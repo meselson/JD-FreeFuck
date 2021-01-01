@@ -1,5 +1,5 @@
 # 《京东薅羊毛》一键部署脚本
-# 通过参与京东商城的各种活动白嫖京豆
+## 通过参与京东商城的各种活动白嫖京豆
 ## 如何获得项目需要的COOKIE内容请访问[Wiki-Cookie-Get](https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get)
 ## https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
 ## 适用系统：CentOS 8简体中文，不适用7及更低版本
