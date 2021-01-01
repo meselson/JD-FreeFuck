@@ -41,7 +41,7 @@ git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd
 cd /home/myid/jd
 mkdir config
 cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
-sed -i '27c Cookie1=""' config/config.sh   #根据Word文档教程将获得的值填入”双引号“内,可同时跑6个账号，格式已在下方保留，同理按顺序填入即可
+sed -i '27c Cookie1=""' config/config.sh   #根据https://github.com/SuperManito/JD/wiki/Cookie-Get教程将获得的值填入”双引号“内,可同时跑6个账号，格式已在下方保留，同理按顺序填入即可
 #例：sed -i '27c Cookie1="pt_pin=xxxxxx;pt_key=xxxxxx;"' config/config.sh
 #sed -i '28c Cookie2=""' config/config.sh
 #sed -i '29c Cookie3=""' config/config.sh
