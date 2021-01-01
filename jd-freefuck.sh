@@ -7,7 +7,7 @@
 #https://github.com/EvineDeng/jd-base/wiki/Linux        #此环境原作者
 #https://github.com/lxk0301/jd_scripts/wiki/GetCookies  #此项目核心js脚本原作者
 #适用系统：CentOS 8简体中文，不适用7及更低版本，本人测试环境为最新CentOS 8.2，系统装完后联网即可，无需其它任何操作
-#！！！！！！请认真阅读第44~51行内容并填入对应的值！！！！！！
+#！！！！！！请认真阅读第44~51行内容并填入对应的值！！！！！！教程网址为：https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
 #环境部署部分：
 systemctl disable --now firewalld
 sed -i "7c SELINUX=disabled" /etc/selinux/config
