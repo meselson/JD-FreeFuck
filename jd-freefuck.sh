@@ -7,7 +7,7 @@
 #https://github.com/EvineDeng/jd-base   #此环境原作者
 #https://github.com/lxk0301/jd_scripts  #此项目核心js脚本原作者
 #适用系统：CentOS 8简体中文，不适用7及更低版本，本人测试环境为最新CentOS 8.2，系统装完后联网即可，无需其它任何操作
-#！！！！！！请认真阅读第44~51行内容并填入对应的值！！！！！！教程网址为：https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
+#！！！！！！请认真阅读第45~52行内容并填入对应的值！！！！！！教程网址为：https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
 #环境部署部分：
 systemctl disable --now firewalld
 sed -i "7c SELINUX=disabled" /etc/selinux/config
@@ -22,6 +22,7 @@ yum install -y vim net-tools curl git perl nodejs npm
 yum install -y http://rpmfind.net/linux/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IO-Tty-1.12-11.el8.x86_64.rpm
 yum install -y http://rpmfind.net/linux/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IPC-Run-0.99-1.el8.noarch.rpm
 yum install -y moreutils
+yum update -y 
 #语言环境验证：
 locale | grep 'LANG=zh_CN.UTF-8' -q
 if [ $? -eq 0 ];then
