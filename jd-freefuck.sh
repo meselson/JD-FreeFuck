@@ -49,7 +49,7 @@ sed -i '27c Cookie1=""' config/config.sh   #根据https://github.com/SuperManito
 #sed -i '30c Cookie4=""' config/config.sh
 #sed -i '31c Cookie5=""' config/config.sh
 #sed -i '32c Cookie6=""' config/config.sh
-#sed -i '70c export PUSH_KEY=""' config/config.sh   #此处内容用于微信消息推送功能，会将结果利用Wechat公众号推送到你的Wechat上，如有需要请取消注释并在”双引号“处填入SCKEY值，详细教程请访问 http://sc.ftqq.com/3.version/
+#sed -i '70c export PUSH_KEY=""' config/config.sh   #此处内容用于微信消息推送功能，会将结果利用Wechat公众号推送到你的Wechat上，如有需要请取消注释并在”双引号“内填入SCKEY值，详细教程请访问 http://sc.ftqq.com/3.version/
 cd /home/myid/jd/scripts
 npm install || npm install --registry=https://registry.npm.taobao.org
 cd /home/myid/jd
