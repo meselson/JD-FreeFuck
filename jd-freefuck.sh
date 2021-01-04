@@ -56,7 +56,7 @@ cd /home/myid/jd
 bash git_pull.sh
 #一键执行所有活动脚本：
 touch /home/myid/jd/run-all.sh
-chmod 755 /home/myid/jd/run-all.sh
+chmod +x /home/myid/jd/run-all.sh
 bash jd.sh | grep jd_ >> /home/myid/jd/run-all.sh
 sed -i '1d' /home/myid/jd/run-all.sh
 sed -i 's/^/bash jd.sh &/g' /home/myid/jd/run-all.sh
@@ -71,7 +71,7 @@ cat > /home/myid/jd/manual-update.sh << EOF
 bash git_pull.sh
 rm -rf run-all.sh
 touch run-all.sh
-chmod 755 run-all.sh
+chmod +x run-all.sh
 bash jd.sh | grep jd_ >> run-all.sh
 sed -i '1d' run-all.sh
 sed -i 's/^/bash jd.sh &/g' run-all.sh
