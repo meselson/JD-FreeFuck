@@ -2,7 +2,7 @@
 #Author；King'S HAN
 #《京东薅羊毛》一键部署脚本，通过参与京东商城的各种活动白嫖京豆
 #本人为了懒人一键部署而写此脚本，此脚本内容涵盖编写了所有该项目所需要的环境软件包和原创一键脚本
-#此脚本核心内容来自于lxk0301大神并托管至GitHub的项目，定期更新核心JavaScript脚本内容
+#此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
 #原作者官方托管GitHub项目网址：
 #https://github.com/EvineDeng/jd-base   #此环境原作者
 #https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript脚本原作者
