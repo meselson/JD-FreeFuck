@@ -65,7 +65,7 @@ echo "bash jd.sh jr_sign now" >> /home/myid/jd/run-all.sh
 sed -i '1i\#!/bin/bash' /home/myid/jd/run-all.sh
 #一键更新脚本：
 touch /home/myid/jd/manual-update.sh
-chmod 755 /home/myid/jd/manual-update.sh
+chmod +x /home/myid/jd/manual-update.sh
 cat > /home/myid/jd/manual-update.sh << EOF
 #!/bin/bash
 bash git_pull.sh
