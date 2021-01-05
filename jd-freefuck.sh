@@ -51,6 +51,7 @@ git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd  #该项目环境�
 cd /home/myid/jd
 mkdir config
 cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
+bash git_pull.sh
 sed -i '27c Cookie1=""' config/config.sh  #根据教程将获得的值填入”双引号“内,可同时跑6个账号，格式已在下方保留，同理按顺序填入即可
 #sed -i '28c Cookie2=""' config/config.sh
 #sed -i '29c Cookie3=""' config/config.sh
@@ -61,7 +62,6 @@ sed -i '27c Cookie1=""' config/config.sh  #根据教程将获得的值填入”�
 cd /home/myid/jd/scripts
 npm install || npm install --registry=https://registry.npm.taobao.org
 cd /home/myid/jd
-bash git_pull.sh
 #编写一键执行脚本：
 touch /home/myid/jd/run-all.sh
 chmod +x /home/myid/jd/run-all.sh
