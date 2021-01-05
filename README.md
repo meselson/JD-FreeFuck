@@ -9,6 +9,13 @@
 
 ***
 
+
+## 原作者官方GitHub项目网址：
+### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
+### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者
+    
+***
+
 # 一键部署教程，请认真阅读下面的内容
 ## 一、环境部署
 _注：请在终端执行下面的命令_
@@ -92,13 +99,6 @@ _注：建议每次执行脚本前更新或者几天内更新一次，京东活�
 ### 5.由于京东活动一直变化所以会出现无法参加活动等正常现象，可手动更新JavaScript活动脚本
 ### 6.如果需要更新核心JavaScript活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可
 ### 7.之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过命令手动更新
-    
-***
-
-## 原作者官方GitHub项目网址：
-### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
-### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者
-_注：本人并非剽窃，原作者只给出了方法并没有落实，软件包环境适配问题就是由本人解决的，十分感谢两位原作者的努力。_
     
 ***
 
