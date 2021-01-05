@@ -1,4 +1,4 @@
-# 《京东薅羊毛》一键部署脚本
+    # 《京东薅羊毛》一键部署脚本
 ## 通过参与京东商城的各种活动白嫖京豆
 ## 如何获得项目需要的COOKIE部分内容请访问 Wiki ，链接如下
 ## https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
