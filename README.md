@@ -18,10 +18,13 @@
 2.为Github添加解析记录。
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
-3.下载脚本并赋予可执行权限，然后执行脚本。
+3.下载脚本并赋予可执行权限。
 
-    wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && bash install.sh
+    wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh
 _注：请将如上命令复制到终端并回车执行_
+4.执行安装脚本。
+
+     bash install.sh
 
 ***
 
