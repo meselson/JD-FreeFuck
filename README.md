@@ -24,7 +24,7 @@ _注：请在终端执行下面的命令_
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh
 ### 4.执行安装脚本。
 
-     bash install.sh
+    bash install.sh
 
 ***
 
