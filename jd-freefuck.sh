@@ -33,7 +33,7 @@ yum install -y http://rpmfind.net/linux/centos/8.3.2011/PowerTools/x86_64/os/Pac
 yum install -y moreutils
 #yum update -y
 #语言环境判定：
-locale | grep 'LANG=zh_CN.UTF-8' -q
+locale | grep 'LANG=zh_CN' -q
 if [ $? -eq 0 ];then
     echo "\033[32m ------------ 语言环境正确，开始部署项目核心环境 ------------ \033[0m"
     sleep 2s
