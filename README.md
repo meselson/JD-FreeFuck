@@ -27,20 +27,17 @@ _注：建议使用手机短信验证码登录，此方式cookie有效时长大�
 #### 6.	点击链接(log.gif)进去，找到cookie，复制完整内容到本地，下面需要用到。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/5.png)
 #### 7.	在开发者模式面板中的Console里面输入下面三行内容
-		var CV = '';
-		var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
-		copy(CookieValue);
+	var CV = '';
+	var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
+	copy(CookieValue);
 
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/6.png)
-	 
+![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/6.png) 
 #### 8.	将从开发者模式面板Network中复制出来的Cookie填入下面第一行的’单引号’内，然后复制所有内容，类似于这样
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/7.png)
-
 #### 9.	成功回车执行后，我们想要的命令就会在你的系统剪贴板上，然后右键粘贴或Ctrl + V至脚本文件规定处。
-
 _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况，不排除其它可能性，京东账号注册方式不同呈现的内容也不同，每个账号都不一样，内容是否正确需通过脚本进行验证，以下内容仅供参考。_
-    pt_pin=jd_6a596373acc;pt_key=AAakjshdsaZHQOd_SiYLYi8shkjsahkdjsahdskjahdsakho;\
-    pt_pin=%E7%AB%A2%E9%AB%A1%E5%13%78;pt_key=Aadq7wmHADCwQ831254235VA5J7mh3_b-czTdFNIyXtRN1WasfewqqawZItEp1dQhjgfnrmrc;
+	pt_pin=jd_6a596373acc;pt_key=AAakjshdsaZHQOd_SiYLYi8shkjsahkdjsahdskjahdsakho;\
+	pt_pin=%E7%AB%A2%E9%AB%A1%E5%13%78;pt_key=Aadq7wmHADCwQ831254235VA5J7mh3_b-czTdFNIyXtRN1WasfewqqawZItEp1dQhjgfnrmrc;
 
 
 ***
