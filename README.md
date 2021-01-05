@@ -18,4 +18,4 @@ https://github.com/EvineDeng/jd-base   #此项目环境原作者
 注意：之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过脚本对应处的命令手动更新\
       配置文件位于/home/myid/jd/config/config，命令为sed -i '27c Cookie1=""' /home/myid/jd/config/config
 
-有任何问题都可以联系本人liu2273689770@gmail.com
+## 有问题可以联系本人解决，可将问题发送至liu2273689770@gmail.com
