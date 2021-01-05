@@ -11,7 +11,7 @@
 ***
 
 ## 接下来进入正题，请认真阅读下面的教程
-## 一、环境部署
+## 一、环境部署，请在终端执行下面的命令。
 ### 1.安装Wget软件包。
 
     yum -y install wget
@@ -21,8 +21,6 @@
 ### 3.下载脚本并赋予可执行权限。
 
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh
-_注：请将如上命令复制到终端并回车执行_
-
 ### 4.执行安装脚本。
 
      bash install.sh
