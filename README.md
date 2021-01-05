@@ -2,15 +2,15 @@
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
 ## 适用系统：CentOS 8简体中文，不适用7及更低版本
 ### 本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
-### 此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
+## 原作者：此项目核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
 
 ***
 
 ## 一、环境部署
-1.安装Wget软件包并添加Hosts解析以解决无科学上网环境导致的拒绝连接问题。
+1.安装Wget软件包并添加Github Hosts解析。
 
     yum -y install wget && echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
-2.下载懒人一键脚本并赋予可执行权限，然后执行安装脚本。
+2.下载脚本并赋予可执行权限，然后执行脚本。
 
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && ./install.sh
 _注：请将如上命令复制到终端并回车执行_
