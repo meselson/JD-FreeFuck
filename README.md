@@ -1,9 +1,8 @@
 《京东薅羊毛》一键部署脚本
 =====
-## * 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
-## * 适用系统：CentOS 8简体中文，不适用7及更低版本
+## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
+## 适用系统：CentOS 8简体中文，不适用7及更低版本
 ### 本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
-## * 原作者：此项目核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
 
 ***
 
@@ -96,9 +95,12 @@ _注：建议每次执行脚本前更新或者几天内更新一次，京东活�
 ## 原作者官方GitHub项目网址：
 ### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
 ### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者
-## 有问题可以联系本人解决，可将问题发送至本人Gmail：liu2273689770@gmail.com
     
 ***
 
 ## 如果您觉得这个项目不错的话可通过以下方式对我进行打赏，万分感谢！
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/Reward.png)
+    
+***
+
+## 遇到问题可以联系本人解决，可将问题发送至本人Gmail：liu2273689770@gmail.com
