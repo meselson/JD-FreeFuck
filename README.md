@@ -9,17 +9,17 @@
 ***
 
 ## 一、快速部署脚本
-	wget --no-check-certificate -O jd-freefuck.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x jd-freefuck.sh
+	wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh
 _注：请将如上命令复制到CentOS终端并回车执行_
 
 ### 二、接下来我们需要您京东账户的“身份证”，如何获取请认真阅读下面的教程
 #### 1. 电脑Chrome系浏览器打开[https://m.jd.com/](https://m.jd.com/)
-建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。
+_注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
 #### 2.	在Chrome浏览器中按F12进入开发者模式面板，然后点下图中的图标。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/2.png)
 #### 3.	此时是未登录状态(使用手机短信验证码登录)，如已登录请忽略此步骤。
-_注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长_
+_注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长。_
 #### 4.	登录后，选择开发者模式面板中的Network，有很多链接点箭头3这里清空下。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/3.png)
 #### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
