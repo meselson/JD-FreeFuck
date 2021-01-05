@@ -51,7 +51,7 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 ## 三、配置脚本
 ### 请将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行（必须步骤）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
-__参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh__
+_参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 \
 #### 1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
 
@@ -60,7 +60,7 @@ __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/
     sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-#### 2.如果需要微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)并将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。（选择步骤）
+#### 2.如果需要使用微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)，登陆后将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。（选择步骤）
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 
@@ -86,12 +86,16 @@ _注：建议每次执行脚本前或者几天内执行一次，京东活动变�
 ### 4.run-all.sh脚本内容含义为执行所有活动脚本，可使用cat或bash jd.sh命令查看内容和教程
 ### 5.由于京东活动一直变化所以会出现无法参加活动等正常现象，可手动更新JavaScript活动脚本
 ### 6.如果需要更新核心JavaScript活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可
-### 7.之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过脚本对应处的命令手动更新
+### 7.之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过命令手动更新
+    
+***
 
 ## 原作者官方GitHub项目网址：
-https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者\
-https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者
+### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
+### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者
+## 有问题可以联系本人解决，可将问题发送至本人Gmail：liu2273689770@gmail.com
+    
+***
 
-## 有问题可以联系本人解决，可将问题发送至liu2273689770@gmail.com
 ## 如果您觉得这个项目不错的话可通过以下方式对我进行打赏，万分感谢！
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/Reward.png)
