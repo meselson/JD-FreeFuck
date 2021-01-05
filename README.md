@@ -1,7 +1,9 @@
-    # 《京东薅羊毛》一键部署脚本
+# 《京东薅羊毛》一键部署脚本
 ## 通过参与京东商城的各种活动白嫖京豆
 ## 如何获得项目需要的COOKIE部分内容请访问 Wiki ，链接如下
 ## https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
+## 如何快速部署脚本
+```wget --no-check-certificate -O jd-freefuck.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x jd-freefuck.sh  && ./jd-freefuck.sh
 ## 适用系统：CentOS 8简体中文，不适用7及更低版本
 ## 本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
 ## 此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
