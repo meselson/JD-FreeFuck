@@ -46,9 +46,9 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 
 ## 三、将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行。
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
-__参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config__\
+__参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh__
 
-附1.如果需要同时运行多个账号（最多6个），请按顺序执行以下命令的完整内容
+附1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。
 
     sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
     sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
