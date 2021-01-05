@@ -1,12 +1,12 @@
 #!/bin/bash
 #Author:King'S HAN
-#Update Date:2020-1-5
+#Update Date:2021-1-6
 #Project Name:《京东薅羊毛》一键部署脚本，通过参与京东商城的各种活动白嫖京豆
 #本人为了懒人一键部署而写此脚本，此脚本内容涵盖编写了所有该项目所需要的环境软件包和原创一键脚本
 #此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容，所有京东活动脚本最终解释权归他所有
-#此脚本环境内容来自于EvineDeng托管至GitHub的项目，定期更新环境支持
+#此脚本环境内容来自于EvineDeng托管至GitHub的项目，使用了他提供的所有JavaScript脚本环境组件
 #适用系统：CentOS 8简体中文，不适用7及更低版本，本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
-#！！！！！！请认真阅读第45~52行内容并填入对应的值！！！！！！教程网址为：https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
+#！！！！！！请认真阅读第53~59行内容并填入对应的值，如果使用Github一键教程则不用在此手动填入了！！！！！！
 #当前用户判定：
 if [ $UID -ne 0 ];then
     echo -e '\033[31m ------------ Permission no enough, please use user ROOT! ------------ \033[0m'
@@ -22,7 +22,6 @@ fi
 systemctl disable --now firewalld
 sed -i "7c SELINUX=disabled" /etc/selinux/config
 setenforce 0
-yum -y install wget
 rm -rf /etc/yum.repos.d/*
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo
 yum makecache > /dev/null 2>&1
@@ -52,13 +51,12 @@ cd /home/myid/jd
 mkdir config
 cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
 sed -i '27c Cookie1=""' config/config.sh  #根据教程将获得的值填入”双引号“内,可同时跑6个账号，格式已在下方保留，同理按顺序填入即可
-#例：sed -i '27c Cookie1="pt_pin=xxxxxx;pt_key=xxxxxx;"' config/config.sh
 #sed -i '28c Cookie2=""' config/config.sh
 #sed -i '29c Cookie3=""' config/config.sh
 #sed -i '30c Cookie4=""' config/config.sh
 #sed -i '31c Cookie5=""' config/config.sh
 #sed -i '32c Cookie6=""' config/config.sh
-#sed -i '70c export PUSH_KEY=""' config/config.sh   #此处内容用于微信消息推送功能，会将结果利用Wechat公众号推送到你的Wechat上，如有需要请取消注释并在”双引号“内填入SCKEY值，详细教程请访问 http://sc.ftqq.com/3.version/
+#sed -i '70c export PUSH_KEY=""' config/config.sh  #此处内容用于微信消息推送功能，如有需要请取消注释并在”双引号“内填入SCKEY值，详细教程请访问 http://sc.ftqq.com/3.version/
 cd /home/myid/jd/scripts
 npm install || npm install --registry=https://registry.npm.taobao.org
 cd /home/myid/jd
