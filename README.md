@@ -8,11 +8,11 @@
 
 ***
 
-## 一、快速部署脚本
+## 一、环境部署
 1.安装Wget软件包并添加Hosts解析以解决无科学上网环境导致的拒绝连接问题。
 
     yum -y install wget && echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
-2.下载脚本并赋予可执行权限，然后执行安装脚本。
+2.下载懒人一键脚本并赋予可执行权限，然后执行安装脚本。
 
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && ./install.sh
 _注：请将如上命令复制到终端并回车执行_
@@ -52,15 +52,15 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 ### 请将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行（必须步骤）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh__
-
-#### 1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。
+\
+#### 1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
 
     sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
     sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
     sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-#### 2.如果需要微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)并将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。
+#### 2.如果需要微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)并将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。（选择步骤）
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 
