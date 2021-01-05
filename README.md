@@ -9,8 +9,7 @@
 ***
 
 ## 一、快速部署脚本
-    yum -y install wget
-    echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
+    yum -y install wget && echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && ./install.sh
 _注：请将如上命令复制到终端并回车执行_
 
@@ -55,9 +54,10 @@ __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/
     sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-附2.如果需要微信消息推送功能，请将`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。
+附2.如果需要微信消息推送功能，请访问[官网](http://sc.ftqq.com/3.version/)并将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
+
 
 ***
 
