@@ -19,7 +19,7 @@ _注：请将如上命令复制到终端并回车执行_
 
 ***
 
-### 二、接下来我们需要您京东账户的“身份证”，如何获取请认真阅读下面的教程
+### 二、接下来我们需要您京东账户的“身份证”——`Cookie`部分内容，请认真阅读下面的教程自行获取
 #### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
 _注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
@@ -48,7 +48,7 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 
 ***
 
-## 三、将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行。
+## 三、将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh__
 
@@ -66,13 +66,13 @@ __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/
 
 ***
 
-## 四、执行脚本，开始你的薅羊毛行为。
+## 四、执行脚本，开始你的薅羊毛行为
     cd /home/myid/jd
     bash run-all.sh
 
 ***
 
-## 五、如果需要更新活动脚本，可通过执行如下命令。
+## 五、如果需要更新活动脚本，可通过执行如下命令
     cd /home/myid/jd
     bash manual-update.sh
     
