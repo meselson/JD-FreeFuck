@@ -9,10 +9,10 @@
 ***
 
 ## 一、快速部署脚本
-		wget --no-check-certificate -O jd-freefuck.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x jd-freefuck.sh
+	wget --no-check-certificate -O jd-freefuck.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x jd-freefuck.sh
 _注：请将如上命令复制到CentOS终端并回车执行_
 
-### 接下来我们需要您京东账户的“身份证”，如何获取请认真阅读下面的教程
+### 二、接下来我们需要您京东账户的“身份证”，如何获取请认真阅读下面的教程
 #### 1. 电脑Chrome系浏览器打开[https://m.jd.com/](https://m.jd.com/)
 建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
