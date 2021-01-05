@@ -12,6 +12,9 @@
 ## 一、快速部署脚本
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh
 _注：请将如上命令复制到CentOS终端并回车执行_
+
+***
+
 ### 二、接下来我们需要您京东账户的“身份证”，如何获取请认真阅读下面的教程
 #### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
 _注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
@@ -24,20 +27,26 @@ _注：建议使用手机短信验证码登录，此方式cookie有效时长大�
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/3.png)
 #### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/4.png)
-#### 6.	点击链接(log.gif)进去，找到cookie，复制完整内容到本地，下面需要用到。
+#### 6.	择开发者模式面板中点击链接(log.gif)，右边滚动条向下滑找到“cookie：”，复制完整内容到本地，下面需要用到。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/5.png)
-#### 7.	在开发者模式面板中的Console里面输入下面三行内容
+#### 7.	在Console里面输入下面三行内容
     var CV = '';
     var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
     copy(CookieValue);
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/6.png) 
-#### 8.	将从开发者模式面板Network中复制出来的Cookie填入下面第一行的’单引号’内，然后复制所有内容，类似于这样
+#### 8.	将从Network中复制出来的Cookie填入下面第一行的’单引号’内，然后复制所有内容，类似于这样
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/7.png)
 #### 9.	成功回车执行后，我们想要的命令就会在你的系统剪贴板上，然后右键粘贴或Ctrl + V至脚本文件规定处。
 _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况，不排除其它可能性，京东账号注册方式不同呈现的内容也不同，每个账号都不一样，内容是否正确需通过脚本进行验证，以下内容仅供参考。_
 
     pt_pin=jd_6a596373acc;pt_key=AAakjshdsaZHQOd_SiYLYi8shkjsahkdjsahdskjahdsakho;\
     pt_pin=%E7%AB%A2%E9%AB%A1%E5%13%78;pt_key=Aadq7wmHADCwQ831254235VA5J7mh3_b-czTdFNIyXtRN1WasfewqqawZItEp1dQhjgfnrmrc;
+
+***
+
+## 三、将在获得的
+
+
 
 ***
 
