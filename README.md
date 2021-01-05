@@ -33,7 +33,7 @@ _注：建议使用手机短信验证码登录，此方式cookie有效时长大�
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/4.png)
 #### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie:`，复制完整内容到本地，下面需要用到。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/5.png)
-#### 7.	在`Console`中输入以下三行内容
+#### 7.	在`Console`中输入以下三行内容。
     var CV = '';
     var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
     copy(CookieValue);
@@ -48,18 +48,19 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 
 ***
 
-## 三、将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行
+## 三、配置脚本
+### __请将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行__
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh__
 
-### 附1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。
+#### 1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。
 
     sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
     sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
     sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-### 附2.如果需要微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)并将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。
+#### 2.如果需要微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)并将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 
