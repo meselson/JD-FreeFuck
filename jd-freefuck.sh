@@ -30,8 +30,6 @@ yum makecache
 yum install -y http://rpmfind.net/linux/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IO-Tty-1.12-11.el8.x86_64.rpm
 yum install -y http://rpmfind.net/linux/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IPC-Run-0.99-1.el8.noarch.rpm
 yum install -y net-tools curl git perl nodejs npm moreutils
-#yum install -y moreutils
-#yum update -y
 #语言环境判定：
 locale | grep 'LANG=zh_CN' -q
 if [ $? -eq 0 ];then
