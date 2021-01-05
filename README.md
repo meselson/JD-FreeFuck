@@ -10,9 +10,7 @@
 
 ## 一、快速部署脚本
     yum -y install wget
-    
     echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
-    
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && ./install.sh
 _注：请将如上命令复制到终端并回车执行_
 
