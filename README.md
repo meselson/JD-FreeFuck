@@ -11,9 +11,9 @@
 
 ## 接下来进入正题，请认真阅读下面的教程
 ## 一、环境部署
-1.安装Wget软件包并添加Github Hosts解析。
+1.安装Wget软件包。
 
-    yum -y install wget && echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
+    yum -y install wget
 2.下载脚本并赋予可执行权限，然后执行脚本。
 
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && ./install.sh
