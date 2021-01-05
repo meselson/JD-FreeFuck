@@ -19,7 +19,7 @@ _注：请将如上命令复制到终端并回车执行_
 
 ***
 
-### 二、接下来我们需要您京东账户的“身份证”——`Cookie`部分内容，请认真阅读下面的教程自行获取
+### 二、接下来我们需要您京东账户的“身份证”，它由`Cookie`部分内容组成，请认真阅读下面的教程自行获取
 #### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
 _注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
@@ -79,19 +79,19 @@ __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/
 ***
 
 # 项目需知
-注意：该项目运行主目录为/home/myid/jd\
-注意：为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误\
-注意：执行脚本期间可能会卡住或运行挂机脚本，可通过命令 Ctrl + C 跳过继续执行剩余活动脚本\
-注意：run-all.sh脚本内容含义为执行所有活动脚本，可使用cat或bash jd.sh命令查看内容和教程\
-注意：由于京东活动一直变化所以会出现无法参加活动等正常现象，可手动更新JavaScript活动脚本\
-注意：如果需要更新核心JavaScript活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可\
-注意：之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过脚本对应处的命令手动更新\
-配置文件位于/home/myid/jd/config/config，命令为sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
+### 1.该项目运行主目录为/home/myid/jd\
+### 2.为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误\
+### 3.执行脚本期间可能会卡住或运行挂机脚本，可通过命令 Ctrl + C 跳过继续执行剩余活动脚本\
+### 4.run-all.sh脚本内容含义为执行所有活动脚本，可使用cat或bash jd.sh命令查看内容和教程\
+### 5.由于京东活动一直变化所以会出现无法参加活动等正常现象，可手动更新JavaScript活动脚本\
+### 6.如果需要更新核心JavaScript活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可\
+### 7.之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过脚本对应处的命令手动更新\
+###   配置文件位于/home/myid/jd/config/config，命令为sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 
 ## 原作者官方GitHub项目网址：
 https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript脚本原作者\
 https://github.com/EvineDeng/jd-base   #此项目环境原作者
 
 ## 有问题可以联系本人解决，可将问题发送至liu2273689770@gmail.com
-## 如果您觉得这个项目不错的话可以通过以下方式对我进行打赏，万分感谢！
+## 如果您觉得这个项目不错的话可通过以下方式对我进行打赏，万分感谢！
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/Reward.png)
