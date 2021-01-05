@@ -12,45 +12,45 @@
 
 ## 接下来进入正题，请认真阅读下面的教程
 ## 一、环境部署
-1.安装Wget软件包。
+### 1.安装Wget软件包。
 
     yum -y install wget
-2.为Github添加解析记录。
+### 2.为Github添加解析记录。
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
-3.下载脚本并赋予可执行权限。
+### 3.下载脚本并赋予可执行权限。
 
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh
 _注：请将如上命令复制到终端并回车执行_
 
-4.执行安装脚本。
+### 4.执行安装脚本。
 
      bash install.sh
 
 ***
 
-### 二、接下来我们需要您京东账户的“身份证”，它由`Cookie部分内容`组成，请认真阅读下面的教程自行获取
-#### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
+## 二、接下来我们需要您京东账户的“身份证”，它由`Cookie部分内容`组成，请认真阅读下面的教程自行获取
+### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
 _注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
-#### 2.	在Chrome浏览器中按F12进入开发者模式面板，然后点下图中的图标。
+### 2.	在Chrome浏览器中按F12进入开发者模式面板，然后点下图中的图标。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/2.png)
-#### 3.	此时是未登录状态，请使用手机短信验证码方式登录，如已登录请忽略此步骤。
+### 3.	此时是未登录状态，请使用手机短信验证码方式登录，如已登录请忽略此步骤。
 _注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长。_
-#### 4.	登录后，选择开发者模式面板中的`Network`，有很多链接点击箭头`3`这里清空下。
+### 4.	登录后，选择开发者模式面板中的`Network`，有很多链接点击箭头`3`这里清空下。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/3.png)
-#### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
+### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/4.png)
-#### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie:`，复制完整内容到本地，下面需要用到。
+### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie:`，复制完整内容到本地，下面需要用到。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/5.png)
-#### 7.	在`Console`中输入以下三行内容。
+### 7.	在`Console`中输入以下三行内容。
     var CV = '';
     var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
     copy(CookieValue);
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/6.png) 
-#### 8.	将从`Network`中复制出来的Cookie填入下面第一行的’单引号’内，如图，然后回车执行。
+### 8.	将从`Network`中复制出来的Cookie填入下面第一行的’单引号’内，如图，然后回车执行。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/7.png)
-#### 9.	成功回车执行后，我们想要的命令就会在你的系统剪贴板上，然后右键粘贴或`Ctrl + V`至本地，下面需要用到。
+### 9.	成功回车执行后，我们想要的命令就会在你的系统剪贴板上，然后右键粘贴或`Ctrl + V`至本地，下面需要用到。
 _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况，不排除其它可能性，京东账号注册方式不同呈现的内容也不同，每个账号都不一样，内容是否正确需通过脚本进行验证，以下内容仅供参考。_
 
     pt_pin=jd_6a596373acc;pt_key=AAakjshdsaZHQOd_SiYLYi8shkjsahkdjsahdskjahdsakho;
