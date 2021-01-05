@@ -1,10 +1,8 @@
 # 《京东薅羊毛》一键部署脚本
-## 通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
-### 适用系统：CentOS 8简体中文，不适用7及更低版本
+## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
+## 适用系统：CentOS 8简体中文，不适用7及更低版本
 ### 本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
 ### 此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
-### 如何获得项目需要的COOKIE部分内容请访问 Wiki ，链接如下
-### https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
 
 ***
 
@@ -19,7 +17,7 @@ _注：请将如上命令复制到终端并回车执行_
 
 ***
 
-### 二、接下来我们需要您京东账户的“身份证”，它由`Cookie`部分内容组成，请认真阅读下面的教程自行获取
+### 二、接下来我们需要您京东账户的“身份证”，它由`Cookie部分内容`组成，请认真阅读下面的教程自行获取
 #### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
 _注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
@@ -49,7 +47,7 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 ***
 
 ## 三、配置脚本
-### 请将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行（必须步骤）
+### 请将上面步骤获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并回车执行（必须步骤）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 \
@@ -66,16 +64,20 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 
 ***
 
-## 四、执行脚本，开始你的薅羊毛行为
+## 四、更新脚本
     cd /home/myid/jd
-    bash run-all.sh
+    bash manual-update.sh
+_注：建议每次执行脚本前更新或者几天内更新一次，京东活动变化无常。_
 
 ***
 
-## 五、如果需要更新活动脚本，可通过执行如下命令
+## 五、运行脚本
     cd /home/myid/jd
-    bash manual-update.sh
-_注：建议每次执行脚本前或者几天内执行一次，京东活动变化无常。_
+    bash run-all.sh
+    
+***
+
+# 到此所有内容就全部执行完了
     
 ***
 
