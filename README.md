@@ -23,13 +23,13 @@ _注：建议使用无痕窗口，因为当有使用需求需要切换账号时�
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/2.png)
 #### 3.	此时是未登录状态(使用手机短信验证码登录)，如已登录请忽略此步骤。
 _注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长。_
-#### 4.	登录后，选择开发者模式面板中的Network，有很多链接点箭头3这里清空下。
+#### 4.	登录后，选择开发者模式面板中的Network，有很多链接点击箭头3这里清空下。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/3.png)
 #### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/4.png)
-#### 6.	择开发者模式面板中点击链接(log.gif)，右边滚动条向下滑找到“cookie：”，复制完整内容到本地，下面需要用到。
+#### 6. 在开发者模式面板中点击链接(log.gif)，右边滚动条向下滑找到“cookie：”，复制完整内容到本地，下面需要用到。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/5.png)
-#### 7.	在Console里面输入下面三行内容
+#### 7.	在Console中输入以下三行内容
     var CV = '';
     var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
     copy(CookieValue);
@@ -44,7 +44,7 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 
 ***
 
-## 三、将在获得的
+## 三、将在第二部获得的“身份证”填入下面的命令中
 
 
 
@@ -65,5 +65,5 @@ https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript脚本原作者
 https://github.com/EvineDeng/jd-base   #此项目环境原作者
 
 ## 有问题可以联系本人解决，可将问题发送至liu2273689770@gmail.com
-## 如果你觉得这个项目不错的话可以通过以下方式对我进行打赏，感谢！
+## 如果您觉得这个项目不错的话可以通过以下方式对我进行打赏，万分感谢！
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/Reward.png)
