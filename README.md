@@ -26,7 +26,7 @@ _注：建议使用手机短信验证码登录，此方式cookie有效时长大�
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/3.png)
 #### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/4.png)
-#### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie：`，复制完整内容到本地，下面需要用到。
+#### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie:`，复制完整内容到本地，下面需要用到。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/5.png)
 #### 7.	在`Console`中输入以下三行内容
     var CV = '';
@@ -43,11 +43,23 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 
 ***
 
-## 三、将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行
-    sed -i '27c Cookie1=""' /home/myid/jd/config/config
-_参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config_
-_如果需要
-## 四、执行脚本开始你的薅羊毛行为
+## 三、将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行。
+    sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
+__参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config__
+1.如果需要同时运行多个账号（最多6个）,请按顺序执行以下命令的完整内容
+
+    sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
+    sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
+    sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
+    sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
+    sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
+2.如果需要微信消息推送功能，请将`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。
+
+    sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
+
+***
+
+## 四、执行脚本，开始你的薅羊毛行为
     cd /home/myid/jd
     bash run-all.sh
 
@@ -61,7 +73,7 @@ _如果需要
 注意：由于京东活动一直变化所以会出现无法参加活动等正常现象，可手动更新JavaScript活动脚本\
 注意：如果需要更新核心JavaScript活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可\
 注意：之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过脚本对应处的命令手动更新\
-配置文件位于/home/myid/jd/config/config，命令为sed -i '27c Cookie1=""' /home/myid/jd/config/config
+配置文件位于/home/myid/jd/config/config，命令为sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 
 原作者官方GitHub项目网址：\
 https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript脚本原作者\
