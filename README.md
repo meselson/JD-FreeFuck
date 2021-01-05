@@ -9,7 +9,11 @@
 ***
 
 ## 一、快速部署脚本
+1.安装Wget软件包并添加Hosts解析以解决无科学上网环境导致的拒绝连接问题。
+
     yum -y install wget && echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
+2.下载脚本并赋予可执行权限，然后执行安装脚本。
+
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && ./install.sh
 _注：请将如上命令复制到终端并回车执行_
 
@@ -84,7 +88,7 @@ __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/
 注意：之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过脚本对应处的命令手动更新\
 配置文件位于/home/myid/jd/config/config，命令为sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 
-原作者官方GitHub项目网址：\
+## 原作者官方GitHub项目网址：
 https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript脚本原作者\
 https://github.com/EvineDeng/jd-base   #此项目环境原作者
 
