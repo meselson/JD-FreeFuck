@@ -27,9 +27,11 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos
 yum makecache > /dev/null 2>&1
 yum install -y https://mirrors.aliyun.com/epel/epel-release-latest-8.noarch.rpm
 yum makecache
-yum install -y net-tools curl git perl nodejs npm moreutils
+
 yum install -y http://rpmfind.net/linux/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IO-Tty-1.12-11.el8.x86_64.rpm
 yum install -y http://rpmfind.net/linux/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IPC-Run-0.99-1.el8.noarch.rpm
+yum install -y net-tools curl git perl nodejs npm moreutils
+
 #yum install -y moreutils
 #yum update -y
 #语言环境判定：
