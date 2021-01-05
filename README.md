@@ -9,6 +9,10 @@
 ***
 
 ## 一、快速部署脚本
+    yum -y install wget
+    
+    echo "151.101.76.133 raw.githubusercontent.com" >> /etc/hosts
+    
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && ./install.sh
 _注：请将如上命令复制到终端并回车执行_
 
@@ -20,8 +24,8 @@ _注：建议使用无痕窗口，因为当有使用需求需要切换账号时�
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
 #### 2.	在Chrome浏览器中按F12进入开发者模式面板，然后点下图中的图标。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/2.png)
-#### 3.	此时是未登录状态(使用手机短信验证码登录)，如已登录请忽略此步骤。
-__注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长。__
+#### 3.	此时是未登录状态，请使用手机短信验证码方式登录，如已登录请忽略此步骤。
+_注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长。_
 #### 4.	登录后，选择开发者模式面板中的`Network`，有很多链接点击箭头`3`这里清空下。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/3.png)
 #### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
