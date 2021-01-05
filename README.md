@@ -1,19 +1,18 @@
 # 《京东薅羊毛》一键部署脚本
 ## 通过参与京东商城的各种活动白嫖京豆,京豆数量受限于京东商城的活动，目前日均100~200京豆。
-## 适用系统：CentOS 8简体中文，不适用7及更低版本
-## 本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
-## 此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
-## 如何获得项目需要的COOKIE部分内容请访问 Wiki ，链接如下
-## https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
+### 适用系统：CentOS 8简体中文，不适用7及更低版本
+### 本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
+### 此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容
+### 如何获得项目需要的COOKIE部分内容请访问 Wiki ，链接如下
+### https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
 
 ***
 
 ## 一、快速部署脚本
 	wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh
 _注：请将如上命令复制到CentOS终端并回车执行_
-
 ### 二、接下来我们需要您京东账户的“身份证”，如何获取请认真阅读下面的教程
-#### 1. 电脑Chrome系浏览器打开[https://m.jd.com/](https://m.jd.com/)
+#### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
 _注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
 #### 2.	在Chrome浏览器中按F12进入开发者模式面板，然后点下图中的图标。
