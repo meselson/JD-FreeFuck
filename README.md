@@ -1,6 +1,6 @@
 # 《京东薅羊毛》一键部署脚本
 ## 通过参与京东商城的各种活动白嫖京豆
-## 如何获得项目需要的COOKIE内容请访问 Wiki 
+## 如何获得项目需要的COOKIE部分内容请访问 Wiki ，链接如下
 ## https://github.com/SuperManito/JD-FreeFuck/wiki/Cookie-Get
 ## 适用系统：CentOS 8简体中文，不适用7及更低版本
 ## 本人测试环境为最新CentOS 8.3，系统装完后联网即可，无需其它任何操作
@@ -17,3 +17,5 @@ https://github.com/EvineDeng/jd-base   #此项目环境原作者
 注意：如果需要更新核心JavaScript活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可\
 注意：之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过脚本对应处的命令手动更新\
       配置文件位于/home/myid/jd/config/config，命令为sed -i '27c Cookie1=""' /home/myid/jd/config/config
+
+有任何问题都可以联系本人liu2273689770@gmail.com
