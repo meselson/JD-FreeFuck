@@ -49,7 +49,7 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 ***
 
 ## 三、配置脚本
-### __请将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行__
+### 请将在第上面步骤获得的“身份证”填入下面命令中的“双引号”内，复制完整命令到终端并回车执行（必须步骤）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh__
 
@@ -64,7 +64,6 @@ __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 
-
 ***
 
 ## 四、执行脚本，开始你的薅羊毛行为
@@ -76,6 +75,7 @@ __参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/
 ## 五、如果需要更新活动脚本，可通过执行如下命令
     cd /home/myid/jd
     bash manual-update.sh
+_注：建议每次执行脚本前或者几天内执行一次，京东活动变化无常。_
     
 ***
 
