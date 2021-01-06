@@ -102,8 +102,6 @@ _注：建议每次执行脚本前更新或者几天内更新一次，京东活�
     
 ***
 
-## 如果您觉得这个项目不错的话可通过以下方式对我进行打赏，万分感谢！
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/Reward.png)
     
 ***
 
