@@ -17,17 +17,11 @@
 ***
 
 # 一键部署教程，请认真阅读下面的内容
-## 一、环境部署
+## 一、环境一键部署
 _注：请在终端执行下面的命令_
 
-### 一键部署命令：
-
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && bash install.sh
-
-### 附1.如何安装Wget软件包。
-
-    yum -y install wget
-### 附2.，如果没有科学上网方式可为Github添加解析记录，命令如下。
+### 附：如果没有科学上网方式可为Github添加解析记录，命令如下。
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     
