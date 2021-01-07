@@ -53,13 +53,13 @@ _注：详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)_
 
 ***
 
-# 如何运行脚本开始白嫖京豆？
+## 如何运行脚本开始白嫖京豆？
     cd /home/myid/jd
     bash run-all.sh
     
 ***
 
-# 如何更新活动脚本？
+## 如何更新活动脚本？
     cd /home/myid/jd
     bash manual-update.sh
 _注：建议每次执行脚本前更新或者几天内更新一次，京东活动变化无常。_\
