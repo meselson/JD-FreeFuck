@@ -20,7 +20,7 @@
 ## 一、环境一键部署
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && bash install.sh
 _注：请将上面的命令复制到终端并执行_
-### 附：如果没有科学上网方式可为Github添加解析记录，命令如下。
+__附：如果没有科学上网方式可为Github添加解析记录，命令如下。
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     
