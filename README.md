@@ -16,7 +16,7 @@
     
 ***
 
-# 接下来进入部署教程，请认真阅读下面的内容
+# 接下来进入部署教程，共三步，请认真阅读下面的内容
 ## 一、环境一键部署
 ### CentOS
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck-centos.sh && chmod +x install.sh && bash install.sh
