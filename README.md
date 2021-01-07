@@ -64,14 +64,14 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 ### ★ 请将上面步骤获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并回车执行
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
-#### 1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
+#### 附1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
 
     sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
     sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
     sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-#### 2.如果需要使用微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)，登陆后将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。（选择步骤）
+#### 附2.如果需要使用微信消息推送功能，请访问[Server酱官网](http://sc.ftqq.com/3.version/)，登陆后将获得的`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。（选择步骤）
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 
