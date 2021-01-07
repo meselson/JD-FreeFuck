@@ -18,6 +18,9 @@
 
 # 接下来进入部署教程，请认真阅读下面的内容
 ## 一、环境一键部署
+### 如果你是CentOS
+    wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck-centos.sh && chmod +x install.sh && bash install.sh
+### 如果你是Ubuntu
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck-centos.sh && chmod +x install.sh && bash install.sh
 _注：请将上面的命令复制到终端并执行_\
 \
