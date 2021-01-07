@@ -1,4 +1,4 @@
-《京东薅羊毛》一键部署脚本
+《京东薅羊毛》一键部署脚本 For Linux
 =====
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
 
@@ -18,7 +18,7 @@
 
 # 接下来进入部署教程，请认真阅读下面的内容
 ## 一、环境一键部署
-    wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && bash install.sh
+    wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck-centos.sh && chmod +x install.sh && bash install.sh
 _注：请将上面的命令复制到终端并执行_\
 \
 __附：如果没有科学上网方式可为Github添加解析记录，命令如下。__
