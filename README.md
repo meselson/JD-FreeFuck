@@ -1,5 +1,3 @@
-![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/ruAMsa53pVQWN7FLK88i5jJAaJFL6iOouiNaUd1l1DFeJaWRuF2uMGRUxiTZGYhELIKK5KxIPZSb4DKEXVsVWZ5T0kdcg*bkW1MDvry*Gbc!/b&bo=YAXaAgAAAAADB58!&rf=viewer_4)
-
 《京东薅羊毛》一键部署脚本
 =====
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
@@ -32,24 +30,24 @@ __附：如果没有科学上网方式可为Github添加解析记录，命令如
 ## 二、接下来我们需要您京东账户的“身份证”，它由`Cookie部分内容`组成，请认真阅读下面的教程自行获取
 ### 1. 电脑Chrome系浏览器打开京东移动端官网[https://m.jd.com/](https://m.jd.com/)
 _注：建议使用无痕窗口，因为当有使用需求需要切换账号时，在正常模式下一旦手动注销当前账号cookie就会失效，若只用1个账号可随意，该脚本最多可以同时跑6个账号。_
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/1.png)
+![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/ruAMsa53pVQWN7FLK88i5jJAaJFL6iOouiNaUd1l1DFeJaWRuF2uMGRUxiTZGYhELIKK5KxIPZSb4DKEXVsVWZ5T0kdcg*bkW1MDvry*Gbc!/b&bo=YAXaAgAAAAADB58!&rf=viewer_4)
 ### 2.	在Chrome浏览器中按F12进入开发者模式面板，然后点下图中的图标。
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/2.png)
+![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcaCEokTm5PafYqcRN.3.a*FYvbpikRSmFt*Bqwbdr1HHh88mQTu*hw6CgPnA6Y5saVXqdm69fGSiOocKHT*5ztw!/b&bo=QAb1AgAAAAADN6M!&rf=viewer_4)
 ### 3.	此时是未登录状态，请使用手机短信验证码方式登录，如已登录请忽略此步骤。
 _注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长。_
 ### 4.	登录后，选择开发者模式面板中的`Network`，有很多链接点击箭头`3`这里清空下。
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/3.png)
+![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcaCEokTm5PafYqcRN.3.a*GawbsSK4R5EssLRVJvisTA8Jfr1Rsbz1J*VJ62MM.xu3r8cjW7RvlZ25FBu3MfjUk!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
 ### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/4.png)
+![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dAbPSKyqQFfYkORV5cuevQ9va2fVPMuTmtPhZVVdPS82PdIvKUitGtvgJ*aGur0yNc!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
 ### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie:`，复制完整内容到本地，下面需要用到。
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/5.png)
+![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dCgkDEjXCER0NTJf9YO*27j40pMrWeGgNYjdmCCp31AoGJYA0CpSoDk6C*pzben948!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
 ### 7.	在`Console`中输入以下三行内容。
     var CV = '';
     var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
     copy(CookieValue);
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/6.png) 
+![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dBRgEIUBBxRPUQSlfGGTioWDof5iWJ2gAbKdbe5kTYcrtxeS3sH57YM0UBt2oqXkRI!/b&bo=3gPLAQAAAAADFyU!&rf=viewer_4) 
 ### 8.	将从`Network`中复制出来的Cookie填入下面第一行的’单引号’内，如图，然后执行。
-![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/7.png)
+![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dCr4U6aeX8Pn.BVU5W09BGVWmV2TLVzbEXs8RpG2pqnauKvLUdA5q6NSP7sIjfvrQg!/b&bo=2gOkAgAAAAADJ30!&rf=viewer_4)
 ### 9.	成功回车执行后，我们想要的命令就会在你的系统剪贴板上，然后右键粘贴或`Ctrl + V`至本地，下面需要用到。
 _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况，不排除其它可能性，京东账号注册方式不同呈现的内容也不同，每个账号都不一样，内容是否正确需通过脚本进行验证，以下内容仅供参考。_
 
