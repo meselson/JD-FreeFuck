@@ -75,7 +75,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 
-##### 到此部署就结束了，是不是很快QAQ
+##### _到此部署就结束了，是不是很快OvO_
 
 ***
 
