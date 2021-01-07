@@ -60,7 +60,6 @@ sed -i '27c Cookie1=""' config/config.sh  #根据教程将获得的值填入”�
 cd /home/myid/jd/scripts
 npm install || npm install --registry=https://registry.npm.taobao.org
 cd /home/myid/jd
-bash git_pull.sh
 #编写一键执行脚本：
 touch /home/myid/jd/run-all.sh
 chmod +x /home/myid/jd/run-all.sh
