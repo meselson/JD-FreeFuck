@@ -4,11 +4,11 @@
 
 ***
 
-## 适用系统：CentOS 8简体中文，不适用7及更低版本
-### 本人测试环境为最新CentOS 8.3，系统装完后联网即可，如果是最小化安装，请通过SSL方式进入到终端
+## 适用系统：Ubuntu 20 & CentOS 8  简体中文
+### CentOS本人测试环境为最新CentOS 8.3，不适用7及更低版本，系统装完后联网即可，如果是最小化安装，请通过SSL方式进入到终端
+### Ubuntu正在完善中
 
 ***
-
 
 ## 原作者官方GitHub项目网址：
 ### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
@@ -18,11 +18,11 @@
 
 # 接下来进入部署教程，请认真阅读下面的内容
 ## 一、环境一键部署
-### 如果你是CentOS
+### CentOS
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck-centos.sh && chmod +x install.sh && bash install.sh
-### 如果你是Ubuntu
+### Ubuntu
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck-centos.sh && chmod +x install.sh && bash install.sh
-_注：请将上面的命令复制到终端并执行_\
+_注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_\
 \
 __附：如果没有科学上网方式可为Github添加解析记录，命令如下。__
 
