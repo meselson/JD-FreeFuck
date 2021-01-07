@@ -18,9 +18,8 @@
 
 # 一键部署教程，请认真阅读下面的内容
 ## 一、环境一键部署
-_注：请在终端执行下面的命令_
-
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/jd-freefuck.sh && chmod +x install.sh && bash install.sh
+_注：请将上面的命令复制到终端并执行_
 ### 附：如果没有科学上网方式可为Github添加解析记录，命令如下。
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
@@ -46,7 +45,7 @@ _注：建议使用手机短信验证码登录，此方式cookie有效时长大�
     var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
     copy(CookieValue);
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/6.png) 
-### 8.	将从`Network`中复制出来的Cookie填入下面第一行的’单引号’内，如图，然后回车执行。
+### 8.	将从`Network`中复制出来的Cookie填入下面第一行的’单引号’内，如图，然后执行。
 ![](https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/course/7.png)
 ### 9.	成功回车执行后，我们想要的命令就会在你的系统剪贴板上，然后右键粘贴或`Ctrl + V`至本地，下面需要用到。
 _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况，不排除其它可能性，京东账号注册方式不同呈现的内容也不同，每个账号都不一样，内容是否正确需通过脚本进行验证，以下内容仅供参考。_
@@ -57,7 +56,7 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 ***
 
 ## 三、配置脚本
-### ★ 请将上面步骤获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并回车执行
+### ★ 请将上面步骤获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 #### 附1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
@@ -67,7 +66,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
     sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-#### 附2.如果需要使用微信消息推送功能，将`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。（选择步骤）
+#### 附2.如果需要使用微信消息推送功能，将`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并执行。（选择步骤）
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 _注：详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)_
