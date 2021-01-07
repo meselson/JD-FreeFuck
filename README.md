@@ -37,7 +37,7 @@ _注：建议使用无痕窗口，因为当有使用需求需要切换账号时�
 _注：建议使用手机短信验证码登录，此方式cookie有效时长大概为31天，相较于其它登录方式时效最长。_
 ### 4.	登录后，选择开发者模式面板中的`Network`，有很多链接点击箭头`3`这里清空下。
 ![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcaCEokTm5PafYqcRN.3.a*GawbsSK4R5EssLRVJvisTA8Jfr1Rsbz1J*VJ62MM.xu3r8cjW7RvlZ25FBu3MfjUk!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
-### 5.	然后回到左边的京东页面点击底部导航栏—我的，出来的链接就变少了。
+### 5.	然后回到左边的京东页面点击底部导航栏—`我的`，这样出来的链接就变少了。
 ![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dAbPSKyqQFfYkORV5cuevQ9va2fVPMuTmtPhZVVdPS82PdIvKUitGtvgJ*aGur0yNc!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
 ### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie:`，复制完整内容到本地，下面需要用到。
 ![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dCgkDEjXCER0NTJf9YO*27j40pMrWeGgNYjdmCCp31AoGJYA0CpSoDk6C*pzben948!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
