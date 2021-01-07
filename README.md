@@ -41,12 +41,12 @@ _注：建议使用手机短信验证码登录，此方式cookie有效时长大�
 ![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dAbPSKyqQFfYkORV5cuevQ9va2fVPMuTmtPhZVVdPS82PdIvKUitGtvgJ*aGur0yNc!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
 ### 6. 在开发者模式面板中点击链接`log.gif`，右边滚动条向下滑找到`cookie:`，复制完整内容到本地，下面需要用到。
 ![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dCgkDEjXCER0NTJf9YO*27j40pMrWeGgNYjdmCCp31AoGJYA0CpSoDk6C*pzben948!/b&bo=QAb1AgAAAAADJ7M!&rf=viewer_4)
-### 7.	在`Console`中输入以下三行内容。
+### 7.	在开发者模式面板的`Console`中输入以下三行内容。
     var CV = '';
     var CookieValue = CV.match(/pt_pin=.+?;/) + CV.match(/pt_key=.+?;/);
     copy(CookieValue);
 ![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dBRgEIUBBxRPUQSlfGGTioWDof5iWJ2gAbKdbe5kTYcrtxeS3sH57YM0UBt2oqXkRI!/b&bo=3gPLAQAAAAADFyU!&rf=viewer_4) 
-### 8.	将从第⑥步`Network`中复制出来的Cookie填入下面第一行的’单引号’内，如图，然后执行。
+### 8.	将从第⑹步`Network`中复制出来的Cookie填入下面第一行的’单引号’内，如图，然后执行。
 ![](https://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/45NBuzDIW489QBoVep5mcRTBl2gUUBZsmW6Wwbhy5dCr4U6aeX8Pn.BVU5W09BGVWmV2TLVzbEXs8RpG2pqnauKvLUdA5q6NSP7sIjfvrQg!/b&bo=2gOkAgAAAAADJ30!&rf=viewer_4)
 ### 9.	成功回车执行后，我们想要的命令就会在你的系统剪贴板上，然后右键粘贴或`Ctrl + V`至本地，下面需要用到。
 _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况，不排除其它可能性，京东账号注册方式不同呈现的内容也不同，每个账号都不一样，内容是否正确需通过脚本进行验证，以下内容仅供参考。_
