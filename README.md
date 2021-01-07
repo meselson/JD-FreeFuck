@@ -74,7 +74,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 #### 附2.如果需要使用微信消息推送功能，将`SCKEY`填入下面命令的”双引号“内，复制完整命令到终端并回车执行。（选择步骤）
 
     sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
-_详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)，_
+_注：详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)_
 ##### _到此部署就结束了，是不是很快OvO_
 
 ***
