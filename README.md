@@ -77,14 +77,18 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 
 ***
 
-## 四、运行脚本
-    cd /home/myid/jd
-    bash run-all.sh
-## 到此所有内容就全部执行完了
+
+## 到此部署就结束了，是不是很快QAQ
 
 ***
 
-## 如何更新活动脚本？
+# 如何运行脚本开始白嫖京豆？
+    cd /home/myid/jd
+    bash run-all.sh
+    
+***
+
+# 如何更新活动脚本？
     cd /home/myid/jd
     bash manual-update.sh
 _注：建议每次执行脚本前更新或者几天内更新一次，京东活动变化无常。_
