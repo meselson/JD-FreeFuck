@@ -77,22 +77,25 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 
 ***
 
-## 四、更新脚本
-    cd /home/myid/jd
-    bash manual-update.sh
-_注：建议每次执行脚本前更新或者几天内更新一次，京东活动变化无常。_
-
-***
-
-## 五、运行脚本
+## 四、运行脚本
     cd /home/myid/jd
     bash run-all.sh
 ## 到此所有内容就全部执行完了
+
+***
+
+## 如何更新活动脚本？
+    cd /home/myid/jd
+    bash manual-update.sh
+_注：建议每次执行脚本前更新或者几天内更新一次，京东活动变化无常。_
     
 ***
 
-## 定义
-run-all.sh 为本人编写的一键执行所有活动脚本，manual-update.sh 为本人编写的一键更新脚本
+## 脚本定义
+`run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本
+    
+***
+
 ## 项目需知
 ### 1.该项目运行主目录为/home/myid/jd
 ### 2.为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误
