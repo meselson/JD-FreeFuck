@@ -1,3 +1,5 @@
+![](http://m.qpic.cn/psc?/V50JLr6f3NCtQ84fWTz73pzh9u4fyAYL/ruAMsa53pVQWN7FLK88i5jJAaJFL6iOouiNaUd1l1DFeJaWRuF2uMGRUxiTZGYhELIKK5KxIPZSb4DKEXVsVWZ5T0kdcg*bkW1MDvry*Gbc!/b&bo=YAXaAgAAAAADB58!&rf=viewer_4)
+
 《京东薅羊毛》一键部署脚本
 =====
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
