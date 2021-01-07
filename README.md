@@ -57,7 +57,7 @@ _注：内容格式为”pt_pin=xxxxx;pt_key=xxxxxxx;”，有如下俩种情况
 ***
 
 ## 三、配置脚本
-### 请将上面步骤获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必须步骤）
+### 请将上面步骤获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 #### 附1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
