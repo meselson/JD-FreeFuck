@@ -37,7 +37,8 @@ __附：如果没有科学上网方式可为Github添加解析记录，命令如
 ## 三、配置脚本
 ### 根据[Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)教程将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
-_参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_\
+_参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
+\
 #### 附1.如果需要同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
 
     sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
@@ -63,12 +64,18 @@ _注：详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)_
     cd /home/myid/jd
     bash manual-update.sh
 _注：建议每次执行脚本前更新或者几天内更新一次，京东活动变化无常。_\
-_注：如果在多次执行该命令后还有遇到报错等情况，导致项目无法正常运作，说明是原作者的环境库问题，请换个时间重试。。。_
     
 ***
 
 ## 脚本定义
 `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本
+    
+***
+
+## 遇到报错等现象导致项目无法正常运作怎么办？
+1.多次执行`manual-update.sh`更新脚本尝试
+2.删除/home/myid整个目录后重新一键部署
+_注：如果仍然报错导致项目无法正常运作，说明是原作者环境库的问题，请换个时间重试。_
     
 ***
 
