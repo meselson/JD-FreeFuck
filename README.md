@@ -7,7 +7,7 @@ Ubuntu正在完善中,但现在仍可用
 
 ***
 
-## 原作者官方GitHub项目网址：
+## 原作者GitHub项目地址：
 ### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
 ### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者
     
