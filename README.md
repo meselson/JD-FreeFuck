@@ -1,9 +1,6 @@
 《京东薅羊毛》一键部署脚本 For Linux
 =====
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
-
-***
-
 ## 适用系统：Ubuntu 20 & CentOS 8 _简体中文_
 ### CentOS本人测试环境为最新CentOS 8.3，不适用7及更低版本，系统装完后联网即可，如果是最小化安装，请通过SSL方式进入到终端
 ### Ubuntu正在完善中,但现在仍可用
@@ -17,6 +14,9 @@
 ***
 
 # 接下来进入部署教程，共三步，请认真阅读下面的内容
+    
+***
+
 ## 一、环境一键部署
 ### Ubuntu
     wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh && chmod +x install.sh && bash install.sh
@@ -57,18 +57,10 @@ _注：详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)_
 ## 如何运行脚本开始白嫖京豆？
     cd /home/myid/jd
     bash run-all.sh
-    
-***
-
 ## 如何更新活动脚本？
     cd /home/myid/jd
     bash manual-update.sh
-_注：建议每次执行脚本前更新或者几天内更新一次，京东活动变化无常。_\
-    
-***
-
-## 脚本定义
-`run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，其余均为原作者脚本。
+_注：建议每次执行脚本前或者几天内更新一次，京东活动变化无常。_\
     
 ***
 
@@ -79,6 +71,8 @@ _注：如果仍然报错导致项目无法正常运作，说明是原作者环�
     
 ***
 
+## 脚本定义
+`run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，其余均为原作者脚本。
 ## 项目需知
 ### 1.该项目运行主目录为/home/myid/jd
 ### 2.为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误
