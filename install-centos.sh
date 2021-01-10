@@ -67,7 +67,6 @@ bash jd.sh | grep jd_ >> /home/myid/jd/run-all.sh
 sed -i '1d' /home/myid/jd/run-all.sh
 sed -i 's/^/bash jd.sh &/g' /home/myid/jd/run-all.sh
 sed -i 's/$/& now/g' /home/myid/jd/run-all.sh
-echo "bash jd.sh jr_sign now" >> /home/myid/jd/run-all.sh
 sed -i '1i\#!/bin/bash' /home/myid/jd/run-all.sh
 #编写一键更新脚本：
 touch /home/myid/jd/manual-update.sh
@@ -82,7 +81,6 @@ bash jd.sh | grep jd_ >> run-all.sh
 sed -i '1d' run-all.sh
 sed -i 's/^/bash jd.sh &/g' run-all.sh
 sed -i 's/$/& now/g' run-all.sh
-echo "bash jd.sh jr_sign now" >> run-all.sh
 sed -i '1i\#!/bin/bash' run-all.sh
 EOF
 #结束语：
