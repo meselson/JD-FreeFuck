@@ -1,7 +1,7 @@
  2021/1/11
  通知：活动列表有所变化，请执行最新的更新一键更新脚本命令，命令如下
 
-    wget --no-check-certificate -P /home/myid/jd https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh && chmod +x manual-update.sh
+    wget --no-check-certificate -P /home/myid/jd -N https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh && chmod +x manual-update.sh
 《京东薅羊毛》一键部署脚本 For Linux
 =====
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
@@ -62,7 +62,7 @@ _注：详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)_
     cd /home/myid/jd
     bash run-all.sh
 ## 如何更新一键更新脚本？
-    wget --no-check-certificate -P /home/myid/jd https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh && chmod +x manual-update.sh
+    wget --no-check-certificate -P /home/myid/jd -N https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh && chmod +x manual-update.sh
 ## 如何更新活动脚本？
     cd /home/myid/jd
     bash manual-update.sh
