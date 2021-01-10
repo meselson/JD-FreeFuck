@@ -1,4 +1,5 @@
- 2021/1/11通知：活动列表有所变化，请执行最新的更新一键更新脚本命令，命令如下
+ 2021/1/11
+ 通知：活动列表有所变化，请执行最新的更新一键更新脚本命令，命令如下
 
     wget --no-check-certificate -P /home/myid/jd https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh && chmod +x manual-update.sh
 《京东薅羊毛》一键部署脚本 For Linux
