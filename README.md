@@ -1,3 +1,6 @@
+#通知 活动列表有所变化，请执行最新的更新一键更新脚本命令
+
+    wget --no-check-certificate -P /home/myid/jd https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh && chmod +x manual-update.sh
 《京东薅羊毛》一键部署脚本 For Linux
 =====
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
