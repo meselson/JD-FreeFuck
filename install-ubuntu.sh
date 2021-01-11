@@ -53,7 +53,7 @@ cd /home/myid/jd
 #编写一键执行脚本：
 touch /home/myid/jd/run-all.sh
 chmod +x /home/myid/jd/run-all.sh
-bash jd.sh | grep jd_ >> /home/myid/jd/run-all.sh
+bash jd.sh | grep _ >> /home/myid/jd/run-all.sh
 sed -i '1d' /home/myid/jd/run-all.sh
 sed -i 's/^/bash jd.sh &/g' /home/myid/jd/run-all.sh
 sed -i 's/$/& now/g' /home/myid/jd/run-all.sh
@@ -67,7 +67,7 @@ bash git_pull.sh
 rm -rf run-all.sh
 touch run-all.sh
 chmod +x run-all.sh
-bash jd.sh | grep jd_ >> run-all.sh
+bash jd.sh | grep _ >> run-all.sh
 sed -i '1d' run-all.sh
 sed -i 's/^/bash jd.sh &/g' run-all.sh
 sed -i 's/$/& now/g' run-all.sh
