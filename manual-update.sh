@@ -8,4 +8,3 @@ sed -i '1d' run-all.sh
 sed -i 's/^/bash jd.sh &/g' run-all.sh
 sed -i 's/$/& now/g' run-all.sh
 sed -i '1i\#!/bin/bash' run-all.sh
-EOF
