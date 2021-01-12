@@ -23,9 +23,9 @@
 
 ## 一、环境一键部署
 ### Ubuntu
-    wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh && chmod +x install.sh && bash install.sh
+    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
 ### CentOS
-    wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh && chmod +x install.sh && bash install.sh
+    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
 _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_\
 \
 __附：如果没有科学上网方式可为Github添加解析记录，命令如下。__
