@@ -1,26 +1,38 @@
 #!/bin/bash
-#Author:King'S HAN
-#Update Date:2021-1-7
+#Author:SuperManito
+#Update Date:2021-1-13
 #Project Name:《京东薅羊毛》一键部署脚本，通过参与京东商城的各种活动白嫖京豆
 #本人为了懒人一键部署而写此脚本，此脚本内容涵盖编写了所有该项目所需要的环境软件包和原创一键脚本
 #此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容，所有京东活动脚本最终解释权归他所有
 #此脚本环境内容来自于EvineDeng托管至GitHub的项目，使用了他提供的所有JavaScript脚本环境组件
 #适用系统：Ubuntu 20.x简体中文，本人测试环境为Ubuntu 20.04 LTS，系统装完后联网即可
-#！！！！！！请认真阅读第42~48行内容并填入对应的值，如果使用Github一键教程则不用在此手动填入了！！！！！！
-#当前用户判定：
-if [ $UID -ne 0 ];then
-    echo -e '\033[31m ------------ Permission no enough, please use user ROOT! ------------ \033[0m'
-    return
-fi
-#网络环境判定：
-ping -c 1 www.baidu.com > /dev/null 2>&1
-if [ $? -ne 0 ];then
-    echo -e "\033[31m ----- Network connection error.Please check the network environment and try again later! ----- \033[0m"
-    return
-fi
-#环境部署：
-sed -i '1,$d' /etc/apt/sources.list
-cat > /etc/apt/sources.list <<EOF
+
+#将Cookie部分内容填入”双引号“内：（适用于手动搭建）
+COOKIE1='""'
+COOKIE2='""'
+COOKIE3='""'
+COOKIE4='""'
+COOKIE5='""'
+COOKIE6='""'
+
+JudgeUser(){
+    if [ $UID -ne 0 ];then
+        echo -e '\033[31m ------------ Permission no enough, please use user ROOT! ------------ \033[0m'
+        return
+    fi
+}
+
+JudgeNetwork(){
+    ping -c 1 www.baidu.com > /dev/null 2>&1
+    if [ $? -ne 0 ];then
+        echo -e "\033[31m ----- Network connection error.Please check the network environment and try again later! ----- \033[0m"
+        return
+    fi
+}
+
+EnvDeploy(){
+    sed -i '1,$d' /etc/apt/sources.list
+    cat > /etc/apt/sources.list <<EOF
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
@@ -32,36 +44,61 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted univers
 deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
 EOF
-apt-get update
-apt install -y git curl nodejs npm perl moreutils
-#核心内容：
-git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd  #该项目环境作者同时在Github和码云Gitee都有托管此项目，考虑到网络因素故使用码云Gitee
-cd /home/myid/jd
-mkdir config
-cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
-bash git_pull.sh
-sed -i '27c Cookie1=""' config/config.sh  #根据教程将获得的值填入”双引号“内,可同时跑6个账号，格式已在下方保留，同理按顺序填入即可
-#sed -i '28c Cookie2=""' config/config.sh
-#sed -i '29c Cookie3=""' config/config.sh
-#sed -i '30c Cookie4=""' config/config.sh
-#sed -i '31c Cookie5=""' config/config.sh
-#sed -i '32c Cookie6=""' config/config.sh
-#sed -i '70c export PUSH_KEY=""' config/config.sh  #此处内容用于Server酱微信消息推送功能，如有需要请取消注释并在”双引号“内填入SCKEY值
-cd /home/myid/jd/scripts
-npm install || npm install --registry=https://registry.npm.taobao.org
-cd /home/myid/jd
-#编写一键执行脚本：
-touch /home/myid/jd/run-all.sh
-chmod +x /home/myid/jd/run-all.sh
-bash jd.sh | grep _ >> /home/myid/jd/run-all.sh
-sed -i '1d' /home/myid/jd/run-all.sh
-sed -i 's/^/bash jd.sh &/g' /home/myid/jd/run-all.sh
-sed -i 's/$/& now/g' /home/myid/jd/run-all.sh
-sed -i '1i\#!/bin/bash' /home/myid/jd/run-all.sh
-#编写一键更新脚本：
-touch /home/myid/jd/manual-update.sh
-chmod +x /home/myid/jd/manual-update.sh
-cat > /home/myid/jd/manual-update.sh << EOF
+    apt-get update
+    apt install -y git curl nodejs npm perl moreutils
+}
+
+JudgeLocale(){
+    locale | grep 'LANG=zh_CN' -q
+    if [ $? -eq 0 ];then
+        echo "\033[32m ------------ 语言环境正确，开始部署项目核心环境 ------------ \033[0m"
+        sleep 2s
+    else
+        yum -y install langpacks-zh_CN
+        locale -a
+        echo 'LANG="zh_CN.utf8"' > /etc/locale.conf
+        . /etc/locale.conf
+        type locale
+        echo -e "\033[33m -------- Please reboot your system and try again，Because the locale was updated. -------- \033[0m"
+        return
+    fi
+}
+
+ScriptInstall(){
+    git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd  #该项目环境作者同时在Github和码云Gitee都有托管此项目，考虑到网络因素故使用码云Gitee
+    cd /home/myid/jd
+    mkdir config
+    cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
+    bash git_pull.sh
+    cd /home/myid/jd/scripts
+    npm install || npm install --registry=https://registry.npm.taobao.org
+    cd /home/myid/jd
+}
+
+SetProfile(){
+    sed -i "27c Cookie1=$COOKIE1" config/config.sh
+    sed -i "28c Cookie2=$COOKIE2" config/config.sh
+    sed -i "29c Cookie3=$COOKIE3" config/config.sh
+    sed -i "30c Cookie4=$COOKIE4" config/config.sh
+    sed -i "31c Cookie5=$COOKIE5" config/config.sh
+    sed -i "32c Cookie6=$COOKIE6" config/config.sh
+    sed -i "70c export PUSH_KEY=$PUSH_KEY" config/config.sh
+}
+
+AutoRun(){
+    touch /home/myid/jd/run-all.sh
+    chmod +x /home/myid/jd/run-all.sh
+    bash jd.sh | grep _ >> /home/myid/jd/run-all.sh
+    sed -i '1d' /home/myid/jd/run-all.sh
+    sed -i 's/^/bash jd.sh &/g' /home/myid/jd/run-all.sh
+    sed -i 's/$/& now/g' /home/myid/jd/run-all.sh
+    sed -i '1i\#!/bin/bash' /home/myid/jd/run-all.sh
+}
+
+AutoUpdate(){
+    touch /home/myid/jd/manual-update.sh
+    chmod +x /home/myid/jd/manual-update.sh
+    cat > /home/myid/jd/manual-update.sh << EOF
 #!/bin/bash
 bash git_pull.sh
 rm -rf run-all.sh
@@ -73,6 +110,17 @@ sed -i 's/^/bash jd.sh &/g' run-all.sh
 sed -i 's/$/& now/g' run-all.sh
 sed -i '1i\#!/bin/bash' run-all.sh
 EOF
+}
+
+JudgeUser
+JudgeNetwork
+EnvDeploy
+JudgeLocale
+ScriptInstall
+AutoRun
+AutoUpdate
+SetProfile
+
 #结束语：
 echo -e "\033[32m ------------------- 环境部署完成，请执行 bash run-all.sh 命令开始你的薅羊毛行为 ------------------- \033[0m"
 echo -e "\033[32m +=================================================================================================+ \033[0m"
