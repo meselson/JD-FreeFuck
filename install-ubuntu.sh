@@ -48,22 +48,6 @@ EOF
     apt install -y git curl nodejs npm perl moreutils
 }
 
-JudgeLocale(){
-    locale | grep 'LANG=zh_CN' -q
-    if [ $? -eq 0 ];then
-        echo "\033[32m ------------ 语言环境正确，开始部署项目核心环境 ------------ \033[0m"
-        sleep 2s
-    else
-        yum -y install langpacks-zh_CN
-        locale -a
-        echo 'LANG="zh_CN.utf8"' > /etc/locale.conf
-        . /etc/locale.conf
-        type locale
-        echo -e "\033[33m -------- Please reboot your system and try again，Because the locale was updated. -------- \033[0m"
-        return
-    fi
-}
-
 ScriptInstall(){
     git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd  #该项目环境作者同时在Github和码云Gitee都有托管此项目，考虑到网络因素故使用码云Gitee
     cd /home/myid/jd
@@ -115,7 +99,6 @@ EOF
 JudgeUser
 JudgeNetwork
 EnvDeploy
-JudgeLocale
 ScriptInstall
 SetProfile
 AutoRun
