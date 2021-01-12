@@ -117,9 +117,9 @@ JudgeNetwork
 EnvDeploy
 JudgeLocale
 ScriptInstall
+SetProfile
 AutoRun
 AutoUpdate
-SetProfile
 
 #结束语：
 echo -e "\033[32m ------------------- 环境部署完成，请执行 bash run-all.sh 命令开始你的薅羊毛行为 ------------------- \033[0m"
