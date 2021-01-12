@@ -1,5 +1,5 @@
 #!/bin/bash
-#Author:King'S HAN
+#Author:SuperManito
 #Update Date:2021-1-13
 #Project Name:《京东薅羊毛》一键部署脚本，通过参与京东商城的各种活动白嫖京豆
 #本人为了懒人一键部署而写此脚本，此脚本内容涵盖编写了所有该项目所需要的环境软件包和原创一键脚本
@@ -113,9 +113,9 @@ JudgeNetwork
 EnvDeploy
 JudgeLocale
 ScriptInstall
+SetProfile
 AutoRun
 AutoUpdate
-SetProfile
 
 #结束语：
 echo -e "\033[32m ------------------- 环境部署完成，请执行 bash run-all.sh 命令开始你的薅羊毛行为 ------------------- \033[0m"
