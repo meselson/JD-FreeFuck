@@ -28,7 +28,8 @@
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
 _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_\
 \
-- 附：如果没有科学上网方式可为Github添加解析记录，命令如下。
+附：如果没有科学上网方式可为Github添加解析记录，命令如下。
+
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     
 ***
