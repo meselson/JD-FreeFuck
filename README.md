@@ -34,7 +34,7 @@ _注：请根据你的操作系统，选择上面对应的命令复制到终端�
 附1：如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
     apt-get install -y curl 或 yum install -y curl
-附2：执行上面的命令时如果没有科学上网方式会报错提示无法连接，可通过添加Github解析记录以解决连通性问题，命令如下：
+附2：如果没有科学上网方式会提示无法连接，可通过添加Github解析记录以解决连通性问题，命令如下：
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     
@@ -69,6 +69,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 _注：建议每次执行脚本前或者几天内执行一次，京东活动变化无常。_
 ### 3.如何更新一键更新脚本？
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
+_注：适用于后期本人维护。_\
 ### 4.一键部署后遇到报错怎么办？
 - 多次执行`manual-update.sh`更新脚本尝试
 - 删除/home/myid整个目录后重新一键部署
