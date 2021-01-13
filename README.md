@@ -22,14 +22,7 @@
 ***
 
 ## 一、环境部署
-## 1.安装curl软件包
-Ubuntu：
-
-    apt-get install -y curl
-CentOS：
-
-    yum install -y curl
-## 2.执行一键部署脚本
+### 脚本一键部署命令
 Ubuntu：
 
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
@@ -38,7 +31,11 @@ CentOS：
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
 _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_\
 \
-附：执行上面的命令时如果没有科学上网方式会报错提示无法连接，可通过添加Github解析记录以解决连通性问题，命令如下：
+附1：如果提示`Command 'curl' not found`则说明当前未安装curl软件包，安装命令如下：
+
+    apt-get/ install -y curl #Ubuntu
+    yum install -y curl #CentOS
+附2：执行上面的命令时如果没有科学上网方式会报错提示无法连接，可通过添加Github解析记录以解决连通性问题，命令如下：
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     
