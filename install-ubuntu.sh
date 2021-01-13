@@ -43,7 +43,7 @@ deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe m
 deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
 EOF
     apt-get update
-    apt install -y git curl nodejs npm perl moreutils
+    apt install -y git curl wget nodejs npm perl moreutils
 }
 
 #项目部署：
