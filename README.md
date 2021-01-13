@@ -65,7 +65,7 @@ _注：详细教程请访问[Server酱官网](http://sc.ftqq.com/3.version/)_
     bash manual-update.sh
 _注：建议每次执行脚本前或者几天内执行一次，京东活动变化无常。_
 ### 3.如何更新一键更新脚本？
-    wget --no-check-certificate -P /home/myid/jd -N https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh && chmod +x manual-update.sh
+    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
 ### 4.一键部署后遇到报错怎么办？
 - 多次执行`manual-update.sh`更新脚本尝试
 - 删除/home/myid整个目录后重新一键部署
