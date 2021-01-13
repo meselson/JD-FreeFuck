@@ -69,7 +69,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 _注：建议每次执行脚本前或者几天内执行一次，京东活动变化无常。_
 ### 3.如何更新一键更新脚本？
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
-_注：适用于后期本人维护。_\
+_注：适用于后期维护，当需要更新时会在项目置顶通知。_
 ### 4.一键部署后遇到报错怎么办？
 - 多次执行`manual-update.sh`更新脚本尝试
 - 删除/home/myid整个目录后重新一键部署
