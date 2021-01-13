@@ -13,7 +13,7 @@
 
 ## 原作者GitHub项目地址：
 ### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
-### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者，已授权，在其Issues有分帖
+### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者，在其项目[Issues](https://github.com/EvineDeng/jd-base/issues/185)有分帖
     
 ***
 
