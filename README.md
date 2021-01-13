@@ -23,12 +23,18 @@
 
 ## 一、环境部署
 ## 1.安装curl软件包
-    apt-get install -y curl #Ubuntu
-    yum install -y curl #CentOS
+Ubuntu：
+
+    apt-get install -y curl
+CentOS：
+
+    yum install -y curl
 ## 2.执行一键部署脚本
-### Ubuntu
+Ubuntu：
+
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
-### CentOS
+CentOS：
+
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
 _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_\
 \
