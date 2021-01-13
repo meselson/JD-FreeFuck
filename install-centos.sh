@@ -74,7 +74,7 @@ ScriptInstall() {
 }
 
 #更改配置文件：
-SetProfile() {
+CookieConfig() {
   sed -i "27c Cookie1=$COOKIE1" config/config.sh
   sed -i "28c Cookie2=$COOKIE2" config/config.sh
   sed -i "29c Cookie3=$COOKIE3" config/config.sh
@@ -133,7 +133,7 @@ JudgeNetwork
 EnvDeploy
 JudgeLocale
 ScriptInstall
-SetProfile
+CookieConfig
 AutoRun
 ManualUpdate
 Tips
