@@ -69,7 +69,7 @@ CookieConfig() {
 }
 
 #编写一键执行脚本：
-AutoRun() {
+RunAll() {
   touch /home/myid/jd/run-all.sh
   chmod +x /home/myid/jd/run-all.sh
   bash jd.sh | grep _ >>/home/myid/jd/run-all.sh
@@ -118,6 +118,6 @@ JudgeNetwork
 EnvDeploy
 ScriptInstall
 CookieConfig
-AutoRun
+RunAll
 ManualUpdate
 Tips
