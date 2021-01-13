@@ -6,7 +6,7 @@
 # 《京东薅羊毛》一键部署脚本 For Linux
 ## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~200京豆
 ## 适用系统：Ubuntu 20 & CentOS 8 _简体中文_
-- Ubuntu正在完善中，但现在仍可用，建议优先使用Ubuntu系统
+- Ubuntu本人测试环境为Ubuntu 20.04 LTS，建议优先使用Ubuntu系统
 - CentOS本人测试环境为最新CentOS 8.3，不适用7及更低版本，系统装完后联网即可，如果是最小化安装，请通过SSL方式进入到终端
 
 ***
@@ -28,7 +28,7 @@
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
 _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_\
 \
-附：如果没有科学上网方式可为Github添加解析记录，命令如下。
+附1：如果没有科学上网方式可为Github添加解析记录，命令如下。
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     
