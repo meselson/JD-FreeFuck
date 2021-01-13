@@ -14,4 +14,4 @@ sed -i 's/^/bash jd.sh &/g' run-all.sh
 sed -i 's/$/& now/g' run-all.sh
 sed -i '1i\#!/bin/bash' run-all.sh
 EOF
-echo -e "\033[32m ------------- 更新成功 ------------- \033[0m"
+echo -e "\033[32m --------------------- 更新成功 --------------------- \033[0m"
