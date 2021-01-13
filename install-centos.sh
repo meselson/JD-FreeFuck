@@ -41,7 +41,7 @@ EnvDeploy(){
     yum makecache
     yum install -y https://mirrors.aliyun.com/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IO-Tty-1.12-11.el8.x86_64.rpm
     yum install -y https://mirrors.aliyun.com/centos/8.3.2011/PowerTools/x86_64/os/Packages/perl-IPC-Run-0.99-1.el8.noarch.rpm
-    yum install -y net-tools curl git perl nodejs npm moreutils
+    yum install -y net-tools git curl wget nodejs npm perl moreutils
 }
 
 #语言环境判定：
