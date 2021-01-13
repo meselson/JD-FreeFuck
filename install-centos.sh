@@ -13,7 +13,7 @@ COOKIE5='""'
 COOKIE6='""'
 
 #当前用户判定：
-JudgeUser(){
+JudgeUser() {
   if [ $UID -ne 0 ];then
       echo -e '\033[31m ------------ Permission no enough, please use user ROOT! ------------ \033[0m'
       return
@@ -21,7 +21,7 @@ JudgeUser(){
 }
 
 #网络环境判定：
-JudgeNetwork(){
+JudgeNetwork() {
   ping -c 1 www.baidu.com > /dev/null 2>&1
   if [ $? -ne 0 ];then
       echo -e "\033[31m ----- Network connection error.Please check the network environment and try again later! ----- \033[0m"
@@ -30,7 +30,7 @@ JudgeNetwork(){
 }
 
 #环境部署：
-EnvDeploy(){
+EnvDeploy() {
   systemctl disable --now firewalld
   sed -i "7c SELINUX=disabled" /etc/selinux/config
   setenforce 0
@@ -45,7 +45,7 @@ EnvDeploy(){
 }
 
 #语言环境判定：
-JudgeLocale(){
+JudgeLocale() {
   locale | grep 'LANG=zh_CN' -q
   if [ $? -eq 0 ];then
       echo "\033[32m ------------ 语言环境正确，开始部署项目核心环境 ------------ \033[0m"
@@ -62,7 +62,7 @@ JudgeLocale(){
 }
 
 #部署项目环境：
-ScriptInstall(){
+ScriptInstall() {
   git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd
   cd /home/myid/jd
   mkdir config
@@ -74,7 +74,7 @@ ScriptInstall(){
 }
 
 #更改配置文件：
-SetProfile(){
+SetProfile() {
   sed -i "27c Cookie1=$COOKIE1" config/config.sh
   sed -i "28c Cookie2=$COOKIE2" config/config.sh
   sed -i "29c Cookie3=$COOKIE3" config/config.sh
@@ -84,7 +84,7 @@ SetProfile(){
 }
 
 #编写一键执行脚本：
-AutoRun(){
+AutoRun() {
   touch /home/myid/jd/run-all.sh
   chmod +x /home/myid/jd/run-all.sh
   bash jd.sh | grep _ >> /home/myid/jd/run-all.sh
@@ -95,7 +95,7 @@ AutoRun(){
 }
 
 #编写一键更新脚本：
-ManualUpdate(){
+ManualUpdate() {
   touch /home/myid/jd/manual-update.sh
   chmod +x /home/myid/jd/manual-update.sh
   cat > /home/myid/jd/manual-update.sh << EOF
@@ -113,7 +113,7 @@ EOF
 }
 
 #结束语：
-Tips(){
+Tips() {
   echo -e "\033[32m ------------------- 环境部署完成，请执行 bash run-all.sh 命令开始你的薅羊毛行为 ------------------- \033[0m"
   echo -e "\033[32m +=================================================================================================+ \033[0m"
   echo -e "\033[32m | 注意：该项目主运行目录为/home/myid/jd                                                           | \033[0m"
