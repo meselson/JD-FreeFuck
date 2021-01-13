@@ -4,7 +4,7 @@
 ***
 
 # 《京东薅羊毛》一键部署脚本 For Linux
-## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均100~250京豆
+## 用途：通过参与京东商城的各种活动白嫖京豆，目前每个账号日均150~250京豆
 ## 适用系统：Ubuntu 20 & CentOS 8 _简体中文_
 - Ubuntu本人测试环境为Ubuntu 20.04 LTS，建议优先使用Ubuntu系统
 - CentOS本人测试环境为CentOS 8.3，不适用7及更低版本，如果是最小化安装，请通过SSL方式进入到终端
@@ -12,8 +12,8 @@
 ***
 
 ## 原作者GitHub项目地址：
-### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本原作者
-### https://github.com/EvineDeng/jd-base   #此项目Linux环境原作者，在其项目[Issues](https://github.com/EvineDeng/jd-base/issues/185)有分帖
+### https://github.com/lxk0301/jd_scripts  #此项目核心JavaScript京东活动脚本作者
+### https://github.com/EvineDeng/jd-base   #此项目Linux环境作者，在其项目[Issues](https://github.com/EvineDeng/jd-base/issues/185)有分帖
     
 ***
 
