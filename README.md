@@ -33,8 +33,8 @@ _注：请根据你的操作系统，选择上面对应的命令复制到终端�
 \
 附1：如果提示`Command 'curl' not found`则说明当前未安装curl软件包，安装命令如下：
 
-    apt-get/ install -y curl #Ubuntu
-    yum install -y curl #CentOS
+    apt-get install -y curl #Ubuntu #Ubuntu
+    yum install -y curl #CentOS #CentOS
 附2：执行上面的命令时如果没有科学上网方式会报错提示无法连接，可通过添加Github解析记录以解决连通性问题，命令如下：
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
