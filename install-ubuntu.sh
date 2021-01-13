@@ -1,11 +1,8 @@
 #!/bin/bash
 #Author:SuperManito
 #Update Date:2021-1-13
-#Project Name:《京东薅羊毛》一键部署脚本，通过参与京东商城的各种活动白嫖京豆
-#本人为了懒人一键部署而写此脚本，此脚本内容涵盖编写了所有该项目所需要的环境软件包和原创一键脚本
-#此脚本核心内容来自于lxk0301大神托管至GitHub的项目，定期更新核心JavaScript脚本内容，所有京东活动脚本最终解释权归他所有
-#此脚本环境内容来自于EvineDeng托管至GitHub的项目，使用了他提供的所有JavaScript脚本环境组件
-#适用系统：Ubuntu 20.x简体中文，本人测试环境为Ubuntu 20.04 LTS，系统装完后联网即可
+#Project Name:《京东薅羊毛》一键部署脚本 For Linux，通过参与京东商城的各种活动白嫖京豆
+#适用系统：Ubuntu 20.x简体中文，本人测试环境为Ubuntu 20.04 LTS
 
 #将Cookie部分内容填入”双引号“内：（适用于手动搭建）
 COOKIE1='""'
@@ -30,6 +27,7 @@ JudgeNetwork(){
     fi
 }
 
+#环境部署：
 EnvDeploy(){
     sed -i '1,$d' /etc/apt/sources.list
     cat > /etc/apt/sources.list <<EOF
@@ -48,8 +46,9 @@ EOF
     apt install -y git curl nodejs npm perl moreutils
 }
 
+#项目部署：
 ScriptInstall(){
-    git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd  #该项目环境作者同时在Github和码云Gitee都有托管此项目，考虑到网络因素故使用码云Gitee
+    git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd
     cd /home/myid/jd
     mkdir config
     cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
@@ -59,6 +58,7 @@ ScriptInstall(){
     cd /home/myid/jd
 }
 
+#更改配置文件：
 SetProfile(){
     sed -i "27c Cookie1=$COOKIE1" config/config.sh
     sed -i "28c Cookie2=$COOKIE2" config/config.sh
@@ -66,9 +66,9 @@ SetProfile(){
     sed -i "30c Cookie4=$COOKIE4" config/config.sh
     sed -i "31c Cookie5=$COOKIE5" config/config.sh
     sed -i "32c Cookie6=$COOKIE6" config/config.sh
-    sed -i "70c export PUSH_KEY=$PUSH_KEY" config/config.sh
 }
 
+#编写一键执行脚本：
 AutoRun(){
     touch /home/myid/jd/run-all.sh
     chmod +x /home/myid/jd/run-all.sh
@@ -79,6 +79,7 @@ AutoRun(){
     sed -i '1i\#!/bin/bash' /home/myid/jd/run-all.sh
 }
 
+#编写一键更新脚本：
 AutoUpdate(){
     touch /home/myid/jd/manual-update.sh
     chmod +x /home/myid/jd/manual-update.sh
