@@ -63,7 +63,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
     bash run-all.sh
 ### 2.如何更新京东活动脚本？
     bash manual-update.sh
-_注：建议每次执行脚本前或者几天内执行一次，京东活动变化无常。_
+_注：建议每次运行活动脚本前执行一次，京东活动经常变化，原作者更新也很频繁。_
 ### 3.如何更新一键更新脚本？
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
 _注：适用于后期维护，当需要更新时会在项目置顶通知。_
