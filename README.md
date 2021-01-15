@@ -58,7 +58,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 
 ***
 
-## 四、如何使用与更新
+## 四、使用与更新
 ### 1.如何运行脚本开始白嫖京豆？
     bash run-all.sh
 ### 2.如何更新京东活动脚本？
