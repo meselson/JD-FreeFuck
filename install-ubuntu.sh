@@ -111,14 +111,14 @@ fi
 
 #项目部署：
 ScriptInstall() {
-  git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd
-  cd /home/myid/jd
-  mkdir config
-  cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
-  bash git_pull.sh
-  cd /home/myid/jd/scripts
-  npm install || npm install --registry=https://registry.npm.taobao.org
-  cd /home/myid/jd
+git clone -b v3 https://gitee.com/evine/jd-base /home/myid/jd
+cd /home/myid/jd
+mkdir config
+cp sample/config.sh.sample config/config.sh && cp sample/computer.list.sample config/crontab.list
+bash git_pull.sh
+cd /home/myid/jd/scripts
+npm install || npm install --registry=https://registry.npm.taobao.org
+cd /home/myid/jd
 }
 
 #更改配置文件：
