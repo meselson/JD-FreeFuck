@@ -97,13 +97,6 @@ echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe mu
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 apt update
 apt install -y git wget curl nodejs npm perl moreutils
-apt remove -y nodejs
-curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
-echo "deb https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
-echo "deb-src https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
-apt update
-apt install -y nodejs
 }
 
 #项目部署：
