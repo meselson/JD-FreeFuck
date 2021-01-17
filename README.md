@@ -50,7 +50,7 @@ _注：请根据你的操作系统，选择上面对应的命令复制到终端�
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 \
-### 附.该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
+### 附：该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
 
     sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
     sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
@@ -58,7 +58,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
 
-### _到此部署就结束了，是不是很快OvO_
+### _到此部署就结束了，是不是很快OvO _
 
 ***
 
