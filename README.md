@@ -91,4 +91,4 @@ _注：如果仍然报错导致项目无法正常运作，说明是原作者环�
     
 ***
 
-## 如果您有意见与建议欢迎在项目Issuse提问
+## 如果您有意见与建议欢迎到 [Issuse](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
