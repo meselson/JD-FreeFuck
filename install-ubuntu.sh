@@ -95,7 +95,7 @@ echo "deb https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe mul
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
-apt-get update
+apt update
 apt install -y git curl wget nodejs npm perl moreutils
 }
 
