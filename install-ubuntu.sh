@@ -1,6 +1,6 @@
 #!/bin/bash
 #Author:SuperManito
-#Update Date:2021-1-13
+#Update Date:2021-1-17
 #Project Name:《京东薅羊毛》一键部署脚本 For Linux，通过参与京东商城的各种活动白嫖京豆
 #适用系统：Ubuntu 20.x简体中文，本人测试环境为Ubuntu 20.04 LTS
 
@@ -12,6 +12,7 @@ COOKIE4='""'
 COOKIE5='""'
 COOKIE6='""'
 
+#当前用户判定：
 JudgeUser() {
   if [ $UID -ne 0 ]; then
     echo -e '\033[31m ------------ Permission no enough, please use user ROOT! ------------ \033[0m'
@@ -19,6 +20,7 @@ JudgeUser() {
   fi
 }
 
+#网络环境判定：
 JudgeNetwork() {
   ping -c 1 www.baidu.com >/dev/null 2>&1
   if [ $? -ne 0 ]; then
@@ -29,21 +31,72 @@ JudgeNetwork() {
 
 #环境部署：
 EnvDeploy() {
-  sed -i '1,$d' /etc/apt/sources.list
-  cat >/etc/apt/sources.list <<EOF
-deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
-EOF
-  apt-get update
-  apt install -y git curl wget nodejs npm perl moreutils
+  VERSION=`lsb_release -c --short`
+echo -e '\033[37m+---------------------------------------------------+ \033[0m'
+echo -e '\033[37m|                                                   | \033[0m'
+echo -e '\033[37m|   =============================================   | \033[0m'
+echo -e '\033[37m|                                                   | \033[0m'
+echo -e '\033[37m|   欢迎使用《京东薅羊毛》一键部署脚本 For Linux    | \033[0m'
+echo -e '\033[37m|                                                   | \033[0m'
+echo -e '\033[37m|   =============================================   | \033[0m'
+echo -e '\033[37m|                                                   | \033[0m'
+echo -e '\033[37m+---------------------------------------------------+ \033[0m'
+echo -e ''
+echo -e '\033[37m##################################################### \033[0m'
+echo -e ''
+echo -e '\033[37m           提供以下四种国内更新源可供选择： \033[0m'
+echo -e ''
+echo -e '\033[37m##################################################### \033[0m'
+echo -e ''
+echo -e '\033[37m*    1) 阿里源 \033[0m'
+echo -e ''
+echo -e '\033[37m*    2) 网易源 \033[0m'
+echo -e ''
+echo -e '\033[37m*    3) 清华源 \033[0m'
+echo -e ''
+echo -e '\033[37m*    4) 中科大源 \033[0m'
+echo -e ''
+echo -e '\033[37m##################################################### \033[0m'
+echo -e ''
+echo -e "\033[37m           当前系统时间  `date +%Y-%m-%d` `date +%H:%M` \033[0m"
+echo -e ''
+echo -e '\033[37m##################################################### \033[0m'
+echo -e ''
+CHOICE=`echo -e '\033[32m请输入你想使用的国内更新源[1~4]： \033[0m'`
+read -p "$CHOICE" INPUT
+case $INPUT in
+1)
+  SOURCE="mirrors.aliyun.com"
+  ;;
+2)
+  SOURCE="mirrors.163.com"
+  ;;
+3)
+  SOURCE="mirrors.tuna.tsinghua.edu.cn"
+  ;;
+4)
+  SOURCE="mirrors.ustc.edu.cn"
+  ;;
+*)
+  SOURCE="mirrors.aliyun.com"
+  echo -e ''
+  echo -e '\033[33m----------输入错误，更新源将默认使用阿里源---------- \033[0m'
+  sleep 3s
+  ;;
+esac
+sed -i '1,$d' /etc/apt/sources.list
+echo "deb https://$SOURCE/ubuntu/ $VERSION main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src https://$SOURCE/ubuntu/ $VERSION main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb https://$SOURCE/ubuntu/ $VERSION-security main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src https://$SOURCE/ubuntu/ $VERSION-security main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb https://$SOURCE/ubuntu/ $VERSION-updates main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src https://$SOURCE/ubuntu/ $VERSION-updates main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
+apt-get update
+apt install -y git curl wget nodejs npm perl moreutils
 }
 
 #项目部署：
