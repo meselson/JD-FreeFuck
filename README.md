@@ -40,10 +40,10 @@ _注：请根据你的操作系统，选择上面对应的命令复制到终端�
 \
 - 附1.如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包
 
-    apt install -y curl 或 yum install -y curl
+        apt install -y curl 或 yum install -y curl
 - 附2.如果没有科学上网方式会提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题
 
-    echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
+        echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     
 ***
 
