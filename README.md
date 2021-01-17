@@ -29,6 +29,7 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
 
 ## 一、环境部署
 - 脚本一键部署
+
 `Ubuntu`：
 
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
