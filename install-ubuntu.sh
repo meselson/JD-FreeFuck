@@ -84,6 +84,9 @@ case $INPUT in
   sleep 3s
   ;;
 esac
+cp -rf /etc/apt/sources.list /etc/apt/sources.list.bak
+echo -e '\033[32m----------已备份原有 source.list 更新源文件---------- \033[0m'
+sleep 2s
 sed -i '1,$d' /etc/apt/sources.list
 echo "deb https://$SOURCE/ubuntu/ $VERSION main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION main restricted universe multiverse" >> /etc/apt/sources.list
