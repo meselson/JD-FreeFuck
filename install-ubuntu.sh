@@ -110,7 +110,7 @@ else
   sed -i "3c deb https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
   sed -i "4c deb-src https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
   apt-get update
-  apt-get install -y nodejs npm
+  apt-get install -y nodejs
 fi
 apt-get dist-upgrade -y
 apt-get autoremove
