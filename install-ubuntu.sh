@@ -100,8 +100,7 @@ echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe mu
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 apt update
 apt install -y git wget curl nodejs npm perl moreutils
-lsb_release -c --short | grep focal
-if [ $? -ne 0 ];then
+if [ $VERSION != "focal" ];then
   apt remove -y nodejs
   curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
   sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
