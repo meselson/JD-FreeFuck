@@ -105,10 +105,11 @@ if [ $VERSION_NUMBER -eq "20" ];then
   apt-get install -y nodejs npm
 else
   curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-  sed -i "1c deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
-  sed -i "2c deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
-  sed -i "3c deb https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
-  sed -i "4c deb-src https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
+  sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
+  echo "deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
+  echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
+  echo "deb https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
+  echo "deb-src https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
   apt-get update
   apt-get install -y nodejs
 fi
