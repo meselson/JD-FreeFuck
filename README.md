@@ -32,22 +32,22 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
 
     `Ubuntu`
 
-        bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
+      bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
     `CentOS`
 
-        bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
+      bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
     _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
 - 附1.如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
-        apt install -y curl 或 yum install -y curl
+      apt install -y curl 或 yum install -y curl
 - 附2.如果没有科学上网方式会提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
-        echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
+      echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
 - 附3.一键部署后遇到报错怎么办？
 
-        1）检查系统版本、联网状态等基本条件
-        2）多次执行manual-update.sh更新脚本尝试
-        3）删除/home/myid整个目录后重新一键部署
+      1）检查系统版本、联网状态等基本条件
+      2）多次执行manual-update.sh更新脚本尝试
+      3）删除/home/myid整个目录后重新一键部署
     _注：如果仍然报错导致部署失败无法运行项目，说明是原作者环境库的问题，请换个时间重试。_
     
 ***
