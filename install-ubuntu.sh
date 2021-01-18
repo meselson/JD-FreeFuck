@@ -104,11 +104,11 @@ echo "deb https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe mul
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
-apt-get update
-apt-get remove -y nodejs npm
-apt-get install -y git wget curl perl moreutils
+apt update
+apt remove -y nodejs npm
+apt install -y git wget curl perl moreutils
 if [ $VERSION_NUMBER -eq "20" ];then
-  apt-get install -y nodejs npm
+  apt install -y nodejs npm
 else
   curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
   sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
@@ -116,11 +116,11 @@ else
   echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $VERSION main" >> /etc/apt/sources.list.d/nodesource.list
   echo "deb https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ $VERSION main" >> /etc/apt/sources.list.d/nodesource.list
   echo "deb-src https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ $VERSION main" >> /etc/apt/sources.list.d/nodesource.list
-  apt-get update
-  apt-get install -y nodejs
+  apt update
+  apt install -y nodejs
 fi
-apt-get dist-upgrade -y
-apt-get autoremove -y
+apt dist-upgrade -y
+apt autoremove -y
 }
 
 #项目部署：
