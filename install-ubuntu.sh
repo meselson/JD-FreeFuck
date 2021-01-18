@@ -31,8 +31,8 @@ fi
 
 #环境部署：
 EnvDeploy() {
-Version=`lsb_release -c --short`
-Version_Number=`lsb_release -r --short | cut -c1-2`
+VERSION=`lsb_release -c --short`
+VERSION_NUMBER=`lsb_release -r --short | cut -c1-2`
 echo -e '\033[37m+---------------------------------------------------+ \033[0m'
 echo -e '\033[37m|                                                   | \033[0m'
 echo -e '\033[37m|   =============================================   | \033[0m'
@@ -63,7 +63,7 @@ echo -e "\033[37m           当前系统时间  `date +%Y-%m-%d` `date +%H:%M` \
 echo -e ''
 echo -e '\033[37m##################################################### \033[0m'
 echo -e ''
-Choice=`echo -e '\033[32m请输入你想使用的国内更新源[1~4]： \033[0m'`
+CHOICE=`echo -e '\033[32m请输入你想使用的国内更新源[1~4]： \033[0m'`
 read -p "$CHOICE" INPUT
 case $INPUT in
 1)
