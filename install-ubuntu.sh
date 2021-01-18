@@ -100,6 +100,7 @@ echo "deb-src https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe
 echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 apt-get update
+apt-get remove -y nodejs npm
 apt-get install -y git wget curl perl moreutils
 if [ $VERSION_NUMBER -eq "20" ];then
   apt-get install -y nodejs npm
@@ -169,8 +170,6 @@ EOF
 JudgeResult() {
 VERIFICATION=`node -v | cut -c2`
 if [ $VERIFICATION -eq "1" ]; then
-  echo -e "\033[31m -------------- 一键部署失败 -------------- \033[0m"
-else
   echo -e "\033[32m ------------------- 环境部署成功，请执行 bash run-all.sh 命令开始你的薅羊毛行为 ------------------- \033[0m"
   echo -e "\033[32m +=================================================================================================+ \033[0m"
   echo -e "\033[32m | 注意：该项目主运行目录为/home/myid/jd                                                           | \033[0m"
@@ -183,6 +182,8 @@ else
   echo -e "\033[32m | 定义：run-all.sh 为本人编写的一键执行所有活动脚本，manual-update.sh 为本人编写的一键更新脚本    | \033[0m"
   echo -e "\033[32m +=================================================================================================+ \033[0m"
   echo -e "\033[32m -------------------- 更多帮助请访问 https://github.com/SuperManito/JD-FreeFuck -------------------- \033[0m"
+else
+  echo -e "\033[31m -------------- 一键部署失败 -------------- \033[0m"
 fi
 }
 
