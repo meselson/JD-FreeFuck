@@ -69,7 +69,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
     sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
     sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
 
-### _到此部署就结束了，是不是很快OvO _
+- __到此部署就结束了，是不是很快OvO __
 
 ***
 
