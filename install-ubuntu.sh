@@ -1,6 +1,6 @@
 #!/bin/bash
 #Author:SuperManito
-#Update Date:2021-1-17
+#Update Date:2021-1-19
 #Project Name:《京东薅羊毛》一键部署脚本 For Linux，通过参与京东商城的各种活动白嫖京豆
 #适用系统: Ubuntu 16.04 ~ 20.10
 
@@ -32,6 +32,7 @@ fi
 #环境部署：
 EnvDeploy() {
 VERSION=`lsb_release -c --short`
+VERSION_NUMBER=``
 echo -e '\033[37m+---------------------------------------------------+ \033[0m'
 echo -e '\033[37m|                                                   | \033[0m'
 echo -e '\033[37m|   =============================================   | \033[0m'
@@ -98,17 +99,21 @@ echo "deb https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe mul
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-proposed main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
-apt update
-apt install -y git wget curl nodejs npm perl moreutils
-if [ $VERSION != "focal" ];then
-  apt remove -y nodejs
+apt-get update
+apt-get install -y git wget curl perl moreutils
+if [ $VERSION_NUMBER -eq 20 ];then
+  apt-get install -y nodejs npm
+else
   curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-  sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
-  echo "deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
-  echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
-  apt update
-  apt install -y nodejs
+  sed -i "1c deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
+  sed -i "2c deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
+  sed -i "3c deb https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
+  sed -i "4c deb-src https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
+  apt-get update
+  apt-get install -y nodejs npm
 fi
+apt-get dist-upgrade -y
+apt-get autoremove
 }
 
 #项目部署：
