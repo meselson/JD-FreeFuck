@@ -51,11 +51,13 @@ echo -e '\033[37m##################################################### \033[0m'
 echo -e ''
 echo -e '\033[37m*    1) 阿里源 \033[0m'
 echo -e ''
-echo -e '\033[37m*    2) 网易源 \033[0m'
+echo -e '\033[37m*    2) 华为源 \033[0m'
 echo -e ''
-echo -e '\033[37m*    3) 清华源 \033[0m'
+echo -e '\033[37m*    3) 网易源 \033[0m'
 echo -e ''
-echo -e '\033[37m*    4) 中科大源 \033[0m'
+echo -e '\033[37m*    4) 清华源 \033[0m'
+echo -e ''
+echo -e '\033[37m*    5) 中科大源 \033[0m'
 echo -e ''
 echo -e '\033[37m##################################################### \033[0m'
 echo -e ''
@@ -63,19 +65,22 @@ echo -e "\033[37m           当前系统时间  `date +%Y-%m-%d` `date +%H:%M` \
 echo -e ''
 echo -e '\033[37m##################################################### \033[0m'
 echo -e ''
-CHOICE=`echo -e '\033[32m请输入你想使用的国内更新源[1~4]： \033[0m'`
+CHOICE=`echo -e '\033[32m请输入你想使用的国内更新源[1~5]： \033[0m'`
 read -p "$CHOICE" INPUT
 case $INPUT in
 1)
   SOURCE="mirrors.aliyun.com"
   ;;
 2)
-  SOURCE="mirrors.163.com"
+  SOURCE="mirrors.huaweicloud.com"
   ;;
 3)
-  SOURCE="mirrors.tuna.tsinghua.edu.cn"
+  SOURCE="mirrors.163.com"
   ;;
 4)
+  SOURCE="mirrors.tuna.tsinghua.edu.cn"
+  ;;
+5)
   SOURCE="mirrors.ustc.edu.cn"
   ;;
 *)
