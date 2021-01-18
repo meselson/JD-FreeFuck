@@ -114,7 +114,7 @@ else
   apt-get install -y nodejs
 fi
 apt-get dist-upgrade -y
-apt-get autoremove
+apt-get autoremove -y
 }
 
 #项目部署：
