@@ -102,10 +102,10 @@ apt update
 apt install -y git wget curl nodejs npm perl moreutils
 if [ $VERSION != "focal" ];then
   apt remove -y nodejs
-  curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+  curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
   sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
-  echo "deb https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_10.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
-  echo "deb-src https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_10.x/ bionic main" >> /etc/apt/sources.list.d/nodesource.list
+  echo "deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
+  echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x stretch main" >> /etc/apt/sources.list.d/nodesource.list
   apt update
   apt install -y nodejs
 fi
