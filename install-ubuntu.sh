@@ -32,7 +32,7 @@ fi
 #环境部署：
 EnvDeploy() {
 VERSION=`lsb_release -c --short`
-VERSION_NUMBER=``
+VERSION_NUMBER=`lsb_release -r --short | cut -c1-2`
 echo -e '\033[37m+---------------------------------------------------+ \033[0m'
 echo -e '\033[37m|                                                   | \033[0m'
 echo -e '\033[37m|   =============================================   | \033[0m'
