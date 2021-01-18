@@ -101,7 +101,7 @@ echo "deb https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe mu
 echo "deb-src https://$SOURCE/ubuntu/ $VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
 apt-get update
 apt-get install -y git wget curl perl moreutils
-if [ $VERSION_NUMBER -eq 20 ];then
+if [ $VERSION_NUMBER -eq "20" ];then
   apt-get install -y nodejs npm
 else
   curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
