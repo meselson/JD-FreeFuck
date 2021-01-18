@@ -30,12 +30,12 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
 ## 一、环境部署
 - __命令一键部署：__
 
-`Ubuntu`
+    `Ubuntu`
 
-    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
-`CentOS`
+        bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-ubuntu.sh)
+    `CentOS`
 
-    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
+        bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
 _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
 - 附1.如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
