@@ -17,7 +17,7 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
     
 ***
 
-## 原作者GitHub项目地址：
+## 此项目原作者GitHub网址链接：
 ### [lxk0301/jd_scripts](https://github.com/lxk0301/jd_scripts)  #此项目核心JavaScript京东活动脚本作者
 ### [EvineDeng/jd-base](https://github.com/EvineDeng/jd-base)   #此项目Linux环境Shell套壳作者，在其项目[Issues](https://github.com/EvineDeng/jd-base/issues/185)有分帖
     
@@ -74,6 +74,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 ***
 
 ## 四、使用与更新
+### 友情提示：如需更多功能请访问链接——[EvineDeng/jd-base](https://github.com/EvineDeng/jd-base/wiki/Linux)
 - 1.如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
