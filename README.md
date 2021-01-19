@@ -77,14 +77,14 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 
 ## 四、使用与更新
 __友情提示：如何获取更多功能请访问原作者[Wiki](https://github.com/EvineDeng/jd-base/wiki/Linux)__
-- 1.如何运行脚本开始白嫖京豆？
+- 1. 如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
-- 2.如何更新活动脚本？
+- 2. 如何更新活动脚本？
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，京东活动经常变化，原作者更新也很频繁。_
-- 3.如何更新一键更新脚本？
+- 3. 如何更新一键更新脚本？
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
     _注：适用于后期维护，当需要更新时会在本人项目置顶通知。_
