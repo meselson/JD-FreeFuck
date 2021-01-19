@@ -10,10 +10,10 @@ __如果您觉得这个项目不错的话可以在右上角点个小星星吗？
 # 《京东薅羊毛》一键部署脚本 For Linux
 ## 用途：通过JavaScript与Shell自动化脚本参与京东商城的各种活动从而白嫖京豆
 ## 适用系统：Ubuntu & CentOS (简体中文)
-- __Ubuntu：支持`16.04 ~ 20.10`版本，建议优先使用Ubuntu系统，[Win10商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/WIN10%E5%95%86%E5%BA%97%E5%AE%89%E8%A3%85Ubuntu)__
+- __Ubuntu：支持`16.04 ~ 20.10`版本，建议优先使用Ubuntu系统__
 - __CentOS：支持`7.0 ~ 8.3`版本，包括所有子版本号系统，如果是最小化安装，请通过SSH方式进入到终端__
 
-_温馨提示：尽量使用最新的系统，并且安装语言使用简体中文，旧版系统如果遇到问题请及时向我反馈，谢谢！_
+_温馨提示：尽量使用最新的系统，并且安装语言使用简体中文，旧版系统如果遇到问题请及时向我反馈，谢谢！附：[Win10商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/WIN10%E5%95%86%E5%BA%97%E5%AE%89%E8%A3%85Ubuntu)_
     
 ***
 
