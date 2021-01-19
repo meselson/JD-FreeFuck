@@ -70,7 +70,6 @@ _温馨提示：尽量使用最新的系统，并且安装语言使用简体中�
 - 附2. 如果需要使用[Server酱](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
-- __到此部署就结束了，是不是很快OvO__
 
 ***
 
