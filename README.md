@@ -74,7 +74,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 ***
 
 ## 四、使用与更新
-__友情提示：如需更多功能请访问链接[EvineDeng/jd-base](https://github.com/EvineDeng/jd-base/wiki/Linux)__
+__友情提示：更多功能请访问链接[jd-base/wiki/Linux](https://github.com/EvineDeng/jd-base/wiki/Linux)__
 - 1.如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
