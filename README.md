@@ -19,7 +19,7 @@ _温馨提示：尽量使用最新的系统，并且安装语言使用简体中�
 
 ## 此项目原作者GitHub网址链接：
 ### [lxk0301/jd_scripts](https://github.com/lxk0301/jd_scripts)  #此项目核心JavaScript京东活动脚本作者
-### [EvineDeng/jd-base](https://github.com/EvineDeng/jd-base)   #此项目Linux环境Shell套壳作者，在其项目[Issues](https://github.com/EvineDeng/jd-base/issues/185)有分帖
+### [EvineDeng/jd-base](https://github.com/EvineDeng/jd-base)   #此项目Linux环境Shell套壳作者，在其项目[ Issues ](https://github.com/EvineDeng/jd-base/issues/185)有分帖
     
 ***
 
@@ -67,14 +67,14 @@ _温馨提示：尽量使用最新的系统，并且安装语言使用简体中�
       sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
       sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
       sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-- 附2. 如果需要使用[Server酱](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
+- 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 
 ***
 
 ## 四、使用与更新
-__友情提示：获取更多功能请访问原作者[Wiki](https://github.com/EvineDeng/jd-base/wiki/Linux)__
+__友情提示：获取更多功能请访问原作者[ Wiki ](https://github.com/EvineDeng/jd-base/wiki/Linux)__
 - 1.如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
