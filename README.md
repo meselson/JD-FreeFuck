@@ -59,8 +59,7 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
 ## 三、配置脚本
 ### 根据[Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)教程将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
-_参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
-\
+  _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 - 附1. 该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
       sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
@@ -77,14 +76,14 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/j
 
 ## 四、使用与更新
 __友情提示：如何获取更多功能请访问原作者[Wiki](https://github.com/EvineDeng/jd-base/wiki/Linux)__
-- 1. 如何运行脚本开始白嫖京豆？
+- 1.如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
-- 2. 如何更新活动脚本？
+- 2.如何更新活动脚本？
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，京东活动经常变化，原作者更新也很频繁。_
-- 3. 如何更新一键更新脚本？
+- 3.如何更新一键更新脚本？
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
     _注：适用于后期维护，当需要更新时会在本人项目置顶通知。_
