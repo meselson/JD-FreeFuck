@@ -40,10 +40,10 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
-- 附2.如果没有科学上网方式会提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
+- 附2. 如果没有科学上网方式会提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
-- 附3.一键部署后遇到报错怎么办？
+- 附3. 一键部署后遇到报错怎么办？
 
       1）检查系统版本、联网状态等基本条件
       2）多次执行manual-update.sh更新脚本尝试
@@ -61,14 +61,14 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 \
-- 附1.该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
+- 附1. 该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
       sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
       sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
       sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
       sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
       sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
-- 附2.如果需要使用Server酱微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
+- 附2. 如果需要使用Server酱微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 - __到此部署就结束了，是不是很快OvO__
