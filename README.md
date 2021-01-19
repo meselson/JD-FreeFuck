@@ -57,7 +57,7 @@ _温馨提示：尽量使用最新的系统，并且安装语言使用简体中�
 ***
 
 ## 三、配置信息
-### 根据[Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)教程将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
+### 根据[ Wiki ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)教程将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
   _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 - 附1. 该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
