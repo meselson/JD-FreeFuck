@@ -61,20 +61,22 @@ _注意：尽量使用最新的系统，并且安装语言使用简体中文，�
     sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
 _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 \
-### 附：该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令。（选择步骤）
+- 附1.该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
-    sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
-    sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
-    sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
-    sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
-    sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
+      sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
+      sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
+      sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
+      sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
+      sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
+- 附2.如果需要使用Server酱微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
+      sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 - __到此部署就结束了，是不是很快OvO__
 
 ***
 
 ## 四、使用与更新
-__友情提示：更多功能请访问链接[jd-base/wiki/Linux](https://github.com/EvineDeng/jd-base/wiki/Linux)__
+__友情提示：如何获取更多功能请访问原作者[Wiki](https://github.com/EvineDeng/jd-base/wiki/Linux)__
 - 1.如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
