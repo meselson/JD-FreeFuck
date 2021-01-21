@@ -108,3 +108,4 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 ***
 
 ## 如果您有意见与建议欢迎到 [Issuse](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
+1
