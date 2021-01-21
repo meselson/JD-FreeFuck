@@ -74,7 +74,7 @@ __如果您觉得这个项目不错的话可以在右上角点个小星星吗？
 ***
 
 ## 四、使用与更新
-__友情提示：获取更多功能请访问[/EvineDeng/jd-base/wiki/Linux](https://github.com/EvineDeng/jd-base/wiki/Linux)__
+__友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](https://github.com/EvineDeng/jd-base/wiki/Linux)__
 - 1.如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
