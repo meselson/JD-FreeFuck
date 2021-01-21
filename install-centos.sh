@@ -127,6 +127,7 @@ EOF
 
 #部署结果判定：
 JudgeResult() {
+cd /home/myid/jd
 VERIFICATION=`node -v | cut -c2`
 if [ $VERIFICATION -eq "1" ]; then
   echo -e "\033[32m ------------------- 环境部署成功，请执行 bash run-all.sh 命令开始你的薅羊毛行为 ------------------- \033[0m"
