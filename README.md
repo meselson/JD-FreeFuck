@@ -38,7 +38,7 @@ __如果您觉得这个项目不错的话可以在右上角点个小星星吗？
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-debians.sh)
     __RedHat系 `CentOS`__
 
-      bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-centos.sh)
+      bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-redhats.sh)
     _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
