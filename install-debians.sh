@@ -112,8 +112,7 @@ if [ $SYSTEM_NAME = "Ubuntu" ];then
   echo "deb-src https://$SOURCE/ubuntu/ $SYSTEM_VERSION-proposed main restricted universe multiverse" >> /etc/apt/sources.list
   echo "deb https://$SOURCE/ubuntu/ $SYSTEM_VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
   echo "deb-src https://$SOURCE/ubuntu/ $SYSTEM_VERSION-backports main restricted universe multiverse" >> /etc/apt/sources.list
-fi
-if [ $SYSTEM_NAME = "Debian" ];then
+elif [ $SYSTEM_NAME = "Debian" ];then
   echo "deb https://$SOURCE/debian/ $SYSTEM_VERSION main contrib non-free" >> /etc/apt/sources.list
   echo "deb-src https://$SOURCE/debian/ $SYSTEM_VERSION main contrib non-free" >> /etc/apt/sources.list
   echo "deb https://$SOURCE/debian/ $SYSTEM_VERSION-updates main contrib non-free" >> /etc/apt/sources.list
@@ -122,8 +121,7 @@ if [ $SYSTEM_NAME = "Debian" ];then
   echo "deb-src https://$SOURCE/debian/ $SYSTEM_VERSION-backports main contrib non-free" >> /etc/apt/sources.list
   echo "deb https://$SOURCE/debian-security $SYSTEM_VERSION/updates main contrib non-free" >> /etc/apt/sources.list
   echo "deb-src https://$SOURCE/debian-security $SYSTEM_VERSION/updates main contrib non-free" >> /etc/apt/sources.list
-fi
-if [ $SYSTEM_NAME = "Kali" ];then
+elif [ $SYSTEM_NAME = "Kali" ];then
   echo "deb https://$SOURCE/kali $SYSTEM_VERSION main non-free contrib" >> /etc/apt/sources.list
   echo "deb-src https://$SOURCE/kali $SYSTEM_VERSION main non-free contrib" >> /etc/apt/sources.list
 fi
