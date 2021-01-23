@@ -36,7 +36,7 @@ __如果您觉得这个项目不错的话可以在右上角点个小星星吗？
     __Debian系 `Ubuntu | Debian | Kali`__
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-debians.sh)
-    __RedHat系 `CentOS`__
+    __RedHat系 `CentOS | Fedora`__
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-redhats.sh)
     _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
