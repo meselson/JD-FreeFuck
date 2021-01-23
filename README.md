@@ -45,6 +45,7 @@ __如果您觉得这个项目不错的话可以在右上角点个小星星吗？
 - 附2. 如果没有科学上网方式会提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
+      echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
 - 附3. 一键部署后遇到报错怎么办？
 
       1）检查系统版本、联网状态等基本条件
