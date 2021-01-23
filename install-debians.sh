@@ -225,4 +225,3 @@ CookieConfig
 RunAll
 ManualUpdate
 JudgeResult
-1
