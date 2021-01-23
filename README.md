@@ -22,10 +22,10 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 ## 一、环境部署
 - __命令一键部署：__
 
-    __Debian系 `Ubuntu | Debian | Kali`__
+    __Debian系列 `Ubuntu | Debian | Kali`__
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-debians.sh)
-    __RedHat系 `CentOS | Fedora`__
+    __RedHat系列 `CentOS | Fedora`__
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-redhats.sh)
     _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
