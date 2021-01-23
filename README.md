@@ -63,6 +63,10 @@ __如果您觉得这个项目不错的话可以在右上角点个小星星吗？
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
+- 附3. 如果需要使用[ 控制面板 ](https://github.com/EvineDeng/jd-base/wiki/Panel)功能，安装命令如下：
+
+      bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-panel.sh)
+    _注：此功能可用于在浏览器编辑配置文件、配置定时运行脚本、自定义脚本等功能。_
 
 ***
 
