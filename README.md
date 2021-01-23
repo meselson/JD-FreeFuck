@@ -15,12 +15,6 @@ __如果您觉得这个项目不错的话可以在右上角点个小星星吗？
     
 ***
 
-## 此项目原作者GitHub网址链接：
-### [lxk0301/jd_scripts](https://github.com/lxk0301/jd_scripts)  #此项目核心JavaScript京东活动脚本作者
-### [EvineDeng/jd-base](https://github.com/EvineDeng/jd-base)   #此项目Linux环境Shell套壳作者，在其项目[ Issues ](https://github.com/EvineDeng/jd-base/issues/185)有分帖
-    
-***
-
 # 下面进入正题，部署教程共三步，请认真阅读下面的内容
     
 ***
@@ -91,6 +85,10 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 ## 五、声明
 1. 本人项目为二次使用，我不是该《京东薅羊毛》项目的开发者，所有活动类问题与我无关。
 2. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，自己查看一下这两个文件内容就全明白了，如果你不想用我写的一键脚本请自行删除，其余所有文件均为原作者创作。
+
+### 此项目原作者GitHub网址链接：
+#### [lxk0301/jd_scripts](https://github.com/lxk0301/jd_scripts)  #此项目核心JavaScript京东活动脚本作者
+#### [EvineDeng/jd-base](https://github.com/EvineDeng/jd-base)   #此项目Linux环境Shell套壳作者，在其项目[ Issues ](https://github.com/EvineDeng/jd-base/issues/185)有分帖   
     
 ***
 
