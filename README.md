@@ -15,7 +15,7 @@ __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键
 ## 支持的 Linux (简体中文) 发行版：
 - __`Ubuntu`：支持 16.04 ~ 20.10 版本，建议优先使用Ubuntu系统__  　　附：[Win10应用商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-Ubuntu)
 - __`Debian`：支持 8.0 ~ 10.7 版本__
-- __`Kali`：支持 2019 ~ 2020.4 版本__
+- __`Kali`：支持 2.0 ~ 2020.4 版本__
 - __`Fedora`：支持 28 ~ 33 版本__
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
