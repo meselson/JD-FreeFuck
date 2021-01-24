@@ -66,7 +66,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 - 附3. 如果需要使用[ 控制面板 ](https://github.com/EvineDeng/jd-base/wiki/Panel)功能，安装命令如下：
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-panel.sh)
-    _注：此功能可用于在浏览器编辑配置文件、配置定时运行脚本、自定义脚本等功能。_
+    _注：此功能可用于在浏览器编辑配置文件、配置定时运行脚本、自定义脚本等功能，脚本安装后已默认启动。_
 
 ***
 
