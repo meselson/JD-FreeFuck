@@ -17,3 +17,4 @@ pm2 start server.js
 echo -e "\033[32m 本机访问   http://127.0.0.1:5678 \033[0m"
 echo -e "\033[32m 局域网访问 http://$IP:5678 \033[0m"
 echo -e "\033[32m 初始用户名：admin，初始密码：adminadmin \033[0m"
+echo -e "\033[32m 启动命令： pm2 start server.js \033[0m"
