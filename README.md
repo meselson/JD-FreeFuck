@@ -3,8 +3,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 ***
 
 2021/1/24\
-通知：
-__由于作者更改了输出文字，所以导致一键执行脚本`run-all.sh`失效，请执行一键更新命令：__
+__重要通知：__\
+__由于原作者更改了输出内容，所以导致本人的`run-all.sh`一键执行脚本失效，1月24日前已部署的朋友请执行一键更新命令：__
 
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
 
