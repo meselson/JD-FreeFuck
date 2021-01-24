@@ -4,7 +4,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 2021/1/24\
 通知：
-__由于作者更改了输出文字，所以导致一键执行脚本`run-all.sh`失效，请先手动运行各个活动脚本，本人正在加急寻找解决办法修改代码ing...__
+__由于作者更改了输出文字，所以导致一键执行脚本`run-all.sh`失效，请执行一键更新命令：__
+    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
 
 ***
 
