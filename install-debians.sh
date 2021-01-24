@@ -169,8 +169,8 @@ sed -i "32c Cookie6=$COOKIE6" config/config.sh
 #编写一键执行脚本：
 RunAll() {
 touch /home/myid/jd/run-all.sh
-bash jd.sh | grep _ >>/home/myid/jd/run-all.sh
-sed -i '1d' /home/myid/jd/run-all.sh
+bash jd.sh | grep -o 'jd_[a-z].*' > run-all.sh
+bash jd.sh | grep -o 'jx_[a-z].*' >> run-all.sh
 sed -i 's/^/bash jd.sh &/g' /home/myid/jd/run-all.sh
 sed -i 's/$/& now/g' /home/myid/jd/run-all.sh
 sed -i '1i\#!/bin/bash' /home/myid/jd/run-all.sh
@@ -184,11 +184,10 @@ cat >/home/myid/jd/manual-update.sh <<EOF
 bash git_pull.sh
 rm -rf run-all.sh
 touch run-all.sh
-bash jd.sh | grep _ >> run-all.sh
-sed -i '1d' run-all.sh
+bash jd.sh | grep -o 'jd_[a-z].*' > run-all.sh
+bash jd.sh | grep -o 'jx_[a-z].*' >> run-all.sh
 sed -i 's/^/bash jd.sh &/g' run-all.sh
 sed -i 's/$/& now/g' run-all.sh
-sed -i '1i\#!/bin/bash' run-all.sh
 EOF
 }
 
