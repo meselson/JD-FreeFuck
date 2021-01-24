@@ -4,7 +4,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 # 《京东薅羊毛》一键部署脚本 For Linux
 ## 用途：通过JavaScript与Shell自动化脚本参与京东商城的各种活动从而白嫖京豆
-## 适用的 Debian系列 & RedHat系列 Linux (简体中文) 发行版：
+## 支持的 Linux (简体中文) 发行版：
 - __`Ubuntu`：支持 16.04 ~ 20.10 版本，建议优先使用Ubuntu系统__  　　附：[Win10应用商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-Ubuntu)
 - __`Debian`：支持 9.0 ~ 10.7 版本__
 - __`Kali`：支持 2019 ~ 2020.4 版本__
@@ -22,10 +22,10 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 ## 一、环境部署
 - __命令一键部署：__
 
-    __Debian系列 `Ubuntu | Debian | Kali`__
+    __基于Debian系列 `Ubuntu | Debian | Kali`__
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-debians.sh)
-    __RedHat系列 `CentOS | Fedora`__
+    __基于RedHat系列 `CentOS | Fedora`__
 
       bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-redhats.sh)
     _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
