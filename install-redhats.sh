@@ -2,7 +2,7 @@
 #Author:SuperManito
 #Update Date:2021-1-23
 #Project Name:《京东薅羊毛》一键部署脚本 For Linux，通过参与京东商城的各种活动白嫖京豆
-#适用系统: CentOS 7.0 ~ 8.3 | Fedora 28 ~ 33   CentOS如果是最小化安装，请通过SSH方式进入到终端
+#适用系统: CentOS 7.0 ~ 8.3 | Fedora 28 ~ 33  CentOS如果是最小化安装，请通过SSH方式进入到终端
 
 #将Cookie部分内容填入”双引号“内：（适用于手动搭建）
 COOKIE1='""'
