@@ -90,7 +90,7 @@ yum install -y git wget curl perl moreutils
 curl -sL https://rpm.nodesource.com/setup_14.x | bash -
 sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
 yum makecache
-yum -y install nodejs
+yum install -y nodejs
 }
 
 #项目部署：
