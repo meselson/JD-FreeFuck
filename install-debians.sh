@@ -2,7 +2,7 @@
 #Author:SuperManito
 #Update Date:2021-1-22
 #Project Name:《京东薅羊毛》一键部署脚本 For Linux，通过参与京东商城的各种活动白嫖京豆
-#适用系统: Ubuntu 16.04~20.10 | Debian 9.0~10.7 | Kali 2019~2020
+#适用系统: Ubuntu 16.04~20.10 | Debian 8.0~10.7 | Kali 2019~2020
 
 #将Cookie部分内容填入”双引号“内：（适用于手动搭建）
 COOKIE1='""'
