@@ -2,8 +2,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ***
 
-## 2021/1/24
-__重要通知：__\
+## 重要通知
+__2021/1/24：__\
 __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键执行脚本失效，24日前已部署的朋友请执行一键更新命令：__
 
     bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
