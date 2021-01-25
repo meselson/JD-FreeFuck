@@ -85,7 +85,7 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，京东活动经常变化，原作者更新也很频繁。_
-- 3.如何更新本人原创两个一键脚本？
+- 3.如何更新一键脚本？
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
     _注：适用于后期维护更新，当先前一键脚本失效需要更新时会在项目置顶通知。_
