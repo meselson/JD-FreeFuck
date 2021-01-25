@@ -189,6 +189,7 @@ touch /etc/yum.repos.d/fedora.repo
 touch /etc/yum.repos.d/fedora-updates.repo
 touch /etc/yum.repos.d/fedora-modular.repo
 touch /etc/yum.repos.d/fedora-updates-modular.repo
+touch /etc/yum.repos.d/fedora-cisco-openh264.repo
 cat >/etc/yum.repos.d/fedora.repo <<\EOF
 [fedora]
 name=Fedora $releasever - $basearch
@@ -386,6 +387,28 @@ gpgcheck=1
 metadata_expire=6h
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
 skip_if_unavailable=False
+EOF
+cat >/etc/yum.repos.d/fedora-cisco-openh264.repo <<\EOF
+[fedora-cisco-openh264]
+name=Fedora $releasever openh264 (From Cisco) - $basearch
+metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-cisco-openh264-$releasever&arch=$basearch
+type=rpm
+enabled=1
+metadata_expire=14d
+repo_gpgcheck=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=True
+[fedora-cisco-openh264-debuginfo]
+name=Fedora $releasever openh264 (From Cisco) - $basearch - Debug
+metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-cisco-openh264-debug-$releasever&arch=$basearch
+type=rpm
+enabled=0
+metadata_expire=14d
+repo_gpgcheck=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=True
 EOF
 sed -i "s|http://download.example/pub/fedora/linux|https://$SOURCE/fedora|g" \
 /etc/yum.repos.d/fedora.repo \
