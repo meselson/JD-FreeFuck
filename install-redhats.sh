@@ -96,9 +96,14 @@ case $INPUT in
   sleep 3s
   ;;
 esac
-rm -rf /etc/yum.repos.d.bak
-mkdir -p /etc/yum.repos.d.bak
-cp -rf /etc/yum.repos.d/* /etc/yum.repos.d.bak
+ls /etc | grep yum.repos.d.bak -qw
+if [ $? -eq 0 ];then
+  echo -e '\033[32m检测到已备份的 repo源 文件，跳过备份操作...... \033[0m'
+else
+  mkdir -p /etc/yum.repos.d.bak
+  cp -rf /etc/yum.repos.d/* /etc/yum.repos.d.bak
+  echo -e '\033[32m已备份原有 repo源 文件至 /etc/yum.repos.d.bak ...... \033[0m'
+fi
 sleep 2s
 rm -rf /etc/yum.repos.d/*
 if [ $SYSTEM_VERSION_CENTOS = "8" ];then
