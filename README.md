@@ -7,6 +7,8 @@ __2021/1/24__\
 __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键执行脚本失效，24日前已部署的朋友请执行一键更新命令：__
 
     bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
+__2021/1/16__\
+__由于原作者lxk0301大佬的Github库被封，收到{通知](https://github.com/EvineDeng/jd-base/issues/234)，请16号前部署的朋友删除jd目录后重新一键部署。__
 
 ***
 
