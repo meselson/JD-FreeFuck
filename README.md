@@ -4,11 +4,9 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ## 重要通知：
 __2021/1/24__\
-__由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键执行脚本失效，24日前已部署的朋友请执行一键更新命令：__
-
-    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
+__由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键执行脚本失效，24日前已部署的朋友请执行更新脚本，命令在下方第四步`使用与更新`中的第3条。__
 __2021/1/16__\
-__由于原作者lxk0301大佬的Github库被封，收到[ 通知 ](https://github.com/EvineDeng/jd-base/issues/234)，请16号前已部署的朋友删除`jd`目录后重新一键部署。__
+__由于原作者lxk0301大佬的Github库被封，收到[ 通知 ](https://github.com/EvineDeng/jd-base/issues/234)，请16号前已部署的朋友删除`/jd`目录后重新一键部署。__
 
 ***
 
