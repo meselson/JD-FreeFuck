@@ -50,8 +50,8 @@ __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键
 ***
 
 ## 二、接下来我们需要您京东账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：
-### 1. 在[ Wiki ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，请点击链接自行获取
-### 2. 通过通过下方`控制面板`功能部署后进入浏览器网页手机扫码获取。
+### 1. 在[ Wiki ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，请点击链接自行获取，此方式获得的Cookie只有1个月有效期。
+### 2. 通过通过下方`控制面板`功能部署后进入浏览器网页手机扫码获取，此方式获取的Cookie有效期为3个月。
 
 ***
 
