@@ -118,5 +118,5 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 
 ***
 
-## 如果老板成功薅到羊毛，赏1元可否(∩_∩)　　　　　　　如果您有意见与建议欢迎到 [Issuse](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
+## 如果老板成功薅到羊毛，赏1元可否(∩_∩)　　　　如果您有意见与建议欢迎到 [Issuse](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
 <img src="http://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iJUwS8QebawmCjbKc6d5zQg!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4" width="200" height="200" alt="微信小程序"/><br/>
