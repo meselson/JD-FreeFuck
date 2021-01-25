@@ -91,14 +91,19 @@ case $INPUT in
   SOURCE="mirrors.zju.edu.cn"
   ;;
 *)
-  SOURCE="mirrors.huaweicloud.com"
+  SOURCE="mirrors.ustc.edu.cn"
   echo -e ''
-  echo -e '\033[33m----------输入错误，更新源将默认使用华为源---------- \033[0m'
+  echo -e '\033[33m----------输入错误，更新源将默认使用中科大源---------- \033[0m'
   sleep 3s
   ;;
 esac
-cp -rf /etc/apt/sources.list /etc/apt/sources.list.bak
-echo -e '\033[32m已备份原有 source.list 更新源文件...... \033[0m'
+ls /etc/apt | grep sources.list.bak -qw
+if [ $? -eq 0 ];then
+  echo -e '\033[32m检测到已备份的 source.list源 文件，跳过备份操作...... \033[0m'
+else
+  cp -rf /etc/apt/sources.list /etc/apt/sources.list.bak
+  echo -e '\033[32m已备份原有 source.list 更新源文件...... \033[0m'
+fi
 sleep 2s
 sed -i '1,$d' /etc/apt/sources.list
 if [ $SYSTEM_NAME = "Ubuntu" ];then
