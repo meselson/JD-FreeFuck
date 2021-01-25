@@ -69,7 +69,7 @@ __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键
       sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
 - 附3. 如果需要使用[ 控制面板 ](https://github.com/EvineDeng/jd-base/wiki/Panel)功能，安装命令如下：
 
-      bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-panel.sh)
+      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-panel.sh)
     _注：此功能可用于在浏览器编辑配置文件、配置定时运行脚本、自定义脚本等功能，脚本安装后已默认启动。_
 
 ***
@@ -83,10 +83,10 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，京东活动经常变化，原作者更新也很频繁。_
-- 3.如何更新一键更新脚本？
+- 3.如何更新本人原创两个一键脚本？
 
-      bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
-    _注：适用于后期维护，当需要更新时会在本人项目置顶通知。_
+      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
+    _注：适用于后期维护更新，当先前一键脚本失效需要更新时会在项目置顶通知。_
     
 ***
 
