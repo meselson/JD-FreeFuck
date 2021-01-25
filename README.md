@@ -2,7 +2,7 @@
 __2021/1/24__\
 __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键执行脚本失效，24日前已部署的朋友请执行一键更新命令：__
 
-    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh)
+    bash <(curl -L https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
 
 ***
 
