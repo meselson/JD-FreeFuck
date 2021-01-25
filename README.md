@@ -1,3 +1,7 @@
+__如果您觉得这个项目不错的话可以在右上角给颗小星星吗？方便分享给更多的朋友吗？ (∩_∩)__
+
+***
+
 ## 重要通知：
 __2021/1/24__\
 __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键执行脚本失效，24日前已部署的朋友请执行一键更新命令：__
@@ -115,4 +119,5 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 
 ***
 
-__如果您觉得这个项目不错的话可以在右上角给颗小星星吗？方便分享给更多的朋友吗？ (∩_∩)__
+## 如果老板成功薅到羊毛，赏1元可否(∩_∩)
+[](http://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iJUwS8QebawmCjbKc6d5zQg!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4)
