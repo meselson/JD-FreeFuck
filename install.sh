@@ -494,7 +494,7 @@ function EnvStructures() {
 
 ## 项目部署：
 function ProjectDeployment() {
-  wget --no-check-certificate https://github.com/SuperManito/JD-FreeFuck/raw/main/jd.tar.gz
+  wget --no-check-certificate https://pd.zwc365.com/seturl/https://github.com/SuperManito/JD-FreeFuck/releases/download/jd_backup/jd.tar.gz
   mkdir -p /home/myid
   tar -zxvf jd.tar.gz -C /home/myid
   cd /home/myid/jd
