@@ -48,7 +48,6 @@ function EnvJudgment() {
     fi
   fi
 }
-}
 
 ## 更换国内源：
 function ReplaceMirror() {
