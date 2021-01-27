@@ -27,6 +27,27 @@ function EnvJudgment() {
     echo -e "\033[31m ----- Network connection error.Please check the network environment and try again later! ----- \033[0m"
     return
   fi
+  ## 当前系统判定：
+  ls /etc | grep redhat-release -qw
+  if [ $? -eq 0 ]; then
+    SYSTEM="RedHat"
+  else
+    SYSTEM="Debian"
+  fi
+
+  if [ $SYSTEM = "Debian" ]; then
+    SYSTEM_NAME=$(lsb_release -is)
+    SYSTEM_VERSION=$(lsb_release -cs)
+    SYSTEM_VERSION_NUMBER=$(lsb_release -rs)
+  elif [ $SYSTEM = "RedHat" ]; then
+    SYSTEM_NAME=$(cat /etc/redhat-release | cut -c1-6)
+    if [ $SYSTEM_NAME = "CentOS" ]; then
+      SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c22-24)
+    elif [ $SYSTEM_NAME = "Fedora" ]; then
+      SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c16-18)
+    fi
+  fi
+}
 }
 
 ## 更换国内源：
