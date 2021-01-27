@@ -43,7 +43,7 @@ __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-- 附3. 一键部署后遇到报错怎么办？
+- 附3. 如果执行一键命令后无效或部署后遇到报错怎么办？
 
       1）检查系统版本、联网状态等基本条件
       2）多次执行manual-update.sh更新脚本尝试
