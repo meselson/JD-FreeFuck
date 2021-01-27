@@ -31,12 +31,7 @@ __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键
 ## 一、环境部署
 - __命令一键部署：__
 
-    __基于Debian系列 `Ubuntu | Debian | Kali`__
-
-      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-debians.sh)
-    __基于RedHat系列 `CentOS | Fedora`__
-
-      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-redhats.sh)
+      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
     _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
