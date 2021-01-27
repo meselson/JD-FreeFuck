@@ -494,7 +494,7 @@ function EnvStructures() {
 
 ## 项目部署：
 function ProjectDeployment() {
-  wget https://github.com/SuperManito/JD-FreeFuck/jd.tar.gz
+  wget wget https://github.com/SuperManito/JD-FreeFuck/raw/main/jd.tar.gz
   mkdir -p /home/myid
   tar -zxvf jd.tar.gz -C /home/myid
   cd /home/myid/jd
