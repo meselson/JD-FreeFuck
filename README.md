@@ -29,11 +29,13 @@ __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键
     
 ***
 
-## 一、环境部署
-- __命令一键部署：__
+## 一、命令一键部署
+- __Github：__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
-    _注：请根据你的操作系统，选择上面对应的命令复制到终端并执行_
+- __Gitee：__
+
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
