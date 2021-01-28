@@ -37,7 +37,7 @@ __由于原作者更改了帮助文档，从而导致本人的`run-all.sh`一键
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
-- 附2. 如果没有科学上网方式会提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
+- 附2. 如果没有科学上网方式提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
