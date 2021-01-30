@@ -3,7 +3,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 ***
 
 ## 目前系统直装均已失效，已了解到Doker还可以正常使用，一键脚本以及教程正在紧张制作中，会的可以自己先装一下，敬请期待......
-__[ 教程链接 ](https://hub.docker.com/r/evinedeng/jd)__
+__[ 教程链接 ](https://hub.docker.com/r/evinedeng/jd)__\
 __一键安装docker命令：__
 
     curl -sSL https://get.daocloud.io/docker | sh
