@@ -43,7 +43,19 @@ __由于某D安全团队介入，原作者Github项目资源被封或已下架�
       1）检查系统版本、联网状态等基本条件
       2）检查容器是否启动正常
       3）多次执行manual-update.sh更新脚本尝试
-    _注：如果仍然报错导致部署失败无法运行项目，说明是原作者环境库的问题，请换个时间重试。_
+- 附4. 如果你已经安装了`Docker`不想用我的一键脚本？
+
+      docker run -dit \
+      -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录 /opt` \
+      -v /opt/jd/log:/jd/log `# 设置日志的主机挂载目录 /opt` \
+      -p 5678:5678 `# 设置端口映射，内部端口为5678，外部端口为5678` \
+      -e ENABLE_HANGUP=true `# 启用挂机功能` \
+      -e ENABLE_WEB_PANEL=true `# 启用控制面板功能` \
+      --name jd `# 设置容器名为jd` \
+      --network bridge `# 设置网络为桥接，直连主机` \
+      --hostname jd `# 设置主机名为jd` \
+      --restart always `# 设置开机自启` \
+      evinedeng/jd:gitee
     
 ***
 
