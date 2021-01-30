@@ -4,13 +4,15 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ## 目前系统直装均已失效，已了解到Doker还可以正常使用，一键脚本以及教程正在紧张制作中，会的可以自己先装一下，敬请期待......
 __[ 教程链接 ](https://hub.docker.com/r/evinedeng/jd)__
+__一键安装docker命令：__
 
+    curl -sSL https://get.daocloud.io/docker | sh
 __启动命令：__
 
     docker run -dit \
     -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录 /opt` \
     -v /opt/jd/log:/jd/log `# 设置日志的主机挂载目录 /opt` \
-    -p 5678:5678 `# 设置端口映射，内部端口5678，外部端口5678` \
+    -p 5678:5678 `# 设置端口映射，内部端口为5678，外部端口为5678` \
     -e ENABLE_HANGUP=true `# 启用挂机功能` \
     -e ENABLE_WEB_PANEL=true `# 启用控制面板功能` \
     --name jd `# 设置容器名为jd` \
