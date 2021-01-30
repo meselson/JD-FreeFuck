@@ -242,14 +242,14 @@ function EnvStructures() {
   if [ $? -ne 0 ];then
     if [ $SYSTEM_NAME = "Ubuntu" ]; then
       apt remove -y docker docker-engine docker.io containerd runc
-      apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common dos2unix
+      apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
       curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
       add-apt-repository -y "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
       apt update
       apt install -y docker-ce docker-ce-cli containerd.io
     elif [ $SYSTEM_NAME = "Debian" ]; then
       apt remove -y docker docker-engine docker.io containerd runc
-      apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common dos2unix
+      apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
       curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
       add-apt-repository -y "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian $(lsb_release -cs) stable"
       apt update
@@ -258,7 +258,7 @@ function EnvStructures() {
       firewall-cmd --zone=public --add-port=5678/tcp --permanent
       systemctl reload firewalld
       yum remove -y docker* runc
-      yum install -y yum-utils device-mapper-persistent-data lvm2 dos2unix
+      yum install -y yum-utils device-mapper-persistent-data lvm2
       yum-config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
       yum makecache
       yum install -y docker-ce docker-ce-cli containerd.io
@@ -266,7 +266,7 @@ function EnvStructures() {
       firewall-cmd --zone=public --add-port=5678/tcp --permanent
       systemctl reload firewalld
       yum remove -y docker* runc
-      yum -y install yum-utils device-mapper-persistent-data lvm2 dos2unix
+      yum -y install yum-utils device-mapper-persistent-data lvm2
       yum config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/fedora/docker-ce.repo
       yum makecache
       yum install -y docker-ce docker-ce-cli containerd.io
@@ -329,6 +329,11 @@ sed -i 's/.js/ now/g' /opt/jd/run-all.sh
 sed -i '1i\#!/bin/bash' /opt/jd/run-all.sh
 dos2unix /opt/jd/run-all.sh
 EOF
+  if [ $SYSTEM = "Debian" ]; then
+    apt install -y dos2unix
+  elif [ $SYSTEM = "RedHat" ]; then
+    yum install -y dos2unix
+  fi
   dos2unix /opt/jd/run-all.sh
   dos2unix /opt/jd/manual-update.sh
   bash /opt/jd/manual-update.sh
