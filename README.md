@@ -2,40 +2,21 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ***
 
-## 目前系统直装均已失效，已了解到Doker还可以正常使用，一键脚本以及教程正在紧张制作中，会的可以自己先装一下，敬请期待......
-__[ 教程链接 ](https://hub.docker.com/r/evinedeng/jd)__\
-__一键安装docker命令：__
-
-    curl -sSL https://get.daocloud.io/docker | sh
-__启动命令：__
-
-    docker run -dit \
-    -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录 /opt` \
-    -v /opt/jd/log:/jd/log `# 设置日志的主机挂载目录 /opt` \
-    -p 5678:5678 `# 设置端口映射，内部端口为5678，外部端口为5678` \
-    -e ENABLE_HANGUP=true `# 启用挂机功能` \
-    -e ENABLE_WEB_PANEL=true `# 启用控制面板功能` \
-    --name jd `# 设置容器名为jd` \
-    --network bridge `# 设置网络为桥接，直连主机` \
-    --hostname jd `# 设置主机名为jd` \
-    --restart always `# 设置开机自启` \
-    evinedeng/jd:gitee
-
 ***
 
 ## 通知：
-__2021/1/27__\
-__原项目停止更新，所有资源被封或已下架，本人一键脚本仍可部署，已部署的用户不要执行任何更新命令！目前绝大多数活动脚本已失效，静观后续... [ LXK9301/jd_scripts/issues/280 ](https://github.com/LXK9301/jd_scripts/issues/280)__
+__2021/1/31__\
+__由于某东安全团队介入，原作者Github项目资源被封或已下架，导致Linux直装失效，经过本人研究与学习，现已推出基于GNU/Linux的`Dokcer`版本，请大家重新部署。 [__
 
 ***
 
 # 《京东薅羊毛》一键部署 For Linux
 ## 用途：通过JavaScript与Shell自动化脚本参与京东商城的各种活动从而白嫖京豆
 ## 支持的 Linux (简体中文) 发行版：
-- __`Ubuntu`：支持 16.04 ~ 20.10 版本，建议优先使用Ubuntu系统__  　　附：[Win10应用商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-Ubuntu)
+- __`Ubuntu`：支持 16.04 ~ 20.10 版本，建议优先使用Ubuntu系统__  　附：[Win10应用商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-Ubuntu)
 - __`Debian`：支持 9.0 ~ 10.7 版本__
 - __`Fedora`：支持 28 ~ 33 版本__
-- __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
+- __`CentOS`：支持 8.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
   _温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，旧版系统如果遇到问题请及时向我反馈，谢谢！_
     
@@ -63,31 +44,30 @@ __原项目停止更新，所有资源被封或已下架，本人一键脚本仍
 
       1）检查系统版本、联网状态等基本条件
       2）多次执行manual-update.sh更新脚本尝试
-      3）删除/home/myid整个目录后换源重新一键部署
     _注：如果仍然报错导致部署失败无法运行项目，说明是原作者环境库的问题，请换个时间重试。_
     
 ***
 
 ## 二、接下来我们需要您京东账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：
 __1. 在[ Wiki ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，请点击链接自行获取，此方式获取的Cookie只有1个月有效期。__\
-__2. 通过通过下方`控制面板`功能部署后进入浏览器网页手机扫码获取，此方式获取的Cookie有效期为3个月。__
+__2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方式获取的Cookie有效期为3个月。__
 
 ***
 
 ## 三、配置信息
 ### 将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
-    sed -i '27c Cookie1=""' /home/myid/jd/config/config.sh
+    sed -i '27c Cookie1=""' /opt/jd/config/config.sh
   _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
 - 附1. 该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
-      sed -i '28c Cookie2=""' /home/myid/jd/config/config.sh
-      sed -i '29c Cookie3=""' /home/myid/jd/config/config.sh
-      sed -i '30c Cookie4=""' /home/myid/jd/config/config.sh
-      sed -i '31c Cookie5=""' /home/myid/jd/config/config.sh
-      sed -i '32c Cookie6=""' /home/myid/jd/config/config.sh
+      sed -i "28c Cookie2=$COOKIE2" /opt/jd/config/config.sh
+      sed -i "29c Cookie3=$COOKIE3" /opt/jd/config/config.sh
+      sed -i "30c Cookie4=$COOKIE4" /opt/jd/config/config.sh
+      sed -i "31c Cookie5=$COOKIE5" /opt/jd/config/config.sh
+      sed -i "32c Cookie6=$COOKIE6" /opt/jd/config/config.sh
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
-      sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
+      sed -i '70c export PUSH_KEY=""' /opt/jd/config/config.sh
 
 ***
 
@@ -118,13 +98,13 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 ***
 
 ## 六、项目需知
-1. 该项目运行主目录为/home/myid/jd
-2. 为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误
-3. run-all.sh为执行所有活动脚本，仍可通过原作者 bash jd.sh 命令查看教程并执行特定活动脚本
-4. 执行脚本期间可能会卡住或运行挂机脚本，可通过命令 Ctrl + Z/C 跳过继续执行剩余活动脚本
-5. 由于京东活动一直变化所以会出现无法参加活动等正常现象，可手动更新JavaScript活动脚本
-6. 如果需要更新核心JavaScript活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可
-7. 之前填入的Cookie部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过命令手动更新
+1. 该项目配置文件以及一键脚本所在目录为/opt/jd
+2. 此项目涉及 docker 容器技术，如果你对 docker基础命令 一无所知，那么请不要随意改动容器
+3. 执行脚本期间可能会卡住或运行挂机脚本，可通过命令 Ctrl + ZC 跳过继续执行剩余活动脚本
+4. 由于京东活动一直变化所以会出现无法参加活动、报错等正常现象，可手动更新活动脚本
+5. 如果需要更新活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可
+6. 之前填入的 Cookie 部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过命令手动更新
+7. 如果需要查看帮助文档以及获取更多功能，请通过 docker exec -it jd cat readme.md 命令进行查看
 8. 因为本人每天也在使用，遇到错误会在第一时间解决，遇到任何与部署相关的问题都可访问本项目寻求帮助
 
 ***
