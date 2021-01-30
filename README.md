@@ -83,7 +83,6 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 ***
 
 ## 四、使用与更新
-__友情提示：获取更多功能请进入容器查看`Readme.md`__
 - 1.如何运行脚本开始白嫖京豆？
 
       bash run-all.sh
@@ -91,7 +90,10 @@ __友情提示：获取更多功能请进入容器查看`Readme.md`__
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
-- 3.如何更新一键脚本？
+- 3.如何查看帮助文档并获取更多功能？
+
+      docker exec -it jd cat readme.md
+- 4.如何更新一键脚本？
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
     _注：适用于后期维护更新，当先前一键脚本失效需要更新时会在项目置顶通知。_
@@ -101,10 +103,6 @@ __友情提示：获取更多功能请进入容器查看`Readme.md`__
 ## 五、声明
 1. 本人项目为二次使用，我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关。
 2. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，自己查看一下这两个文件内容就全明白了，如果你不想用我写的一键脚本请自行删除，其余所有文件均为原作者创作。
-
-- __此项目原作者GitHub网址链接：__
-- [lxk0301/jd_scripts](https://github.com/lxk0301/jd_scripts)  #此项目核心JavaScript JD活动脚本作者
-- [EvineDeng/jd-base](https://github.com/LXK9301/jd_scripts)   #此项目Linux环境Shell套壳作者，在其项目[ Issues ](https://github.com/EvineDeng/jd-base/issues/185)有分帖   
     
 ***
 
