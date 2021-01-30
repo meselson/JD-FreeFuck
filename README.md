@@ -13,12 +13,11 @@ __原项目停止更新，所有资源被封或已下架，本人一键脚本仍
 
 ***
 
-# 《京东薅羊毛》一键部署脚本 For Linux
+# 《京东薅羊毛》一键部署 For Linux
 ## 用途：通过JavaScript与Shell自动化脚本参与京东商城的各种活动从而白嫖京豆
 ## 支持的 Linux (简体中文) 发行版：
 - __`Ubuntu`：支持 16.04 ~ 20.10 版本，建议优先使用Ubuntu系统__  　　附：[Win10应用商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-Ubuntu)
-- __`Debian`：支持 8.0 ~ 10.7 版本__
-- __`Kali`：支持 2018 ~ 2020.4 版本__
+- __`Debian`：支持 9.0 ~ 10.7 版本__
 - __`Fedora`：支持 28 ~ 33 版本__
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
@@ -73,10 +72,6 @@ __2. 通过通过下方`控制面板`功能部署后进入浏览器网页手机�
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '70c export PUSH_KEY=""' /home/myid/jd/config/config.sh
-- 附3. 如果需要使用[ 控制面板 ](https://github.com/EvineDeng/jd-base/wiki/Panel)功能，安装命令如下：
-
-      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-panel.sh)
-    _注：此功能可用于在浏览器编辑配置文件、配置定时运行脚本、自定义脚本等功能，脚本安装后已默认启动。_
 
 ***
 
