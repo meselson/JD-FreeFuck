@@ -2,10 +2,10 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ***
 
-目前系统直装均已失效，已了解到Doker教程还可以正常使用，教程以及脚本正在制作中，会的可以自己先装一下，敬请期待...
-[ 教程链接 ](bash <(curl -sL https://gitee.com/SuperManito/LinuxMirrors/raw/main/RedHat-Official-Mirror-Generation.sh))
-
 ## 通知：
+__目前系统直装均已失效，已了解到Doker教程还可以正常使用，教程以及脚本正在制作中，会的可以自己先装一下，敬请期待__...
+__[ 教程链接 ](https://hub.docker.com/r/evinedeng/jd)__
+
 __2021/1/27__\
 __原项目停止更新，所有资源被封或已下架，本人一键脚本仍可部署，已部署的用户不要执行任何更新命令！目前绝大多数活动脚本已失效，静观后续... [ LXK9301/jd_scripts/issues/280 ](https://github.com/LXK9301/jd_scripts/issues/280)__
 
