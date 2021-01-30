@@ -2,16 +2,14 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ***
 
-***
-
 ## 通知：
 __2021/1/31__\
-__由于某东安全团队介入，原作者Github项目资源被封或已下架，导致Linux直装失效，经过本人研究与学习，现已推出基于GNU/Linux的`Dokcer`版本，请大家重新部署。 [__
+__由于某D安全团队介入，原作者Github项目资源被封或已下架，导致Linux直装失效，经过本人的研究与学习，现已推出基于GNU/Linux的`Dokcer`版本，请大家重新部署，制作不易，有条件的朋友可以打赏，万分感谢！
 
 ***
 
-# 《京东薅羊毛》一键部署 For Linux
-## 用途：通过JavaScript与Shell自动化脚本参与京东商城的各种活动从而白嫖京豆
+# 《JD薅羊毛》一键部署 For Linux
+## 用途：通过JavaScript与Shell自动化脚本参与京东商城的各种活动从而白嫖J豆
 ## 支持的 Linux (简体中文) 发行版：
 - __`Ubuntu`：支持 16.04 ~ 20.10 版本，建议优先使用Ubuntu系统__  　附：[Win10应用商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-Ubuntu)
 - __`Debian`：支持 9.0 ~ 10.7 版本__
@@ -43,12 +41,13 @@ __由于某东安全团队介入，原作者Github项目资源被封或已下架
 - 附3. 如果执行一键命令后无效或部署后遇到报错怎么办？
 
       1）检查系统版本、联网状态等基本条件
-      2）多次执行manual-update.sh更新脚本尝试
+      2）检查容器是否启动正常
+      3）多次执行manual-update.sh更新脚本尝试
     _注：如果仍然报错导致部署失败无法运行项目，说明是原作者环境库的问题，请换个时间重试。_
     
 ***
 
-## 二、接下来我们需要您京东账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：
+## 二、接下来我们需要您JD账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：
 __1. 在[ Wiki ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，请点击链接自行获取，此方式获取的Cookie只有1个月有效期。__\
 __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方式获取的Cookie有效期为3个月。__
 
@@ -79,7 +78,7 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 - 2.如何更新活动脚本？
 
       bash manual-update.sh
-    _注：建议每次运行活动脚本前执行一次，京东活动经常变化，原作者更新也很频繁。_
+    _注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
 - 3.如何更新一键脚本？
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
@@ -88,11 +87,11 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 ***
 
 ## 五、声明
-1. 本人项目为二次使用，我不是该《京东薅羊毛》项目的开发者，所有活动类问题与我无关。
+1. 本人项目为二次使用，我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关。
 2. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，自己查看一下这两个文件内容就全明白了，如果你不想用我写的一键脚本请自行删除，其余所有文件均为原作者创作。
 
 - __此项目原作者GitHub网址链接：__
-- [lxk0301/jd_scripts](https://github.com/lxk0301/jd_scripts)  #此项目核心JavaScript京东活动脚本作者
+- [lxk0301/jd_scripts](https://github.com/lxk0301/jd_scripts)  #此项目核心JavaScript JD活动脚本作者
 - [EvineDeng/jd-base](https://github.com/LXK9301/jd_scripts)   #此项目Linux环境Shell套壳作者，在其项目[ Issues ](https://github.com/EvineDeng/jd-base/issues/185)有分帖   
     
 ***
@@ -101,7 +100,7 @@ __友情提示：获取更多功能请访问[ /EvineDeng/jd-base/wiki/Linux](htt
 1. 该项目配置文件以及一键脚本所在目录为/opt/jd
 2. 此项目涉及 docker 容器技术，如果你对 docker基础命令 一无所知，那么请不要随意改动容器
 3. 执行脚本期间可能会卡住或运行挂机脚本，可通过命令 Ctrl + ZC 跳过继续执行剩余活动脚本
-4. 由于京东活动一直变化所以会出现无法参加活动、报错等正常现象，可手动更新活动脚本
+4. 由于JD活动一直变化所以会出现无法参加活动、报错等正常现象，可手动更新活动脚本
 5. 如果需要更新活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可
 6. 之前填入的 Cookie 部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过命令手动更新
 7. 如果需要查看帮助文档以及获取更多功能，请通过 docker exec -it jd cat readme.md 命令进行查看
