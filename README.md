@@ -8,15 +8,15 @@ __[ 教程链接 ](https://hub.docker.com/r/evinedeng/jd)__
 __启动命令：__
 
     docker run -dit \
-    -v /opt/jd/config:/jd/config \   ## 设置配置文件的主机挂载目录 /opt
-    -v /opt/jd/log:/jd/log \         ## 设置日志的主机挂载目录 /opt
-    -p 5678:5678 \                   ## 设置端口映射
-    -e ENABLE_HANGUP=true \          ## 启用挂机程序功能
-    -e ENABLE_WEB_PANEL=true \       ## 启用控制面板功能
-    --name jd \                      ## 设置容器名
-    --network bridge \               ## 设置网络为桥接直连主机
-    --hostname jd \                  ## 设置主机名
-    --restart always \               ## 设置开机自启
+    -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录 /opt` \
+    -v /opt/jd/log:/jd/log `# 设置日志的主机挂载目录 /opt` \
+    -p 5678:5678 `# 设置端口映射` \
+    -e ENABLE_HANGUP=true `# 启用挂机程序功能` \
+    -e ENABLE_WEB_PANEL=true `# 启用控制面板功能` \
+    --name jd `# 设置容器名` \
+    --network bridge `# 设置网络为桥接直连主机` \
+    --hostname jd `# 设置主机名` \
+    --restart always `# 设置开机自启` \
     evinedeng/jd:gitee
 
 ***
