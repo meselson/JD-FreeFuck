@@ -52,7 +52,7 @@ function EnvJudgment() {
 ## 更换国内源：
 function ReplaceMirror() {
   ## 此处调用一键更换国内更新源（定制版）脚本 内容过长所以没有直接加入到此脚本中
-  bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/ReplaceMirrors.sh)
+  bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/ReplaceMirrors.sh)
 }
 
 ## 环境搭建：
