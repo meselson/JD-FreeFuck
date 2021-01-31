@@ -69,13 +69,14 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 ### 将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '27c Cookie1=""' /opt/jd/config/config.sh
   _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
-- 附1. 该项目可同时运行多个账号（最多6个），请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
+- 附1. 该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
       sed -i "28c Cookie2=$COOKIE2" /opt/jd/config/config.sh
       sed -i "29c Cookie3=$COOKIE3" /opt/jd/config/config.sh
       sed -i "30c Cookie4=$COOKIE4" /opt/jd/config/config.sh
       sed -i "31c Cookie5=$COOKIE5" /opt/jd/config/config.sh
       sed -i "32c Cookie6=$COOKIE6" /opt/jd/config/config.sh
+   _注：账号无上限，超出6个账号后需要自己在配置文件创建变量，自行查看配置文件的注释。_
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '70c export PUSH_KEY=""' /opt/jd/config/config.sh
