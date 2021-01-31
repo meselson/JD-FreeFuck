@@ -244,14 +244,14 @@ function EnvStructures() {
       apt remove -y docker docker-engine docker.io containerd runc
       apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
       curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-      add-apt-repository -y "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+      add-apt-repository -y "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $SYSTEM_VERSION stable"
       apt update
       apt install -y docker-ce docker-ce-cli containerd.io
     elif [ $SYSTEM_NAME = "Debian" ]; then
       apt remove -y docker docker-engine docker.io containerd runc
       apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
       curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-      add-apt-repository -y "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian $(lsb_release -cs) stable"
+      add-apt-repository -y "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian $SYSTEM_VERSION stable"
       apt update
       apt install -y docker-ce docker-ce-cli containerd.io
     elif [ $SYSTEM_NAME = "CentOS" ]; then
@@ -270,6 +270,9 @@ function EnvStructures() {
       yum config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/fedora/docker-ce.repo
       yum makecache
       yum install -y docker-ce docker-ce-cli containerd.io
+    else
+      firewall-cmd --zone=public --add-port=5678/tcp --permanent
+      systemctl reload firewalld
     fi
   fi
   ls /etc | grep /docker/daemon.json
@@ -364,7 +367,7 @@ function ResultJudgment() {
     echo -e "\033[32m ------------------- 一键部署成功，请执行 bash run-all.sh 命令开始你的薅羊毛行为 ------------------- \033[0m"
     echo -e "\033[32m +==================================================================================================+ \033[0m"
     echo -e "\033[32m | 注意：该项目配置文件以及一键脚本所在目录为/opt/jd                                                | \033[0m"
-    echo -e "\033[32m | 注意：此项目涉及 docker 容器技术，如果你对 docker基础命令 一无所知，那么请不要随意改动容器       | \033[0m"
+    echo -e "\033[32m | 注意：此项目涉及 Docker 容器技术，如果你对 Docker基础命令 一无所知，那么请不要随意改动容器       | \033[0m"
     if [ $SYSTEM = "Debian" ]; then
       echo -e "\033[32m | 注意：执行脚本期间可能会卡住或运行挂机脚本，可通过命令 Ctrl + Z 跳过继续执行剩余活动脚本         | \033[0m"
     elif [ $SYSTEM = "RedHat" ]; then
