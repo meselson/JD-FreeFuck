@@ -1028,7 +1028,7 @@ function EnvStructures() {
     fi
   fi
   ## 配置国内镜像仓库加速
-  ls /etc | grep /docker/daemon.json
+  ls /etc | grep /docker/daemon.json -wq
   if [ $? -eq 0 ];then
     cp /etc/docker/daemon.json /etc/docker/daemon.json.bak
     echo -e "\033[32m已备份原有daemon.json...... \033[0m"
