@@ -64,8 +64,8 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 ***
 
 ## 二、接下来我们需要您JD账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：
-__1. 在[ Wiki ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，请点击链接自行获取，此方式获取的Cookie有效期为1个月。__\
-__2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方式获取的Cookie有效期为3个月。（优先推荐）__
+__1. 在[ Wiki ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，请点击链接自行获取，此方式获取的Cookie部分内容有效期为1个月。__\
+__2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方式获取的Cookie部分内容有效期为3个月。（优先推荐）__
 
 ***
 
