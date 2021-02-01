@@ -37,14 +37,14 @@ __由于某D安全团队介入，原作者Github项目资源被封或已下架�
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
-- 附2. 如果没有科学上网方式使用Github命令部署项目时提示无法解决`Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
+- 附2. 如果没有科学上网方式使用Github命令部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
 - 附3. 如果执行一键命令后无效或部署后遇到报错怎么办？
 
       1）检查系统版本、联网状态等基本条件
-      2）检查容器是否启动正常
+      2）检查容器是否启动正常、镜像仓库是否可用
       3）多次执行manual-update.sh更新脚本尝试
 - 附4. 如果你已经安装了`Docker`不想用我的一键脚本？
 
@@ -59,7 +59,7 @@ __由于某D安全团队介入，原作者Github项目资源被封或已下架�
       --hostname jd `# 设置主机名为jd` \
       --restart always `# 设置容器开机自启` \
       evinedeng/jd:gitee
-    _注：如果镜像拉取失败提示`TLS handshake timeout`，那么请将镜像仓库换成国内阿里云，另外不是所有的国内仓库都有大佬的镜像并且不一定是最新版，阿里云肯定没有问题。_
+    _注：如果镜像拉取失败提示`TLS handshake timeout`，那么请将镜像仓库换成国内阿里云，另外不是所有的国内仓库都有大佬的镜像并且不一定是最新版，使用阿里云肯定没有问题。_
     
 ***
 
