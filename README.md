@@ -49,15 +49,15 @@ __由于某D安全团队介入，原作者Github项目资源被封或已下架�
 - 附4. 如果你已经安装了`Docker`不想用我的一键脚本？
 
       docker run -dit \
-      -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录 /opt` \
-      -v /opt/jd/log:/jd/log `# 设置日志的主机挂载目录 /opt` \
-      -p 5678:5678 `# 设置端口映射，内部端口为5678，外部端口为5678` \
+      -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录为/opt` \
+      -v /opt/jd/log:/jd/log `# 设置日志的主机挂载目录为/opt` \
+      -p 5678:5678 `# 设置端口映射，格式为 "内部端口号:外部端口号" ，外部端口号可自定义` \
       -e ENABLE_HANGUP=true `# 启用挂机功能` \
       -e ENABLE_WEB_PANEL=true `# 启用控制面板功能` \
       --name jd `# 设置容器名为jd` \
       --network bridge `# 设置网络为桥接，直连主机` \
       --hostname jd `# 设置主机名为jd` \
-      --restart always `# 设置开机自启` \
+      --restart always `# 设置容器开机自启` \
       evinedeng/jd:gitee
     
 ***
