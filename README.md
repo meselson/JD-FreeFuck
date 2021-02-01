@@ -123,4 +123,5 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 
 ## 如果您有意见与建议欢迎到 [Issuse](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
 ## 如果老板成功薅到羊毛，赏1元可否(∩_∩)
+![](https://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iMtKA6HmNU30Pu2EijiozuE!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4)
 <img src="https://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iMtKA6HmNU30Pu2EijiozuE!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4" width="300" height="300" alt="微信赞赏码"/><br/>
