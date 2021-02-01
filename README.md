@@ -20,7 +20,7 @@ __由于某D安全团队介入，原作者Github项目资源被封或已下架�
 
   _温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！如果您使用的系统不在本项目的支持范围内，请根据[ Wiki教程 ](https://github.com/SuperManito/JD-FreeFuck/wiki/%E9%92%88%E5%AF%B9%E9%A1%B9%E7%9B%AE%E6%9C%AA%E9%80%82%E9%85%8D%E7%9A%84-Linux%E5%8F%91%E8%A1%8C%E7%89%88-%E7%9A%84%E9%83%A8%E7%BD%B2%E6%96%B9%E6%B3%95)自行部署，如果遇到问题请及时向我反馈，谢谢！_
 
-### `码云Gitee`同步更新此项目，如果您所在的环境经常性无法访问Github，建议收藏Gitee发布页[](https://gitee.com/SuperManito/JD-FreeFuck)
+### 此项目`码云Gitee`同步更新，如果您所在的环境经常性无法访问Github，建议收藏Gitee发布页[ 点击此处 ](https://gitee.com/SuperManito/JD-FreeFuck)
 ***
 
 # 下面进入正题，部署教程共三步，请认真阅读下面的内容
