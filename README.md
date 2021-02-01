@@ -111,8 +111,8 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 \
 __原作者项目链接：__\
 __[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) ## 此项目JavaScripts活动脚本开发者__\
-__[ EvineDeng ](https://github.com/evinedeng) ## 此项目Linux环境Shell套壳作者__\
-__[ evinedeng/jd ](https://hub.docker.com/r/evinedeng/jd) ## 此项目使用的Docker镜像__
+__[ EvineDeng ](https://github.com/evinedeng)       ## 此项目Linux环境Shell套壳作者__\
+__[ evinedeng/jd ](https://hub.docker.com/r/evinedeng/jd)     ## 此项目使用的Docker镜像__
     
 ***
 
