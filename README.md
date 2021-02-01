@@ -4,7 +4,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ## 通知：
 __2021/1/31__\
-__由于某D安全团队介入，原作者Github项目资源被封或已下架，导致Linux直装失效，根据大佬给出的方案，经过本人的研究，现已推出基于GNU/Linux的[ Dokcer ](https://hub.docker.com/r/evinedeng/jd)版本，请大家重新部署！\
+__由于某D安全团队介入，原作者Github项目资源被封或已下架，导致Linux直装失效，根据大佬给出的方案，经过本人的研究，现已推出基于GNU/Linux的[ Dokcer ](https://hub.docker.com/r/evinedeng/jd)版本，请大家重新部署！
+\
 旧版本系统直装与现版本Docker无任何关联，之前系统直装的朋友删除home下myid整个目录即可。__
 
 ***
