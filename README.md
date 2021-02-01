@@ -12,7 +12,7 @@ __由于某D安全团队介入，原作者Github项目资源被封或已下架�
 
 # 《JD薅羊毛》一键部署 For Linux
 ## 用途：通过 JavaScript 与 Shell 自动化脚本参与JD商城的各种活动从而白嫖J豆
-## 支持的 Linux (简体中文) 发行版：
+## 支持的 GNU/Linux (简体中文) 发行版：
 - __`Ubuntu`：支持 16.04 ~ 20.10 版本，建议优先使用Ubuntu系统__  　　_附：[Win10应用商店安装Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-Ubuntu)_
 - __`Debian`：支持 9.0 ~ 10.7 版本__
 - __`Fedora`：支持 32 ~ 33 版本__
