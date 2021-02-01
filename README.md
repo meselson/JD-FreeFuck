@@ -106,8 +106,13 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 ***
 
 ## 五、声明
-1. 本人项目为二次使用，我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关。
-2. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，自己查看一下这两个文件内容就全明白了，如果你不想用我写的一键脚本请自行删除，其余所有文件均为原作者创作。
+1. 本人项目为二次使用，我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关。\
+2. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，自己查看一下这两个文件内容就全明白了，如果你不想用我写的一键脚本请自行删除，其余所有文件均为原作者创作。\
+
+__原作者项目链接：__
+__[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) ## 此项目JavaScripts活动脚本开发者\
+__[ EvineDeng ](https://github.com/evinedeng) ## 此项目Linux环境Shell套壳作者
+__[ evinedeng/jd ](https://hub.docker.com/r/evinedeng/jd) ## 此项目使用的Docker镜像
     
 ***
 
@@ -119,11 +124,6 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 5. 如果需要更新活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可
 6. 之前填入的 Cookie 部分内容具有一定的时效性，若提示失效请根据教程重新获取并通过命令手动更新
 7. 因为本人每天也在使用，遇到错误会在第一时间解决，遇到任何与部署相关的问题都可访问本项目寻求帮助
-
-原作者项目链接：
-[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) ## 此项目JavaScripts活动脚本开发者
-[evinedeng/jd](https://github.com/evinedeng) ## 此项目Linux环境Shell套壳作者
-[evinedeng/jd](https://hub.docker.com/r/evinedeng/jd) ## 本项目使用的Docker镜像
 
 ***
 
