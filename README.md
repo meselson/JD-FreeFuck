@@ -28,12 +28,12 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 ***
 
 ## 一、命令一键部署
-- __Github：__
+__Github：__
 
-      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
-- __Gitee：__
+    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+__Gitee：__
 
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
+    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
