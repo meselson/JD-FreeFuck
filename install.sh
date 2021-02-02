@@ -1,6 +1,6 @@
 #!/bin/bash
 #Author:SuperManito
-#Modified:2021-2-1
+#Modified:2021-2-3
 
 ## 项目名称:《京东薅羊毛》一键部署 For Linux，通过参与京东商城的各种活动白嫖京豆
 ## 适用系统: Ubuntu 16.04 ~ 20.10 | Debian 9.0 ~ 10.7 | CentOS 8.0 ~ 8.3 | Fedora 32 ~ 33
@@ -1085,6 +1085,12 @@ docker exec -it jd bash jd.sh | grep -o 'jx_[a-z].*' >> /opt/jd/run-all.sh
 sed -i 's/^/docker exec -it jd bash jd.sh &/g' /opt/jd/run-all.sh
 sed -i 's/.js/ now/g' /opt/jd/run-all.sh
 sed -i '1i\#!/bin/bash' /opt/jd/run-all.sh
+cat /opt/jd/run-all.sh | grep jd_crazy_joy_coin -wq
+if [ $? -eq 0 ];then
+  sed -i "s/docker exec -it jd bash jd.sh jd_crazy_joy_coin now//g" /opt/jd/run-all.sh
+  sed -i '/^\s*$/d' /opt/jd/run-all.sh
+  echo "docker exec -it jd bash jd.sh jd_crazy_joy_coin now" >>/opt/jd/run-all.sh
+fi
 dos2unix /opt/jd/run-all.sh
 EOF
   if [ $SYSTEM = "Debian" ]; then
