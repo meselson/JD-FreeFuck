@@ -69,7 +69,7 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 
 ***
 
-## 三、配置信息
+## 三、手动配置信息
 ### 将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '27c Cookie1=""' /opt/jd/config/config.sh
   _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
@@ -84,6 +84,7 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '70c export PUSH_KEY=""' /opt/jd/config/config.sh
+- 以上内容也可在控制面板功能中完成
 
 ***
 
