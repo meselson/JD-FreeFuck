@@ -45,7 +45,7 @@ __Gitee__
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
    _注：如果部署后无法访问控制面板，请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放端口、允许网页流量等重要设置。_ 
-- __部署前需知：__
+- __部署需知：__
 1. 检查系统版本是否符合支持范围，判定联网状态等基本条件
 1. 本项目默认安装目录为`/opt/jd`，如果你不想安装到该目录请自行下载源码并更改相关变量手动部署
 3. 受网络环境因素影响，如果部署失败请再次尝试，否则请反馈至[ Issuse ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
