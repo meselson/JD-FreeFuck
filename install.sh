@@ -1014,7 +1014,6 @@ function EnvStructures() {
     sed -i "4 s#deb.nodesource.com/node_14.x#mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/#" /etc/apt/sources.list.d/nodesource.list
     apt update
     apt install -y nodejs
-    apt dist-upgrade -y
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
     yum remove -y nodejs npm >/dev/null 2>&1
