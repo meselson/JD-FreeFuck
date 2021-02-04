@@ -33,7 +33,7 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 1. 本项目默认安装目录为`/opt/jd`，如果你不想安装到该目录请自行下载源码并更改相关变量手动部署
 3. 受网络环境因素影响，如果部署失败请再次尝试，否则请反馈至[ Issuse ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
 - __安装curl软件包：__
-
+ 
       apt install -y curl 或 yum install -y curl
 - __常规环境部署：__
  
