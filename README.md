@@ -4,7 +4,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 __通知：__\
 __2021/1/31__\
-__项目失效！Linux环境原作者人间蒸发，Docker镜像已下架，已部署的朋友不影响使用，正在研究新的方法，基于Docker-Compose[   lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/docker)。__
+__项目暂时无法部署！Linux环境原作者Evine退隐江湖，Docker镜像已下架，已部署的朋友不影响使用，正在研究新的方法，基于原作者公布的源码。__
 
 - __旧版本系统直装与现版本在Docker容器上运行无任何关联，之前系统直装的朋友删除home下myid整个目录即可。__
 
