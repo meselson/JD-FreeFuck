@@ -18,14 +18,14 @@
 
 ## ==================================== 本 地 部 署 需 要 定 义 的 变 量 ====================================
 ## 安装目录
-BASE="/opt/jd" #
+BASE="/opt/jd"
 ## 京东账户
-COOKIE1='""' #
-COOKIE2='""' #
-COOKIE3='""' #
-COOKIE4='""' #
-COOKIE5='""' #
-COOKIE6='""' #
+COOKIE1='""'
+COOKIE2='""'
+COOKIE3='""'
+COOKIE4='""'
+COOKIE5='""'
+COOKIE6='""'
 ##
 ## 配置京东账户注意事项：
 ## 1. 将 Cookie部分内容 填入"双引号"内，例 COOKIE1='"pt_key=xxxxxx;pt_pin=xxxxxx;"'
