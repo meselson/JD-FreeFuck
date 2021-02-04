@@ -3,8 +3,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 ***
 
 __通知：__\
-__2021/1/31__\
-__项目暂时无法部署！Linux环境原作者Evine退隐江湖，Docker镜像已下架，已部署的朋友不影响使用，本人正在编写新方法，基于原作者公布的源码，敬请期待......__
+__2021/2/5__\
+__项目暂时无法部署！Linux环境原作者Evine退隐江湖，Docker镜像已下架，已部署的朋友不影响使用，本人正在编写新方法，基于原作者公布的源码，马上就来......__
 
 ***
 
@@ -44,20 +44,6 @@ __Gitee：__
       1）检查系统版本、联网状态等基本条件
       2）检查容器是否启动正常、镜像仓库是否可用
       3）多次执行manual-update.sh更新脚本尝试
-- 附4. 如果你已经安装了`Docker`不想用我的一键脚本？
-
-      docker run -dit \
-      -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录为/opt` \
-      -v /opt/jd/log:/jd/log `# 设置日志的主机挂载目录为/opt` \
-      -p 5678:5678 `# 设置端口映射，格式为 "内部端口号:外部端口号" ，外部端口号可自定义` \
-      -e ENABLE_HANGUP=true `# 启用挂机功能` \
-      -e ENABLE_WEB_PANEL=true `# 启用控制面板功能` \
-      --name jd `# 设置容器名为jd` \
-      --network bridge `# 设置网络为桥接，直连主机` \
-      --hostname jd `# 设置主机名为jd` \
-      --restart always `# 设置容器开机自启` \
-      evinedeng/jd:gitee
-    _注：如果镜像拉取失败提示`TLS handshake timeout`，那么请将镜像仓库换成国内阿里云，另外不是所有的国内仓库都有大佬的镜像并且不一定是最新版，使用阿里云肯定没有问题。_
     
 ***
 
@@ -118,7 +104,6 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 __原作者项目链接：__\
 __[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　## JavaScripts活动脚本开发者__\
 __[ EvineDeng ](https://github.com/evinedeng) 　　　　## Linux环境Shell套壳作者__\
-__[ evinedeng/jd ](https://hub.docker.com/r/evinedeng/jd) 　　　## 本项目所使用的Docker镜像__
     
 ***
 
