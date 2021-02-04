@@ -1082,7 +1082,7 @@ function AutoScript() {
   if [ $? -eq 0 ]; then
     sed -i "s/bash jd.sh jd_crazy_joy_coin.sh now//g" $BASE/run-all.sh
     sed -i '/^\s*$/d' $BASE/run-all.sh
-    echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
+    echo "bash jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
   fi
   ## 编写一键更新脚本：
   touch $BASE/manual-update.sh
