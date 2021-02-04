@@ -16,7 +16,8 @@ __新版本为系统直装，基于原作者公布的源码开发而来，制作
 - __`Debian`：支持 9.0 ~ 10.7 版本__
 - __`Fedora`：支持 28 ~ 33 版本__
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
-  _附：[Windows10安装 WSL Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
+
+  _附：[Windows10安装 WSL Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_\
   _温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！_\
 \
 __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法访问Github，建议收藏Gitee项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__
