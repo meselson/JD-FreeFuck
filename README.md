@@ -4,7 +4,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 __通知：__\
 __2021/2/5__\
-__项目暂时无法部署！Linux环境原作者Evine退隐江湖，Docker镜像已下架，已部署的朋友不影响使用，本人正在编写新方法，基于原作者公布的源码，马上就来......__
+__由于Linux环境原作者退隐江湖，Docker镜像已下架，已部署的朋友重新部署......__
+__新版本为系统直装，基于原作者公布的源码开发，制作不易，感谢支持！__
 
 ***
 
@@ -16,7 +17,7 @@ __项目暂时无法部署！Linux环境原作者Evine退隐江湖，Docker镜�
 - __`Fedora`：支持 28 ~ 33 版本__
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
-  _温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，暂不支持WSL，如果您使用的系统不在本项目的支持范围内，请根据[  Wiki教程 ](https://github.com/SuperManito/JD-FreeFuck/wiki/%E9%92%88%E5%AF%B9%E9%A1%B9%E7%9B%AE%E6%9C%AA%E9%80%82%E9%85%8D-GNU-Linux%E5%8F%91%E8%A1%8C%E7%89%88-%E7%9A%84%E9%83%A8%E7%BD%B2%E6%96%B9%E6%B3%95)自行部署，如果遇到问题请及时向我反馈，谢谢！_\
+  _温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！_\
 \
 __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法访问Github，建议收藏Gitee项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__
 ***
@@ -25,7 +26,11 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
     
 ***
 
-## 一、命令一键部署
+## 一、命令部署
+- 1. 安装curl软件包：
+
+      apt install -y curl 或 yum install -y curl
+- 2. 
 __Github：__
 
     bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
