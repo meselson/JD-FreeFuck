@@ -32,18 +32,18 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
  
 __Github__
 
-      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
 __Gitee__
 
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
+    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
 - __VPS环境：__
  
 __Github__
 
-      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
+    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
 __Gitee__
 
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
+    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
    _注：如果部署后无法访问控制面板，请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放端口、允许网页流量等重要设置。_ 
 - __部署需知：__
 1. 检查系统版本是否符合支持范围，判定联网状态等基本条件
