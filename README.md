@@ -36,7 +36,7 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 
       apt install -y curl 或 yum install -y curl
 - __常规环境：__\
-\
+ 
 __Github__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
@@ -44,7 +44,7 @@ __Gitee__
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
 - __VPS环境：__\
-\
+ 
 __Github__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
