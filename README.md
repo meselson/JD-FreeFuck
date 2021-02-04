@@ -33,28 +33,28 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 1. 本项目默认安装目录为`/opt/jd`，如果你不想安装到该目录请自行下载源码并更改相关变量手动部署
 3. 受网络环境因素影响，如果部署失败请再次尝试，否则请反馈至[ Issuse ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
 - __安装curl软件包：__
- 
 
       apt install -y curl 或 yum install -y curl
-- __常规环境部署：__
- 
+- __常规环境部署：__\
+
 __Github__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+
 __Gitee__
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
-- __VPS环境部署：__
- 
+- __VPS环境部署：__\
+
 __Github__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
+
 __Gitee__
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
    _注：如果部署后无法访问控制面板，请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放端口、允许网页流量等重要设置。_    
 - 附. 如果没有科学上网方式使用Github命令部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
- 
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
