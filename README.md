@@ -2,13 +2,9 @@ __如果您觉得这个项目不错的话可以在右上角给颗小星星吗？
 
 ***
 
-__更新：__\
-__2021/2/3__\
-__更新了一键脚本，将` run-all.sh `一键执行所有活动脚本中的` crazy_joy_coin `挂机活动移动到了末尾，这样就不用每次中途执行` Ctrl + C `命令跳过了，请大家执行更新命令，在下方第四部分第5条。__\
-\
 __通知：__\
 __2021/1/31__\
-__由于某D安全团队介入，原作者Github项目资源被封或已下架，导致Linux直装失效，根据大佬给出的方案，经过本人的研究，现已推出基于GNU/Linux的[ Dokcer ](https://hub.docker.com/r/evinedeng/jd)版本，请大家重新部署！__
+__项目失效！Linux环境原作者人间蒸发，Docker镜像已下架，已部署的朋友不影响使用，正在研究新的方法，基于Docker-Compose[   lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/docker)。__
 
 - __旧版本系统直装与现版本在Docker容器上运行无任何关联，之前系统直装的朋友删除home下myid整个目录即可。__
 
