@@ -35,19 +35,19 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 
       apt install -y curl 或 yum install -y curl
 - __常规环境：__\
-Github
+__Github__
 
-    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
-Gitee
+      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+__Gitee__
 
-    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
 - __VPS环境：__\
-Github
+__Github__
 
-    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
-Gitee
+      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
+__Gitee__
 
-    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
    _注：如果部署后无法访问控制面板，请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放端口、允许网页流量等重要设置。_    
 - 附. 如果没有科学上网方式使用Github命令部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
