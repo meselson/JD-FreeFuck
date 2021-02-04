@@ -76,7 +76,7 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
    _注：账号无上限，超出6个账号后需要自己在配置文件创建变量，自行查看配置文件中的注释。_
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
-      sed -i '70c export PUSH_KEY=""' /opt/jd/config/config.sh
+      sed -i '95c export PUSH_KEY=""' /opt/jd/config/config.sh
 - 以上全部内容也可在控制面板功能中的浏览器网页完成配置，可取代Linux命令
 
 ***
