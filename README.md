@@ -28,7 +28,7 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 ***
 
 ## 一、命令部署
-- __常规环境部署：__
+- __常规环境：__
  
 __Github__
 
@@ -36,7 +36,7 @@ __Github__
 __Gitee__
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
-- __VPS环境部署：__
+- __VPS环境：__
  
 __Github__
 
