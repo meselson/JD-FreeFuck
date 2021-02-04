@@ -123,7 +123,7 @@ function ProjectDeployment() {
   systemctl reload firewalld
   cp $BASE/sample/auth.json $BASE/config/auth.json
   cd $BASE/panel
-  npm install || npm install --registry=https://registry.npm.taobao.org
+  npm install
   npm install -g pm2
   pm2 start server.js
   cd $BASE
