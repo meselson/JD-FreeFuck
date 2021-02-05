@@ -1046,7 +1046,7 @@ function ProjectDeployment() {
     rm -rf /opt/jd
   fi
   ## 下载源码并创建目录
-  wget -P /opt https://github.com/SuperManito/JD-FreeFuck/releases/download/SourceCode/jd.tar.gz
+  wget -P /opt https://gitee.com/SuperManito/JD-FreeFuck/attach_files/610490/download/jd.tar.gz
   mkdir -p $BASE
   tar -zxvf /opt/jd.tar.gz -C $BASE
   rm -rf /opt/jd.tar.gz
