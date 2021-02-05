@@ -102,7 +102,7 @@ function EnvStructures() {
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     yum install -y git wget curl perl moreutils
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-    yum install -y nodejs npm
+    yum install -y nodejs
   fi
 }
 
