@@ -1007,7 +1007,11 @@ function EnvStructures() {
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     apt install -y git wget curl perl moreutils
     curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-    sed -i "s#deb.nodesource.com#mirrors.tuna.tsinghua.edu.cn/nodesource/deb#" /etc/apt/sources.list.d/nodesource.list
+    tail /etc/apt/sources.list.d/nodesource.list >>/etc/apt/sources.list.d/nodesource.list
+    sed -i "1 s#deb.nodesource.com#mirrors.ustc.edu.cn/nodesource/deb#" /etc/apt/sources.list.d/nodesource.list
+    sed -i "2 s#deb.nodesource.com#mirrors.ustc.edu.cn/nodesource/deb#" /etc/apt/sources.list.d/nodesource.list
+    sed -i "3 s#deb.nodesource.com/node_14.x#mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/#" /etc/apt/sources.list.d/nodesource.list
+    sed -i "4 s#deb.nodesource.com/node_14.x#mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/#" /etc/apt/sources.list.d/nodesource.list
     apt update
     apt install -y nodejs
     apt autoremove -y
@@ -1016,7 +1020,7 @@ function EnvStructures() {
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     yum install -y git wget curl perl moreutils
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-    sed -i "s#rpm.nodesource.com#mirrors.tuna.tsinghua.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
+    sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
     yum install -y nodejs
   fi
@@ -1133,7 +1137,7 @@ function ResultJudgment() {
     echo -e "\033[32m |                                                                                                     | \033[0m"
     echo -e "\033[32m |       2. 为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误                       | \033[0m"
     echo -e "\033[32m |                                                                                                     | \033[0m"
-    echo -e "\033[32m |       3. 手动执行 run-all 脚本后无需守在电脑旁，会在最后自动运行挂机活动脚本                        | \033[0m"
+    echo -e "\033[32m |       3. 手动执行 run-all 脚本后无需守在电脑旁，会自动在最后运行挂机活动脚本                        | \033[0m"
     echo -e "\033[32m |                                                                                                     | \033[0m"
     if [ $SYSTEM = "Debian" ]; then
       echo -e "\033[32m |       4. 执行 run-all 脚本期间如果卡住，可按回车键尝试或通过命令 Ctrl + Z 跳过继续执行剩余活动脚本  | \033[0m"
