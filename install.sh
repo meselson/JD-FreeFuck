@@ -1008,10 +1008,10 @@ function EnvStructures() {
     apt install -y git wget curl perl moreutils
     curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
     tail /etc/apt/sources.list.d/nodesource.list >>/etc/apt/sources.list.d/nodesource.list
-    sed -i "1 s#deb.nodesource.com#mirrors.ustc.edu.cn/nodesource/deb#" /etc/apt/sources.list.d/nodesource.list
-    sed -i "2 s#deb.nodesource.com#mirrors.ustc.edu.cn/nodesource/deb#" /etc/apt/sources.list.d/nodesource.list
-    sed -i "3 s#deb.nodesource.com/node_14.x#mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/#" /etc/apt/sources.list.d/nodesource.list
-    sed -i "4 s#deb.nodesource.com/node_14.x#mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/#" /etc/apt/sources.list.d/nodesource.list
+    sed -i "1 s#deb.nodesource.com/node_14.x#mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/#" /etc/apt/sources.list.d/nodesource.list
+    sed -i "2 s#deb.nodesource.com/node_14.x#mirrors.tuna.tsinghua.edu.cn/nodesource/deb_14.x/#" /etc/apt/sources.list.d/nodesource.list
+    sed -i "3 s#deb.nodesource.com#mirrors.ustc.edu.cn/nodesource/deb#" /etc/apt/sources.list.d/nodesource.list
+    sed -i "4 s#deb.nodesource.com#mirrors.ustc.edu.cn/nodesource/deb#" /etc/apt/sources.list.d/nodesource.list
     apt update
     apt install -y nodejs
     apt autoremove -y
