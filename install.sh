@@ -1011,7 +1011,7 @@ function EnvStructures() {
     sed -i "1c deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" /etc/apt/sources.list.d/nodesource.list
     sed -i "2c deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" /etc/apt/sources.list.d/nodesource.list
     apt update
-    apt install -y nodejs
+    apt install -y nodejs npm
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
     yum remove -y nodejs npm >/dev/null 2>&1
@@ -1020,7 +1020,7 @@ function EnvStructures() {
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
     sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
-    yum install -y nodejs
+    yum install -y nodejs npm
   fi
 }
 
