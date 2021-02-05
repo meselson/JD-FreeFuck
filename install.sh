@@ -1088,7 +1088,7 @@ function AutoScript() {
   sed -i '1i\#!/bin/bash' $BASE/run-all.sh
   cat $BASE/run-all.sh | grep jd_crazy_joy_coin -wq
   if [ $? -eq 0 ]; then
-    sed -i "s/bash jd.sh jd_crazy_joy_coin.sh now//g" $BASE/run-all.sh
+    sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" $BASE/run-all.sh
     sed -i '/^\s*$/d' $BASE/run-all.sh
     echo "bash jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
   fi
@@ -1106,7 +1106,7 @@ sed -i 's/.js/ now/g' run-all.sh
 sed -i '1i\#!/bin/bash' run-all.sh
 cat run-all.sh | grep jd_crazy_joy_coin -wq
 if [ $? -eq 0 ];then
-  sed -i "s/bash jd.sh jd_crazy_joy_coin.sh now//g" run-all.sh
+  sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" run-all.sh
   sed -i '/^\s*$/d' run-all.sh
   echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
 fi
