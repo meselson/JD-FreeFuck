@@ -252,7 +252,6 @@ function RedHatMirrors() {
     yum install -y epel-release
     sed -i 's|^metalink=|#metalink=|g' /etc/yum.repos.d/epel.repo
     sed -i 's|^#baseurl=https\?://download.fedoraproject.org/pub/epel/|baseurl=https://mirrors.ustc.edu.cn/epel/|g' /etc/yum.repos.d/epel.repo
-    sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
     yum makecache
   fi
 }
@@ -507,7 +506,7 @@ name=CentOS Linux $releasever - PowerTools
 mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=PowerTools&infra=$infra
 #baseurl=http://mirror.centos.org/$contentdir/$releasever/PowerTools/$basearch/os/
 gpgcheck=1
-enabled=0
+enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 EOF
     cat >/etc/yum.repos.d/CentOS-Linux-Sources.repo <<\EOF
