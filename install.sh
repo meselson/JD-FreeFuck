@@ -1013,11 +1013,10 @@ function EnvStructures() {
     echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
     apt update
     apt install -y nodejs
-    if [ $VERIFICATION -ne "1" ]; then
+    if [ $VERIFICATION != "1" ]; then
       sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
       curl -sL https://deb.nodesource.com/setup_14.x | bash -
       apt install -y nodejs
-      apt install -y npm
     fi
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
@@ -1028,7 +1027,7 @@ function EnvStructures() {
     sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
     yum install -y nodejs npm
-    if [ $VERIFICATION -ne "1" ]; then
+    if [ $VERIFICATION != "1" ]; then
       rm -rf /etc/yum.repos.d/nodesource-*.repo
       curl -sL https://rpm.nodesource.com/setup_14.x | bash -
       apt install -y nodejs
@@ -1124,7 +1123,7 @@ function ResultJudgment() {
     sleep 3s
   fi
   VERIFICATION=$(node -v | cut -c2)
-  if [ $VERIFICATION -eq "1" ]; then
+  if [ $VERIFICATION = "1" ]; then
     echo -e ''
     echo -e "\033[32m +------- 已 启 用 控 制 面 板 功 能 -------+ \033[0m"
     echo -e "\033[32m |                                          | \033[0m"
