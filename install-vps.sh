@@ -95,14 +95,14 @@ function EnvStructures() {
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     apt install -y git wget curl perl moreutils
     curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-    apt install -y nodejs
+    apt install -y nodejs npm
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
     yum remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     yum install -y git wget curl perl moreutils
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-    yum install -y nodejs
+    yum install -y nodejs npm
   fi
 }
 
@@ -239,6 +239,7 @@ function ResultJudgment() {
     echo -e "\033[32m --------------------------------- 如果老板成功薅到羊毛，赏5毛钱可否OvO --------------------------------- \033[0m"
   else
     echo -e "\033[31m -------------- 一键部署失败 -------------- \033[0m"
+    echo -e "\033[31m 原因：Nodejs未安装成功，请检查网络相关问题 \033[0m"
   fi
 }
 
