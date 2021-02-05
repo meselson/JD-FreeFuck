@@ -22,7 +22,7 @@ __新版本为系统直装，基于原作者公布的源码开发而来，制作
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
   _附：[Windows10安装 WSL Ubuntu教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_\
-  _附：[基于 Docker 的安装方法（软路由、NAS）](https://github.com/SuperManito/JD-FreeFuck/wiki/%E5%9F%BA%E4%BA%8E-Docker-%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%EF%BC%88%E8%BD%AF%E8%B7%AF%E7%94%B1%E3%80%81NAS%EF%BC%89)_\
+  _附：[基于 Docker 的安装方法（ 软路由、NAS ）](https://github.com/SuperManito/JD-FreeFuck/wiki/%E5%9F%BA%E4%BA%8E-Docker-%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%EF%BC%88%E8%BD%AF%E8%B7%AF%E7%94%B1%E3%80%81NAS%EF%BC%89)_
 
   _温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！_\
 \
