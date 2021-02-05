@@ -1026,12 +1026,11 @@ function EnvStructures() {
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
     sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
-    yum install -y nodejs npm
+    yum install -y nodejs
     if [ $VERIFICATION != "1" ]; then
       rm -rf /etc/yum.repos.d/nodesource-*.repo
       curl -sL https://rpm.nodesource.com/setup_14.x | bash -
       apt install -y nodejs
-      apt install -y npm
     fi
   fi
 }
