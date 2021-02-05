@@ -1002,16 +1002,23 @@ EOF
 
 ## 环境搭建：
 function EnvStructures() {
+  VERIFICATION=$(node -v | cut -c2)
   if [ $SYSTEM = "Debian" ]; then
     apt remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     apt install -y git wget curl perl moreutils
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+    curl -sL https://deb.nodesource.com/setup_14.x | bash -
     sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
-    sed -i "1c deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" /etc/apt/sources.list.d/nodesource.list
-    sed -i "2c deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" /etc/apt/sources.list.d/nodesource.list
+    echo "deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
+    echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
     apt update
-    apt install -y nodejs npm
+    apt install -y nodejs
+    if [ $VERIFICATION -ne "1" ]; then
+      sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
+      curl -sL https://deb.nodesource.com/setup_14.x | bash -
+      apt install -y nodejs
+      apt install -y npm
+    fi
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
     yum remove -y nodejs npm >/dev/null 2>&1
@@ -1020,7 +1027,13 @@ function EnvStructures() {
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
     sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
-    yum install -y nodejs
+    yum install -y nodejs npm
+    if [ $VERIFICATION -ne "1" ]; then
+      rm -rf /etc/yum.repos.d/nodesource-*.repo
+      curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+      apt install -y nodejs
+      apt install -y npm
+    fi
   fi
 }
 
