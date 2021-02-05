@@ -95,7 +95,7 @@ function EnvStructures() {
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     apt install -y git wget curl perl moreutils
     curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-    apt install -y nodejs npm
+    apt install -y nodejs
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
     yum remove -y nodejs npm >/dev/null 2>&1
@@ -193,7 +193,7 @@ function ResultJudgment() {
     sleep 3s
   fi
   VERIFICATION=$(node -v | cut -c2)
-  if [ $VERIFICATION -eq "1" ]; then
+  if [ $VERIFICATION = "1" ]; then
     echo -e ''
     echo -e "\033[32m +------- 已 启 用 控 制 面 板 功 能 -------+ \033[0m"
     echo -e "\033[32m |                                          | \033[0m"
