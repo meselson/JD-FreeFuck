@@ -66,7 +66,7 @@ __Gitee__
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
 - 附3. 如果您已部署此项目想单独使用我原创的一键脚本请执行此命令：
 
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/auto-script.sh)
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/autoscript.sh)
     
 ***
 
@@ -136,4 +136,4 @@ __[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　#
 ## 赞赏码
 <img src="https://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iMtKA6HmNU30Pu2EijiozuE!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4" width="300" height="300" alt="微信赞赏码"/><br/>
 ### 如果您愿意支持此项目，可对我进行打赏，开发不易，维护艰辛，感激不尽！
-### 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
+### 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈，请严格安装模板提交。
