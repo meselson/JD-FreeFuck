@@ -1,4 +1,4 @@
-__如果您觉得这个项目不错的话可以在右上角给颗小星星吗？方便分享给更多的朋友吗？ (∩_∩)__
+__如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便分享给更多的朋友吗？__
 
 ***
 
@@ -64,7 +64,7 @@ __Gitee__
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-- 附3. 如果您的环境已部署此项目想使用我原创的一键脚本请执行此命令：
+- 附3. 如果您已部署此项目想单独使用我原创的一键脚本请执行此命令：
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/auto-script.sh)
     
@@ -91,7 +91,7 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '95c export PUSH_KEY=""' /opt/jd/config/config.sh
-- 以上全部内容也可在控制面板功能中的浏览器网页完成配置，可取代Linux命令
+- 以上全部内容也可在控制面板功能中的浏览器网页完成配置，可取代在终端输入命令
 
 ***
 
@@ -134,5 +134,6 @@ __[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　#
 ***
 
 ## 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
-## 如果您愿意支持此项目，并且成功薅到羊毛，可对我进行打赏，感激不尽(∩_∩)
+## 赞赏码
 <img src="https://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iMtKA6HmNU30Pu2EijiozuE!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4" width="300" height="300" alt="微信赞赏码"/><br/>
+__如果您愿意支持此项目，并且成功薅到羊毛，可对我进行打赏，开发不易，维护艰辛，感激不尽！__
