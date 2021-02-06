@@ -135,5 +135,5 @@ __[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　#
 
 ## 赞赏码
 <img src="https://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iMtKA6HmNU30Pu2EijiozuE!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4" width="300" height="300" alt="微信赞赏码"/><br/>
-### 如果您愿意支持此项目，并且成功薅到羊毛，可对我进行打赏，开发不易，维护艰辛，感激不尽！
+### 如果您愿意支持此项目，可对我进行打赏，开发不易，维护艰辛，感激不尽！
 ### 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
