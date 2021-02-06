@@ -69,6 +69,7 @@ function SystemJudgment() {
       SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c16-18)
     fi
   fi
+  CENTOS_VERSION=$(cat /etc/redhat-release | cut -c22)
 }
 
 ## 环境搭建：
@@ -83,21 +84,28 @@ function EnvStructures() {
   echo -e '\033[37m|                                                   | \033[0m'
   echo -e '\033[37m+---------------------------------------------------+ \033[0m'
   sleep 3s
-  ## CentOS安装扩展EPEL源并启用PowerTools仓库
+  ## CentOS安装扩展EPEL源
   if [ $SYSTEM_NAME = "CentOS" ]; then
+    yum makecache >/dev/null 2>&1
     yum install -y epel-release
-    sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
-    yum makecache
   fi
+
+  ## CentOS8启用PowerTools仓库
+  if [ $CENTOS_VERSION = "8" ]; then
+    sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
+  fi
+
   ## 安装项目所需要的软件包
   if [ $SYSTEM = "Debian" ]; then
+    apt update
     apt remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     apt install -y git wget curl perl moreutils
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+    curl -sL https://deb.nodesource.com/setup_14.x | bash -
     apt install -y nodejs
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
+    yum makecache
     yum remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     yum install -y git wget curl perl moreutils
