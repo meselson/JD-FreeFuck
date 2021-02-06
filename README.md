@@ -55,8 +55,7 @@ __Gitee__
 - __部署需知：__
 1. 检查系统版本是否符合支持范围，判定联网状态等基本条件
 1. 本项目默认安装目录为`/opt/jd`，如果你不想安装到该目录请自行下载源码并更改相关变量手动部署
-3. 受网络环境因素影响，如果部署失败请再次尝试，否则请反馈至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
-4.遇到问题反馈至Issues
+3. 受网络环境因素影响，如果部署失败请再次尝试，否则请按模板反馈至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
@@ -77,6 +76,7 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 ***
 
 ## 三、手动配置信息
+_注：以下全部内容也可在控制面板功能中的浏览器网页完成配置，可取代在终端输入命令_
 ### 将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '28c Cookie1=""' /opt/jd/config/config.sh
   _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /home/myid/jd/config/config.sh_
@@ -91,20 +91,19 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
       sed -i '95c export PUSH_KEY=""' /opt/jd/config/config.sh
-- 以上全部内容也可在控制面板功能中的浏览器网页完成配置，可取代在终端输入命令
 
 ***
 
 ## 四、使用与更新
-- 1.如何运行一键脚本开始白嫖京豆？
+- __如何运行一键脚本开始白嫖京豆？__
 
       bash run-all.sh
     _注：此脚本内容为执行所有活动脚本，如果想要单独执行或延迟执行特定活动脚本，请通过命令`bash jd.sh`查看教程。_
-- 2.如何更新活动脚本与一键脚本？
+- __如何更新活动脚本与一键脚本？__
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
-- 3.如何升级与更新？
+- __如何升级与更新？__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
     _注：适用于后期维护更新，当遇到问题或优化代码需要更新时会在项目置顶通知。_
