@@ -5,12 +5,12 @@
 
 - __2021/2/6 更新__
 
-__修复了`run-all.sh`一键执行所有活动脚本关于重复添加`疯狂的JOY`挂机活动的错误，在5号部署的朋友请执行更新命令，更新命令位于下方第四步中的第3条。__
+修复了`run-all.sh`一键执行所有活动脚本关于重复添加`疯狂的JOY`挂机活动的错误，在5号部署的朋友请执行更新命令，更新命令位于下方第四步中的第3条。
 - __2021/2/5 通知（重要）__
 
-__由于Linux环境原作者退隐江湖，旧版本已无法更新且Docker镜像已下架无法拉取，已部署的朋友请重新部署，新部署脚本会自动备份之前的配置文件。__\
+由于Linux环境原作者退隐江湖，旧版本已无法更新且Docker镜像已下架无法拉取，已部署的朋友请重新部署，新部署脚本会自动备份之前的配置文件。\
 \
-__新版本为系统直装，基于原作者公布的源码开发而来，可同步最新活动脚本。开发不易，维护艰辛，感谢支持！__
+新版本为系统直装，基于原作者公布的源码开发而来，可同步最新活动脚本。开发不易，维护艰辛，感谢支持！
 
 ***
 
@@ -22,8 +22,8 @@ __新版本为系统直装，基于原作者公布的源码开发而来，可同
 - __`Fedora`：支持 28 ~ 33 版本__
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
- _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_\
- _附：[基于 Docker x86 的安装方法（ 软路由、NAS ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-))_
+  _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_\
+  _附：[基于 Docker x86 的安装方法（ 软路由、NAS ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-))_
 
 __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！__\
 __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__
