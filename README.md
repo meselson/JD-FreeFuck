@@ -51,19 +51,11 @@ __Gitee__
 
     bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
    _注：如果部署后无法访问控制面板，请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放端口、允许网页流量等重要设置。_ 
-- __一键脚本：__
- 
-__Github__
-
-    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/auto-script.sh)
-__Gitee__
-
-    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/auto-script.sh)
-   _注：如果您不想使用我的部署脚本但是想单独使用我开发原创的一键脚本请执行此命令。_ 
 - __部署需知：__
 1. 检查系统版本是否符合支持范围，判定联网状态等基本条件
 1. 本项目默认安装目录为`/opt/jd`，如果你不想安装到该目录请自行下载源码并更改相关变量手动部署
-3. 受网络环境因素影响，如果部署失败请再次尝试，否则请反馈至[ Issuse ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
+3. 受网络环境因素影响，如果部署失败请再次尝试，否则请反馈至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
+4.遇到问题反馈至Issues
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
@@ -71,6 +63,9 @@ __Gitee__
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
+- 附3. 如果您的环境已部署此项目想使用我原创的一键脚本请执行此命令：
+
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/auto-script.sh)
     
 ***
 
@@ -136,6 +131,6 @@ __[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　#
 
 ***
 
-## 如果您有意见与建议欢迎到 [Issuse](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
+## 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈
 ## 如果老板成功薅到羊毛，赏5毛可否(∩_∩)
 <img src="https://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iMtKA6HmNU30Pu2EijiozuE!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4" width="300" height="300" alt="微信赞赏码"/><br/>
