@@ -1,15 +1,16 @@
-__如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便分享给更多的朋友吗？__
 
 ***
 
-__更新：__\
-__2021/2/6__\
-__修复了`run-all.sh`一键执行所有活动脚本关于重复添加`疯狂的JOY`挂机活动的错误，在5号部署的朋友请执行更新命令，更新命令下方在第四步中的第3条......__\
+## 通知与更新
+
+- __2021/2/6 更新__
+
+__修复了`run-all.sh`一键执行所有活动脚本关于重复添加`疯狂的JOY`挂机活动的错误，在5号部署的朋友请执行更新命令，更新命令位于下方第四步中的第3条。__
+- __2021/2/5 通知（重要）__
+
+__由于Linux环境原作者退隐江湖，旧版本已无法更新且Docker镜像已下架无法拉取，已部署的朋友请重新部署，新部署脚本会自动备份之前的配置文件。__\
 \
-__通知：__\
-__2021/2/5__\
-__由于Linux环境原作者退隐江湖，旧版本已无法更新且Docker镜像已下架无法拉取，已部署的朋友请重新部署，新部署脚本会自动备份之前的配置文件......__\
-__新版本为系统直装，基于原作者公布的源码开发而来，可同步最新活动脚本。开发不易，维护艰辛，感谢您的支持！__
+__新版本为系统直装，基于原作者公布的源码开发而来，可同步最新活动脚本。开发不易，维护艰辛，感谢支持！__
 
 ***
 
@@ -21,11 +22,10 @@ __新版本为系统直装，基于原作者公布的源码开发而来，可同
 - __`Fedora`：支持 28 ~ 33 版本__
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
-  _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_\
-  _附：[基于 Docker 的安装方法（ 软路由、NAS ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-))_
+ _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_\
+ _附：[基于 Docker x86 的安装方法（ 软路由、NAS ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-))_
 
-  _温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！_\
-\
+__温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！__\
 __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__
 
 ***
@@ -112,7 +112,7 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 ***
 
 ## 五、声明
-1. 本人代码全部开源，代码各处均有注释，没有附加本人的互助码，无任何私利。\
+1. 本人代码全部开源，代码各处均有注释其含义，所有脚本没有附加本人的互助码，无任何私利。
 2. 本人项目为二次使用，我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关。
 3. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，如果你不想用我写的一键脚本请自行删除。\
 \
@@ -136,4 +136,8 @@ __[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　#
 ## 赞赏码
 <img src="https://m.qpic.cn/psc?/V50n9XtX0l0n6J3udmyK2gRcEx18FnXh/45NBuzDIW489QBoVep5mcbTMgCjpKAAK.sAHneYsD2JkZhvOqMXe6eJqnrUjeaIWidOGbhjLKMcjmIUXh.T5iMtKA6HmNU30Pu2EijiozuE!/b&bo=OAQ4BAAAAAADJwI!&rf=viewer_4" width="300" height="300" alt="微信赞赏码"/><br/>
 ### 如果您愿意支持此项目，可对我进行打赏，开发不易，维护艰辛，感激不尽！
-### 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈，请严格安装模板提交。
+### 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈，如果需要帮助请严格按照模板提交。
+
+***
+
+__如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便分享给更多的朋友吗？__
