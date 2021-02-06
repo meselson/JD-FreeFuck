@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-5
+## Modified:2021-2-6
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -86,7 +86,7 @@ function EnvStructures() {
   sleep 3s
   ## CentOS安装扩展EPEL源
   if [ $SYSTEM_NAME = "CentOS" ]; then
-    yum makecache >/dev/null 2>&1
+    yum makecache
     yum install -y epel-release
   fi
 
@@ -142,6 +142,7 @@ function ProjectDeployment() {
   cp $BASE/sample/auth.json $BASE/config/auth.json
   cd $BASE/panel
   npm install
+  npm install >/dev/null 2>&1
   npm install -g pm2
   pm2 start server.js
   cd $BASE
