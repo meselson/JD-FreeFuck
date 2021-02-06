@@ -120,7 +120,7 @@ __2. 通过`控制面板`功能进入浏览器网页手机扫码获取，此方�
 2. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，自己查看一下这两个文件内容就全明白了，如果你不想用我写的一键脚本请自行删除。\
 \
 __原作者项目链接：__\
-__[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　## JavaScripts活动脚本开发者__\
+__[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master/) 　## 活动脚本开发者__
     
 ***
 
