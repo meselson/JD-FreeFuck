@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-5
+## Modified:2021-2-7
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -10,7 +10,7 @@
 ##          Debian 9.0 ~ 10.7       CentOS 7.0 ~ 8.3                                                      #
 ## 温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，CentOS如果是最小化安装，请通过SSH方式进入到终端   #
 ##                                                                                                        #
-## 本人项目基于 Evine 公布的源码，活动脚本基于 lxk0301 大佬的 jd_scripts 项目                                 #
+## 本项目基于 Evine 公布的源码，活动脚本基于 lxk0301 大佬的 jd_scripts 项目                                   #
 ## 本人能力有限，这可能是最终版本，感谢 Evine 对此项目做出的贡献                                               #
 ## 核心活动脚本项目地址：https://gitee.com/lxk0301/jd_scripts/tree/master                                   #
 ##                                                                                                        #
@@ -56,7 +56,7 @@ function SystemJudgment() {
   else
     SYSTEM="Debian"
   fi
-  ## 定义一些变量
+  ## 定义一些变量（系统名称、系统版本、系统版本号）
   if [ $SYSTEM = "Debian" ]; then
     SYSTEM_NAME=$(lsb_release -is)
     SYSTEM_VERSION=$(lsb_release -cs)
@@ -73,6 +73,7 @@ function SystemJudgment() {
 
 ## 更换国内源：
 function ReplaceMirror() {
+  ## 由此到第1000行的内容均为更换国内更新源
   echo -e '\033[37m+---------------------------------------------------+ \033[0m'
   echo -e '\033[37m|                                                   | \033[0m'
   echo -e '\033[37m|   =============================================   | \033[0m'
@@ -1003,30 +1004,38 @@ EOF
 function EnvStructures() {
   VERIFICATION=$(node -v | cut -c2)
   if [ $SYSTEM = "Debian" ]; then
+    ## 卸载旧版本Node版本，从而确保安装最新版本
     apt remove -y nodejs npm >/dev/null 2>&1
-    rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
+    rm -rf /etc/apt/sources.list.d/nodesource.list >/ dev/null 2>&1
+    ## 安装需要的软件包
     apt install -y git wget curl perl moreutils
+    ## 安装Nodejs与NPM
     curl -sL https://deb.nodesource.com/setup_14.x | bash -
     sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
     echo "deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
     echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
     apt update
     apt install -y nodejs
-    if [ $VERIFICATION != "1" ]; then
+    ## 安装Nodejs与NPM备用方案
+    if [ $VERIFICATION != 1 ]; then
       sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
       curl -sL https://deb.nodesource.com/setup_14.x | bash -
       apt install -y nodejs
     fi
     apt autoremove -y
   elif [ $SYSTEM = "RedHat" ]; then
+    ## 卸载旧版本Node版本，从而确保安装最新版本
     yum remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
+    ## 安装需要的软件包
     yum install -y git wget curl perl moreutils
+    ## 安装Nodejs与NPM
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
     sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
     yum install -y nodejs
-    if [ $VERIFICATION != "1" ]; then
+    ## 安装Nodejs与NPM备用方案
+    if [ $VERIFICATION != 1 ]; then
       rm -rf /etc/yum.repos.d/nodesource-*.repo
       curl -sL https://rpm.nodesource.com/setup_14.x | bash -
       apt install -y nodejs
@@ -1036,28 +1045,27 @@ function EnvStructures() {
 
 ## 项目部署：
 function ProjectDeployment() {
-  ## 备份之前Docker版本的配置文件
+  ## 检测是否存在之前Docker旧版本的配置文件，执行备份操作
   ls /opt | grep jd/config -wq
   if [ $? -eq 0 ]; then
     cp /opt/jd/config/config.sh /opt/config.sh.bak
     cp /opt/jd/config/crontab.list /opt/crontab.list.bak
     rm -rf /opt/jd
   fi
-  ## 下载源码并创建目录
+  ## 下载源码并解压至目录
   wget -P /opt https://gitee.com/SuperManito/JD-FreeFuck/attach_files/610490/download/jd.tar.gz
   mkdir -p $BASE
   tar -zxvf /opt/jd.tar.gz -C $BASE
   rm -rf /opt/jd.tar.gz
   mkdir $BASE/config
-  ## 创建项目配置文件
+  ## 创建项目配置文件与定时任务配置文件
   cp $BASE/sample/config.sh.sample $BASE/config/config.sh
-  ## 创建定时任务配置文件
   cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
-  ## 导入0301大佬gitee库活动脚本
+  ## 更新脚本，导入LXK0301大佬gitee库活动脚本
   bash $BASE/git_pull.sh
   bash $BASE/git_pull.sh >/dev/null 2>&1
   ## 安装控制面板功能
-  firewall-cmd --zone=public --add-port=5678/tcp --permanent >/dev/null 2>&1
+  firewall-cmd --zone=public --add-port=5678/tcp --permanent
   systemctl reload firewalld >/dev/null 2>&1
   cp $BASE/sample/auth.json $BASE/config/auth.json
   cd $BASE/panel
@@ -1115,11 +1123,13 @@ EOF
 
 #部署结果判定：
 function ResultJudgment() {
+  ## 判定旧版本配置文件备份结果
   ls /opt | grep jd/config.sh.bak -wq
   if [ $? -eq 0 ]; then
     echo -e "\033[32m安装期间检测到旧版本项目文件，已备份旧的 config 与 crontab 配置文件至/opt目录，请不要覆盖现有配置文件...... \033[0m"
     sleep 3s
   fi
+  ## 判定Nodejs是否安装成功
   VERIFICATION=$(node -v | cut -c2)
   if [ $VERIFICATION = "1" ]; then
     echo -e ''
