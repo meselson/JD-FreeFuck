@@ -8,7 +8,7 @@
 ## 安装目录
 BASE="/opt/jd"
 
-## 修改定时配置文件的目录问题
+## 修复定时配置文件的目录问题
 sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
 ## 一键更新脚本
 rm -rf $BASE/manual-update.sh
@@ -20,8 +20,6 @@ BASE="/opt/jd"
 
 ## 执行更新命令
 bash git_pull.sh
-## 更改定时任务所在目录
-sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
 ## 重新生成一键执行所有活动脚本
 rm -rf run-all.sh
 touch run-all.sh
@@ -39,6 +37,9 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 EOF
+echo '## 配置定时任务' >>$BASE/manual-update.sh
+echo 'sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list' >>$BASE/manual-update.sh
+
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
 echo -e "\033[32m |                                                             | \033[0m"
 echo -e "\033[32m | 特别提示：后续使用遇到问题请访问本人项目页寻求帮助          | \033[0m"
