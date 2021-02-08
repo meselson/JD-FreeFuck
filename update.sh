@@ -13,9 +13,9 @@ sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
 ## 一键更新脚本
 rm -rf $BASE/manual-update.sh
 touch $BASE/manual-update.sh
-cat >$BASE/manual-update.sh <<EOF
+cat >$BASE/manual-update.sh <<\EOF
 #!/bin/bash
-## 安装目录
+## 项目安装目录
 BASE="/opt/jd"
 
 ## 执行更新命令
@@ -36,9 +36,9 @@ if [ $? -eq 0 ];then
   echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
 fi
 sed -i '/^\s*$/d' run-all.sh
+## 配置定时任务
+sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
 EOF
-echo '## 配置定时任务' >>$BASE/manual-update.sh
-echo 'sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list' >>$BASE/manual-update.sh
 
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
 echo -e "\033[32m |                                                             | \033[0m"
