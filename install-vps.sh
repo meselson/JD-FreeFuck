@@ -142,8 +142,8 @@ function ProjectDeployment() {
   bash $BASE/git_pull.sh
   bash $BASE/git_pull.sh >/dev/null 2>&1
   ## 安装控制面板功能
-  firewall-cmd --zone=public --add-port=5678/tcp --permanent
-  systemctl reload firewalld
+  firewall-cmd --zone=public --add-port=5678/tcp --permanent >/dev/null 2>&1
+  systemctl reload firewalld >/dev/null 2>&1
   cp $BASE/sample/auth.json $BASE/config/auth.json
   cd $BASE/panel
   npm install
