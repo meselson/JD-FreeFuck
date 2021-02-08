@@ -151,6 +151,8 @@ function ProjectDeployment() {
   npm install -g pm2
   pm2 start server.js
   cd $BASE
+  ## 配置定时任务
+  sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
 }
 
 ## 更改配置文件：
