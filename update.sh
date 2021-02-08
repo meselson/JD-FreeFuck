@@ -1,12 +1,13 @@
 #!/bin/bash
 ## Author:SuperManito
-## Date:2021-2-6
-## 更新说明：修复一键脚本关于“疯狂的JOY”挂机活动重复的问题
+## Date:2021-2-8
+## 更新说明：修复一键脚本关于“疯狂的JOY”挂机活动重复的问题，修复了定时目录不正确的问题，删除了不该在一键脚本运行的任务
 
 ## 安装目录
 BASE="/opt/jd"
 
-## 一键更新脚本
+## 一键更新脚本s
+sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list 
 rm -rf $BASE/manual-update.sh
 touch $BASE/manual-update.sh
 cat >$BASE/manual-update.sh <<EOF
@@ -19,12 +20,14 @@ bash jd.sh | grep -o 'jx_[a-z].*' >>run-all.sh
 sed -i 's/^/bash jd.sh &/g' run-all.sh
 sed -i 's/.js/ now/g' run-all.sh
 sed -i '1i\#!/bin/bash' run-all.sh
+sed -i "s/bash jd.sh jd_delCoupon now//g" run-all.sh  #不执行京东家庭号任务
+sed -i "s/bash jd.sh jd_family now//g" run-all.sh     #不执行删除优惠券任务
 cat run-all.sh | grep jd_crazy_joy_coin -wq
 if [ $? -eq 0 ];then
   sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" run-all.sh
-  sed -i '/^\s*$/d' run-all.sh
   echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
 fi
+sed -i '/^\s*$/d' run-all.sh
 EOF
 bash $BASE/manual-update.sh
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
