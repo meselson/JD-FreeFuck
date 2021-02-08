@@ -8,13 +8,21 @@
 ## 安装目录
 BASE="/opt/jd"
 
-## 一键更新脚本s
-sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list 
+## 修改定时配置文件的目录问题
+sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
+## 一键更新脚本
 rm -rf $BASE/manual-update.sh
 touch $BASE/manual-update.sh
 cat >$BASE/manual-update.sh <<EOF
 #!/bin/bash
+## 安装目录
+BASE="/opt/jd"
+
+## 执行更新命令
 bash git_pull.sh
+## 更改定时任务所在目录
+sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
+## 重新生成一键执行所有活动脚本
 rm -rf run-all.sh
 touch run-all.sh
 bash jd.sh | grep -o 'jd_[a-z].*' >run-all.sh
