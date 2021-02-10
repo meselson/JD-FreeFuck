@@ -110,6 +110,10 @@ _注：以下全部内容也可在控制面板功能中的浏览器网页完成�
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
+- __如何手动启用控制面板功能？__
+
+      pm2 start panel/server.js
+    _注：此命令适用于后期使用，在某些环境下当系统重启导致控制面板无法访问提示拒绝连接时可用此命令恢复使用。_
 - __如何升级与更新？__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
