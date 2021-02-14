@@ -46,7 +46,7 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 2. 本项目默认安装目录为`/opt/jd`，如果你不想安装到该目录请自行下载源码并更改相关变量手动部署
 3. 受网络环境因素影响，如果部署失败请再次尝试，否则请严格按模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
 4. 下方`PC环境`与`VPS环境`对应两种部署方案，根据你的使用环境选择其一即可，不要重复部署
-- __PC环境：__
+- __PC 环境：__
  
 __Github__
 
@@ -54,7 +54,7 @@ __Github__
 __Gitee__
 
     bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
-- __VPS环境：__
+- __VPS 环境：__
  
 __Github__
 
