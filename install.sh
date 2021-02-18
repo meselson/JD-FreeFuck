@@ -1029,6 +1029,7 @@ function EnvStructures() {
     sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
     yum install -y nodejs
+    yum autoremove -y
   fi
   ## 安装Nodejs与NPM备用方案
   VERIFICATION=$(node -v | cut -c2)
