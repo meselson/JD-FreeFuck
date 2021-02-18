@@ -95,10 +95,10 @@ function EnvStructures() {
     sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
   fi
 
-  ## 安装项目所需要的软件包
+  ## 基于 Debian 的安装方法
   if [ $SYSTEM = "Debian" ]; then
-    ## 卸载旧版本Node版本，从而确保安装最新版本
     apt update
+    ## 卸载旧版本Node版本，从而确保安装新版本
     apt remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     ## 安装需要的软件包
@@ -107,9 +107,10 @@ function EnvStructures() {
     curl -sL https://deb.nodesource.com/setup_14.x | bash -
     apt install -y nodejs
     apt autoremove -y
+  ## 基于 RedHat 的安装方法
   elif [ $SYSTEM = "RedHat" ]; then
-    ## 卸载旧版本Node版本，从而确保安装最新版本
     yum makecache
+    ## 卸载旧版本Node版本，从而确保安装新版本
     yum remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     ## 安装需要的软件包
