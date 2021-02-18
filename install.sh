@@ -1002,11 +1002,11 @@ EOF
 
 ## 环境搭建：
 function EnvStructures() {
-  VERIFICATION=$(node -v | cut -c2)
+  ## 基于 Debian 的安装方法
   if [ $SYSTEM = "Debian" ]; then
-    ## 卸载旧版本Node版本，从而确保安装最新版本
+    ## 卸载旧版本Node版本，从而确保安装新版本
     apt remove -y nodejs npm >/dev/null 2>&1
-    rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1  
+    rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     ## 安装需要的软件包
     apt install -y git wget curl perl moreutils
     ## 安装Nodejs与NPM
@@ -1016,15 +1016,10 @@ function EnvStructures() {
     echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
     apt update
     apt install -y nodejs
-    ## 安装Nodejs与NPM备用方案
-    if [ $VERIFICATION != 1 ]; then
-      sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
-      curl -sL https://deb.nodesource.com/setup_14.x | bash -
-      apt install -y nodejs
-    fi
     apt autoremove -y
+  ## 基于 RedHat 的安装方法
   elif [ $SYSTEM = "RedHat" ]; then
-    ## 卸载旧版本Node版本，从而确保安装最新版本
+    ## 卸载旧版本Node版本，从而确保安装新版本
     yum remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     ## 安装需要的软件包
@@ -1034,9 +1029,20 @@ function EnvStructures() {
     sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
     yum makecache
     yum install -y nodejs
-    ## 安装Nodejs与NPM备用方案
-    if [ $VERIFICATION != 1 ]; then
-      rm -rf /etc/yum.repos.d/nodesource-*.repo
+  fi
+  ## 安装Nodejs与NPM备用方案
+  VERIFICATION=$(node -v | cut -c2)
+  if [ $VERIFICATION != 1 ]; then
+    echo -e '\033[37m常规方法未安装成功，正在执行备用方案，下载网速可能过慢请耐心等候...... \033[0m'
+    sleep 3s
+    if [ $SYSTEM = "Debian" ]; then
+      apt remove -y nodejs npm >/dev/null 2>&1
+      rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
+      curl -sL https://deb.nodesource.com/setup_14.x | bash -
+      apt install -y nodejs
+    elif [ $SYSTEM = "RedHat" ]; then
+      yum remove -y nodejs npm >/dev/null 2>&1
+      rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
       curl -sL https://rpm.nodesource.com/setup_14.x | bash -
       apt install -y nodejs
     fi
