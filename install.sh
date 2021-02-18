@@ -1006,7 +1006,7 @@ function EnvStructures() {
   if [ $SYSTEM = "Debian" ]; then
     ## 卸载旧版本Node版本，从而确保安装最新版本
     apt remove -y nodejs npm >/dev/null 2>&1
-    rm -rf /etc/apt/sources.list.d/nodesource.list >/ dev/null 2>&1
+    rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1  
     ## 安装需要的软件包
     apt install -y git wget curl perl moreutils
     ## 安装Nodejs与NPM
@@ -1164,7 +1164,7 @@ function ResultJudgment() {
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m |       如果想要单独执行或延迟执行特定活动脚本，请通过命令 bash jd.sh 查看教程                                    | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
-    echo -e "\033[32m | 注意：1. 该项目文件以及一键脚本的默认所在目录为$BASE                                                            | \033[0m"
+    echo -e "\033[32m | 注意：1. 该项目文件以及一键脚本的默认所在目录为$BASE                                                          | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m |       2. 为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误                                   | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
