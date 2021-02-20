@@ -85,15 +85,15 @@ __2. 通过浏览器开发工具获取，在[ Wiki-GetCookies ](https://github.c
 ## 三、手动配置信息
 _注：以下全部内容也可在控制面板功能中的浏览器网页完成配置，可取代在终端输入命令。_
 ### 将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
-    sed -i '28c Cookie1=""' /opt/jd/config/config.sh
+    sed -i '27c Cookie1=""' /opt/jd/config/config.sh
   _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_
 - 附1. 该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
-      sed -i "29c Cookie2=$COOKIE2" /opt/jd/config/config.sh
-      sed -i "30c Cookie3=$COOKIE3" /opt/jd/config/config.sh
-      sed -i "31c Cookie4=$COOKIE4" /opt/jd/config/config.sh
-      sed -i "32c Cookie5=$COOKIE5" /opt/jd/config/config.sh
-      sed -i "33c Cookie6=$COOKIE6" /opt/jd/config/config.sh
+      sed -i "28c Cookie2=$COOKIE2" /opt/jd/config/config.sh
+      sed -i "39c Cookie3=$COOKIE3" /opt/jd/config/config.sh
+      sed -i "30c Cookie4=$COOKIE4" /opt/jd/config/config.sh
+      sed -i "31c Cookie5=$COOKIE5" /opt/jd/config/config.sh
+      sed -i "32c Cookie6=$COOKIE6" /opt/jd/config/config.sh
    _注：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释。_
 - 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
 
