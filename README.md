@@ -7,7 +7,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
 由于lxk0301更新了package.json，导致已部署的朋友所有脚本无法使用提示“请先获取JD账号”，请所有已部署的朋友根据《使用于更新》中`如何卸载此项目`的第一条命令删除整个项目文件夹后重新一键部署！\
 \
-注意请先备份自己的Cookie与互助码，配置文件`config.sh`已更新到最新的版本。
+注意删除整个项目文件前请先备份您的Cookie、互助码等配置信息，配置文件`config.sh`已更新到最新的版本。
 
 - __2021/2/11 更新__
 
@@ -125,6 +125,15 @@ _注：以下全部内容也可在控制面板功能中的浏览器网页完成�
       2. 然后通过命令 bash jd.sh <脚本名> xxx 运行
       3. 如果您想将第三方脚本加入到 run-all.sh 一键脚本中可将脚本名改为"jd_"开头即可
     _注：导入的第三方活动脚本不会随项目本身活动脚本的更新而删除。_
+- __如何更新配置文件：__
+      
+      #备份配置文件
+      mv config/config.sh config/config.sh.bak
+      
+      #替换新的配置文件
+      rm -rf sample/config.sh.sample
+      wget -P sample https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/config.sh.sample
+      cp sample/config.sh.sample config/config.sh
 - __如何升级与更新：__
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
