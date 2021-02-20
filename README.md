@@ -128,11 +128,11 @@ _注：以下全部内容也可在控制面板功能中的浏览器网页完成�
       
       #替换新的配置文件
       rm -rf sample/config.sh.sample
-      wget -P sample https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/config.sh.sample
+      wget -P sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
       cp sample/config.sh.sample config/config.sh
 - __如何升级与更新：__
 
-      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/update.sh)
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/update.sh)
     _注：适用于后期维护更新，当遇到问题或优化代码需要更新时会在项目置顶通知，另外如果您修改了默认安装目录，请自行下载源码并更改相关变量手动更新。_
 - __如何卸载此项目：__
 
