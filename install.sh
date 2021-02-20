@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-18
+## Modified:2021-2-20
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -1065,6 +1065,9 @@ function ProjectDeployment() {
   tar -zxvf /opt/jd.tar.gz -C $BASE
   rm -rf /opt/jd.tar.gz
   mkdir $BASE/config
+  ## 更换新的配置文件
+  rm -rf $BASE/sample/config.sh.sample
+  wget -P $BASE/sample https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/config.sh.sample
   ## 创建项目配置文件与定时任务配置文件
   cp $BASE/sample/config.sh.sample $BASE/config/config.sh
   cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
