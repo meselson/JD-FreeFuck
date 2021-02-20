@@ -108,6 +108,9 @@ _注：以下全部内容也可在控制面板功能中的浏览器网页完成�
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
+- __如何获取互助码：__
+
+      bash jd.sh format_share_jd_code now
 - __如何手动启用控制面板功能：__
 
       pm2 start panel/server.js
