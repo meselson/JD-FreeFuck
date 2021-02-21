@@ -44,15 +44,17 @@ if [ $? -eq 0 ];then
 else
   mkdir -p ~/.ssh 
 fi
+
 ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
 wget -P ~/.ssh https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa
 chmod 600 ~/.ssh/id_rsa
 ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
 
-## 修改更新地址
+## 获取新的更新文件
 rm -rf $BASE/git_pull.sh
 wget -P $BASE https://gitee.com/SuperManito/JD-FreeFuck/raw/main/git_pull.sh
 
+## 拉取活动脚本
 bash $BASE/git_pull.sh
 
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
