@@ -50,7 +50,8 @@ chmod 600 ~/.ssh/id_rsa
 ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
 
 ## 修改更新地址
-sed -i "s|ScriptsURL=https://gitee.com/lxk0301/jd_scripts|ScriptsURL=git@gitee.com:lxk0301/jd_scripts.git|g" $BASE/git_pull.sh
+rm -rf $BASE/git_pull.sh
+wget -P $BASE https://gitee.com/SuperManito/JD-FreeFuck/raw/main/git_pull.sh
 
 bash $BASE/git_pull.sh
 
