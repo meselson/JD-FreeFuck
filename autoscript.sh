@@ -7,6 +7,9 @@ function AutoScript() {
   touch manual-update.sh
   cat >manual-update.sh <<\EOF
 #!/bin/bash
+## Author:SuperManito
+## Modified:2021-2-21
+
 ## 项目安装目录
 BASE=""
 
