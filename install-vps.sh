@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-20
+## Modified:2021-2-21
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -102,7 +102,7 @@ function EnvStructures() {
     apt remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     ## 安装需要的软件包
-    apt install -y git wget curl perl moreutils
+    apt install -y git wget curl perl moreutils openssh-server
     ## 安装Nodejs与NPM
     curl -sL https://deb.nodesource.com/setup_14.x | bash -
     apt install -y nodejs
@@ -114,7 +114,7 @@ function EnvStructures() {
     yum remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     ## 安装需要的软件包
-    yum install -y git wget curl perl moreutils
+    yum install -y git wget curl perl moreutils openssh-server
     ## 安装Nodejs与NPM
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
     yum install -y nodejs
@@ -124,22 +124,48 @@ function EnvStructures() {
 
 ## 项目部署：
 function ProjectDeployment() {
-  ## 卸载旧版本Node版本，从而确保安装最新版本
-  ls /opt/jd | grep config -wq
-  if [ $? -eq 0 ]; then
-    cp /opt/jd/config/config.sh /opt/config.sh.bak
-    cp /opt/jd/config/crontab.list /opt/crontab.list.bak
-    rm -rf /opt/jd
+  ## 配置SSH服务
+  service ssh enable >/dev/null 2>&1
+  service ssh start >/dev/null 2>&1
+  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+  service ssh restart >/dev/null 2>&1
+  ## 配置SSH密钥文件夹
+  ls ~ | grep .ssh -rwq
+  if [ $? -eq 0 ];then
+    ## 检测当前用户是否存在私钥
+    ls ~/.ssh | grep id_rsa.bak -wq
+    if [ $? -eq 0 ];then
+      echo -e "\033[31m检测到已备份的私钥，跳过备份操作...... \033[0m"
+      sleep 2s
+    else
+      mv ~/.ssh/id_rsa ~/.ssh/id_rsa.bak >/dev/null 2>&1
+      rm -rf ~/.ssh/id_rsa
+    fi
+    ## 检测当前用户是否存在公钥wq
+    ls ~/.ssh | grep id_rsa.pub.bak -wq
+    if [ $? -eq 0 ];then
+      echo -e "\033[31m检测到已备份的公钥，跳过备份操作...... \033[0m"
+      sleep 2s
+    else
+      mv ~/.ssh/id_rsa.pub ~/.ssh/id_rsa.pub.bak >/dev/null 2>&1
+      rm -rf ~/.ssh/id_rsa.pub
+    fi
+  else
+    mkdir -p ~/.ssh 
   fi
+  ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
+  wget -P ~/.ssh https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa
+  chmod 600 ~/.ssh/id_rsa
+  ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
   ## 下载源码并解压至目录
-  wget -P /opt https://github.com/SuperManito/JD-FreeFuck/releases/download/SourceCode/jd.tar.gz
+  wget -P /opt https://gitee.com/SuperManito/JD-FreeFuck/attach_files/616570/download/jd.tar
   mkdir -p $BASE
-  tar -zxvf /opt/jd.tar.gz -C $BASE
-  rm -rf /opt/jd.tar.gz
+  tar -xvf /opt/jd.tar -C $BASE
+  rm -rf /opt/jd.tar
   mkdir $BASE/config
   ## 更换新的配置文件
   rm -rf $BASE/sample/config.sh.sample
-  wget -P $BASE/sample https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/config.sh.sample
+  wget -P $BASE/sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
   ## 创建项目配置文件与定时任务配置文件
   cp $BASE/sample/config.sh.sample $BASE/config/config.sh
   cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
@@ -151,8 +177,7 @@ function ProjectDeployment() {
   systemctl reload firewalld >/dev/null 2>&1
   cp $BASE/sample/auth.json $BASE/config/auth.json
   cd $BASE/panel
-  npm install
-  npm install >/dev/null 2>&1
+  npm install || npm install --registry=https://registry.npm.taobao.org
   npm install -g pm2
   pm2 start server.js
   cd $BASE
@@ -191,6 +216,9 @@ function AutoScript() {
   touch $BASE/manual-update.sh
   cat >$BASE/manual-update.sh <<\EOF
 #!/bin/bash
+## Author:SuperManito
+## Modified:2021-2-21
+
 ## 项目安装目录
 BASE="/opt/jd"
 
@@ -219,12 +247,6 @@ EOF
 
 #部署结果判定：
 function ResultJudgment() {
-  ## 判定旧版本配置文件备份结果
-  ls /opt | grep jd/config.sh.bak -wq
-  if [ $? -eq 0 ]; then
-    echo -e "\033[32m安装期间检测到旧版本项目文件，已备份旧的 config 与 crontab 配置文件至/opt目录，请不要覆盖现有配置文件...... \033[0m"
-    sleep 3s
-  fi
   ## 判定Nodejs是否安装成功
   VERIFICATION=$(node -v | cut -c2)
   if [ $VERIFICATION = "1" ]; then
