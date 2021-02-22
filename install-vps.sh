@@ -217,7 +217,7 @@ function AutoScript() {
   cat >$BASE/manual-update.sh <<\EOF
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-21
+## Modified:2021-2-22
 
 ## 项目安装目录
 BASE="/opt/jd"
@@ -241,7 +241,8 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
-sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
+sed -i "s#/home/myid/jd#$BASE#g" config/crontab.list
+sed -i "s/git_pull.sh/manual-update.sh/g" config/crontab.list
 EOF
 }
 
