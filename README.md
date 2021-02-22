@@ -62,10 +62,10 @@ __Gitee__
 
       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-- 附3. 如果您在其它环境已部署此项目想单独使用我原创的一键脚本请执行此命令：
+- 附3. 如果您在其它环境已部署此项目想单独使用我原创的一键脚本，请执行此命令：
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/autoscript.sh)
-- 附4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样可使用下面的命令安装：
+- 附4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
 
       cd panel
       npm install || npm install --registry=https://registry.npm.taobao.org
