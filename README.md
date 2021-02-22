@@ -162,7 +162,7 @@ _注：以下全部内容也可在控制面板功能中的浏览器网页完成�
       #卸载软件包
       apt/yum remove -y git perl moreutils nodejs npm
 
-**
+***
 
 ## 五、项目需知
 1. 该项目文件以及一键脚本的默认安装目录为`/opt/jd`
