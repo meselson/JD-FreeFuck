@@ -154,6 +154,10 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
       rm -rf sample/config.sh.sample
       wget -P sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
       cp sample/config.sh.sample config/config.sh
+- __如何更新我原创的一键更新脚本：__
+      
+      rm -rf manual-update.sh
+      wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/manual-update.sh
 - __如何升级与更新：__
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/update.sh)
