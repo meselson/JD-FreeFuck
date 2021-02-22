@@ -29,7 +29,7 @@ touch manual-update.sh
 cat >manual-update.sh <<\EOF
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-21
+## Modified:2021-2-22
 
 ## 执行更新命令
 bash git_pull.sh
