@@ -5,7 +5,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ## 通知与更新
 - __2021/2/22 通知__
 
-ㅤ修复了关于Docker版本`定时任务`执行不正确的问题，请22号前部署`Docker版本`的朋友在终端执行下面的更新命令。
+ㅤ修复了关于Docker版本`定时任务`配置不正确的问题，请22号前部署`Docker版本`的朋友在终端执行下面的更新命令。
 
     docker exec -it jd rm -rf manual-update.sh
     docker exec -it jd wget https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh
