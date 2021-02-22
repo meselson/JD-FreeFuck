@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Date:2021-2-21
+## Date:2021-2-22
 
 ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
 rm -rf ~/.ssh/id_rsa
@@ -23,8 +23,8 @@ bash git_pull.sh
 ## 更正定时任务
 sed -i "s#/home/myid/jd/##g" config/crontab.list
 ## 编写一键更新脚本
-touch $BASE/manual-update.sh
-cat >$BASE/manual-update.sh <<\EOF
+touch manual-update.sh
+cat >manual-update.sh <<\EOF
 #!/bin/bash
 ## Author:SuperManito
 ## Modified:2021-2-21
