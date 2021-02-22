@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Date:2021-2-22
+## Modified:2021-2-22
 
 ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
 rm -rf ~/.ssh/id_rsa
