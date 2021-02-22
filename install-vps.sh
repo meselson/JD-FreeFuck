@@ -133,23 +133,23 @@ function ProjectDeployment() {
   ## 配置SSH密钥文件夹
   ls ~ | grep .ssh -rwq
   if [ $? -eq 0 ];then
-    ## 检测当前用户是否存在私钥
+  ## 检测当前用户是否存在私钥
     ls ~/.ssh | grep id_rsa.bak -wq
     if [ $? -eq 0 ];then
+      rm -rf ~/.ssh/id_rsa
       echo -e "\033[31m检测到已备份的私钥，跳过备份操作...... \033[0m"
       sleep 2s
     else
       mv ~/.ssh/id_rsa ~/.ssh/id_rsa.bak >/dev/null 2>&1
-      rm -rf ~/.ssh/id_rsa
     fi
     ## 检测当前用户是否存在公钥
     ls ~/.ssh | grep id_rsa.pub.bak -wq
     if [ $? -eq 0 ];then
+      rm -rf ~/.ssh/id_rsa.pub
       echo -e "\033[31m检测到已备份的公钥，跳过备份操作...... \033[0m"
       sleep 2s
     else
       mv ~/.ssh/id_rsa.pub ~/.ssh/id_rsa.pub.bak >/dev/null 2>&1
-      rm -rf ~/.ssh/id_rsa.pub
     fi
   else
     mkdir -p ~/.ssh
