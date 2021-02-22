@@ -82,7 +82,7 @@ __2. 通过浏览器开发工具获取，在[ Wiki-GetCookies ](https://github.c
 ***
 
 ## 三、手动配置信息
-_注：以下全部内容也可在控制面板功能中的浏览器网页完成配置，可取代在终端输入命令。_
+_注：以下全部内容也可在控制面板功能中的WEB网页完成配置，可取代在终端输入命令。_
 ### 将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
     sed -i '28c Cookie1=""' /opt/jd/config/config.sh
   _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_
@@ -109,7 +109,7 @@ _注：以下全部内容也可在控制面板功能中的浏览器网页完成�
 
       bash jd.sh xxx      # 如果设置了随机延迟并且当时时间不在0-2、30-31、59分内，将随机延迟一定秒数
       bash jd.sh xxx now  # 无论是否设置了随机延迟，均立即运行
-    _注：具体方法可通过命令`bash jd.sh`查看教程，`xxx`为脚本名。_
+    _注：具体所有活动脚本列表可通过命令`bash jd.sh`查看，`xxx`为脚本名。_
 - __如何更新活动脚本与一键脚本：__
 
       bash manual-update.sh
@@ -121,7 +121,7 @@ _注：以下全部内容也可在控制面板功能中的浏览器网页完成�
  
       #使用脚本
       bash jd.sh format_share_jd_code now
-    _注：这里引用了另一个大佬写的互助码脚本，比 lxk 的好用太多。引用项目链接：[qq34347476/quantumult-x](https://gitee.com/qq34347476/quantumult-x/tree/master)_
+    _注：这里引用了另一个大佬写的互助码脚本，比 lxk 的好用。引用项目链接：[qq34347476/quantumult-x](https://gitee.com/qq34347476/quantumult-x/tree/master)_
 - __如何导出互助码：__
 
       bash export_sharecodes.sh
