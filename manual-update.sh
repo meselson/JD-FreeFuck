@@ -22,3 +22,4 @@ fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
 sed -i "s#/home/myid/jd/jd.sh#jd#g" config/crontab.list
+sed -i "s/git_pull.sh/manual-update.sh/g" config/crontab.list
