@@ -9,6 +9,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
     docker exec -it jd rm -rf manual-update.sh
     docker exec -it jd wget https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh
+    docker exec -it jd bash manual-update.sh
+    docker exec -it jd sed -i "s#/home/myid/jd/##g" config/crontab.list
 - __2021/2/21 通知（重要）__
 
 ㅤ由于活动脚本作者lxk0301大佬的库触发Gitee监控机制被官方封禁，解封后库从公开状态变为私有状态，目前已修复完毕，请所有已部署的朋友根据《使用与更新》中`如何卸载此项目`的第一条命令删除整个项目文件夹后重新一键部署，遇到问题还请立即反馈，制作不易、维护艰辛，各位老板可对我进行打赏，感激不尽！
