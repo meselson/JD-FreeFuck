@@ -789,7 +789,6 @@ function getJxNc() {
                   $.nickName || $.UserName
                 }）京喜农场助力码】${data.smp}`
               )
-              token = data.smp
 
               if (data.active) {
                 console.log(
@@ -797,6 +796,14 @@ function getJxNc() {
                     $.nickName || $.UserName
                   }）京喜农场active】${data.active}`
                 )
+
+                const rst = {
+                  smp: data.smp,
+                  active: data.active,
+                  joinnum:data.joinnum
+                }
+                jdnc.push(JSON.stringify(rst))
+
               } else {
                 console.log(
                   `【账号${$.index}（${
@@ -1626,82 +1633,6 @@ async function getSgmh(timeout = 0) {
   })
 }
 
-// 环球挑战赛
-async function getGlobal() {
-  const JD_API_HOST = 'https://api.m.jd.com/',
-    actCode = 'visa-card-001'
-
-  async function getTask() {
-    return new Promise(resolve => {
-      $.get(
-        taskUrl('myTask', { activityCode: actCode }),
-        async (err, resp, data) => {
-          try {
-            if (err) {
-              console.log(`${JSON.stringify(err)}`)
-              console.log(`${$.name} API请求失败，请检查网路重试`)
-            } else {
-              if (safeGet(data)) {
-                data = JSON.parse(data)
-                if (data['code'] === '0') {
-                  const { timeLimitTask, commonTask } = data.result.data
-                  let task = [...timeLimitTask, ...commonTask]
-                  for (let vo of task) {
-                    if (vo['taskName'] === '每日邀请好友') {
-                      console.log(
-                        `【账号${$.index}（${
-                          $.nickName || $.UserName
-                        }）环球挑战赛】${
-                          vo['jingCommand']['keyOpenapp'].match(
-                            /masterPin":"(.*)","/
-                          )[1]
-                        }`
-                      )
-                      hqtzs.push(
-                        vo['jingCommand']['keyOpenapp'].match(
-                          /masterPin":"(.*)","/
-                        )[1]
-                      )
-                    }
-                  }
-                }
-              }
-            }
-          } catch (e) {
-            $.logErr(e, resp)
-          } finally {
-            resolve(data)
-          }
-        }
-      )
-    })
-  }
-
-  function taskUrl(function_id, body = {}) {
-    return {
-      url: `${JD_API_HOST}/client.action?functionId=${function_id}&body=${escape(
-        JSON.stringify(body)
-      )}&appid=global_mart&time=${new Date().getTime()}`,
-      headers: {
-        Cookie: cookie,
-        origin: 'https://h5.m.jd.com',
-        referer: 'https://h5.m.jd.com/',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'User-Agent': $.isNode()
-          ? process.env.JD_USER_AGENT
-            ? process.env.JD_USER_AGENT
-            : require('./USER_AGENTS').USER_AGENT
-          : $.getdata('JDUA')
-          ? $.getdata('JDUA')
-          : 'jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0',
-      },
-    }
-  }
-
-  // await getHome()
-  await getTask()
-}
-
 // @Turing Lab Bot
 let submit_bean_code = [] // 种豆得豆
 let submit_farm_code = [] // 东东农场互助码
@@ -1717,7 +1648,8 @@ let jdzz = [] // JD赚赚
 // let jdnian = [] // JD炸年兽
 
 let jdSgmh = [] // 闪购盲盒
-let hqtzs = [] // 环球挑战赛
+
+let jdnc = [] // 京喜农场
 
 function formatForJDFreeFuck(
   arr = [],
@@ -1729,26 +1661,28 @@ function formatForJDFreeFuck(
   const nameArr = []
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i]
-    console.log(`${itemName}${i + 1}="${item}"`)
+    console.log(`${itemName}${i + 1}='${item}'`)
     const name = '${' + itemName + (i + 1) + '}'
     nameArr.push(name)
   }
 
-  for (let m = 0; m < nameArr.length; m++) {
-    const item = nameArr[m]
-
-    console.log(
-      `${forOtherName}${m + 1}="${nameArr
-        .filter(cell => cell !== item)
-        .join('@')}"`
-    )
+  // 以 种豆得豆 个数 为准 循环 生成 other互助  补齐 没有 互助码的号 的互助 名额
+  for (let m = 0; m < submit_bean_code.length; m++) {
+    // for (let m = 0; m < nameArr.length; m++) {
+    // const item = nameArr[m]
+    // console.log(
+    //   `${forOtherName}${m + 1}='${nameArr
+    //     .filter(cell => cell !== item)
+    //     .join('@')}'`
+    // )
+    console.log(`${forOtherName}${m + 1}='${nameArr.join('@')}'`)
   }
 }
 
 function getRandomArrayElements(arr, count = 4) {
   if (arr.length === 0) {
     return arr
-  }else {
+  } else {
     let shuffled = arr.slice(0),
       i = arr.length,
       min = i - count,
@@ -1766,16 +1700,39 @@ function getRandomArrayElements(arr, count = 4) {
 }
 
 function showFormatMsg() {
-  console.log(`\n========== 【格式化互助码只留随机4-5个(一定有第一个)】 ==========`)
+  console.log(
+    `\n========== 【格式化互助码只留随机4-5个(一定有第一个)】 ==========`
+  )
   console.log(`\n提交机器人 @Turing Lab Bot\n`)
-  console.log(`/submit_activity_codes bean ${getRandomArrayElements(submit_bean_code).join('&')}\n`)
-  console.log(`/submit_activity_codes farm ${getRandomArrayElements(submit_farm_code).join('&')}\n`)
-  console.log(`/submit_activity_codes pet ${getRandomArrayElements(submit_pet_code).join('&')}\n`)
-  console.log(`/submit_activity_codes jxfactory ${getRandomArrayElements(submit_jxfactory_code).join('&')}\n`)
-  console.log(`/submit_activity_codes ddfactory ${getRandomArrayElements(submit_ddfactory_code).join('&')}\n`)
+  console.log(
+    `/submit_activity_codes bean ${getRandomArrayElements(
+      submit_bean_code
+    ).join('&')}\n`
+  )
+  console.log(
+    `/submit_activity_codes farm ${getRandomArrayElements(
+      submit_farm_code
+    ).join('&')}\n`
+  )
+  console.log(
+    `/submit_activity_codes pet ${getRandomArrayElements(submit_pet_code).join(
+      '&'
+    )}\n`
+  )
+  console.log(
+    `/submit_activity_codes jxfactory ${getRandomArrayElements(
+      submit_jxfactory_code
+    ).join('&')}\n`
+  )
+  console.log(
+    `/submit_activity_codes ddfactory ${getRandomArrayElements(
+      submit_ddfactory_code
+    ).join('&')}\n`
+  )
   // 临时活动
-  console.log(`/submit_activity_codes jdglobal ${getRandomArrayElements(hqtzs).join('&')}\n`)
-  console.log(`/submit_activity_codes sgmh ${getRandomArrayElements(jdSgmh).join('&')}\n`)
+  console.log(
+    `/submit_activity_codes sgmh ${getRandomArrayElements(jdSgmh).join('&')}\n`
+  )
 
   console.log(`\n提交机器人 @Commit Code Bot\n`)
   console.log(`/jdcash ${getRandomArrayElements(jdcash).join('&')}\n`)
@@ -1785,10 +1742,10 @@ function showFormatMsg() {
   // console.log(`/jdnian ${jdnian.join('&')}\n`)
 
   console.log(`\n========== 【格式化互助码for docker ==========`)
-  formatForJDFreeFuck(hqtzs, '环球挑战赛(2.22)', 'MyGLOBAL', 'ForOtherGLOBAL')
   formatForJDFreeFuck(submit_bean_code, '种豆得豆', 'MyBean', 'ForOtherBean')
   formatForJDFreeFuck(submit_farm_code, '东东农场', 'MyFruit', 'ForOtherFruit')
   formatForJDFreeFuck(submit_pet_code, '东东萌宠', 'MyPet', 'ForOtherPet')
+  formatForJDFreeFuck(jdnc, '京喜农场', 'MyJxnc', 'ForOtherJxnc')
   formatForJDFreeFuck(
     submit_jxfactory_code,
     '京喜工厂',
@@ -1808,7 +1765,6 @@ function showFormatMsg() {
 
 async function getShareCodeAndAdd() {
   console.log(`======账号${$.index}开始======`)
-  await getGlobal() // 京东国际
   await getJdFactory() // 东东工厂
   await getJxFactory() // 京喜工厂
   await getJxNc() // 京喜农场
