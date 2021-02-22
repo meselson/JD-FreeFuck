@@ -2,9 +2,6 @@
 ## Author:SuperManito
 ## Modified:2021-2-21
 
-## 项目安装目录
-BASE="/opt/jd"
-
 ## 执行更新命令
 bash git_pull.sh
 ## 重新生成一键执行所有活动脚本
@@ -24,4 +21,4 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
-sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
+sed -i "s#/home/myid/jd/jd.sh#jd#g" config/crontab.list
