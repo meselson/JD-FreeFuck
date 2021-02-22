@@ -1,15 +1,9 @@
 #!/bin/bash
 ## Author:SuperManito
-## Date:2021-2-22
-## 更新说明：修复了Crontab定时配置错误的问题
-
-## 编写新的一键更新脚本
-rm -rf manual-update.sh
-touch manual-update.sh
-cat >manual-update.sh <<\EOF
-#!/bin/bash
-## Author:SuperManito
 ## Modified:2021-2-22
+
+## 项目安装目录
+BASE="/opt/jd"
 
 ## 执行更新命令
 bash git_pull.sh
@@ -30,23 +24,5 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
-sed -i "s#/home/myid/jd/jd.sh#jd#g" config/crontab.list
+sed -i "s#/home/myid/jd#$BASE#g" config/crontab.list
 sed -i "s/git_pull/manual-update/g" config/crontab.list
-EOF
-## 修改非活动脚本的定时配置
-sed -i "s#/home/myid/jd/##g" config/crontab.list
-## 更新活动脚本
-bash manual-update.sh
-
-echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
-echo -e "\033[32m |                                                             | \033[0m"
-echo -e "\033[32m | 特别提示：后续使用遇到问题请访问本人项目页寻求帮助          | \033[0m"
-echo -e "\033[32m |                                                             | \033[0m"
-echo -e "\033[32m |           我不是原项目的开发者，所有活动问题与我无关        | \033[0m"
-echo -e "\033[32m |                                                             | \033[0m"
-echo -e "\033[32m |           但我会维护我的两个原创一键脚本，请持续关注此项目  | \033[0m"
-echo -e "\033[32m |                                                             | \033[0m"
-echo -e "\033[32m | 项目地址：https://github.com/SuperManito/JD-FreeFuck        | \033[0m"
-echo -e "\033[32m |           https://gitee.com/SuperManito/JD-FreeFuck         | \033[0m"
-echo -e "\033[32m |                                                             | \033[0m"
-echo -e "\033[32m +-------------------------------------------------------------+ \033[0m"
