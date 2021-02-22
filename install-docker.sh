@@ -21,7 +21,7 @@ cp sample/computer.list.sample config/crontab.list
 ## 拉取项目文件
 bash git_pull.sh
 ## 更正定时任务
-sed -i "s#/home/myid/jd/##g" config/crontab.list
+sed -i "s#/home/myid##g" config/crontab.list
 ## 编写一键更新脚本
 touch manual-update.sh
 cat >manual-update.sh <<\EOF
@@ -48,5 +48,6 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
-sed -i "s#/home/myid/jd/##g" config/crontab.list
+sed -i "s#/home/myid##g" config/crontab.list
 EOF
+bash manual-update.sh
