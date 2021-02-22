@@ -92,7 +92,8 @@ function EnvStructures() {
 
   ## CentOS8启用PowerTools仓库
   if [ $CENTOS_VERSION = "8" ]; then
-    sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
+    ls 
+    sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/CentOS*PowerTools.repo
   fi
 
   ## 基于 Debian 的安装方法
