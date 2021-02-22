@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-21
+## Modified:2021-2-22
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -1069,7 +1069,7 @@ function ProjectDeployment() {
       mv ~/.ssh/id_rsa ~/.ssh/id_rsa.bak >/dev/null 2>&1
       rm -rf ~/.ssh/id_rsa
     fi
-    ## 检测当前用户是否存在公钥wq
+    ## 检测当前用户是否存在公钥
     ls ~/.ssh | grep id_rsa.pub.bak -wq
     if [ $? -eq 0 ];then
       echo -e "\033[31m检测到已备份的公钥，跳过备份操作...... \033[0m"
@@ -1079,7 +1079,7 @@ function ProjectDeployment() {
       rm -rf ~/.ssh/id_rsa.pub
     fi
   else
-    mkdir -p ~/.ssh 
+    mkdir -p ~/.ssh
   fi
   ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
   wget -P ~/.ssh https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa
@@ -1125,7 +1125,7 @@ function SetConfig() {
 
 ## 一键脚本：
 function AutoScript() {
-  ## 编写一键执行所有活动脚本：
+  ## 编写一键执行所有活动脚本
   touch $BASE/run-all.sh
   bash $BASE/jd.sh | grep -o 'jd_[a-z].*' >$BASE/run-all.sh
   bash $BASE/jd.sh | grep -o 'jx_[a-z].*' >>$BASE/run-all.sh
@@ -1140,7 +1140,7 @@ function AutoScript() {
     echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
   fi
   sed -i '/^\s*$/d' run-all.sh
-  ## 编写一键更新脚本：
+  ## 编写一键更新脚本
   touch $BASE/manual-update.sh
   cat >$BASE/manual-update.sh <<\EOF
 #!/bin/bash
@@ -1173,7 +1173,7 @@ sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
 EOF
 }
 
-#部署结果判定：
+## 部署结果判定：
 function ResultJudgment() {
   ## 判定Nodejs是否安装成功
   VERIFICATION=$(node -v | cut -c2)
@@ -1190,14 +1190,14 @@ function ResultJudgment() {
     echo -e "\033[32m +------------------------------------------+ \033[0m"
     echo -e ''
     sleep 3s
-    echo -e "\033[32m --------------------------- 一键部署成功，请执行 bash run-all.sh 命令开始你的薅羊毛行为 --------------------------- \033[0m"
+    echo -e "\033[32m --------------------------- 一键部署成功，请执行 bash run-all.sh 命令开始您的薅羊毛行为 --------------------------- \033[0m"
     echo -e "\033[32m +=================================================================================================================+ \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m | 定义：run-all.sh 为一键执行所有活动脚本，manual-update.sh 为一键更新脚本                                        | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
-    echo -e "\033[32m |       如果想要单独执行或延迟执行特定活动脚本，请通过命令 bash jd.sh 查看教程                                    | \033[0m"
+    echo -e "\033[32m |       如果想要执行特定活动脚本，请通过命令 bash jd.sh 查看教程                                                  | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
-    echo -e "\033[32m | 注意：1. 该项目文件以及一键脚本的默认所在目录为$BASE                                                          | \033[0m"
+    echo -e "\033[32m | 注意：1. 该项目文件以及一键脚本的默认安装目录为$BASE                                                            | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m |       2. 为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误                                   | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
@@ -1211,7 +1211,7 @@ function ResultJudgment() {
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m |       5. 由于京东活动一直变化可能会出现无法参加活动、报错等正常现象，可手动更新活动脚本                         | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
-    echo -e "\033[32m |       6. 如果需要更新活动脚本，请执行 bash manual-update.sh 命令进行一键更新即可，它会同步更新 run-all.sh 脚本  | \033[0m"
+    echo -e "\033[32m |       6. 如果需要更新活动脚本，请执行 bash manual-update.sh 命令一键更新即可，它会同步更新 run-all.sh 脚本      | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m |       7. 除手动运行活动脚本外该项目还会通过定时的方式全天候自动运行活动脚本，具体运行记录可通过日志查看         | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
@@ -1222,9 +1222,10 @@ function ResultJudgment() {
     echo -e "\033[32m |       10. 我不是活动脚本的开发者，但后续使用遇到任何问题都可访问本项目寻求帮助，制作不易，理解万岁              | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m +=================================================================================================================+ \033[0m"
-    echo -e "\033[32m --------------------------- 更多帮助请访问:  https://github.com/SuperManito/JD-FreeFuck --------------------------- \033[0m"
+    echo -e "\033[32m --------------------------- 更多帮助请访问   https://github.com/SuperManito/JD-FreeFuck --------------------------- \033[0m"
+    echo -e "\033[32m --------------------------- Github & Gitee   https://gitee.com/SuperManito/JD-FreeFuck  --------------------------- \033[0m"
     echo -e ''
-    echo -e "\033[32m ---------------------------------------- 如果老板成功薅到羊毛，赏5块钱可否 ---------------------------------------- \033[0m"
+    echo -e "\033[32m ------------------------------- 如果老板成功薅到羊毛，可对我进行打赏，感谢您的支持！------------------------------- \033[0m"
   else
     echo -e "\033[31m -------------- 一键部署失败 -------------- \033[0m"
     echo -e "\033[31m 原因：Nodejs未安装成功，请检查网络相关问题 \033[0m"
