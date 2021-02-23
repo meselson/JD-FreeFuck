@@ -66,7 +66,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
     echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-#### 4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
+#### 4. 如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
 
     cd /opt/jd/panel
     npm install || npm install --registry=https://registry.npm.taobao.org
