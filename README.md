@@ -38,30 +38,29 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 ## 一、命令部署
 - __部署前需知：__
 1. 检查系统是否符合支持范围、是否联网等基本条件
-2. 为了解决权限问题，请切换至`root`用户进行部署，切换命令为`sudo -i`
-3. 国内用户如果没有科学上网方式请尽量使用`Gitee命令`部署此项目
-4. 本项目默认安装目录为`/opt/jd`，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
-5. 由于某些组件的安装受国外网络因素影响，如果部署失败请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
+2. 执行部署命令前请切换至`root用户`，切换命令为`sudo -i`
+3. 本项目默认安装目录为`/opt/jd`，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
+4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
+5. 下方`从Github部署`与`从码云Gitee部署`对应两种部署途径，国内用户如果没有科学上网方式请尽量使用`码云Gitee`命令部署此项目
 6. 下方`PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用了国内更新源加速下载，根据您的使用环境选择其一即可，不要重复部署
+7. 使用`VPS 环境`部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。_
+- __从`Github`部署：__
 
-- __PC 环境：__
- 
-__Github__
+__PC 环境__
 
     bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
-__Gitee__
-
-    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
-- __VPS 环境：__
- 
-__Github__
+__VPS 环境__
 
     bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
-__Gitee__
+- __从`码云Gitee`部署：__
+
+__PC 环境__
+
+    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
+__VPS 环境__
 
     bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
-   _注：部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。_
-- __常见问题：__
+- __常见问题与帮助：__
 1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
     
        apt install -y curl 或 yum install -y curl
@@ -77,7 +76,7 @@ __Gitee__
        npm install -g pm2
        pm2 start server.js
 5. 拉取更新失败提示`ssh: connect to host gitee.com port 22: Connection timed out`是因为`SSH 22端口`不可用。
-6. 部署成功后后`无法访问控制面板`是因为`5678 端口`外部不能访问所导致的。
+6. 部署成功后无法访问`控制面板`是因为`5678 端口`外部不能访问所导致的。
     
 ***
 
@@ -195,15 +194,22 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
 2. 我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关，本项目所使用的活动脚本均由[ lxk0301 ](https://gitee.com/lxk0301)提供。
 3. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，如果您不想用请自行删除。\
 \
-__原作者项目链接：__\
-__[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master) 　## 活动脚本开发者（私有库）__
+活动脚本作者链接：\
+　　[ lxk0301 ](https://gitee.com/lxk0301)　　　 ## 活动脚本开发者\
+[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master)　## 项目地址（私有库）
 
 ***
 
-## 赞赏码
+## 七、帮助与支持
+#### 如果您有意见与建议或者遇到了问题需要我的协助，欢迎到[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)提交反馈
+#### 为了提高效率快速解决您的问题，请严格按照模板提交，我会在第一时间回复您的问题，感谢您的理解与配合
+
+
+***
+
+## 明天会更好
 <img src="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/icon/thank.jpg" width="300" height="300" alt="微信赞赏码"/><br/>
-### 如果您愿意支持此项目，可对我进行打赏，开发不易，维护艰辛，感激不尽！
-### 如果您有意见与建议欢迎到 [Issues](https://github.com/SuperManito/JD-FreeFuck/issues) 反馈，如果需要帮助请严格按照模板提交。
+### 开发不易、维护艰辛，如果您愿意支持此项目，可对我打赏，感激不尽！
 
 ***
 
