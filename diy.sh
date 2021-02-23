@@ -43,6 +43,12 @@ cd $BASE
 index=1
 for author in $author_list
 do
+  echo -e "\033[32m +---------------- 开 始 下 载 / 更 新 diy 活 动 脚 本 ----------------+ \033[0m"
+  echo -e "\033[32m |                                                             | \033[0m"
+  echo -e "\033[32m | 如果下载报错，证明您当前的网络环境无法连接Github服务器......      | \033[0m"
+  echo -e "\033[32m |                                                             | \033[0m"
+  echo -e "\033[32m +-------------------------------------------------------------+ \033[0m"
+  echo -e ''
   echo -e "开始下载 $author 的脚本"
   # 下载my_scripts_list中的每个js文件，重命名增加前缀"作者昵称_"，增加后缀".new"
   eval scripts_list=\$my_scripts_list_${index}
@@ -55,7 +61,7 @@ do
     echo $url
     eval name=$js
     echo $name
-    wget -q --no-check-certificate $url -O $name.new
+    wget -q --no-check-certificate $url -O scripts/$name.new
 
     # 如果上一步下载没问题，才去掉后缀".new"，如果上一步下载有问题，就保留之前正常下载的版本
     # 随机添加个cron到crontab.list
