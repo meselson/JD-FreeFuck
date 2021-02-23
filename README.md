@@ -15,18 +15,16 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
 # 《JD薅羊毛》一键部署 For Linux
 ## 用途：通过自动化脚本参与JD商城的各种活动从而白嫖京豆
-## 本项目支持的 GNU/Linux (简体中文) 发行版：
+## 已适配的 GNU/Linux (简体中文) 发行版：
 - __`Ubuntu`：16.04 ~ 20.10 ㅤㅤ ㅤ`Fedora`：28 ~ 33__
 - __`Debian`：9.0 ~ 10.7ㅤㅤㅤㅤㅤ`CentOS`：7.0 ~ 8.3__
-#### _注：建议优先使用Ubuntu系统，CentOS如果是最小化安装请通过SSH方式进入到终端。_
 
  _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
 
  _附：[基于 Docker 的安装方法（ 软路由、NAS、其它 GNU/Linux 发行版 ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))_
 
-__此项目`码云Gitee`同步更新，如果您所在的环境经常无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__\
-\
-__温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！__
+#### 此项目`码云Gitee`同步更新，如果您所在的环境经常无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)
+#### 温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，CentOS如果是最小化安装请通过SSH方式进入到终端
 
 ***
 
