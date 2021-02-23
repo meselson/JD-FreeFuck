@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Date:2021-2-22
+## Date:2021-2-23
 ## 更新说明：修复了Crontab定时配置错误的问题
 
 ## 编写新的一键更新脚本
@@ -30,7 +30,8 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
-sed -i "s#/home/myid/jd/jd.sh#jd#g" config/crontab.list
+sed -i "s#/home/myid/jd/##g" config/crontab.list
+sed -i "s#jd.sh#jd#g" config/crontab.list
 sed -i "s/git_pull/manual-update/g" config/crontab.list
 EOF
 ## 修改非活动脚本的定时配置
