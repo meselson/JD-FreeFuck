@@ -46,7 +46,7 @@ rand(){
     min=$1
     max=$(($2-$min+1))
     num=$(cat /proc/sys/kernel/random/uuid | cksum | awk -F ' ' '{print $1}')
-    echo $(($num%$max+$min))
+    #echo $(($num%$max+$min))
 }
 cd $BASE
 index=1
