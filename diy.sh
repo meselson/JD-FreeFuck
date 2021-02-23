@@ -37,7 +37,7 @@ echo -e "\033[37m-------------------------------------------------------------- 
 echo -e ''
 echo -e "\033[37m+-------------- 开 始 更 新 diy 活 动 脚 本... --------------+ \033[0m"
 echo -e "\033[37m|                                                            | \033[0m"
-echo -e "\033[37m|  如若下载报错，证明您当前网络环境无法连接至 Github 服务器  | \033[0m"
+echo -e "\033[37m|  如果下载报错，证明您当前网络环境无法连接至 Github 服务器  | \033[0m"
 echo -e "\033[37m|                                                            | \033[0m"
 echo -e "\033[37m+------------------------------------------------------------+ \033[0m"
 echo -e ''
@@ -87,11 +87,12 @@ do
   done
   index=$[$index+1]
 done
+
 ##############################修正定时任务##########################################
-sed -i "s/bash jd jd_asus_iqiyi/bash $BASE/jd.sh jd_asus_iqiyi/g" config/crontab.list
-sed -i "s/bash jd jd_entertainment/bash $BASE/jd.sh jd_entertainment/g" config/crontab.list
-sed -i "s/bash jd jd_fanslove/bash $BASE/jd.sh jd_fanslove/g" config/crontab.list
-sed -i "s/bash jd jd_getFanslove/bash $BASE/jd.sh jd_getFanslove/g" config/crontab.list
-sed -i "s/bash jd jd_collectBlueCoin/bash $BASE/jd.sh jd_collectBlueCoin/g" config/crontab.list
-sed -i "s/bash jd ddxw/bash $BASE/jd.sh ddxw/g" config/crontab.list
+sed -i "s|bash jd jd_asus_iqiyi|bash $BASE/jd.sh jd_asus_iqiyi|g" config/crontab.list
+sed -i "s|bash jd jd_entertainment|bash $BASE/jd.sh jd_entertainment|g" config/crontab.list
+sed -i "s|bash jd jd_fanslove|bash $BASE/jd.sh jd_fanslove|g" config/crontab.list
+sed -i "s|bash jd jd_getFanslove|bash $BASE/jd.sh jd_getFanslove|g" config/crontab.list
+sed -i "s|bash jd jd_collectBlueCoin|bash $BASE/jd.sh jd_collectBlueCoin|g" config/crontab.list
+sed -i "s|bash jd ddxw|bash $BASE/jd.sh ddxw|g" config/crontab.list
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
