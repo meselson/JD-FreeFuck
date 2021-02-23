@@ -2,6 +2,9 @@
 ## Author:SuperManito
 ## Modified:2021-2-23
 
+## 项目安装目录
+BASE="/opt/jd"
+
 #添加hosts;如无法正常下载Github Raw文件，请注释掉
 Host_IP=('151.101.88.133' '151.101.228.133')
 Host_Name=('raw.githubusercontent.com' 'raw.githubusercontent.com')
@@ -36,7 +39,7 @@ rand(){
     num=$(cat /proc/sys/kernel/random/uuid | cksum | awk -F ' ' '{print $1}')
     echo $(($num%$max+$min))
 }
-cd $ScriptsDir   # 在 git_pull.sh 中已经定义 ScriptsDir 此变量，diy.sh 由 git_pull.sh 调用，因此可以直接使用此变量
+cd $BASE
 index=1
 for author in $author_list
 do
