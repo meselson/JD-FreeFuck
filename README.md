@@ -64,8 +64,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 #### 2. 如果执行部署脚本命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性以及相关设置。
 #### 3. 如果使用`Github命令`部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
-    echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
     echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
+    echo "151.101.228.133 raw.githubusercontent.com" >> /etc/hosts
 #### 4. 如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
 
     cd /opt/jd/panel
