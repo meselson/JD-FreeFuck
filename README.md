@@ -21,9 +21,9 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 - __`Fedora`：支持 28 ~ 33 版本__
 - __`CentOS`：支持 7.0 ~ 8.3 版本，如果是最小化安装，请通过SSH方式进入到终端__
 
-  _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
+ _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
 
-  _附：[基于 Docker 的安装方法（ 软路由、NAS、其它 GNU/Linux 发行版 ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))_
+ _附：[基于 Docker 的安装方法（ 软路由、NAS、其它 GNU/Linux 发行版 ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))_
 
 __此项目`码云Gitee`同步更新，如果您所在的环境经常无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__\
 \
