@@ -34,19 +34,17 @@ my_scripts_list_2="jd_collectBlueCoin.js ddxw.js"
 
 ##############################随机函数##########################################
 echo -e "\033[37m-------------------------------------------------------------- \033[0m"
-
-  echo -e "\033[37m+-------------- 开 始 下 载 / 更 新 diy 活 动 脚 本 --------------+ \033[0m"
-  echo -e "\033[37m|                                                                 | \033[0m"
-  echo -e "\033[37m|   如果下载报错，证明您当前的网络环境无法连接Github服务器......  | \033[0m"
-  echo -e "\033[37m|                                                                 | \033[0m"
-  echo -e "\033[37m+-----------------------------------------------------------------+ \033[0m"
-  echo -e ''
+echo -e "\033[37m+------------ 开 始 下 载 / 更 新 diy 活 动 脚 本 ------------+ \033[0m"
+echo -e "\033[37m|                                                               | \033[0m"
+echo -e "\033[37m|  如果下载报错，证明您当前的网络环境无法连接Github服务器...... | \033[0m"
+echo -e "\033[37m|                                                               | \033[0m"
+echo -e "\033[37m+---------------------------------------------------------------+ \033[0m"echo -e ''
 
 rand(){
     min=$1
     max=$(($2-$min+1))
     num=$(cat /proc/sys/kernel/random/uuid | cksum | awk -F ' ' '{print $1}')
-    #echo $(($num%$max+$min))
+    echo $(($num%$max+$min))
 }
 cd $BASE
 index=1
@@ -72,7 +70,7 @@ do
       mv -f scripts/$name.new scripts/$name
       echo -e "更新 $name 完成...\n"
 	  croname=`echo "$name"|awk -F\. '{print $1}'`
-	  script_date=`cat $name|grep "http"|awk '{if($1~/^[0-59]/) print $1,$2,$3,$4,$5}'|sort |uniq|head -n 1 >/dev/null 2>&1`
+	  script_date=`cat scripts/$name|grep "http"|awk '{if($1~/^[0-59]/) print $1,$2,$3,$4,$5}'|sort |uniq|head -n 1`
 	  if [ -z "${script_date}" ];then
 	    cron_min=$(rand 1 59)
 	    cron_hour=$(rand 7 9)
@@ -81,11 +79,11 @@ do
 	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash jd $croname"  $BASE/config/crontab.list
 	  fi
     else
-      [ -f $name.new ] && rm -f scripts/$name.new
+      [ -f scripts/$name.new ] && rm -f scripts/$name.new
       echo -e "更新 $name 失败，使用上一次正常的版本...\n"
     fi
   done
   index=$[$index+1]
 done
+echo -e ''
 echo -e "\033[37mjs脚本更新完成... \033[0m"
-echo -e "\033[37m-------------------------------------------------------------- \033[0m"
