@@ -25,13 +25,13 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
   _附：[基于 Docker 的安装方法（ 软路由、NAS、其它 GNU/Linux 发行版 ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))_
 
-__此项目`码云Gitee`同步更新，如果您所在的环境经常无法访问`Github`，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__\
+__此项目`码云Gitee`同步更新，如果您所在的环境经常无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__\
 \
 __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，不在本项目支持范围内的环境请使用`基于 Docker 的安装方法`__
 
 ***
 
-# 下面进入正题，请`认真阅读`下面的内容
+# 下面进入正题，请认真阅读下面的内容
     
 ***
 
