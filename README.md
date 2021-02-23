@@ -44,22 +44,21 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 5. 下方`从Github部署`与`从码云Gitee部署`对应两种部署途径，国内用户如果没有科学上网方式请尽量使用`码云Gitee`命令部署此项目
 6. 下方`PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用了国内更新源加速下载，根据您的使用环境选择其一即可，不要重复部署
 7. 使用`VPS 环境`部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。_
+
 - __从`Github`部署：__
+1. PC 环境
 
-__PC 环境__
+       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+2. VPS 环境
 
-    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
-__VPS 环境__
-
-    bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
+       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
 - __从`码云Gitee`部署：__
+1. PC 环境
 
-__PC 环境__
+       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
+2. VPS 环境
 
-    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
-__VPS 环境__
-
-    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
+       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
 - __常见问题与帮助：__
 1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
     
