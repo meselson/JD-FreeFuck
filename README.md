@@ -16,7 +16,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 # 《JD薅羊毛》一键部署 For Linux
 ## 用途：通过自动化脚本参与JD商城的各种活动从而白嫖京豆
 ## 已适配的 GNU/Linux 发行版（简体中文）：
-- __`Ubuntu`：16.04 ~ 20.10  ㅤㅤㅤ`Fedora`：28 ~ 33__
+- __`Ubuntu`：16.04 ~ 20.10 ㅤㅤ ㅤ`Fedora`：28 ~ 33__
 - __`Debian`：9.0 ~ 10.7ㅤㅤㅤㅤㅤ`CentOS`：7.0 ~ 8.3__
 
  _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
