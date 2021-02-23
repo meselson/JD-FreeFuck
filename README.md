@@ -157,7 +157,6 @@ _注：导入的第三方活动脚本不会随项目本身活动脚本的更新�
 #### 12. 更新配置文件：
     #备份配置文件
     mv config/config.sh config/config.sh.bak
-
     #替换新的配置文件
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample -O sample/config.sh.sample
     cp sample/config.sh.sample config/config.sh
