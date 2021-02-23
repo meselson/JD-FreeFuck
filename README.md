@@ -149,6 +149,7 @@ _注：导入的第三方活动脚本不会随项目本身活动脚本的更新�
     cp sample/config.sh.sample config/config.sh
 #### 12. 更新一键更新脚本：
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/manual-update.sh -O manual-update.sh
+    bash manual-update.sh
 #### 13. 修复与升级：
     bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/update.sh)
 _注：适用于后期维护，当遇到问题或优化代码需要修复时会在项目置顶通知，另外如果您修改了默认安装目录，请自行下载源码并更改相关变量手动更新。_
