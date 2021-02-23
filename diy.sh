@@ -76,7 +76,7 @@ do
 	  if [ -z "${script_date}" ];then
 	    cron_min=$(rand 1 59)
 	    cron_hour=$(rand 7 9)
-	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${cron_min} ${cron_hour} * * * bash jd $croname"  $BASE/config/crontab.list
+	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${cron_min} ${cron_hour} * * * bash $BASE/jd.sh $croname"  $BASE/config/crontab.list
 	  else
 	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash $BASE/jd.sh $croname"  $BASE/config/crontab.list
 	  fi
