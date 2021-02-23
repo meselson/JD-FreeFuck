@@ -34,8 +34,6 @@ sed -i "s#/home/myid/jd/##g" config/crontab.list
 sed -i "s#jd.sh#jd#g" config/crontab.list
 sed -i "s/git_pull/manual-update/g" config/crontab.list
 EOF
-## 修改非活动脚本的定时配置
-sed -i "s#/home/myid/jd/##g" config/crontab.list
 ## 更新活动脚本
 bash manual-update.sh
 
