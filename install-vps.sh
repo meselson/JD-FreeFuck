@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-22
+## Modified:2021-2-23
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -102,7 +102,7 @@ function EnvStructures() {
     apt remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/apt/sources.list.d/nodesource.list >/dev/null 2>&1
     ## 安装需要的软件包
-    apt install -y git wget curl perl moreutils openssh-server
+    apt install -y wget curl net-tools openssh-server git perl moreutils
     ## 安装Nodejs与NPM
     curl -sL https://deb.nodesource.com/setup_14.x | bash -
     apt install -y nodejs
@@ -114,7 +114,7 @@ function EnvStructures() {
     yum remove -y nodejs npm >/dev/null 2>&1
     rm -rf /etc/yum.repos.d/nodesource-*.repo >/dev/null 2>&1
     ## 安装需要的软件包
-    yum install -y git wget curl perl moreutils openssh-server
+    yum install -y wget curl net-tools openssh-server git perl moreutils
     ## 安装Nodejs与NPM
     curl -sL https://rpm.nodesource.com/setup_14.x | bash -
     yum install -y nodejs
@@ -154,7 +154,7 @@ function ProjectDeployment() {
     mkdir -p ~/.ssh
   fi
   ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
-  wget -P ~/.ssh https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa -O ~/.ssh/id_rsa
   chmod 600 ~/.ssh/id_rsa
   ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
   ## 下载源码并解压至目录
@@ -164,8 +164,7 @@ function ProjectDeployment() {
   rm -rf /opt/jd.tar
   mkdir $BASE/config
   ## 更换新的配置文件
-  rm -rf $BASE/sample/config.sh.sample
-  wget -P $BASE/sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample -O $BASE/sample/config.sh.sample
   ## 创建项目配置文件与定时任务配置文件
   cp $BASE/sample/config.sh.sample $BASE/config/config.sh
   cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
@@ -212,46 +211,15 @@ function AutoScript() {
     echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
   fi
   sed -i '/^\s*$/d' run-all.sh
-  ## 编写一键更新脚本
-  touch $BASE/manual-update.sh
-  cat >$BASE/manual-update.sh <<\EOF
-#!/bin/bash
-## Author:SuperManito
-## Modified:2021-2-22
-
-## 项目安装目录
-BASE="/opt/jd"
-
-## 执行更新命令
-bash git_pull.sh
-## 重新生成一键执行所有活动脚本
-rm -rf run-all.sh
-touch run-all.sh
-bash jd.sh | grep -o 'jd_[a-z].*' >run-all.sh
-bash jd.sh | grep -o 'jx_[a-z].*' >>run-all.sh
-sed -i 's/^/bash jd.sh &/g' run-all.sh
-sed -i 's/.js/ now/g' run-all.sh
-sed -i '1i\#!/bin/bash' run-all.sh
-sed -i "s/bash jd.sh jd_delCoupon now//g" run-all.sh  #不执行京东家庭号任务
-sed -i "s/bash jd.sh jd_family now//g" run-all.sh     #不执行删除优惠券任务
-cat run-all.sh | grep jd_crazy_joy_coin -wq
-if [ $? -eq 0 ];then
-  sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" run-all.sh
-  echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
-fi
-sed -i '/^\s*$/d' run-all.sh
-## 配置定时任务
-sed -i "s#/home/myid/jd#$BASE#g" config/crontab.list
-sed -i "s/git_pull/manual-update/g" config/crontab.list
-EOF
+  ## 下载最新的一键更新脚本
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/manual-update.sh -O $BASE/manual-update.sh >/dev/null 2>&1
 }
 
 ## 部署结果判定：
 function ResultJudgment() {
-  ## 判定Nodejs是否安装成功
-  VERIFICATION=$(node -v | cut -c2)
-  if [ $VERIFICATION = "1" ]; then
-    echo -e ''
+  ## 判定控制面板是否安装成功
+  netstat -anp | grep 5678 -wq
+  if [ $? -eq 0 ];then
     echo -e "\033[32m +------- 已 启 用 控 制 面 板 功 能 -------+ \033[0m"
     echo -e "\033[32m |                                          | \033[0m"
     echo -e "\033[32m | 本地访问：http://127.0.0.1:5678          | \033[0m"
@@ -261,8 +229,14 @@ function ResultJudgment() {
     echo -e "\033[32m | 初始用户名：admin，初始密码：adminadmin  | \033[0m"
     echo -e "\033[32m |                                          | \033[0m"
     echo -e "\033[32m +------------------------------------------+ \033[0m"
+  else
+    echo -e "\033[31m -------------- 控制面板安装失败 -------------- \033[0m"
+  fi
+  sleep 3s
+  ## 判定Nodejs是否安装成功
+  VERIFICATION=$(node -v | cut -c2)
+  if [ $VERIFICATION = "1" ]; then
     echo -e ''
-    sleep 3s
     echo -e "\033[32m --------------------------- 一键部署成功，请执行 bash run-all.sh 命令开始您的薅羊毛行为 --------------------------- \033[0m"
     echo -e "\033[32m +=================================================================================================================+ \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
