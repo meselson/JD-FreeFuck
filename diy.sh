@@ -96,3 +96,4 @@ sed -i "s|bash jd jd_getFanslove|bash $BASE/jd.sh jd_getFanslove|g" config/cront
 sed -i "s|bash jd jd_collectBlueCoin|bash $BASE/jd.sh jd_collectBlueCoin|g" config/crontab.list
 sed -i "s|bash jd ddxw|bash $BASE/jd.sh ddxw|g" config/crontab.list
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
+echo -e ''
