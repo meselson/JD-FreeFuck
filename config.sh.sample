@@ -1,6 +1,6 @@
 ## Version: v3.27.2
 ## Date: 2021-02-23
-## Update Content: 删除了过期活动“京东环球挑战赛”的互助码
+## Update Content: 去除了过期活动“京东环球挑战赛”的互助码
 
 ## 上面版本号中，如果第2位数字有变化，那么代表增加了新的参数，如果只有第3位数字有变化，仅代表更新了注释，没有增加新的参数，可更新可不更新
 ## 如需更新，请参考WIKI（https://github.com/EvineDeng/jd-base/wiki）中"如何更新配置文件"部分的操作说明，进行智能比对后修改。
@@ -536,7 +536,7 @@ export PURCHASE_SHOPS=""
 ################################## 是否添加DIY脚本（选填） ##################################
 ## 如果你自己会写shell脚本，并且希望在每次git_pull.sh这个脚本运行时，额外运行你的DIY脚本，请赋值为 "true"
 ## 同时，请务必将你的脚本命名为 diy.sh (只能叫这个文件名)，放在 config 目录下
-## 仓库下已经上传diy.sh模板，如果你想使用；可以参考本仓库下 diy.sh 文件；地址：https://raw.githubusercontent.com/dockere/jd-base/master/sample/diy.sh
+## 我已定义好的变量，你如果想直接使用，可以参考本仓库下 git_pull.sh 文件
 EnableExtraShell=""
 
 
