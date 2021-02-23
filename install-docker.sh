@@ -1,12 +1,14 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-23
+## Modified:2021-2-24
 
 ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
 rm -rf ~/.ssh/id_rsa
 wget -P ~/.ssh https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa
 chmod 600 ~/.ssh/id_rsa
 ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+## 删除活动脚本目录
+rm -rf scripts
 ## 更换新的文件
 wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/jd.sh -O jd.sh
 wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/git_pull.sh -O git_pull.sh
