@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-23
+## Modified:2021-2-24
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -84,12 +84,15 @@ function EnvStructures() {
   echo -e '\033[37m|                                                   | \033[0m'
   echo -e '\033[37m+---------------------------------------------------+ \033[0m'
   sleep 3s
+
+  ## 修改系统时区：
+  timedatectl set-timezone "Asia/Shanghai"
+
   ## CentOS安装扩展EPEL源
   if [ $SYSTEM_NAME = "CentOS" ]; then
     yum makecache
     yum install -y epel-release
   fi
-
   ## CentOS8启用PowerTools仓库
   if [ $CENTOS_VERSION = "8" ]; then
     sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/CentOS*PowerTools.repo
