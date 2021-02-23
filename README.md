@@ -48,17 +48,17 @@ __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用
 ### 从`Github`部署：
 - PC 环境
 
-       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
 - VPS 环境
 
-       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
+      bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
 ### 从`码云Gitee`部署：
 - PC 环境
 
-       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
 - VPS 环境
 
-       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
+      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
 ㅤ
 ### 常见问题与帮助：
 1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
