@@ -27,7 +27,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
 __此项目`码云Gitee`同步更新，如果您所在的环境经常无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__\
 \
-__温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，不在本项目支持范围内的环境请使用`基于 Docker 的安装方法`__
+__温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！__
 
 ***
 
@@ -71,7 +71,7 @@ __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用
        echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
 4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
 
-       cd panel
+       cd /opt/jd/panel
        npm install || npm install --registry=https://registry.npm.taobao.org
        npm install -g pm2
        pm2 start server.js
@@ -82,27 +82,29 @@ __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用
 
 ## 二、获取账号信息
 __接下来我们需要您JD账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：__
-- 通过`控制面板`功能进入WEB网页手机扫码获取，此方式获取的Cookie部分内容有效期为3个月。（优先推荐）
-- 通过浏览器开发工具获取，在[ Wiki-GetCookies ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，此方式获取的Cookie部分内容有效期为1个月。
+- 通过`控制面板`功能进入WEB网页手机扫码获取，此方式获取的“身份证”有效期为3个月。（优先推荐）
+- 通过浏览器开发工具获取，在[ Wiki-GetCookies ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，此方式获取的“身份证”有效期为1个月。
 
 ***
 
 ## 三、手动配置信息
 _注：以下全部内容也可在控制面板功能中的WEB网页完成配置，可取代在终端输入命令。_
-### 将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行。（必填）
-    sed -i '28c Cookie1=""' /opt/jd/config/config.sh
-  _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_
-- 附1. 该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
+- __将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行：__
 
-      sed -i "29c Cookie2=$COOKIE2" /opt/jd/config/config.sh
-      sed -i "30c Cookie3=$COOKIE3" /opt/jd/config/config.sh
-      sed -i "31c Cookie4=$COOKIE4" /opt/jd/config/config.sh
-      sed -i "32c Cookie5=$COOKIE5" /opt/jd/config/config.sh
-      sed -i "33c Cookie6=$COOKIE6" /opt/jd/config/config.sh
-   _注：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释。_
-- 附2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
+      sed -i '28c Cookie1=""' /opt/jd/config/config.sh
+_参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_
+- __其它配置信息：（选填）__
+1. 该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
-      sed -i '95c export PUSH_KEY=""' /opt/jd/config/config.sh
+       sed -i "29c Cookie2=$COOKIE2" /opt/jd/config/config.sh
+       sed -i "30c Cookie3=$COOKIE3" /opt/jd/config/config.sh
+       sed -i "31c Cookie4=$COOKIE4" /opt/jd/config/config.sh
+       sed -i "32c Cookie5=$COOKIE5" /opt/jd/config/config.sh
+       sed -i "33c Cookie6=$COOKIE6" /opt/jd/config/config.sh
+    _注：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释。_
+2. 如果需要使用[ Server酱 ](http://sc.ftqq.com/)微信推送功能请将`SCKEY`填入下面的双引号内，复制完整命令到终端并执行：
+
+       sed -i '95c export PUSH_KEY=""' /opt/jd/config/config.sh
 
 ***
 
