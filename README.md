@@ -58,7 +58,9 @@ __Github__
 __Gitee__
 
     bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
-   _注：如果部署后无法访问控制面板，请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放端口、允许网页流量等重要设置。_ 
+   _注：部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。\
+  ㅤㅤ拉取更新失败提示`ssh: connect to host gitee.com port 22: Connection timed out`是因为`SSH 22端口`不可用。\
+  ㅤㅤ部署成功后后`无法访问控制面板`是因为`5678 端口`外部不能访问所导致的。_
 - 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
 
       apt install -y curl 或 yum install -y curl
