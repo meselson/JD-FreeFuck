@@ -5,7 +5,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ## 通知与更新
 - __2021/2/23 13:50 通知__
 
-ㅤ修复了关于Docker版本`定时任务`配置不正确的问题，请所有已部署`Docker版本`的朋友通过`docker exec -it jd /bin/bash`命令进入容器后执行更新命令，更新命令位于下方《使用与更新》中的倒数第二条。
+ㅤ修复了关于Docker版本`定时任务`配置不正确的问题，请所有已部署`Docker版本`的朋友通过`docker exec -it jd /bin/bash`命令进入容器后执行更新命令，更新命令位于下方《使用与更新》中的第12条。
 
 - __2021/2/21 通知（重要）__
 
@@ -36,7 +36,7 @@ __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用
 ***
 
 ## 一、命令部署
-- __部署前需知：__
+### 部署前需知：
 1. 检查系统是否符合支持范围、是否联网等基本条件
 2. 执行部署命令前请切换至`root用户`，切换命令为`sudo -i`
 3. 本项目默认安装目录为`/opt/jd`，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
@@ -45,22 +45,22 @@ __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用
 6. `PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用了国内更新源加速，根据您的使用环境选择其一即可，不要重复部署
 7. 使用`VPS 环境`部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。\
 ㅤ
-- __从`Github`部署：__
-1. PC 环境
+### 从`Github`部署：
+- PC 环境
 
        bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
-2. VPS 环境
+- VPS 环境
 
        bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
-- __从`码云Gitee`部署：__
-1. PC 环境
+### 从`码云Gitee`部署：
+- PC 环境
 
        bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
-2. VPS 环境
+- VPS 环境
 
        bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
 ㅤ
-- __常见问题与帮助：__
+### 常见问题与帮助：
 1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
     
        apt install -y curl 或 yum install -y curl
@@ -92,7 +92,7 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
 - __将获得的`Cookie部分内容`填入下面命令中的“双引号”内，复制完整命令到终端并执行：__
 
       sed -i '28c Cookie1=""' /opt/jd/config/config.sh
-_参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_
+    _参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_
 - __其它配置信息：（选填）__
 1. 该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
@@ -109,70 +109,57 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/conf
 ***
 
 ## 四、使用与更新
-- __1. 进入项目安装目录：__
+#### 1. 进入项目安装目录：
+    cd /opt/jd
+_注：进入项目安装目录内才能使用所有功能。_
+#### 2. 运行一键脚本开始您的薅羊毛行为：
+    bash run-all.sh
+_注：此一键脚本内容为执行所有活动脚本。_
+#### 3. 更新活动脚本与一键脚本：
+    bash manual-update.sh
+_注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
+#### 4. 执行特定活动脚本：
+    bash jd.sh xxx      # 如果设置了随机延迟并且当时时间不在0-2、30-31、59分内，将随机延迟一定秒数
+    bash jd.sh xxx now  # 无论是否设置了随机延迟，均立即运行
+_注：具体所有活动脚本列表可通过命令`bash jd.sh`查看，`xxx`为脚本名。_
+#### 5. 获取互助码：
+    #导入脚本
+    wget -P scripts https://gitee.com/SuperManito/JD-FreeFuck/raw/main/format_share_jd_code.js
 
-      cd /opt/jd
-    _注：进入项目安装目录内才能使用所有功能。_
-- __2. 运行一键脚本开始您的薅羊毛行为：__
+    #使用脚本
+    bash jd.sh format_share_jd_code now
+_注：这里引用了另一个大佬写的互助码脚本，比 lxk 的好用。引用项目链接：[qq34347476/quantumult-x](https://gitee.com/qq34347476/quantumult-x/tree/master)_
+#### 6. 导出互助码：
+    bash export_sharecodes.sh
+#### 7. 启用挂机功能：
+    bash jd.sh hangup
+#### 8. 手动启用控制面板功能：
+    pm2 start panel/server.js
+_注：此命令适用于后期使用，在某些环境下当系统重启导致控制面板无法访问提示拒绝连接时可用此命令恢复使用。_
+#### 9. 重置控制面板的用户名和密码：
+    bash jd.sh resetpwd
+#### 10. 导入并使用第三方活动脚本：
+    1. 将脚本放置在该项目 scripts 子目录下
+    2. 然后通过命令 bash jd.sh xxx now 运行
+    3. 如果您想将第三方脚本加入到 run-all.sh 一键脚本中可将脚本名改为"jd_"开头即可
+_注：导入的第三方活动脚本不会随项目本身活动脚本的更新而删除。_
+#### 11. 更新配置文件：
+    #备份配置文件
+    mv config/config.sh config/config.sh.bak
 
-      bash run-all.sh
-    _注：此一键脚本内容为执行所有活动脚本。_
-- __3. 更新活动脚本与一键脚本：__
+    #替换新的配置文件
+    rm -rf sample/config.sh.sample
+    wget -P sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
+    cp sample/config.sh.sample config/config.sh
+#### 12. 升级与更新：
+    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/update.sh)
+_注：适用于后期维护更新，当遇到问题或优化代码需要更新时会在项目置顶通知，另外如果您修改了默认安装目录，请自行下载源码并更改相关变量手动更新。_
+#### 13. 卸载此项目：
+    #删除项目文件（默认安装目录）
+    rm -rf /opt/jd
 
-      bash manual-update.sh
-    _注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
-- __4. 执行特定活动脚本：__
-
-      bash jd.sh xxx      # 如果设置了随机延迟并且当时时间不在0-2、30-31、59分内，将随机延迟一定秒数
-      bash jd.sh xxx now  # 无论是否设置了随机延迟，均立即运行
-    _注：具体所有活动脚本列表可通过命令`bash jd.sh`查看，`xxx`为脚本名。_
-- __5. 获取互助码：__
-
-      #导入脚本
-      wget -P scripts https://gitee.com/SuperManito/JD-FreeFuck/raw/main/format_share_jd_code.js
- 
-      #使用脚本
-      bash jd.sh format_share_jd_code now
-    _注：这里引用了另一个大佬写的互助码脚本，比 lxk 的好用。引用项目链接：[qq34347476/quantumult-x](https://gitee.com/qq34347476/quantumult-x/tree/master)_
-- __6. 导出互助码：__
-
-      bash export_sharecodes.sh
-- __7. 启用挂机功能：__
-
-      bash jd.sh hangup
-- __8. 手动启用控制面板功能：__
-
-      pm2 start panel/server.js
-    _注：此命令适用于后期使用，在某些环境下当系统重启导致控制面板无法访问提示拒绝连接时可用此命令恢复使用。_
-- __9. 重置控制面板的用户名和密码：__
-
-      bash jd.sh resetpwd
-- __10. 导入并使用第三方活动脚本：__
-
-      1. 将脚本放置在该项目 scripts 子目录下
-      2. 然后通过命令 bash jd.sh xxx now 运行
-      3. 如果您想将第三方脚本加入到 run-all.sh 一键脚本中可将脚本名改为"jd_"开头即可
-    _注：导入的第三方活动脚本不会随项目本身活动脚本的更新而删除。_
-- __11. 更新配置文件：__
-      
-      #备份配置文件
-      mv config/config.sh config/config.sh.bak
-      
-      #替换新的配置文件
-      rm -rf sample/config.sh.sample
-      wget -P sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
-      cp sample/config.sh.sample config/config.sh
-- __12. 升级与更新：__
-
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/update.sh)
-    _注：适用于后期维护更新，当遇到问题或优化代码需要更新时会在项目置顶通知，另外如果您修改了默认安装目录，请自行下载源码并更改相关变量手动更新。_
-- __13. 卸载此项目：__
-
-      #删除项目文件（默认安装目录）
-      rm -rf /opt/jd
-      
-      #卸载软件包
-      apt/yum remove -y git perl moreutils nodejs npm
+    #卸载软件包
+    apt/yum remove -y git perl moreutils nodejs npm
 
 ***
 
@@ -194,11 +181,7 @@ _参考命令：sed -i '27c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/conf
 ## 六、声明
 1. 本项目代码全部开源，代码各处均有注释其含义，所有脚本没有附加本人的互助码，无任何私利。
 2. 我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关，本项目所使用的活动脚本均由[ lxk0301 ](https://gitee.com/lxk0301)提供。
-3. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，如果您不想用请自行删除。\
-\
-活动脚本作者链接：\
-　　[ lxk0301 ](https://gitee.com/lxk0301)　　　 ## 活动脚本开发者\
-[ lxk0301/jd_scripts ](https://gitee.com/lxk0301/jd_scripts/tree/master)　## 项目地址（私有库）
+3. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，如果您不想用请自行删除。
 
 ***
 
