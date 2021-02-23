@@ -163,7 +163,8 @@ function ProjectDeployment() {
   tar -xvf /opt/jd.tar -C $BASE
   rm -rf /opt/jd.tar
   mkdir $BASE/config
-  ## 更换新的配置文件
+  ## 更换新的文件
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/jd.sh -O $BASE/jd.sh
   wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample -O $BASE/sample/config.sh.sample
   ## 创建项目配置文件与定时任务配置文件
   cp $BASE/sample/config.sh.sample $BASE/config/config.sh
