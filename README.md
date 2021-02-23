@@ -201,15 +201,16 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
 ***
 
 ## 七、帮助与支持
-#### 如果您有意见与建议或者遇到了问题需要我的协助，欢迎到[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)提交反馈
-#### 为了提高效率快速解决您的问题，请严格按照模板提交，我会在第一时间回复您的问题，感谢您的理解与配合
+#### 如果您有意见与建议或者遇到问题需要我的协助，欢迎到[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)提交反馈
+#### 为了提高效率快速解决您的问题，请严格按照模板提交，我会在第一时间进行回复，感谢您的理解与配合
 
 
 ***
 
 ## 明天会更好
 <img src="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/icon/thank.jpg" width="300" height="300" alt="微信赞赏码"/><br/>
-### 开发不易、维护艰辛，如果您愿意支持此项目，可对我打赏，感激不尽！
+### 如果您愿意支持此项目，可对我打赏，感激不尽！
+### 开发不易、维护艰辛，感谢您的理解与支持！
 
 ***
 
