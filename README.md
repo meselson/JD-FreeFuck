@@ -121,7 +121,7 @@ _注：建议每次运行活动脚本前执行一次，JD活动经常变化，�
 _注：具体所有活动脚本列表可通过命令`bash jd.sh`查看，`xxx`为脚本名。_
 #### 5. 获取互助码：
     #导入脚本
-    wget -P scripts https://gitee.com/SuperManito/JD-FreeFuck/raw/main/format_share_jd_code.js
+    wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/format_share_jd_code.js -O scripts/format_share_jd_code.js
 
     #使用脚本
     bash jd.sh format_share_jd_code now
@@ -145,8 +145,7 @@ _注：导入的第三方活动脚本不会随项目本身活动脚本的更新�
     mv config/config.sh config/config.sh.bak
 
     #替换新的配置文件
-    rm -rf sample/config.sh.sample
-    wget -P sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
+    wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample -O sample/config.sh.sample
     cp sample/config.sh.sample config/config.sh
 #### 12. 升级与更新：
     bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/update.sh)
