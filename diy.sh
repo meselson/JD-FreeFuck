@@ -5,6 +5,12 @@
 ## 项目安装目录
 BASE="/opt/jd"
 
+## 如果您还想添加第三方脚本，需要填写此脚本以下几处地方：
+## 1. 作者昵称
+## 2. 作者脚本地址URL
+## 3. 作者脚本名称
+## 4. 修正定时任务
+
 #添加hosts;如无法正常下载Github Raw文件，请注释掉
 Host_IP=('151.101.88.133' '151.101.228.133')
 Host_Name=('raw.githubusercontent.com' 'raw.githubusercontent.com')
