@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-2-23
+## Modified:2021-2-24
 
 ## 项目安装目录
 BASE="/opt/jd"
@@ -78,7 +78,7 @@ do
 	    cron_hour=$(rand 7 9)
 	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${cron_min} ${cron_hour} * * * bash jd $croname"  $BASE/config/crontab.list
 	  else
-	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash jd $croname"  $BASE/config/crontab.list
+	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash $BASE/jd.sh $croname"  $BASE/config/crontab.list
 	  fi
     else
       [ -f scripts/$name.new ] && rm -f scripts/$name.new
@@ -87,5 +87,4 @@ do
   done
   index=$[$index+1]
 done
-echo -e ''
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
