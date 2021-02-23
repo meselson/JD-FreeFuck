@@ -7,14 +7,10 @@ rm -rf ~/.ssh/id_rsa
 wget -P ~/.ssh https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa
 chmod 600 ~/.ssh/id_rsa
 ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
-## 删除旧的文件
-rm -rf scripts
-rm -rf git_pull.sh
-rm -rf sample/config.sh.sample
-## 下载新版更新文件
-wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/git_pull.sh
-## 下载新版配置文件模板
-wget -P sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
+## 更换新的文件
+wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/jd.sh -O jd.sh
+wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/git_pull.sh -O git_pull.sh
+wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample -O sample/config.sh.sample
 ## 创建配置文件
 rm -rf config.sh
 cp -f sample/config.sh.sample config/config.sh
