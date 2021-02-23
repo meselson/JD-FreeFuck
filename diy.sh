@@ -76,9 +76,9 @@ do
 	  if [ -z "${script_date}" ];then
 	    cron_min=$(rand 1 59)
 	    cron_hour=$(rand 7 9)
-	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${cron_min} ${cron_hour} * * * bash $BASE/jd.sh $croname"  $BASE/config/crontab.list
+	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${cron_min} ${cron_hour} * * * bash jd $croname"  $BASE/config/crontab.list
 	  else
-	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash $BASE/jd.sh $croname"  $BASE/config/crontab.list
+	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash jd $croname"  $BASE/config/crontab.list
 	  fi
     else
       [ -f scripts/$name.new ] && rm -f scripts/$name.new
@@ -87,4 +87,11 @@ do
   done
   index=$[$index+1]
 done
+##############################修正定时任务##########################################
+sed -i "s/bash jd jd_asus_iqiyi/bash $BASE/jd.sh jd_asus_iqiyi/g" config/crontab.list
+sed -i "s/bash jd jd_entertainment/bash $BASE/jd.sh jd_entertainment/g" config/crontab.list
+sed -i "s/bash jd jd_fanslove/bash $BASE/jd.sh jd_fanslove/g" config/crontab.list
+sed -i "s/bash jd jd_getFanslove/bash $BASE/jd.sh jd_getFanslove/g" config/crontab.list
+sed -i "s/bash jd jd_collectBlueCoin/bash $BASE/jd.sh jd_collectBlueCoin/g" config/crontab.list
+sed -i "s/bash jd ddxw/bash $BASE/jd.sh ddxw/g" config/crontab.list
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
