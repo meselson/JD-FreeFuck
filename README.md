@@ -39,9 +39,11 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 - __部署前需知：__
 1. 检查系统是否符合支持范围、是否联网等基本条件
 2. 为了解决权限问题，请切换至`root`用户进行部署，切换命令为`sudo -i`
-3. 本项目默认安装目录为`/opt/jd`，如果您不想安装到该目录请自行下载源码并更改相关变量手动部署
-4. 由于某些组件的安装受国外网络因素影响，如果部署失败请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
-5. 下方`PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用了国内更新源加速下载，根据您的使用环境选择其一即可，不要重复部署
+3. 国内用户如果没有科学上网方式请尽量使用`Gitee命令`部署此项目
+4. 本项目默认安装目录为`/opt/jd`，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
+5. 由于某些组件的安装受国外网络因素影响，如果部署失败请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
+6. 下方`PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用了国内更新源加速下载，根据您的使用环境选择其一即可，不要重复部署
+
 - __PC 环境：__
  
 __Github__
@@ -58,25 +60,24 @@ __Github__
 __Gitee__
 
     bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
-   _注：部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。\
-  ㅤㅤ拉取更新失败提示`ssh: connect to host gitee.com port 22: Connection timed out`是因为`SSH 22端口`不可用。\
-  ㅤㅤ部署成功后后`无法访问控制面板`是因为`5678 端口`外部不能访问所导致的。_
-- 附1. 如果提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
+   _注：部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。_
+- __常见问题：__
+1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
+    
+       apt install -y curl 或 yum install -y curl
+2. 如果执行部署脚本命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性以及相关设置。
+3. 如果使用`Github命令`部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
-      apt install -y curl 或 yum install -y curl
-- 附2. 如果没有科学上网方式使用Github命令部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
+       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
+       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
+4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
 
-      echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
-      echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-- 附3. 如果您在其它环境已部署此项目想单独使用我原创的一键脚本，请执行此命令：
-
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/autoscript.sh)
-- 附4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
-
-      cd panel
-      npm install || npm install --registry=https://registry.npm.taobao.org
-      npm install -g pm2
-      pm2 start server.js
+       cd panel
+       npm install || npm install --registry=https://registry.npm.taobao.org
+       npm install -g pm2
+       pm2 start server.js
+5. 拉取更新失败提示`ssh: connect to host gitee.com port 22: Connection timed out`是因为`SSH 22端口`不可用。
+6. 部署成功后后`无法访问控制面板`是因为`5678 端口`外部不能访问所导致的。
     
 ***
 
