@@ -3,6 +3,15 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ***
 
 ## 通知与更新
+- __2021/2/24 2:00 通知__
+
+ㅤ增加了本人深度定制的`diy`脚本，可通过下面的步骤部署到您的项目中：
+
+    1. 为了确保使用最新版的配置文件，请先根据《使用与更新》中的第12条教程更新您的配置文件
+    2. 通过《使用与更新》中的第5条命令启用该功能后一键导入脚本到项目
+    3. 执行 bash manual-update.sh 更新命令完成部署
+`Docker`用户请前往`Wiki`项目页查看具体更新命令ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))
+
 - __2021/2/23 13:50 通知__
 
 ㅤ修复了关于Docker版本`定时任务`配置不正确的问题，请所有已部署`Docker版本`的朋友更新，[ 点击此处 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))前往`Wiki`项目页查看具体更新命令。
@@ -114,7 +123,7 @@ _注：进入项目安装目录内才能使用所有功能。_
 _注：此一键脚本内容为执行所有活动脚本。_
 #### 3. 更新活动脚本与一键脚本：
     bash manual-update.sh
-_注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
+_注：为了正确配置定时任务，请使用此脚本更新项目活动脚本，您还可对照此脚本中的内容定制`run-all.sh`一键执行所有活动脚本。_
 #### 4. 执行特定活动脚本：
     bash jd.sh xxx      # 如果设置了随机延迟并且当时时间不在0-2、30-31、59分内，将随机延迟一定秒数
     bash jd.sh xxx now  # 无论是否设置了随机延迟，均立即运行
@@ -124,7 +133,7 @@ _注：具体所有活动脚本列表可通过命令`bash jd.sh`查看，`xxx`�
     sed -i 's/EnableExtraShell=""/EnableExtraShell="true"/g' config/config.sh
     #导入脚本
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy.sh -O config/diy.sh
-_注：此脚本定期更新，如果您想添加更多内容，可根据此脚本中的注释自行添加。_
+_注：此脚本定期更新，如果您想添加更多内容，可根据此脚本中的注释自行添加，如果您修改了默认安装目录，请下载脚本到本地后修改相关变量才能使用。_
 #### 6. 获取互助码：
     #导入脚本
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/format_share_jd_code.js -O scripts/format_share_jd_code.js
