@@ -9,7 +9,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
 - __2021/2/21 通知（重要）__
 
-ㅤ由于活动脚本作者lxk0301大佬的库触发Gitee监控机制被官方封禁，解封后库从公开状态变为私有状态，目前已修复完毕，请所有已部署的朋友根据《使用与更新》中`如何卸载此项目`的第一条命令删除整个项目文件夹后重新一键部署，遇到问题还请立即反馈，制作不易、维护艰辛，各位老板可对我进行打赏，感激不尽！
+ㅤ由于活动脚本作者lxk0301的库触发Gitee监控机制被官方封禁，解封后库从公开状态变为私有状态，目前已修复完毕，请所有已部署的朋友根据《使用与更新》中`如何卸载此项目`的第一条命令删除整个项目文件夹后重新一键部署，遇到问题还请立即反馈，制作不易、维护艰辛，各位老板可对我进行打赏，感激不尽！
 
 ***
 
@@ -23,11 +23,11 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
   _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
 
-  _附：[基于 Docker 的安装方法（ 软路由、NAS ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-))_
+  _附：[基于 Docker 的安装方法（ 软路由、NAS、其它 GNU/Linux 发行版 ）](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-))_
 
-__温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，如果遇到问题请及时向我反馈，谢谢！__\
+__此项目`码云Gitee`同步更新，如果您所在的环境经常无法访问`Github`，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__\
 \
-__此项目`码云Gitee`同步更新，如果您所在的环境经常性无法访问Github，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__
+__温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文，不在本项目支持范围内的环境请使用[基于 Docker 的安装方法](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-))__
 
 ***
 
@@ -41,8 +41,8 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 2. 执行部署命令前请切换至`root用户`，切换命令为`sudo -i`
 3. 本项目默认安装目录为`/opt/jd`，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
 4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
-5. 下方`从Github部署`与`从码云Gitee部署`对应两种部署途径，国内用户如果没有科学上网方式请尽量使用`码云Gitee`命令部署此项目
-6. 下方`PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用了国内更新源加速下载，根据您的使用环境选择其一即可，不要重复部署
+5. 下方`从Github部署`与`从码云Gitee部署`对应两种部署途径，国内用户如果没有科学上网方式请选择`码云Gitee`命令部署此项目
+6. `PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用了国内更新源加速，根据您的使用环境选择其一即可，不要重复部署
 7. 使用`VPS 环境`部署前请检查您所使用平台的防火墙功能，检查是否已为您的VPS开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置。\
 ㅤ
 - __从`Github`部署：__
@@ -52,7 +52,6 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
 2. VPS 环境
 
        bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
-ㅤ
 - __从`码云Gitee`部署：__
 1. PC 环境
 
@@ -77,14 +76,14 @@ __此项目`码云Gitee`同步更新，如果您所在的环境经常性无法�
        npm install -g pm2
        pm2 start server.js
 5. 拉取更新失败提示`ssh: connect to host gitee.com port 22: Connection timed out`是因为`SSH 22端口`不可用。
-6. 部署成功后无法访问`控制面板`是因为`5678 端口`外部不能访问所导致的。
+6. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
     
 ***
 
 ## 二、获取账号信息
-### 接下来我们需要您JD账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：
-__1. 通过`控制面板`功能进入WEB网页手机扫码获取，此方式获取的Cookie部分内容有效期为3个月。（优先推荐）__\
-__2. 通过浏览器开发工具获取，在[ Wiki-GetCookies ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，此方式获取的Cookie部分内容有效期为1个月。__
+__接下来我们需要您JD账户的“身份证”，它由`Cookie部分内容`组成，下面是获取途径：__
+- 通过`控制面板`功能进入WEB网页手机扫码获取，此方式获取的Cookie部分内容有效期为3个月。（优先推荐）
+- 通过浏览器开发工具获取，在[ Wiki-GetCookies ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，此方式获取的Cookie部分内容有效期为1个月。
 
 ***
 
@@ -108,20 +107,20 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
 ***
 
 ## 四、使用与更新
-- __如何运行一键脚本开始您的薅羊毛行为：__
+- __1. 运行一键脚本开始您的薅羊毛行为：__
 
       bash run-all.sh
     _注：此一键脚本内容为执行所有活动脚本。_
-- __如何执行特定活动脚本：__
+- __2. 执行特定活动脚本：__
 
       bash jd.sh xxx      # 如果设置了随机延迟并且当时时间不在0-2、30-31、59分内，将随机延迟一定秒数
       bash jd.sh xxx now  # 无论是否设置了随机延迟，均立即运行
     _注：具体所有活动脚本列表可通过命令`bash jd.sh`查看，`xxx`为脚本名。_
-- __如何更新活动脚本与一键脚本：__
+- __3. 更新活动脚本与一键脚本：__
 
       bash manual-update.sh
     _注：建议每次运行活动脚本前执行一次，JD活动经常变化，原作者更新也很频繁。_
-- __如何获取互助码：__
+- __4. 获取互助码：__
 
       #导入脚本
       wget -P scripts https://gitee.com/SuperManito/JD-FreeFuck/raw/main/format_share_jd_code.js
@@ -129,26 +128,26 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
       #使用脚本
       bash jd.sh format_share_jd_code now
     _注：这里引用了另一个大佬写的互助码脚本，比 lxk 的好用。引用项目链接：[qq34347476/quantumult-x](https://gitee.com/qq34347476/quantumult-x/tree/master)_
-- __如何导出互助码：__
+- __5. 导出互助码：__
 
       bash export_sharecodes.sh
-- __如何启用挂机功能：__
+- __6. 启用挂机功能：__
 
       bash jd.sh hangup
-- __如何手动启用控制面板功能：__
+- __7. 手动启用控制面板功能：__
 
       pm2 start panel/server.js
     _注：此命令适用于后期使用，在某些环境下当系统重启导致控制面板无法访问提示拒绝连接时可用此命令恢复使用。_
-- __如何重置控制面板的用户名和密码：__
+- __8. 重置控制面板的用户名和密码：__
 
       bash jd.sh resetpwd
-- __如何导入并使用第三方活动脚本：__
+- __9. 导入并使用第三方活动脚本：__
 
       1. 将脚本放置在该项目 scripts 子目录下
       2. 然后通过命令 bash jd.sh xxx now 运行
       3. 如果您想将第三方脚本加入到 run-all.sh 一键脚本中可将脚本名改为"jd_"开头即可
     _注：导入的第三方活动脚本不会随项目本身活动脚本的更新而删除。_
-- __如何更新配置文件：__
+- __10. 更新配置文件：__
       
       #备份配置文件
       mv config/config.sh config/config.sh.bak
@@ -157,15 +156,11 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
       rm -rf sample/config.sh.sample
       wget -P sample https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample
       cp sample/config.sh.sample config/config.sh
-- __如何更新我原创的一键更新脚本：__
-      
-      rm -rf manual-update.sh
-      wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/manual-update.sh
-- __如何升级与更新：__
+- __11. 升级与更新：__
 
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/update.sh)
     _注：适用于后期维护更新，当遇到问题或优化代码需要更新时会在项目置顶通知，另外如果您修改了默认安装目录，请自行下载源码并更改相关变量手动更新。_
-- __如何卸载此项目：__
+- __12. 卸载此项目：__
 
       #删除项目文件（默认安装目录）
       rm -rf /opt/jd
