@@ -61,22 +61,22 @@ __温馨提示：尽量使用最新的稳定版系统，并且安装语言使用
       bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
 ㅤ
 ### 常见问题与帮助：
-1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
+#### 1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
     
-       apt install -y curl 或 yum install -y curl
-2. 如果执行部署脚本命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性以及相关设置。
-3. 如果使用`Github命令`部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
+    apt install -y curl 或 yum install -y curl
+#### 2. 如果执行部署脚本命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性以及相关设置。
+#### 3. 如果使用`Github命令`部署项目时提示`无法解决Hosts`，可通过添加解析记录以解决连通性问题，添加命令如下：
 
-       echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
-       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
+    echo "199.232.96.133 raw.githubusercontent.com" >> /etc/hosts
+    echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
+#### 4. 受网络环境影响如果控制面板功能未安装成功提示`npm error`相关字样，请执行下面的命令重新安装：
 
-       cd /opt/jd/panel
-       npm install || npm install --registry=https://registry.npm.taobao.org
-       npm install -g pm2
-       pm2 start server.js
-5. 拉取更新失败提示`ssh: connect to host gitee.com port 22: Connection timed out`是因为`SSH 22端口`不可用。
-6. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
+    cd /opt/jd/panel
+    npm install || npm install --registry=https://registry.npm.taobao.org
+    npm install -g pm2
+    pm2 start server.js
+#### 5. 拉取更新失败提示`ssh: connect to host gitee.com port 22: Connection timed out`是因为`SSH 22端口`不可用。
+#### 6. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
     
 ***
 
@@ -179,9 +179,9 @@ _注：适用于后期维护更新，当遇到问题或优化代码需要更新�
 ***
 
 ## 六、声明
-1. 本项目代码全部开源，代码各处均有注释其含义，所有脚本没有附加本人的互助码，无任何私利。
-2. 我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关，本项目所使用的活动脚本均由[ lxk0301 ](https://gitee.com/lxk0301)提供。
-3. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，如果您不想用请自行删除。
+#### 1. 本项目代码全部开源，代码各处均有注释其含义，所有脚本没有附加本人的互助码，无任何私利。
+#### 2. 我不是该《JD薅羊毛》项目的开发者，所有活动类问题与我无关，本项目所使用的活动脚本均由[ lxk0301 ](https://gitee.com/lxk0301)提供。
+#### 3. `run-all.sh`为本人编写的一键执行所有活动脚本，`manual-update.sh`为本人编写的一键更新脚本，如果您不想用请自行删除。
 
 ***
 
