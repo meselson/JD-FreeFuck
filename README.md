@@ -90,7 +90,7 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
 
       sed -i '28c Cookie1=""' /opt/jd/config/config.sh
     _参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_
-- __其它配置信息：（选填）__
+- __其它配置信息（选填）：__
 1. 该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：
 
        sed -i "29c Cookie2=$COOKIE2" /opt/jd/config/config.sh
