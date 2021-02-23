@@ -16,6 +16,8 @@ done
 # 使用空格隔开
 author_list="i-chenzhe whyour"
 
+## 添加更多作者昵称（必填）示例：author_list="i-chenzhe whyour testuser"  直接追加，不要新定义变量
+
 ##############################作者脚本地址URL（必填）##############################
 # 例如：https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.js
 # 1.从作者库中随意挑选一个脚本地址，每个作者的地址添加一个即可，无须重复添加
@@ -23,6 +25,7 @@ author_list="i-chenzhe whyour"
 scripts_base_url_1=https://raw.githubusercontent.com/i-chenzhe/qx/main/
 scripts_base_url_2=https://raw.githubusercontent.com/whyour/hundun/master/quanx/
 
+## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/xxx/xxx/master/
 
 ##############################作者脚本名称（必填）##############################
 # 将相应作者的脚本填写到以下变量中
@@ -31,6 +34,8 @@ my_scripts_list_2="jd_collectBlueCoin.js ddxw.js"
 
 ## 活动脚本名称1：华硕-爱奇艺、百变大咖秀、粉丝互动、粉丝互动活动获取
 ## 活动脚本名称2：京东超市领蓝币、东东小窝
+
+## 添加更多脚本名称示例：my_scripts_list_3="jd_test1.js jd_test2.js jd_test3.js ......"
 
 ##############################随机函数##########################################
 echo -e "\033[37m-------------------------------------------------------------- \033[0m"
@@ -89,11 +94,16 @@ do
 done
 
 ##############################修正定时任务##########################################
+## 注意两边修改内容区别在于中间内容"jd"、"$BASE/jd.sh"
+## 修正定时任务示例：sed -i "s|bash jd jd_test|bash $BASE/jd.sh test|g" config/crontab.list
+##                 sed -i "s|bash jd jd_ceshi|bash $BASE/jd.sh ceshi|g" config/crontab.list
+
 sed -i "s|bash jd jd_asus_iqiyi|bash $BASE/jd.sh jd_asus_iqiyi|g" config/crontab.list
 sed -i "s|bash jd jd_entertainment|bash $BASE/jd.sh jd_entertainment|g" config/crontab.list
 sed -i "s|bash jd jd_fanslove|bash $BASE/jd.sh jd_fanslove|g" config/crontab.list
 sed -i "s|bash jd jd_getFanslove|bash $BASE/jd.sh jd_getFanslove|g" config/crontab.list
 sed -i "s|bash jd jd_collectBlueCoin|bash $BASE/jd.sh jd_collectBlueCoin|g" config/crontab.list
 sed -i "s|bash jd ddxw|bash $BASE/jd.sh ddxw|g" config/crontab.list
+
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
 echo -e ''
