@@ -33,6 +33,14 @@ my_scripts_list_2="jd_collectBlueCoin.js ddxw.js"
 ## 活动脚本名称2：京东超市领蓝币、东东小窝
 
 ##############################随机函数##########################################
+
+  echo -e "\033[37m +-------------- 开 始 下 载 / 更 新 diy 活 动 脚 本 --------------+ \033[0m"
+  echo -e "\033[37m |                                                                 | \033[0m"
+  echo -e "\033[37m |   如果下载报错，证明您当前的网络环境无法连接Github服务器......  | \033[0m"
+  echo -e "\033[37m |                                                                 | \033[0m"
+  echo -e "\033[37m +-----------------------------------------------------------------+ \033[0m"
+  echo -e ''
+
 rand(){
     min=$1
     max=$(($2-$min+1))
@@ -43,18 +51,12 @@ cd $BASE
 index=1
 for author in $author_list
 do
-  echo -e "\033[32m +---------------- 开 始 下 载 / 更 新 diy 活 动 脚 本 ----------------+ \033[0m"
-  echo -e "\033[32m |                                                             | \033[0m"
-  echo -e "\033[32m | 如果下载报错，证明您当前的网络环境无法连接Github服务器......      | \033[0m"
-  echo -e "\033[32m |                                                             | \033[0m"
-  echo -e "\033[32m +-------------------------------------------------------------+ \033[0m"
-  echo -e ''
   echo -e "开始下载 $author 的脚本"
   # 下载my_scripts_list中的每个js文件，重命名增加前缀"作者昵称_"，增加后缀".new"
   eval scripts_list=\$my_scripts_list_${index}
-  echo $scripts_list
+  #echo $scripts_list
   eval url_list=\$scripts_base_url_${index}
-  echo $url_list
+  #echo $url_list
   for js in $scripts_list
   do
     eval url=$url_list$js
@@ -66,10 +68,10 @@ do
     # 如果上一步下载没问题，才去掉后缀".new"，如果上一步下载有问题，就保留之前正常下载的版本
     # 随机添加个cron到crontab.list
     if [ $? -eq 0 ]; then
-      mv -f $name.new $name
+      mv -f scripts/$name.new scripts/$name
       echo -e "更新 $name 完成...\n"
 	  croname=`echo "$name"|awk -F\. '{print $1}'`
-	  script_date=`cat  $name|grep "http"|awk '{if($1~/^[0-59]/) print $1,$2,$3,$4,$5}'|sort |uniq|head -n 1`
+	  script_date=`cat $name|grep "http"|awk '{if($1~/^[0-59]/) print $1,$2,$3,$4,$5}'|sort |uniq|head -n 1`
 	  if [ -z "${script_date}" ];then
 	    cron_min=$(rand 1 59)
 	    cron_hour=$(rand 7 9)
@@ -78,7 +80,7 @@ do
 	    [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash jd $croname"  $BASE/config/crontab.list
 	  fi
     else
-      [ -f $name.new ] && rm -f $name.new
+      [ -f $name.new ] && rm -f scripts/$name.new
       echo -e "更新 $name 失败，使用上一次正常的版本...\n"
     fi
   done
