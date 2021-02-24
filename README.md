@@ -3,6 +3,15 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ***
 
 ## 通知与更新
+- __2021/2/24 17:50 通知__
+
+ㅤ目前收到反馈部分朋友执行`run-all.sh`脚本后遇到报错并卡住，原因是由于diy脚本中的`fanslove`活动脚本错误，原作者还修复中，请大家执行下面的命令解决此问题：
+
+    rm -rf /opt/jd/scripts *love.js
+    wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy.sh -O /opt/jd/config/diy.sh
+
+`Docker`用户请前往`Wiki`项目页查看具体更新命令ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))
+
 - __2021/2/24 15:00 通知__
 
 ㅤ再次修复了关于Docker版本`定时任务`配置不正确的问题，请所有已部署`Docker版本`的朋友更新，[ 点击此处 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))前往`Wiki`项目页查看具体更新命令，给您造成的不便我深表歉意，感谢您的理解。
