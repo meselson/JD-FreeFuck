@@ -35,7 +35,7 @@ scripts_base_url_2=https://raw.githubusercontent.com/whyour/hundun/master/quanx/
 
 ##############################作者脚本名称（必填）##############################
 # 将相应作者的脚本填写到以下变量中
-my_scripts_list_1="jd_asus_iqiyi.js jd_entertainment.js jd_fanslove.js jd_getFanslove.js"
+my_scripts_list_1="jd_asus_iqiyi.js jd_entertainment.js"
 my_scripts_list_2="jd_collectBlueCoin.js ddxw.js"
 
 ## 活动脚本名称1：华硕-爱奇艺、百变大咖秀、粉丝互动、粉丝互动活动获取
