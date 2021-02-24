@@ -3,6 +3,10 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ***
 
 ## 通知与更新
+- __2021/2/24 15:00 通知__
+
+ㅤ再次修复了关于Docker版本`定时任务`配置不正确的问题，请所有已部署`Docker版本`的朋友更新，[ 点击此处 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))前往`Wiki`项目页查看具体更新命令，给您造成的不便我深表歉意，感谢您的理解。
+
 - __2021/2/24 14:00 通知__
 
 ㅤ目前Gitee的库的脚本被官方屏蔽......为了保证项目的长久运行，即日起下架Gitee命令，请使用Github命令部署此项目。
@@ -15,10 +19,6 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
     2. 通过《使用与更新》中的第5条命令启用该功能后一键导入脚本到项目
     3. 执行 bash manual-update.sh 更新命令完成部署
 `Docker`用户请前往`Wiki`项目页查看具体更新命令ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))
-
-- __2021/2/23 13:50 通知__
-
-ㅤ修复了关于Docker版本`定时任务`配置不正确的问题，请所有已部署`Docker版本`的朋友更新，[ 点击此处 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))前往`Wiki`项目页查看具体更新命令。
 
 - __2021/2/21 通知（重要）__
 
