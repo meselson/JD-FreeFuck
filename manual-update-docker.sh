@@ -21,6 +21,5 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
-sed -i "s#/home/myid/jd/##g" config/crontab.list
-sed -i "s#jd\.sh#jd#g" config/crontab.list
+sed -i "s#/home/myid##g" config/crontab.list
 sed -i "s#git_pull#manual-update#g" config/crontab.list
