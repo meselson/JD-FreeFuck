@@ -7,6 +7,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
 ㅤ彻底修复了关于Docker版本`定时任务`配置不正确的问题，请所有已部署`Docker版本`的朋友更新，[ 点击此处 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))前往`Wiki`项目页查看具体更新命令，给您造成的不便我深表歉意，感谢您的理解。
 
+***
+
 - __2021/2/24 17:50 通知__
 
 ㅤ目前收到反馈部分朋友执行`run-all.sh`脚本后遇到报错并卡住，原因是由于diy脚本中的`fanslove`活动脚本错误，原作者还修复中，请大家执行下面的命令解决此问题：
@@ -15,9 +17,13 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy.sh -O /opt/jd/config/diy.sh
 `Docker`用户请前往`Wiki`项目页查看具体更新命令ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))
 
+***
+
 - __2021/2/24 14:00 通知__
 
 ㅤ目前Gitee的库的脚本被官方屏蔽......为了保证项目的长久运行，即日起下架Gitee命令，请使用Github命令部署此项目。
+
+***
 
 - __2021/2/24 2:00 更新__
 
@@ -27,6 +33,8 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
     2. 通过《使用与更新》中的第5条命令启用该功能后一键导入脚本到项目
     3. 执行 bash manual-update.sh 更新命令完成部署
 `Docker`用户请前往`Wiki`项目页查看具体更新命令ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))
+
+***
 
 - __2021/2/21 通知（重要）__
 
