@@ -9,7 +9,6 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
     rm -rf /opt/jd/scripts *love.js
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy.sh -O /opt/jd/config/diy.sh
-
 `Docker`用户请前往`Wiki`项目页查看具体更新命令ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))
 
 - __2021/2/24 15:00 通知__
