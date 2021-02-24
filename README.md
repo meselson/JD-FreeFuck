@@ -11,7 +11,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
 ㅤ目前收到反馈部分朋友执行`run-all.sh`脚本后遇到报错并卡住，原因是由于diy脚本中的`fanslove`活动脚本错误，原作者还修复中，请大家执行下面的命令解决此问题：
 
-    rm -rf /opt/jd/scripts *love.js
+    rm -rf /opt/jd/scripts/*love.js
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy.sh -O /opt/jd/config/diy.sh
 `Docker`用户请前往`Wiki`项目页查看具体更新命令ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Install-(-Soft-Router-&-NAS-&-Other-Linux-))
 
