@@ -159,6 +159,7 @@ _注：具体所有活动脚本列表可通过命令`bash jd.sh`查看，`xxx`�
     sed -i 's/EnableExtraShell=""/EnableExtraShell="true"/g' config/config.sh
     #导入脚本
     wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy.sh -O config/diy.sh
+_注：由于diy脚本采用了第三方作者的脚本，可能会遇到错误，甚至影响`run-all.sh`一键执行所有活动脚本，若使用此脚本请需持续关注本项目，遇到问题请及时反馈。_
 _注：此脚本定期更新，如果您想添加更多内容，可根据此脚本中的注释自行添加，如果您修改了默认安装目录，请下载脚本到本地后修改相关变量才能使用。_
 #### 6. 获取互助码：
     #导入脚本
