@@ -27,7 +27,7 @@ touch manual-update.sh
 cat >manual-update.sh <<\EOF
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-22
+## Modified:2021-2-24
 
 ## 执行更新命令
 bash git_pull.sh
@@ -48,8 +48,7 @@ if [ $? -eq 0 ];then
 fi
 sed -i '/^\s*$/d' run-all.sh
 ## 配置定时任务
-sed -i "s#/home/myid/jd/##g" config/crontab.list
-sed -i "s#jd.sh#jd#g" config/crontab.list
-sed -i "s/git_pull/manual-update/g" config/crontab.list
+sed -i "s#/home/myid##g" config/crontab.list
+sed -i "s#git_pull#manual-update#g" config/crontab.list
 EOF
 bash manual-update.sh
