@@ -3,6 +3,10 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ***
 
 ## 通知与更新
+- __2021/2/24 14:00 通知__
+
+ㅤ目前Gitee的库的脚本被官方屏蔽......为了保证项目的长久运行，即日起下架Gitee命令，请使用Github命令部署此项目。
+
 - __2021/2/24 2:00 更新__
 
 ㅤ增加了本人深度定制的`diy`脚本，可通过下面的步骤部署到您的项目中：
@@ -41,7 +45,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
     
 ***
 
-## 一、命令部署
+## 一、项目部署
 ### 部署前需知：
 #### 1. 检查系统是否符合支持范围、是否联网等基本条件
 #### 2. 执行部署命令前请切换至`root用户`，切换命令为`sudo -i`
@@ -51,20 +55,13 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 #### 6. `PC 环境`与`VPS 环境`对应两种部署方案，区别在于是否使用国内更新源加速，根据您的使用环境选择其一即可，不要重复部署
 #### 7. 使用`VPS 环境`部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置
 ㅤ
-### 从`Github`部署：
+### 命令一键部署：
 - PC 环境
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
 - VPS 环境
 
       bash <(curl -sL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
-### 从`Gitee`部署：
-- PC 环境
-
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install.sh)
-- VPS 环境
-
-      bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/install-vps.sh)
 ㅤ
 ### 常见问题与帮助：
 #### 1. 如果执行部署脚本命令后提示`Command 'curl' not found`则说明当前未安装`curl`软件包，安装命令如下：
