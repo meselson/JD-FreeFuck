@@ -224,6 +224,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     docker exec -it jd sed -i '33c Cookie6=""' /jd/config/config.sh
 > __参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh__\
 > _注意：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释_
+## 配置消息推送功能信息
+> _正在完善中，敬请期待......_
 
 ***
 
@@ -236,12 +238,12 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 # 五、卸载项目
-## `Linux` 版本
+### `Linux` 版本
     #删除项目文件
     rm -rf /opt/jd
     #卸载软件包
     apt/yum remove -y git perl moreutils nodejs npm
-## `Docker` 版本
+### `Docker` 版本
     #删除容器
     docker rm -f jd
     #删除镜像
