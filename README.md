@@ -231,10 +231,13 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 # 四、使用项目
-> 关于如何使用此项目，请移步至 `Wiki`
+> 关于如何使用此项目，请前往至 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) ，项目后续的更新、修复都在其页面发布！
 
 - __`Linux`  版本使用教程 ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Linux-Use-And-Update-Tutorial)__
 - __`Docker` 版本使用教程 ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Use-And-Update-Tutorial)__
+> _注意：您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_\
+> _ㅤㅤㅤ您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_\
+> _ㅤㅤㅤ您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_
 
 ***
 
