@@ -1055,14 +1055,14 @@ function ProjectDeployment() {
   ## 配置SSH服务
   service ssh enable >/dev/null 2>&1
   service ssh start >/dev/null 2>&1
-  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+  echo "StrictHostKeyChecking no" >>/etc/ssh/ssh_config
   service ssh restart >/dev/null 2>&1
   ## 配置SSH密钥文件夹
   ls ~ | grep .ssh -rwq
-  if [ $? -eq 0 ];then
+  if [ $? -eq 0 ]; then
     ## 检测当前用户是否存在私钥
     ls ~/.ssh | grep id_rsa.bak -wq
-    if [ $? -eq 0 ];then
+    if [ $? -eq 0 ]; then
       rm -rf ~/.ssh/id_rsa
       echo -e "\033[31m检测到已备份的私钥，跳过备份操作...... \033[0m"
       sleep 2s
@@ -1071,7 +1071,7 @@ function ProjectDeployment() {
     fi
     ## 检测当前用户是否存在公钥
     ls ~/.ssh | grep id_rsa.pub.bak -wq
-    if [ $? -eq 0 ];then
+    if [ $? -eq 0 ]; then
       rm -rf ~/.ssh/id_rsa.pub
       echo -e "\033[31m检测到已备份的公钥，跳过备份操作...... \033[0m"
       sleep 2s
@@ -1082,9 +1082,9 @@ function ProjectDeployment() {
     mkdir -p ~/.ssh
   fi
   ## 通过添加SSH私钥与公钥解决访问lxk/jd_scripts私有库的权限问题
-  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/id_rsa -O ~/.ssh/id_rsa
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/source/id_rsa -O ~/.ssh/id_rsa
   chmod 600 ~/.ssh/id_rsa
-  ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+  ssh-keygen -y -f ~/.ssh/id_rsa >~/.ssh/id_rsa.pub
   ## 下载源码并解压至目录
   wget -P /opt https://gitee.com/SuperManito/JD-FreeFuck/attach_files/616570/download/jd.tar
   mkdir -p $BASE
@@ -1092,8 +1092,8 @@ function ProjectDeployment() {
   rm -rf /opt/jd.tar
   mkdir $BASE/config
   ## 更换新的文件
-  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/jd.sh -O $BASE/jd.sh
-  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/config.sh.sample -O $BASE/sample/config.sh.sample
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/source/jd.sh -O $BASE/jd.sh
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/config.sh.sample -O $BASE/sample/config.sh.sample
   ## 创建项目配置文件与定时任务配置文件
   cp $BASE/sample/config.sh.sample $BASE/config/config.sh
   cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
@@ -1135,7 +1135,7 @@ function AutoScript() {
   sed -i "s/bash jd.sh jd_delCoupon now//g" run-all.sh
   sed -i "s/bash jd.sh jd_family now//g" run-all.sh
   cat $BASE/run-all.sh | grep jd_crazy_joy_coin -wq
-  if [ $? -eq 0 ];then
+  if [ $? -eq 0 ]; then
     sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" run-all.sh
     echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
   fi
@@ -1148,7 +1148,7 @@ function AutoScript() {
 function ResultJudgment() {
   ## 判定控制面板是否安装成功
   netstat -anp | grep 5678 -wq
-  if [ $? -eq 0 ];then
+  if [ $? -eq 0 ]; then
     echo -e "\033[32m +------- 已 启 用 控 制 面 板 功 能 -------+ \033[0m"
     echo -e "\033[32m |                                          | \033[0m"
     echo -e "\033[32m | 本地访问：http://127.0.0.1:5678          | \033[0m"
