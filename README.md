@@ -160,7 +160,7 @@ _注：以下全部内容也可在控制面板功能中的WEB网页完成配置�
     cd /opt/jd
 _注：进入项目安装目录内才能使用所有功能。_
 #### 2. 运行一键脚本开始您的薅羊毛行为：
-    source run-all.sh
+    source run-all.sh 或 . run-all.sh
 _注：此一键脚本内容为执行所有活动脚本。_
 #### 3. 更新活动脚本与一键脚本：
     bash manual-update.sh
