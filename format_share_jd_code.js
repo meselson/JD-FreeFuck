@@ -1655,13 +1655,14 @@ function formatForJDFreeFuck(
   arr = [],
   name = '',
   itemName = '',
-  forOtherName = ''
+  forOtherName = '',
+  marks = '"'
 ) {
   console.log(`# ${name}`)
   const nameArr = []
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i]
-    console.log(`${itemName}${i + 1}='${item}'`)
+    console.log(`${itemName}${i + 1}=${marks}${item}${marks}`)
     const name = '${' + itemName + (i + 1) + '}'
     nameArr.push(name)
   }
@@ -1675,7 +1676,7 @@ function formatForJDFreeFuck(
     //     .filter(cell => cell !== item)
     //     .join('@')}'`
     // )
-    console.log(`${forOtherName}${m + 1}='${nameArr.join('@')}'`)
+    console.log(`${forOtherName}${m + 1}="${nameArr.join('@')}"`)
   }
 }
 
@@ -1745,7 +1746,7 @@ function showFormatMsg() {
   formatForJDFreeFuck(submit_bean_code, '种豆得豆', 'MyBean', 'ForOtherBean')
   formatForJDFreeFuck(submit_farm_code, '东东农场', 'MyFruit', 'ForOtherFruit')
   formatForJDFreeFuck(submit_pet_code, '东东萌宠', 'MyPet', 'ForOtherPet')
-  formatForJDFreeFuck(jdnc, '京喜农场', 'MyJxnc', 'ForOtherJxnc')
+  formatForJDFreeFuck(jdnc, '京喜农场', 'MyJxnc', 'ForOtherJxnc', "'")
   formatForJDFreeFuck(
     submit_jxfactory_code,
     '京喜工厂',
