@@ -184,7 +184,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     --restart always `# 设置容器开机自启` \
     evinedeng/jd:gitee
 > _注意：如果是旁路由，容器网络类型需使用ㅤ`host` 模式，将 `--network bridge` 参数修改成 `--network host` 即可。_
-### __6. 脚本一键部署：__
+### __6. 脚本部署：__
     #1) 进入容器
     docker exec -it jd /bin/bash
     #2) 执行脚本
@@ -266,6 +266,9 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 <img src="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/icon/thank.jpg" width="300" height="300" alt="微信赞赏码"/><br/>
 ### 如果您愿意支持此项目，可对我打赏，感激不尽！
 ### 开发不易、维护艰辛，感谢您的理解与支持！
+
+## Stargazers over time
+<img src="https://starchart.cc/SuperManito/JD-FreeFuck.svg" width="1000" height="500" alt="Stargazers over time"/><br/>
 
 ***
 
