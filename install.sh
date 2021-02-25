@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-23
+## Modified:2021-2-25
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -1086,7 +1086,7 @@ function ProjectDeployment() {
   chmod 600 ~/.ssh/id_rsa
   ssh-keygen -y -f ~/.ssh/id_rsa >~/.ssh/id_rsa.pub
   ## 下载源码并解压至目录
-  wget -P /opt https://gitee.com/SuperManito/JD-FreeFuck/attach_files/616570/download/jd.tar
+  wget -P /opt https://gitee.com/SuperManito/JD-FreeFuck/attach_files/620461/download/jd.tar
   mkdir -p $BASE
   tar -xvf /opt/jd.tar -C $BASE
   rm -rf /opt/jd.tar
