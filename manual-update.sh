@@ -45,10 +45,11 @@ sed -i "s#git_pull#manual-update#g" config/crontab.list
 
 ## 自动更新 Diy 脚本（默认禁用此功能，请手动启用）
 function DiyUpdate() {
-  rm -rf $BASE/config/diy.sh
   echo -e "\033[37m开始同步diy.sh脚本... \033[0m"
+  echo -e ''
   wget -q $DIYURL -O $BASE/config/diy.sh
   echo -e "\033[37mdiy.sh脚本同步完成... \033[0m"
+  echo -e ''
 }
 ## 将下方 " #DiyUpdate " 内容取消注释修改为 " DiyUpdate " 即代表启用此功能
 #DiyUpdate
