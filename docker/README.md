@@ -76,7 +76,6 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ## 四、更新教程
 #### 1. 更新一键更新脚本：
     docker exec -it jd wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/docker/manual-update-docker.sh -O manual-update.sh
-    docker exec -it jd bash manual-update.sh
 #### 2. 更新获取互助码脚本：
     docker exec -it jd wget https://gitee.com/qq34347476/quantumult-x/raw/master/format_share_jd_code.js -O scripts/format_share_jd_code.js
 #### 3. 更新配置文件：
