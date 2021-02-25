@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-2-24
+## Modified:2021-2-25
 
 ## 项目安装目录
 BASE="/jd"
@@ -35,10 +35,10 @@ scripts_base_url_2=https://raw.githubusercontent.com/whyour/hundun/master/quanx/
 ##############################作者脚本名称（必填）##############################
 # 将相应作者的脚本填写到以下变量中
 my_scripts_list_1="jd_asus_iqiyi.js jd_entertainment.js"
-my_scripts_list_2="jd_collectBlueCoin.js ddxw.js"
+my_scripts_list_2="jd_collectBlueCoin.js"
 
-## 活动脚本名称1：华硕-爱奇艺、百变大咖秀、粉丝互动、粉丝互动活动获取
-## 活动脚本名称2：京东超市领蓝币、东东小窝
+## 活动脚本名称1：华硕-爱奇艺、百变大咖秀
+## 活动脚本名称2：京东超市领蓝币
 
 ## 添加更多脚本名称示例：my_scripts_list_3="jd_test1.js jd_test2.js jd_test3.js ......"
 
@@ -95,6 +95,13 @@ for author in $author_list; do
   done
   index=$(($index + 1))
 done
+
+##############################删除旧版本失效的活动##########################################
+## 删除旧版本失效的活动示例： rm -rf $BASE/scripts/jd_test.js >/dev/null 2>&1
+rm -rf $BASE/scripts/ddxw.js >/dev/null 2>&1
+rm -rf $BASE/scripts/*love.js
+
+
 
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
 echo -e ''
