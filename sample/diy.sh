@@ -20,7 +20,7 @@ done
 
 ##############################作者昵称（必填）##############################
 # 使用空格隔开
-author_list="i-chenzhe whyour"
+author_list="i-chenzhe"
 
 ## 添加更多作者昵称（必填）示例：author_list="i-chenzhe whyour testuser"  直接追加，不要新定义变量
 
@@ -29,17 +29,17 @@ author_list="i-chenzhe whyour"
 # 1.从作者库中随意挑选一个脚本地址，每个作者的地址添加一个即可，无须重复添加
 # 2.将地址最后的 “脚本名称+后缀” 剪切到下一个变量里（my_scripts_list_xxx）
 scripts_base_url_1=https://raw.githubusercontent.com/i-chenzhe/qx/main/
-scripts_base_url_2=https://raw.githubusercontent.com/whyour/hundun/master/quanx/
+
 
 ## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/xxx/xxx/master/
 
 ##############################作者脚本名称（必填）##############################
 # 将相应作者的脚本填写到以下变量中
-my_scripts_list_1="jd_asus_iqiyi.js jd_entertainment.js"
-my_scripts_list_2="jd_collectBlueCoin.js"
+my_scripts_list_1="jd_asus_iqiyi.js jd_entertainment.js jd_jump-jump.js"
 
-## 活动脚本名称1：华硕-爱奇艺、百变大咖秀
-## 活动脚本名称2：京东超市领蓝币
+
+## 活动脚本名称1：华硕-爱奇艺、百变大咖秀、母婴-跳一跳
+
 
 ## 添加更多脚本名称示例：my_scripts_list_3="jd_test1.js jd_test2.js jd_test3.js ......"
 
@@ -99,8 +99,10 @@ done
 
 ##############################删除旧版本失效的活动##########################################
 ## 删除旧版本失效的活动示例： rm -rf $BASE/scripts/jd_test.js >/dev/null 2>&1
-rm -rf $BASE/scripts/ddxw.js >/dev/null 2>&1
+rm -rf $BASE/scripts/ddxw.js
 rm -rf $BASE/scripts/*love.js
+rm -rf $BASE/scripts/jd_collectBlueCoin.js
+
 
 ##############################修正定时任务##########################################
 ## 注意两边修改内容区别在于中间内容"jd"、"$BASE/jd.sh"
