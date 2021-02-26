@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-2-25
+## Modified:2021-2-26
 
 ## 项目安装目录
 BASE="/opt/jd"
@@ -97,10 +97,10 @@ for author in $author_list; do
   index=$(($index + 1))
 done
 
-##############################删除旧版本失效的活动##########################################
+##########################  删  除  旧  版  本  失  效  的  活  动  ##########################
 ## 删除旧版本失效的活动示例： rm -rf $BASE/scripts/jd_test.js >/dev/null 2>&1
 rm -rf $BASE/scripts/ddxw.js
-rm -rf $BASE/scripts/*love.js
+rm -rf $BASE/scripts/*anslove.js
 rm -rf $BASE/scripts/jd_collectBlueCoin.js
 
 
@@ -111,10 +111,9 @@ rm -rf $BASE/scripts/jd_collectBlueCoin.js
 
 sed -i "s|bash jd jd_asus_iqiyi|bash $BASE/jd.sh jd_asus_iqiyi|g" config/crontab.list
 sed -i "s|bash jd jd_entertainment|bash $BASE/jd.sh jd_entertainment|g" config/crontab.list
-sed -i "s|bash jd jd_fanslove|bash $BASE/jd.sh jd_fanslove|g" config/crontab.list
-sed -i "s|bash jd jd_getFanslove|bash $BASE/jd.sh jd_getFanslove|g" config/crontab.list
 sed -i "s|bash jd jd_collectBlueCoin|bash $BASE/jd.sh jd_collectBlueCoin|g" config/crontab.list
-sed -i "s|bash jd ddxw|bash $BASE/jd.sh ddxw|g" config/crontab.list
+sed -i "s|bash jd jd_jump-jump|bash $BASE/jd.sh jd_jump-jump|g" config/crontab.list
+
 
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
 echo -e ''
