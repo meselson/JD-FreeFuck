@@ -193,7 +193,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     #1) 进入容器
     docker exec -it jd /bin/bash
     #2) 执行脚本
-    bash <(curl -sSL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/docker/install-docker.sh)
+    bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/docker/install-docker.sh)
     #3) 退出容器
     exit
 > _注意：此命令请逐一执行。_
