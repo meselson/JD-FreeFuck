@@ -3,12 +3,12 @@
 ## Version 1.1
 ## Modified:2021-2-26
 
-## ================== 定 义 项 目 的 安 装 目 录 ==================================
+## ================== 定 义 项 目 的 安 装 目 录 ================================
 ## 项目安装目录
 BASE="/opt/jd"
 ################################################################################
 
-## ================== 定 义  d i y 脚 本 同 步 链 接 ==========================
+## ================== 定 义  d i y 脚 本 同 步 链 接 ============================
 ## diy 自定义脚本链接
 DIYURL="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/diy.sh"
 ## 此脚本用于执行非 lxk 的第三方脚本
@@ -28,7 +28,7 @@ bash git_pull.sh
 ## 默认将 "jd、jx、jr" 开头的活动脚本加入其中
 rm -rf $BASE/run-all.sh
 bash jd.sh | grep -o 'j[drx]_[a-z].*' >$BASE/run-all.sh
-sed -i "s|^/bash $BASE|jd.sh &|g" $BASE/run-all.sh
+sed -i "s#^/bash $BASE/jd.sh &#g" $BASE/run-all.sh
 sed -i 's|.js| now|g' $BASE/run-all.sh
 sed -i '1i\#!/bin/bash' $BASE/run-all.sh
 ## 自定义添加脚本
@@ -41,19 +41,19 @@ sed -i '1i\#!/bin/bash' $BASE/run-all.sh
 ## 模板如下 ：
 ## cat run-all.sh | grep xxx -wq
 ## if [ $? -eq 0 ];then
-##   sed -i "s|bash jd.sh xxx now||g" $BASE/run-all.sh
+##   sed -i "s#bash jd.sh xxx now##g" $BASE/run-all.sh
 ##   echo "bash jd.sh xxx now" >>$BASE/run-all.sh
 ## fi
 cat run-all.sh | grep jd_crazy_joy_coin -wq
 if [ $? -eq 0 ]; then
-  sed -i "s|bash $BASE/jd.sh jd_crazy_joy_coin now||g" $BASE/run-all.sh
+  sed -i "s#bash $BASE/jd.sh jd_crazy_joy_coin now##g" $BASE/run-all.sh
   echo "bash $BASE/jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
 fi
 
 ## 去除不想加入到此脚本中的活动
-## 例：sed -i "s|bash $BASE/jd.sh xxx now||g" $BASE/run-all.sh
-sed -i "s|bash $BASE/jd.sh jd_delCoupon now||g" $BASE/run-all.sh ## 不执行 "京东家庭号" 任务
-sed -i "s|bash $BASE/jd.sh jd_family now||g" $BASE/run-all.sh    ## 不执行 "删除优惠券" 任务
+## 例：sed -i "s#bash $BASE/jd.sh xxx now##g" $BASE/run-all.sh
+sed -i "s#bash $BASE/jd.sh jd_delCoupon now##g" $BASE/run-all.sh ## 不执行 "京东家庭号" 任务
+sed -i "s#bash $BASE/jd.sh jd_family now##g" $BASE/run-all.sh    ## 不执行 "删除优惠券" 任务
 
 ## 去除脚本中的空行
 sed -i '/^\s*$/d' $BASE/run-all.sh
