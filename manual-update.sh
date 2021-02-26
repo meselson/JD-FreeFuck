@@ -2,7 +2,6 @@
 ## Author:SuperManito
 ## Modified:2021-2-26
 
-
 ## =========== 定 义 项 目 的 安 装 目 录 ===========
 ## 项目安装目录
 BASE="/opt/jd"
