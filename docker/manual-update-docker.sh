@@ -10,7 +10,7 @@ BASE="/jd"
 
 ## ================== 定 义  d i y 脚 本 同 步 链 接 ============================
 ## diy 自定义脚本链接
-DIYURL="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/diy.sh"
+DIYURL="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/diy-docker.sh"
 ## 此脚本用于执行非 lxk 的第三方脚本
 ## 默认同步本人项目中的 diy.sh 脚本
 ## 不建议您直接使用其它人的脚本，因为本项目中的 diy 脚本高度定制
