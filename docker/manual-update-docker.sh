@@ -1,48 +1,61 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-25
+## Version 1.1
+## Modified:2021-2-26
 
-
-## =========== 定 义 项 目 的 安 装 目 录 ===========
+## ================== 定 义 项 目 的 安 装 目 录 ==================================
 ## 项目安装目录
 BASE="/jd"
-## ================================================
+################################################################################
 
-
-## ====================== 定 义 同 步 的 d i y 脚 本 链 接 =======================
-## diy脚本链接
-DIYURL="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/docker/diy-docker.sh"
-
+## ================== 定 义  d i y 脚 本 同 步 链 接 ==========================
+## diy 自定义脚本链接
+DIYURL="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/diy.sh"
+## 此脚本用于执行非 lxk 的第三方脚本
 ## 默认同步本人项目中的 diy.sh 脚本
-## 不建议您使用其它人的脚本，因为本项目中的 diy 脚本高度适配
+## 不建议您直接使用其它人的脚本，因为本项目中的 diy 脚本高度定制
 ## 您可以使用本项目中的 diy.sh.sample 模板定制一个属于您自己的脚本
-## 然后您可以将定制的 diy.sh 脚本放在您自己项目库的中以此来同步
-## =============================================================================
+## 然后您可以将定制的 diy.sh 脚本放在您自己的项目库中以此来同步
+################################################################################
 
+## ================== 更 新 活 动 脚 本 =========================================
 ## 执行更新命令
 bash git_pull.sh
+################################################################################
 
-## 重新生成一键执行所有活动脚本
-rm -rf run-all.sh
-touch run-all.sh
-bash jd.sh | grep -o 'jd_[a-z].*' >run-all.sh
-bash jd.sh | grep -o 'jx_[a-z].*' >>run-all.sh
-sed -i 's/^/bash jd.sh &/g' run-all.sh
-sed -i 's/.js/ now/g' run-all.sh
-sed -i '1i\#!/bin/bash' run-all.sh
-sed -i "s/bash jd.sh jd_delCoupon now//g" run-all.sh  #不执行京东家庭号任务
-sed -i "s/bash jd.sh jd_family now//g" run-all.sh     #不执行删除优惠券任务
+## ================= 一 键 执 行 所 有 活 动 脚 本 ===============================
+## 生成一键执行所有活动脚本
+## 默认将 "jd、jx、jr" 开头的活动脚本加入其中
+bash jd.sh | grep -o 'j[drx]_[a-z].*' >$BASE/run-all.sh
+sed -i 's/^/bash jd.sh &/g' $BASE/run-all.sh
+sed -i 's/.js/ now/g' $BASE/run-all.sh
+sed -i '1i\#!/bin/bash' $BASE/run-all.sh
+
+## 将挂机活动移至末尾从而最后执行
+## 检测是否存在此活动，如若存在就加入其中
+## 目前仅有 "疯狂的JOY" 这一个活动
+## 模板如下 ：
+## cat run-all.sh | grep xxx -wq
+## if [ $? -eq 0 ];then
+##   sed -i "s/bash jd.sh xxx now//g" $BASE/run-all.sh
+##   echo "bash jd.sh xxx now" >>$BASE/run-all.sh
+## fi
 cat run-all.sh | grep jd_crazy_joy_coin -wq
-if [ $? -eq 0 ];then
-  sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" run-all.sh
-  echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
+if [ $? -eq 0 ]; then
+  sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" $BASE/run-all.sh
+  echo "bash jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
 fi
-sed -i '/^\s*$/d' run-all.sh
 
-## 配置定时任务
-sed -i "s#/home/myid##g" config/crontab.list
-sed -i "s#git_pull#manual-update#g" config/crontab.list
+## 去除不想加入到此脚本中的活动
+## 例： sed -i "s/bash jd.sh xxx now//g" $BASE/run-all.sh
+sed -i "s/bash jd.sh jd_delCoupon now//g" $BASE/run-all.sh ## 不执行 "京东家庭号" 任务
+sed -i "s/bash jd.sh jd_family now//g" $BASE/run-all.sh    ## 不执行 "删除优惠券" 任务
 
+## 去除脚本中的空行
+sed -i '/^\s*$/d' $BASE/run-all.sh
+################################################################################
+
+## ================= 同 步 d i y 脚 本 功 能 ====================================
 ## 自动更新 Diy 脚本（默认禁用此功能，请手动启用）
 function DiyUpdate() {
   echo -e "\033[37m开始同步diy.sh脚本... \033[0m"
@@ -51,5 +64,5 @@ function DiyUpdate() {
   echo -e "\033[37mdiy.sh脚本同步完成... \033[0m"
   echo -e ''
 }
-## 将下方 " #DiyUpdate " 内容取消注释修改为 " DiyUpdate " 即代表启用此功能
-#DiyUpdate
+#DiyUpdate    ## 将 " #DiyUpdate " 取消注释修改为 " DiyUpdate " 即代表启用此功能
+################################################################################
