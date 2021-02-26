@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-2-25
+## Modified:2021-2-26
 
 ## 项目安装目录
 BASE="/jd"
@@ -99,7 +99,7 @@ done
 ##############################删除旧版本失效的活动##########################################
 ## 删除旧版本失效的活动示例： rm -rf $BASE/scripts/jd_test.js >/dev/null 2>&1
 rm -rf $BASE/scripts/ddxw.js
-rm -rf $BASE/scripts/*love.js
+rm -rf $BASE/scripts/*anslove.js
 rm -rf $BASE/scripts/jd_collectBlueCoin.js
 
 
