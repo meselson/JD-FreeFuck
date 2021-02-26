@@ -27,7 +27,7 @@ bash git_pull.sh
 ## 生成一键执行所有活动脚本
 ## 默认将 "jd、jx、jr" 开头的活动脚本加入其中
 bash jd.sh | grep -o 'j[drx]_[a-z].*' >$BASE/run-all.sh
-sed -i 's/^/bash jd.sh &/g' $BASE/run-all.sh
+sed -i "s/^/bash $BASE/jd.sh &/g" $BASE/run-all.sh
 sed -i 's/.js/ now/g' $BASE/run-all.sh
 sed -i '1i\#!/bin/bash' $BASE/run-all.sh
 
@@ -42,14 +42,14 @@ sed -i '1i\#!/bin/bash' $BASE/run-all.sh
 ## fi
 cat run-all.sh | grep jd_crazy_joy_coin -wq
 if [ $? -eq 0 ]; then
-  sed -i "s/bash jd.sh jd_crazy_joy_coin now//g" $BASE/run-all.sh
-  echo "bash jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
+  sed -i "s/bash $BASE/jd.sh jd_crazy_joy_coin now//g" $BASE/run-all.sh
+  echo "bash $BASE/jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
 fi
 
 ## 去除不想加入到此脚本中的活动
-## 例： sed -i "s/bash jd.sh xxx now//g" $BASE/run-all.sh
-sed -i "s/bash jd.sh jd_delCoupon now//g" $BASE/run-all.sh ## 不执行 "京东家庭号" 任务
-sed -i "s/bash jd.sh jd_family now//g" $BASE/run-all.sh    ## 不执行 "删除优惠券" 任务
+## 例： sed -i "s/bash $BASE/jd.sh xxx now//g" $BASE/run-all.sh
+sed -i "s/bash $BASE/jd.sh jd_delCoupon now//g" $BASE/run-all.sh ## 不执行 "京东家庭号" 任务
+sed -i "s/bash $BASE/jd.sh jd_family now//g" $BASE/run-all.sh    ## 不执行 "删除优惠券" 任务
 
 ## 去除脚本中的空行
 sed -i '/^\s*$/d' $BASE/run-all.sh
