@@ -14,7 +14,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ## 修改以下所有脚本路径和cron时间。
 
 # 更新lxk0301大佬的js脚本，并替换相关参数：
-55 * * * * bash BASE/manual-update.sh >> ${ShellDir}/log/manual-update.log 2>&1
+55 * * * * bash BASE/manual-update.sh >> BASE/log/manual-update.log 2>&1
 
 # 删除 RmLogDaysAgo 指定天数以前的旧日志，本行为不记录日志：
 57 13 * * * bash BASE/rm_log.sh >/dev/null 2>&1
