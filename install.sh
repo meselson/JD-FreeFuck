@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-25
+## Modified:2021-2-26
 
 ## ============================================== 项 目 说 明 ==============================================
 ##                                                                                                        #
@@ -1094,9 +1094,12 @@ function ProjectDeployment() {
   ## 更换新的文件
   wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/source/jd.sh -O $BASE/jd.sh
   wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/config.sh.sample -O $BASE/sample/config.sh.sample
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/computer.list.sample -O $BASE/sample/computer.list.sample
   ## 创建项目配置文件与定时任务配置文件
   cp $BASE/sample/config.sh.sample $BASE/config/config.sh
   cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
+  ## 配置定时任务
+  sed -i "s#BASE#$BASE#g" $BASE/config/crontab.list
   ## 更新脚本，导入LXK0301大佬gitee库活动脚本
   bash $BASE/git_pull.sh
   bash $BASE/git_pull.sh >/dev/null 2>&1
@@ -1109,8 +1112,6 @@ function ProjectDeployment() {
   npm install -g pm2
   pm2 start server.js
   cd $BASE
-  ## 配置定时任务
-  sed -i "s#/home/myid/jd#$BASE#g" $BASE/config/crontab.list
 }
 
 ## 更改配置文件：
