@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-25
+## Modified:2021-2-26
 
 
 ## =========== 定 义 项 目 的 安 装 目 录 ===========
@@ -38,10 +38,6 @@ if [ $? -eq 0 ];then
   echo "bash jd.sh jd_crazy_joy_coin now" >>run-all.sh
 fi
 sed -i '/^\s*$/d' run-all.sh
-
-## 配置定时任务
-sed -i "s#/home/myid/jd#$BASE#g" config/crontab.list
-sed -i "s#git_pull#manual-update#g" config/crontab.list
 
 ## 自动更新 Diy 脚本（默认禁用此功能，请手动启用）
 function DiyUpdate() {
