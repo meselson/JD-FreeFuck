@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Author:SuperManito
-## Modified:2021-2-25
+## Modified:2021-2-26
 
 function EnvStructures() {
   echo -e '\033[37m+---------------------------------------------------+ \033[0m'
@@ -23,11 +23,11 @@ function EnvStructures() {
   ## 更换新的文件
   wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/source/jd.sh -O jd.sh
   wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/source/git_pull.sh -O git_pull.sh
-  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/config.sh.sample -O sample/config.sh.sample
+  wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/docker.list.sample -O sample/docker.list.sample
   ## 创建配置文件
   rm -rf config.sh
   cp -f sample/config.sh.sample config/config.sh
-  cp -f sample/computer.list.sample config/crontab.list
+  cp -f sample/docker.list.sample config/crontab.list
   ## 拉取项目文件
   bash git_pull.sh
   ## 更正定时任务
