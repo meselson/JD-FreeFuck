@@ -27,7 +27,7 @@ bash $BASE/git_pull.sh
 ## 生成一键执行所有活动脚本
 ## 默认将 "jd、jx、jr" 开头的活动脚本加入其中
 rm -rf $BASE/run-all.sh
-bash jd.sh | grep -o 'j[drx]_[a-z].*' >$BASE/run-all.sh
+bash $BASE/jd.sh | grep -o 'j[drx]_[a-z].*' >$BASE/run-all.sh
 sed -i "s#^#bash $BASE/jd.sh &#g" $BASE/run-all.sh
 sed -i 's#.js# now#g' $BASE/run-all.sh
 sed -i '1i\#!/bin/bash' $BASE/run-all.sh
@@ -44,7 +44,7 @@ sed -i '1i\#!/bin/bash' $BASE/run-all.sh
 ##   sed -i '/xxx/d' $BASE/run-all.sh
 ##   echo "bash jd.sh xxx now" >>$BASE/run-all.sh
 ## fi
-cat run-all.sh | grep jd_crazy_joy_coin -wq
+cat $BASE/run-all.sh | grep jd_crazy_joy_coin -wq
 if [ $? -eq 0 ]; then
   sed -i '/jd_crazy_joy_coin/d' $BASE/run-all.sh
   echo "bash $BASE/jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
