@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Author:SuperManito
 ## Date:2021-2-26
-
+## 修复定时重复的问题
 
 ## 项目安装目录
 BASE="/opt/jd"
@@ -10,6 +10,7 @@ wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/computer.list.sam
 rm -rf $BASE/config/crontab.list
 cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
 sed -i "s#BASE#$BASE#g" $BASE/config/crontab.list
+wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/manual-update.sh -O $BASE/manual-update.sh >/dev/null 2>&1
 bash $BASE/git_pull.sh
 
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
