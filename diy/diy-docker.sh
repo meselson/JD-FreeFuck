@@ -18,7 +18,7 @@ author_list="i-chenzhe"
 
 ## 添加更多作者昵称（必填）示例：author_list="i-chenzhe whyour testuser"  直接追加，不要新定义变量
 
-##############################作者脚本地址URL（必填）##############################
+##############################  作  者  脚  本  地  址  URL  （必填）  ##############################
 # 例如：https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.js
 # 1.从作者库中随意挑选一个脚本地址，每个作者的地址添加一个即可，无须重复添加
 # 2.将地址最后的 “脚本名称+后缀” 剪切到下一个变量里（my_scripts_list_xxx）
