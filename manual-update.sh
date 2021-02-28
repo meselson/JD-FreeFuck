@@ -1,16 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ## Author:SuperManito
-## Version 1.1
-## Modified:2021-2-26
+## Version 1.2
+## Modified:2021-2-28
 
-## ================== 定 义 项 目 的 安 装 目 录 ================================
-## 项目安装目录
-BASE="/opt/jd"
+## ================== 定 义 变 量 ==============================================
+## 项目目录
+BASE=/opt/jd  ## 默认目录为 /opt/jd
+## 脚 本 下 载 代 理 链 接
+Proxy_URL=https://ghproxy.com/
 ################################################################################
 
 ## ================== 定 义  d i y 脚 本 同 步 链 接 ============================
 ## diy 自定义脚本链接
-DIYURL="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/diy.sh"
+Diy_URL=https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy/diy.sh
 ## 此脚本用于执行非 lxk 的第三方脚本
 ## 默认同步本人项目中的 diy.sh 脚本
 ## 不建议您直接使用其它人的脚本，因为本项目中的 diy 脚本高度定制
@@ -23,7 +25,7 @@ DIYURL="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/diy.sh"
 bash $BASE/git_pull.sh
 ################################################################################
 
-## ================= 一 键 执 行 所 有 活 动 脚 本 ===============================
+## ================= run all 一 键 执 行 所 有 活 动 脚 本 =======================
 ## 生成一键执行所有活动脚本
 ## 默认将 "jd、jx、jr" 开头的活动脚本加入其中
 rm -rf $BASE/run-all.sh
@@ -65,7 +67,7 @@ sed -i '/^\s*$/d' $BASE/run-all.sh
 function DiyUpdate() {
   echo -e "\033[37m开始同步diy.sh脚本... \033[0m"
   echo -e ''
-  wget -q $DIYURL -O $BASE/config/diy.sh
+  wget -q $Proxy_URL$Diy_URL -O $BASE/config/diy.sh
   echo -e "\033[37mdiy.sh脚本同步完成... \033[0m"
   echo -e ''
 }
