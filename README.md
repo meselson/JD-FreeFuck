@@ -91,7 +91,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### 2. `Linux` 为系统直装版本，适配常用 GNU/Linux 发行版，仅适用于在 `PC` | `VPS` 平台部署
 #### 3. `Docker` 为容器版本，为通用版本，建议用于在 `NAS` | `软路由` 平台部署，占用资源较低
 #### 4. 两版本的部署教程与使用教程均不相同，不要重复、错误使用，请认真阅读所有教程内容
-#### 5. 建议优先使用 `Linux` 版本，将得到本人第一时间的维护与更新， `Docker` 版本主要靠用户的反馈来维护、
+#### 5. 建议优先使用 `Linux` 版本，将得到本人第一时间的维护与更新， `Docker` 版本主要靠用户的反馈来维护
 ㅤ
 
 ***
@@ -118,16 +118,16 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > 如果您的系统或版本未在此列表中，可使用 `VPS` 部署方案尝试\
 > 否则请使用 `Docker` 通用版本部署此项目
  _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
-#### __1. 部署前需知与准备工作：__
-I. 检查您的系统是否符合支持范围、是否联网等基本条件\
-II. 执行部署脚本命令前请切换至 `root用户` ，切换命令为 `sudo -i`\
-III. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端\
-IV. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署\
-V. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助\
-VI. 下方的 `PC` 与 `VPS` 对应两种部署方案，区别在于是否使用国内更新源加速，根据您的使用平台选择其一即可，不要重复部署\
-VII. 若使用 `VPS` 部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置
+#### __部署前需知与准备工作：__
+1. 检查您的系统是否符合支持范围、是否联网等基本条件
+2. 执行部署脚本命令前请切换至 `root用户` ，切换命令为 `sudo -i`
+3. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端
+4. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
+5. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
+6. 下方的 `PC` 与 `VPS` 对应两种部署方案，区别在于是否使用国内更新源加速，根据您的使用平台选择其一即可，不要重复部署
+7. 若使用 `VPS` 部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置
 
-#### __2. 脚本部署：__
+#### __脚本部署：__
 - __PC 平台__
 
       bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
@@ -135,24 +135,24 @@ VII. 若使用 `VPS` 部署前请进入您所使用平台的防火墙功能，�
 
       bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
 > _ㅤㅤ再次提醒：请根据您使用的平台选择合适的版本，不要重复部署！位于国内的 `VPS` 平台可使用 `PC` 平台的脚本。_
-#### __3. 常见问题与帮助：__
-I. 如果执行部署脚本命令后提示 `Command 'curl' not found` 则说明当前未安装 `curl` 软件包，安装命令如下：
+#### __常见问题与帮助：__
+1. 如果执行部署脚本命令后提示 `Command 'curl' not found` 则说明当前未安装 `curl` 软件包，安装命令如下：
 
-    apt install -y curl 或 yum install -y curl
-II. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。\
-III. 如果执行脚本部署命令后提示 `无法解决Hosts` ，可通过添加解析记录以解决连通性问题，添加命令如下：
+       apt install -y curl 或 yum install -y curl
+2. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。
+3. 如果执行脚本部署命令后提示 `无法解决Hosts` ，可通过添加解析记录以解决连通性问题，添加命令如下：
 
-    echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-    echo "151.101.228.133 raw.githubusercontent.com" >> /etc/hosts
-IV. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的SSH `22 ` 端口不可用所导致的，自行解决处理。\
-V. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，请带上完整的日志严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助。\
-VI. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
+       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
+       echo "151.101.228.133 raw.githubusercontent.com" >> /etc/hosts
+4. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
+5. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，详见[Issues #95](https://github.com/SuperManito/JD-FreeFuck/issues/95)。
+6. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
 
-    cd /opt/jd/panel
-    npm install || npm install --registry=https://registry.npm.taobao.org
-    npm install -g pm2
-    pm2 start server.js
-VII. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
+       cd /opt/jd/panel
+       npm install || npm install --registry=https://registry.npm.taobao.org
+       npm install -g pm2
+       pm2 start server.js
+7. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
 ㅤ
 
 ***
@@ -163,26 +163,26 @@ VII. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能
 
 ### `Docker` 版本
 
-#### __1. 部署前需知与准备工作：__
-I. 由于 Docker 镜像 `区分架构` 并不通用，本人没有基于 `ARM架构` 的平台，暂时无法为基于此架构的设备开发本项目。\
-II. 故无法为您提供基于`ARM架构`平台的部署方法，例如 `N1` 用户，请使用下面经过本人确认并且可靠的第三方教程。\
-III. 此第三方教程与本人无任何关系，它所使用的是另一个作者的项目，不受本人的支持，我与其之间没有利益关系。\
-IV. 下面的教程涉及 `容器技术` 专业知识，执行命令前请先看 `注释内容` ，若无法理解请先百度或向我咨询(我的回复可能不及时)。\
-V. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命令，不要使用图形界面。
+#### __部署前需知与准备工作：__
+1. 由于 Docker 镜像 `区分架构` 并不通用，本人没有基于 `ARM架构` 的平台，暂时无法为基于此架构的设备开发本项目。
+2. 故无法为您提供基于`ARM架构`平台的部署方法，例如 `N1` 用户，请使用下面经过本人确认并且可靠的第三方教程。
+3. 此第三方教程与本人无任何关系，它所使用的是另一个作者的项目，不受本人的支持，我与其之间没有利益关系。
+4. 下面的教程涉及 `容器技术` 专业知识，执行命令前请先看 `注释内容` ，若无法理解请先百度或向我咨询。
+5. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命令，不要使用图形界面。
 
 > __基于 `ARM架构` 平台的部署教程：[致富经5.0（网站被墙）](https://v2raytech.com/jd-script-diy-tutorial)__
 
 ㅤ
-#### __2. 安装 Docker Server 客户端：__
+#### __安装 Docker Server 客户端：__
 
     sudo curl -sSL https://get.daocloud.io/docker | sh
 > _注意：大部分设备默认自带ㅤ`Docker` 客户端，如果没有安装请先执行此官方命令一键安装。_
-#### __3. 下载本项目所使用镜像：__
+#### __下载本项目所使用镜像：__
     wget https://github.com/SuperManito/JD-FreeFuck/releases/download/evinedeng%2Fjd/gitee.tar.gz
 > _注意：此镜像大约需要占用 `246MB` 的空闲储存空间。_
-#### __4. 导入镜像：__
+#### __导入镜像：__
     docker load -i gitee.tar.gz
-#### __5. 启动容器：__
+#### __启动容器：__
     docker run -dit \
     -v /opt/jd/scripts:/jd/scripts `# 设置活动脚本的主机挂载目录为/opt/jd/scripts` \
     -v /opt/jd/config:/jd/config `# 设置配置文件的主机挂载目录为/opt/jd/config` \
@@ -196,7 +196,7 @@ V. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命�
     --restart always `# 设置容器开机自启` \
     evinedeng/jd:gitee
 > _注意：如果是旁路由，容器网络类型需使用ㅤ`host` 模式，将 `--network bridge` 参数修改成 `--network host` 即可。_
-#### __6. 脚本部署：__
+#### __脚本部署：__
     #1) 进入容器
     docker exec -it jd /bin/bash
     #2) 执行脚本
@@ -208,14 +208,14 @@ V. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命�
 
 ***
 
-# 三、配置项目
-> 到此项目已部署完成，但还不能直接使用，接下来需要您JD账户的“身份证”，它由 `Cookie部分内容` 组成，然后将它写入至配置文件后就可以开始使用了\
-##  获取账号信息
+## 三、配置项目
+> 到此项目已部署完成，但还不能直接使用，接下来需要您JD账户的“身份证”，它由 `Cookie部分内容` 组成，然后将它写入至配置文件后就可以开始使用了
+###  获取账号信息
 - 通过 `控制面板` 功能进入 `WEB网页` 手机扫码获取，此方式获取的“身份证”有效期为3个月 __（优先推荐）__
 - 通过浏览器开发工具获取，在 Wiki [ GetCookies ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，此方式获取的“身份证”有效期为1个月
-## 配置账号信息
+### 配置账号信息
 > _注意：以下全部关于配置账号信息的教程操作也可在 `控制面板` 功能中的 `WEB网页` 完成配置，可取代在终端输入命令，小白。_
-### 1. __`Linux` 版本配置教程：__
+#### 1. __`Linux` 版本配置教程：__
 > __将获得的`Cookie部分内容`填入下面命令中的“双引号”内，该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：__
 
     sed -i '28c Cookie1=""' /opt/jd/config/config.sh
@@ -226,7 +226,7 @@ V. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命�
     sed -i '33c Cookie6=""' /opt/jd/config/config.sh
 > _参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_\
 > _注意：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释_
-### 2. __`Docker` 版本配置教程：__
+#### 2. __`Docker` 版本配置教程：__
 > __将获得的`Cookie部分内容`填入下面命令中的“双引号”内，该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：__
 
     docker exec -it jd sed -i '28c Cookie1=""' /jd/config/config.sh
@@ -237,7 +237,7 @@ V. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命�
     docker exec -it jd sed -i '33c Cookie6=""' /jd/config/config.sh
 > __参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh__\
 > _注意：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释_
-## 配置消息推送功能信息
+### 配置消息推送功能信息
 > _正在完善中，敬请期待......_
 
 ***
@@ -253,7 +253,7 @@ V. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命�
 
 ***
 
-# 五、卸载项目
+## 五、卸载项目
 ### `Linux` 版本
     #删除项目文件
     rm -rf /opt/jd
@@ -268,10 +268,12 @@ V. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命�
 
 ***
 
-# 六、帮助与支持
+## 六、帮助与支持
 - __如果您有意见与建议或者遇到问题需要我的协助，欢迎到[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)提交反馈__
 - __为了提高效率快速解决您的问题，请严格按照模板提交，感谢您的理解与配合__
 - __如果您通过下方赞赏码打赏两位数以上的金额即可获得本人专业的一对一服务__
+
+***
 
 ## 赞赏码
 <img src="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/icon/thank.jpg" width="300" height="300" alt="微信赞赏码"/><br/>
