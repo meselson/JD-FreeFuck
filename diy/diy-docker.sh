@@ -29,7 +29,7 @@ scripts_base_url_1=https://raw.githubusercontent.com/i-chenzhe/qx/main/
 
 ##############################  作  者  脚  本  名  称  （必填）  ##############################
 # 将相应作者的脚本填写到以下变量中
-my_scripts_list_1="jd_asus_iqiyi.js jd_entertainment.js jd_jump-jump.js"
+my_scripts_list_1="jd_entertainment.js jd_jump-jump.js"
 
 
 ## 活动脚本名称1：华硕-爱奇艺、百变大咖秀、母婴-跳一跳
@@ -85,7 +85,7 @@ done
 ##########################  删  除  旧  的  失  效  活  动  ##########################
 ## 删除旧版本失效的活动示例： rm -rf ${ShellDir}/scripts/jd_test.js >/dev/null 2>&1
 rm -rf ${ShellDir}/scripts/ddxw.js
-rm -rf ${ShellDir}/scripts/*anslove.js
+rm -rf ${ShellDir}/scripts/jd_asus_iqiyi.js
 rm -rf ${ShellDir}/scripts/jd_collectBlueCoin.js
 
 
