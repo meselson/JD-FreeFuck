@@ -119,13 +119,13 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > 否则请使用 `Docker` 通用版本部署此项目
  _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
 ### __1. 部署前需知与准备工作：__
-#### I. 检查您的系统是否符合支持范围、是否联网等基本条件
-#### II. 执行部署脚本命令前请切换至 `root用户` ，切换命令为 `sudo -i`
-#### III. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端
-#### IV. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
-#### V. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
-#### VI. 下方的 `PC` 与 `VPS` 对应两种部署方案，区别在于是否使用国内更新源加速，根据您的使用平台选择其一即可，不要重复部署
-#### VII. 若使用 `VPS` 部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置
+I. 检查您的系统是否符合支持范围、是否联网等基本条件\
+II. 执行部署脚本命令前请切换至 `root用户` ，切换命令为 `sudo -i`\
+III. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端\
+IV. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署\
+V. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助\
+VI. 下方的 `PC` 与 `VPS` 对应两种部署方案，区别在于是否使用国内更新源加速，根据您的使用平台选择其一即可，不要重复部署\
+VII. 若使用 `VPS` 部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置
 
 ### __2. 脚本部署：__
 - __PC 平台__
@@ -136,20 +136,23 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
       bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
 > _ㅤㅤ再次提醒：请根据您使用的平台选择合适的版本，不要重复部署！位于国内的 `VPS` 平台可使用 `PC` 平台的脚本。_
 ### __3. 常见问题与帮助：__
-#### I. 如果执行部署脚本命令后提示 `Command 'curl' not found` 则说明当前未安装 `curl` 软件包，安装命令如下：
+I. 如果执行部署脚本命令后提示 `Command 'curl' not found` 则说明当前未安装 `curl` 软件包，安装命令如下：
+
     apt install -y curl 或 yum install -y curl
-#### II. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。
-#### III. 如果执行脚本部署命令后提示 `无法解决Hosts` ，可通过添加解析记录以解决连通性问题，添加命令如下：
+II. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。\
+III. 如果执行脚本部署命令后提示 `无法解决Hosts` ，可通过添加解析记录以解决连通性问题，添加命令如下：\
+
     echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
     echo "151.101.228.133 raw.githubusercontent.com" >> /etc/hosts
-#### IV. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的SSH `22 ` 端口不可用所导致的，自行解决处理。
-#### V. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，请带上完整的日志严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助。
-#### VI. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
+IV. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的SSH `22 ` 端口不可用所导致的，自行解决处理。\
+V. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，请带上完整的日志严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助。\
+VI. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
+
     cd /opt/jd/panel
     npm install || npm install --registry=https://registry.npm.taobao.org
     npm install -g pm2
     pm2 start server.js
-#### VII. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
+VII. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
 ㅤ
 
 ***
