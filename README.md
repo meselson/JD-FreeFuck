@@ -24,9 +24,6 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 - __2021/2/24 17:50 `修复`__
 ㅤ修复了关于部署 `diy` 脚本后执行 `run-all.sh` 脚本后遇到报错并卡住问题
 
-- __2021/2/24 14:00 `通知`__
-ㅤGitee的库的脚本被官方屏蔽，即日起下架Gitee命令，换用Github命令部署此项目。
-
 - __2021/2/21 `重要通知`__\
 ㅤ由于活动脚本作者lxk0301的库触发Gitee监控机制被官方封禁，解封后库从公开状态变为私有状态，目前已修复完毕，请所有已部署的朋友根据《使用与更新》中`卸载此项目`的第一条命令删除整个项目文件夹后重新部署，遇到问题还请立即反馈。
 
@@ -97,6 +94,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 ## 二、项目部署
+
 ***
 
 > __下面是 `Linux` 版本的部署教程，请根据您使用的平台选择合适的版本，不要重复部署！__
@@ -130,29 +128,25 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### __脚本部署：__
 - __PC 平台__
 
-      bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+      bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
 - __VPS 平台__
 
-      bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
+      bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
 > _ㅤㅤ再次提醒：请根据您使用的平台选择合适的版本，不要重复部署！位于国内的 `VPS` 平台可使用 `PC` 平台的脚本。_
 #### __常见问题与帮助：__
 1. 如果执行部署脚本命令后提示 `Command 'curl' not found` 则说明当前未安装 `curl` 软件包，安装命令如下：
 
        apt install -y curl 或 yum install -y curl
 2. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。
-3. 如果执行脚本部署命令后提示 `无法解决Hosts` ，可通过添加解析记录以解决连通性问题，添加命令如下：
-
-       echo "151.101.88.133 raw.githubusercontent.com" >> /etc/hosts
-       echo "151.101.228.133 raw.githubusercontent.com" >> /etc/hosts
-4. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
-5. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，详见[Issues #95](https://github.com/SuperManito/JD-FreeFuck/issues/95)。
-6. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
+3. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
+4. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，详见[Issues #95](https://github.com/SuperManito/JD-FreeFuck/issues/95)。
+5. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
 
        cd /opt/jd/panel
        npm install || npm install --registry=https://registry.npm.taobao.org
        npm install -g pm2
        pm2 start server.js
-7. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
+6. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
 ㅤ
 
 ***
@@ -200,7 +194,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     #1) 进入容器
     docker exec -it jd /bin/bash
     #2) 执行脚本
-    bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/docker/install-docker.sh)
+    bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/docker/install-docker.sh)
     #3) 退出容器
     exit
 > _注意：此命令请逐一执行。_
@@ -209,40 +203,38 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 ## 三、配置项目
-> 到此项目已部署完成，但还不能直接使用，接下来需要您JD账户的“身份证”，它由 `Cookie部分内容` 组成，然后将它写入至配置文件后就可以开始使用了
-###  获取账号信息
+
+***
+
+> 到此项目已部署完毕，接下来需要您账户的“身份证”，它由 `Cookie部分内容` 组成，将它写入至配置文件中才可以开始使用\
+> 此部分教程的配置操作也可在 `控制面板` 功能中的 `WEB网页` 完成配置，可取代在终端输入命令，具体看下方教程的注释
+***
+
+### 关于如何获取账号信息的途径：
 - 通过 `控制面板` 功能进入 `WEB网页` 手机扫码获取，此方式获取的“身份证”有效期为3个月 __（优先推荐）__
 - 通过浏览器开发工具获取，在 Wiki [ GetCookies ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，此方式获取的“身份证”有效期为1个月
-### 配置账号信息
-> _注意：以下全部关于配置账号信息的教程操作也可在 `控制面板` 功能中的 `WEB网页` 完成配置，可取代在终端输入命令，小白。_
-#### 1. __`Linux` 版本配置教程：__
-> __将获得的`Cookie部分内容`填入下面命令中的“双引号”内，该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：__
 
-    sed -i '28c Cookie1=""' /opt/jd/config/config.sh
-    sed -i '29c Cookie2=""' /opt/jd/config/config.sh
-    sed -i '30c Cookie3=""' /opt/jd/config/config.sh
-    sed -i '31c Cookie4=""' /opt/jd/config/config.sh
-    sed -i '32c Cookie5=""' /opt/jd/config/config.sh
-    sed -i '33c Cookie6=""' /opt/jd/config/config.sh
-> _参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh_\
-> _注意：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释_
-#### 2. __`Docker` 版本配置教程：__
-> __将获得的`Cookie部分内容`填入下面命令中的“双引号”内，该项目可同时运行多个账号，请按顺序填入下面命令中的“双引号”内，用几个就执行几条对应的命令，复制完整命令到终端并执行：__
+### 1. 配置账户
 
-    docker exec -it jd sed -i '28c Cookie1=""' /jd/config/config.sh
-    docker exec -it jd sed -i '29c Cookie2=""' /jd/config/config.sh
-    docker exec -it jd sed -i '30c Cookie3=""' /jd/config/config.sh
-    docker exec -it jd sed -i '31c Cookie4=""' /jd/config/config.sh
-    docker exec -it jd sed -i '32c Cookie5=""' /jd/config/config.sh
-    docker exec -it jd sed -i '33c Cookie6=""' /jd/config/config.sh
-> __参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' /opt/jd/config/config.sh__\
-> _注意：账号无上限，超出6个账号后需要自行在`config.sh`配置文件创建变量，自行查看配置文件中的注释_
-### 配置消息推送功能信息
+- 将获得的`Cookie部分内容`填入下面命令中的“双引号”内复制完整命令到终端并执行：
+
+      sed -i '28c Cookie1=""' config/config.sh
+      sed -i '29c Cookie2=""' config/config.sh
+      sed -i '30c Cookie3=""' config/config.sh
+      sed -i '31c Cookie4=""' config/config.sh
+      sed -i '32c Cookie5=""' config/config.sh
+      sed -i '33c Cookie6=""' config/config.sh
+> _参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' config/config.sh_
+
+> _注意：1. 执行此命令前 `Linux` 版需要进入项目安装目录，`Docker` 版需要进入容器内。_\
+> _ㅤㅤㅤ2. 此操作对应 `控制面板` 功能 `首页` 中的 28~33 行内容，具体教程查看注释内容。_\
+> _ㅤㅤㅤ3. 用几个账号就执行几行命令，超出6个账号后需要自行在 `config.sh` 配置文件中创建变量。_
+### 2. 配置消息推送功能
 > _正在完善中，敬请期待......_
 
 ***
 
-# 四、使用项目
+## 四、使用项目
 > 关于如何使用此项目，请前往至 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) ，项目后续的更新、修复都在其页面发布！
 
 - __`Linux`  版本使用教程 ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Linux-Use-And-Update-Tutorial)__
@@ -271,7 +263,6 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ## 六、帮助与支持
 - __如果您有意见与建议或者遇到问题需要我的协助，欢迎到[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)提交反馈__
 - __为了提高效率快速解决您的问题，请严格按照模板提交，感谢您的理解与配合__
-- __如果您通过下方赞赏码打赏两位数以上的金额即可获得本人专业的一对一服务__
 
 ***
 
@@ -283,7 +274,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 ## Stargazers over time
-<img src="https://starchart.cc/SuperManito/JD-FreeFuck.svg" width="1000" height="500" alt="Stargazers over time"/><br/>
+<img src="https://starchart.cc/SuperManito/JD-FreeFuck.svg" width="500" height="250" alt="Stargazers over time"/><br/>
 
 ***
 
