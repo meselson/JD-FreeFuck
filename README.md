@@ -25,14 +25,14 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 
 ***
 
-# __《JD薅羊毛》一键部署 For Linux__
+# __《京东薅羊毛》一键部署 For Linux__
 - __用途：通过自动化脚本参与JD商城的各种活动从而获取京豆用于购物抵扣__
 - __适用平台：PC、VPS (虚拟专用服务器) 、NAS 、软路由__
 - __适用环境：Linux & Docker Server__
 
 __ㅤㅤ`Telegram` 通知频道：[ t.me/jd_freefuck ](https://t.me/jd_freefuck)__
 
-__ㅤㅤ`码云Gitee` 同步更新此项目，建议收藏国内项目发布页[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__
+__ㅤㅤ`码云Gitee` 同步更新：[ 点击此处访问 ](https://gitee.com/SuperManito/JD-FreeFuck)__
 
 ## 特别声明：
 
