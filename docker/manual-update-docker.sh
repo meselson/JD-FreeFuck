@@ -5,14 +5,14 @@
 
 ## ================== 定 义 变 量 ==============================================
 ## 项目目录
-BASE=/jd  ## 默认目录为 /jd
-## 脚 本 下 载 代 理 链 接
+BASE=/jd  ## 此目录为容器的默认目录，不要擅自更改！
+## 脚本下载代理链接
 Proxy_URL=https://ghproxy.com/
 ################################################################################
 
 ## ================== 定 义  d i y 脚 本 同 步 链 接 ============================
 ## diy 自定义脚本链接
-Diy_URL=https://gitee.com/SuperManito/JD-FreeFuck/raw/main/diy/diy.sh
+Diy_URL=https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/diy/diy-docker.sh
 ## 此脚本用于执行非 lxk 的第三方脚本
 ## 默认同步本人项目中的 diy.sh 脚本
 ## 不建议您直接使用其它人的脚本，因为本项目中的 diy 脚本高度定制
