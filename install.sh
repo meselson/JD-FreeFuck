@@ -201,8 +201,7 @@ function ProjectDeployment() {
     ## 拉取活动脚本
     bash $BASE/git_pull.sh
     bash $BASE/git_pull.sh >/dev/null 2>&1
-    ## 赋权
-    chmod 777 $BASE/*
+
 }
 
 ## 安装控制面板：
@@ -216,6 +215,8 @@ function PanelInstallation() {
     npm install -g pm2
     pm2 start server.js
     cd $BASE
+    ## 赋权所有项目文件
+    chmod 777 $BASE/*
     ## 判定控制面板是否安装成功
     netstat -anp | grep 5678 -wq
     if [ $? -eq 0 ]; then
@@ -236,6 +237,7 @@ function PanelInstallation() {
         echo -e "\033[32m +-------------------------------------------------------+ \033[0m"
 
     else
+        echo -e ''
         echo -e "\033[31m ------------------- 控制面板安装失败 ------------------- \033[0m"
     fi
     echo -e ''
@@ -274,7 +276,9 @@ function AutoScript() {
     ## 下载最新的 manual-update 一键更新脚本
     wget -q $Proxy_URL$Manual_Update_URL -O $BASE/manual-update.sh
     if [ $? -ne 0 ]; then
+        echo -e ''
         echo -e "\033[31m -------------- 一键更新脚本下载失败 -------------- \033[0m"
+        echo -e ''
     fi
 }
 
