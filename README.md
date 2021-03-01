@@ -7,9 +7,12 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 > `修复` 代表有错误已经修复完成需要执行更新命令\
 > `通知` 代表有新的内容或信息需要您了解\
 > 具体内容和命令请前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看通知
-ㅤ
+
+- __2021/3/01 21:00 `更新`__
+ㅤ已发布 `Linux` 全新版本，使用了最新的源码，加入了最新活动京喜财富岛相关变量，重新编排了配置文件，请大家重新部署使用新版本，后续发现问题请及时反馈，感谢您的支持。
+
 - __2021/2/28 23:30 `更新`__
-ㅤ更新了 Docker 新版本的镜像，使用了国内镜像仓库解决了下载版本不一致的情况，修复了小错误，后续发现问题请及时反馈，感谢您的理解与支持。
+ㅤ更新了 `Docker` 新版本的镜像，使用了国内镜像仓库解决了下载版本不一致的情况，修复了小错误，后续发现问题请及时反馈，感谢您的理解与支持。
 
 - __2021/2/28 21:20 `更新`__
 ㅤ已发布全新的 `Docker` 版本，全新构建了镜像，支持 armv7/arm64/amd64 架构的设备，请所有使用 `Docker` 版本的朋友根据新的教程重新部署，`Linux` 新版本正在制作中，请持续关注此项目......
@@ -102,37 +105,36 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 ### `Linux` 版本
-#### 已适配的 GNU/Linux 发行版（简体中文）：
-
-| 系统 | 支持版本 |
-| ------ | ------ |
-| Ubuntu | 20.04 ~ 20.10 |
-| Debian | 9.0 ~ 10.8 |
-| Kali | 2019 ~ 2021.1 |
-| Fedora | 28 ~ 33 |
-| CentOS | 7.0 ~ 8.3 |
-> 尽量使用最新的稳定版系统，并且安装语言使用 `简体中文` \
-> 仅支持 `Debian` 与 `Redhat` 发行版和及其衍生发行版 \
-> 如果您的系统或版本未在此列表中，可使用 `VPS` 部署方案尝试\
-> 否则请使用 `Docker` 通用版本部署此项目
- _附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)_
+> 仅支持 `Debian` 与 `Redhat` 发行版和及其衍生发行版\
+> 尽量使用最新的稳定版系统，并且安装语言使用 `简体中文`\
+> 否则请使用 `Docker` 通用版本部署此项目\
+> 附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)
 #### __部署前需知与准备工作：__
 1. 检查您的系统是否符合支持范围、是否联网等基本条件
 2. 执行部署脚本命令前请切换至 `root用户` ，切换命令为 `sudo -i`
 3. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端
 4. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
 5. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
-6. 下方的 `PC` 与 `VPS` 对应两种部署方案，区别在于是否使用国内更新源加速，根据您的使用平台选择其一即可，不要重复部署
-7. 若使用 `VPS` 部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等重要设置
+6. 若使用 `VPS` 平台，部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置
 
+#### __更换国内源：__
+    bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/ReplaceMirror.sh)
+> _注意：1. 此脚本为 `LinuxMirror` 一键更换国内源脚本，之前附加在旧版本部署脚本中现独立出来，_\
+> _ㅤㅤㅤ2. 如果您使用的平台位于国外则不需要执行此命令，例如 `Google Cloud Platform` 用户，_\
+> _ㅤㅤㅤ3. 此脚本并没有适配所有的 GNU/Linux 发行版，具体支持列表详见下方表格。_
+- 可使用 `LinuxMirror` 一键更换国内源脚本的 GNU/Linux 发行版
+
+| 系统 | 支持版本 |
+| ------ | ------ |
+| Ubuntu | 18.04 ~ 20.10 |
+| Debian | 9.0 ~ 10.8 |
+| Kali | 2019 ~ 2021.1 |
+| Fedora | 28 ~ 33 |
+| CentOS | 7.0 ~ 8.3 |
+> 如果您的系统或版本未在此列表中则不能使用一键更换国内源脚本
 #### __脚本部署：__
-- __PC 平台__
-
-      bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
-- __VPS 平台__
-
-      bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install-vps.sh)
-> _ㅤㅤ再次提醒：请根据您使用的平台选择合适的版本，不要重复部署！位于国内的 `VPS` 平台可使用 `PC` 平台的脚本。_
+    bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+> _再次提醒：请根据您使用的平台选择合适的版本，不要重复部署！_
 #### __常见问题与帮助：__
 1. 如果执行部署脚本命令后提示 `Command 'curl' not found` 则说明当前未安装 `curl` 软件包，安装命令如下：
 
@@ -183,8 +185,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     --hostname jd `# 设置主机名为jd` \
     --restart always `# 设置容器开机自启` \
     registry.cn-hangzhou.aliyuncs.com/supermanito/jd
-> _注意：1.如果是旁路由，容器网络类型需使用ㅤ`host` 模式，将 `--network bridge` 参数修改成 `--network host` 即可。\
-> _ㅤㅤㅤ2. 如果设备不存在 `opt` 目录，先通过命令 `mkdir -p /opt/jd` 目录_
+> _注意：1.如果是旁路由，容器网络类型需使用ㅤ`host` 模式，请将 `--network bridge` 参数改成 `--network host`，_\
+> _ㅤㅤㅤ2.如果设备不存在 `opt` 目录，先通过命令 `mkdir -p /opt/jd` 目录。_
 #### __初始化容器：__
     docker logs -f jd
 > _注意：请先执行此命令查看初始化容器进度，当输出 `容器启动成功......` 字样即代表容器创建成功，此时通过命令 `Ctrl + C` 退出即可。_
@@ -203,6 +205,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
 > 到此项目已部署完毕，接下来需要您账户的“身份证”，它由 `Cookie部分内容` 组成，将它写入至配置文件中才可以开始使用\
 > 此部分教程的配置操作也可在 `控制面板` 功能中的 `WEB网页` 完成配置，可取代在终端输入命令，具体看下方教程的注释
+
 ***
 
 ### 关于如何获取账号信息的途径：
