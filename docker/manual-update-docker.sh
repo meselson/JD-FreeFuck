@@ -68,7 +68,7 @@ function DiyUpdate() {
   echo -e "\033[37m开始同步diy.sh脚本... \033[0m"
   echo -e ''
   wget -q $Proxy_URL$Diy_URL -O $BASE/config/diy.sh
-  echo -e "\033[37mdiy.sh脚本同步完成... \033[0m"
+  echo -e "\033[37mdiy脚本同步完成... \033[0m"
   echo -e ''
 }
 #DiyUpdate   
