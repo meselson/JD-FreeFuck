@@ -240,17 +240,22 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
 ## 五、卸载项目
 ### `Linux` 版本
-    #删除项目文件
-    rm -rf /opt/jd
-    #卸载软件包
-    apt/yum remove -y git perl moreutils nodejs npm
+- 删除项目文件
+
+      rm -rf /opt/jd
+- 卸载软件包
+
+      apt/yum remove -y git perl moreutils nodejs npm
 ### `Docker` 版本
-    #删除容器
-    docker rm -f jd
-    #删除容器挂载目录
-    rm -rf /opt/jd
-    #删除镜像
-    docker rmi -f registry.cn-hangzhou.aliyuncs.com/supermanito/jd
+- 删除容器
+
+      docker rm -f jd
+- 删除容器挂载目录
+
+      rm -rf /opt/jd
+- 删除镜像
+
+      docker rmi -f registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > __若您 `已接受` 本项目声明，您必须在下载后的 `24小时` 内从计算机中完全删除相关内容。__
 
 ***
