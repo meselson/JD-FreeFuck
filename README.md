@@ -169,7 +169,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > _注意：大部分设备默认自带ㅤ`Docker` 客户端，如果没有安装请先执行此官方命令一键安装。_
 #### __下载镜像：__
     docker pull registry.cn-hangzhou.aliyuncs.com/supermanito/jd
-> _注意：此镜像大约需要占用 `239MB` 的空闲储存空间。_
+> _注意：此镜像大约需要占用 `239MB` 的空闲存储空间。_
 #### __启动容器：__
     docker run -dit \
     -v /opt/jd/scripts:/jd/scripts `# 设置活动脚本的主机挂载目录为/opt/jd/scripts` \
@@ -183,7 +183,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     --hostname jd `# 设置主机名为jd` \
     --restart always `# 设置容器开机自启` \
     registry.cn-hangzhou.aliyuncs.com/supermanito/jd
-> _注意：1.如果是旁路由，容器网络类型需使用ㅤ`host` 模式，将 `--network bridge` 参数修改成 `--network host` 即可。_
+> _注意：1.如果是旁路由，容器网络类型需使用ㅤ`host` 模式，将 `--network bridge` 参数修改成 `--network host` 即可。\
 > _ㅤㅤㅤ2. 如果设备不存在 `opt` 目录，先通过命令 `mkdir -p /opt/jd` 目录_
 #### __初始化容器：__
     docker logs -f jd
