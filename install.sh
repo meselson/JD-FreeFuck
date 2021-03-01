@@ -201,6 +201,8 @@ function ProjectDeployment() {
     ## 拉取活动脚本
     bash $BASE/git_pull.sh
     bash $BASE/git_pull.sh >/dev/null 2>&1
+    ## 赋权
+    chmod 777 $BASE/*
 }
 
 ## 安装控制面板：
@@ -349,5 +351,4 @@ function Installation() {
         exit
     fi
 }
-
 Installation
