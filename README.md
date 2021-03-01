@@ -187,8 +187,6 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### __初始化容器：__
     docker logs -f jd
 > _注意：请先执行此命令查看初始化容器进度，当输出 `容器启动成功......` 字样即代表容器创建成功，此时通过命令 `Ctrl + C` 退出即可。_
-#### __拉取脚本：__
-    docker exec -it jd bash manual-update.sh
 #### __常见问题与帮助：__
 1. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
 2. 如在拉取活动脚本时失败提示 `Repository more than 5 connections` 是由于 `Gitee` 限制了每秒同时拉取项目的IP不能超过 `5` 个所导致，此报错为正常现象，重新执行更新命令即可。
@@ -249,6 +247,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ### `Docker` 版本
     #删除容器
     docker rm -f jd
+    #删除容器挂载目录
+    rm -rf /opt/jd
     #删除镜像
     docker rmi -f registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > __若您 `已接受` 本项目声明，您必须在下载后的 `24小时` 内从计算机中完全删除相关内容。__
