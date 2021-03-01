@@ -32,7 +32,7 @@ scripts_base_url_1=https://raw.githubusercontent.com/i-chenzhe/qx/main/
 my_scripts_list_1="jd_entertainment.js"
 
 
-## 活动脚本名称1：华硕-爱奇艺、百变大咖秀、母婴-跳一跳
+## 活动脚本名称1：百变大咖秀
 
 
 ## 添加更多脚本名称示例：my_scripts_list_3="jd_test1.js jd_test2.js jd_test3.js ......"
