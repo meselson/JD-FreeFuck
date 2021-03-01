@@ -5,8 +5,14 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 # 关于 Docker 版本的《使用与更新》教程
 ## 一、基础使用教程
 #### 1. 手动运行一键脚本开始您的薅羊毛行为：
-    docker exec -it jd source run-all.sh
-> _注意：此脚本内容为 `执行所有活动脚本` ，您还可对照此脚本中的内容定制此脚本，_\
+    #进入容器
+    docker exec -it jd /bin/bash
+    #执行一键脚本
+    source run-all.sh
+    #退出容器
+    exit
+> _注意：请进入容器内执行此脚本，只有进入容器内才可以使用 `Ctrl + Z`跳过命令，_\
+> _ㅤㅤㅤ此脚本内容为 `执行所有活动脚本` ，您还可对照此脚本中的内容定制此脚本，_\
 > _ㅤㅤㅤ除手动运行活动脚本外该项目还会通过定时的方式自动执行活动脚本，注意看日志。_
 #### 2. 更新活动脚本与一键脚本：
     docker exec -it jd bash manual-update.sh
@@ -28,7 +34,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ## 二、高阶使用教程
 #### 1. 获取互助码：
     #导入脚本
-    docker exec -it jd wget https://gitee.com/qq34347476/quantumult-x/raw/master/format_share_jd_code.js -O scripts/format_share_jd_code.js
+    docker exec -it jd wget -P scripts https://ghproxy.com/https://raw.githubusercontent.com/qq34347476/js_script/master/scripts/format_share_jd_code.js
     #使用脚本
     docker exec -it jd bash jd.sh format_share_jd_code.js now
 > _引用声明：这里引用了另一个大佬写的互助码脚本，比 lxk 的好用。引用项目链接：[qq34347476/quantumult-x](https://gitee.com/qq34347476/quantumult-x/tree/master)_
@@ -42,18 +48,23 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
     2. 然后通过命令 docker exec -it jd bash jd.sh xxx now 运行
     3. 如果您想将第三方脚本加入到 run-all.sh 一键脚本中可将脚本名改为"jd_"开头即可
 > _注意：导入的第三方活动脚本不会随项目本身活动脚本的更新而删除。_
-#### 5. 使用diy脚本：
-    #启用该功能
-    docker exec -it jd sed -i 's/EnableExtraShell=""/EnableExtraShell="true"/g' config/config.sh
-    #启用自动同步功能（自动同步本人项目中的diy脚本）
-    docker exec -it jd sed -i 's/#DiyUpdate/DiyUpdate/g' manual-update.sh
-> _注意：1. 此脚本的用途为加入非 lxk 的第三方脚本，_\
-> _ㅤㅤㅤ2. 您可以同步跟着本人项目里的 diy 脚本走，本人保持更新，_\
-> _ㅤㅤㅤ3. 如果您想添加更多内容，可根据此脚本中的注释帮助自行添加，_\
-> _ㅤㅤㅤ4. 如果您想使用您自定义的脚本请关闭在 `manual-update.sh` 中的同步功能_\      
-> _ㅤㅤㅤ5. 如果您修改了默认安装目录，修改相关变量才能使用直接使用。_\
-> _ㅤㅤㅤ6. 除手动运行活动脚本外该项目还会通过定时的方式自动执行活动脚本，注意看日志。_\
-> _ㅤㅤㅤ7. 此功能持续开发中，准备推出新版本_
+#### 5. 使用自定义 `diy` 脚本：
+- 使用需知
+
+      1. 此脚本的用途为加入非 lxk0301大佬 的第三方脚本
+      2. 您可以开启自动同步功能跟着本人项目里的 diy 脚本走
+      3. 您也可以使用本项目中的模板文件自定义构建想您的 diy 脚本
+      4. 您可以将您的 diy 脚本上传到您的仓库
+      5. 如果您想使用了您自定义的脚本请关闭自动同步功能
+- 启用该功能
+
+      docker exec -it jd sed -i 's/EnableExtraShell=""/EnableExtraShell="true"/g' config/config.sh
+- 启用自动同步功能（选择）
+
+      docker exec -it jd sed -i 's/#DiyUpdate/DiyUpdate/g' manual-update.sh
+> _注意：1. 此功能由本人开发加入到了 `manual-update` 一键更新脚本中，_\
+> _ㅤㅤㅤ2. 启用该功能后便可直接下载或同步更新本项目中的 diy 脚本，_\
+> _ㅤㅤㅤ3. 开启此功能后连续执行两次更新命令就可以下载脚本正常使用了。_
 
 ***
 
@@ -75,22 +86,27 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ㅤ
 ## 四、更新教程
 #### 1. 更新一键更新脚本：
-    docker exec -it jd wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/docker/manual-update-docker.sh -O manual-update.sh
+    docker exec -it jd wget https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/manual-update.sh -O manual-update.sh
 #### 2. 更新获取互助码脚本：
-    docker exec -it jd wget https://gitee.com/qq34347476/quantumult-x/raw/master/format_share_jd_code.js -O scripts/format_share_jd_code.js
+    docker exec -it jd wget https://ghproxy.com/https://raw.githubusercontent.com/qq34347476/js_script/master/scripts/format_share_jd_code.js -O scripts/format_share_jd_code.js
 #### 3. 更新配置文件：
-    #备份配置文件
-    docker exec -it jd mv config/config.sh config/config.sh.bak
-    #替换新的配置文件
-    docker exec -it jd wget https://gitee.com/SuperManito/JD-FreeFuck/raw/main/sample/config.sh.sample -O sample/config.sh.sample
-    cp -f sample/config.sh.sample config/config.sh
+- 备份配置文件
+
+      docker exec -it jd mv config/config.sh config/config.sh.bak
+- 替换新的配置文件
+
+      docker exec -it jd wget https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/source/sample/config.sh.sample -O sample/config.sh.sample
+      cp -f sample/config.sh.sample config/config.sh
 #### 4. 修复与升级：
-    #进入容器
-    docker exec -it jd /bin/bash
-    #执行更新脚本
-    bash <(curl -sL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/docker/update-docker.sh)
-    #退出容器
-    exit
+- 进入容器
+
+      docker exec -it jd /bin/bash
+- 执行更新脚本
+
+      bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/docker/update-docker.sh)
+- 退出容器
+
+      exit
 > _注意：适用于后期维护，当遇到问题或优化代码需要修复时会在项目置顶通知，_\
 > _ㅤㅤㅤ另外如果您修改了默认安装目录，请自行下载源码并更改相关变量手动更新。_
 
@@ -100,7 +116,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 ## 五、使用需知
 #### 1.  `run-all.sh` 为一键执行所有活动脚本， `manual-update.sh` 为一键更新脚本
 #### 2. 手动执行 `run-all.sh` 脚本后无需守在电脑旁，会自动在最后运行挂机活动脚本
-#### 3. 执行活动脚本期间如果卡住，可按回车键尝试或通过命令 `Ctrl + C` 跳过继续执行剩余活动脚本
+#### 3. 执行 `run-all.sh` 脚本期间如果卡住，可按回车键尝试或通过命令 `Ctrl + Z` 跳过继续执行剩余活动脚本
 #### 4. 由于京东活动一直变化可能会出现无法参加活动、报错等正常现象，可手动更新活动脚本
 #### 5. 如果需要更新活动脚本，请执行 `docker exec -it jd bash manual-update.sh` 命令一键更新即可，它会同步更新 `run-all.sh` 脚本
 #### 6. 除手动运行活动脚本外该项目还会通过定时的方式全天候自动运行活动脚本，具体运行记录可通过日志查看
