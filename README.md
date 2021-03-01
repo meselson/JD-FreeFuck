@@ -88,7 +88,6 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### 2. `Linux` 为系统直装版本，适配常用 GNU/Linux 发行版，仅适用于在 `PC` | `VPS` 平台部署
 #### 3. `Docker` 为容器版本，为通用版本，建议用于在 `NAS` | `软路由` 平台部署，占用资源较低
 #### 4. 两版本的部署教程与使用教程均不相同，不要重复、错误使用，请认真阅读所有教程内容
-#### 5. 建议优先使用 `Linux` 版本，将得到本人第一时间的维护与更新， `Docker` 版本主要靠用户的反馈来维护
 ㅤ
 
 ***
@@ -107,12 +106,11 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > 否则请使用 `Docker` 通用版本部署此项目\
 > 附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)
 #### __部署前需知与准备工作：__
-1. 检查您的系统是否符合支持范围、是否联网等基本条件
-2. 执行部署脚本命令前请切换至 `root用户` ，切换命令为 `sudo -i`
-3. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端
-4. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
-5. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
-6. 若使用 `VPS` 平台，部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置
+1. 执行部署脚本前请检查您的系统是否联网，并请切换至 `root用户` ，切换命令为 `sudo -i`
+2. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端
+3. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
+4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
+5. 若使用 `VPS` 平台，部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置
 
 #### __更换国内源：__
     bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/ReplaceMirror.sh)
