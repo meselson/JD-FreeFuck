@@ -8,6 +8,9 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便
 > `通知` 代表有新的内容或信息需要您了解\
 > 具体内容和命令请前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看通知
 ㅤ
+- __2021/3/01 23:30 `通知`__
+ㅤ更新了`Docker` 新版本的镜像，请大家重新部署，使用了国内镜像仓库解决了下载版本不一致的情况，修复了小错误，后续发现问题请及时反馈，感谢您的理解与支持。
+
 - __2021/2/28 21:20 `更新`__
 ㅤ已发布全新的 `Docker` 版本，全新构建了镜像，支持 armv7/arm64/amd64 架构的设备，请所有使用 `Docker` 版本的朋友根据新的教程重新部署，`Linux` 新版本正在制作中，请持续关注此项目......
 
@@ -164,7 +167,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     sudo curl -sSL https://get.daocloud.io/docker | sh
 > _注意：大部分设备默认自带ㅤ`Docker` 客户端，如果没有安装请先执行此官方命令一键安装。_
 #### __下载镜像：__
-    docker pull supermanito/jd
+    docker pull registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > _注意：此镜像大约需要占用 `239MB` 的空闲储存空间。_
 #### __启动容器：__
     docker run -dit \
@@ -178,7 +181,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     --network bridge `# 设置网络为桥接，直连主机` \
     --hostname jd `# 设置主机名为jd` \
     --restart always `# 设置容器开机自启` \
-    supermanito/jd
+    registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > _注意：1.如果是旁路由，容器网络类型需使用ㅤ`host` 模式，将 `--network bridge` 参数修改成 `--network host` 即可。_
 > _ㅤㅤㅤ2. 如果设备不存在 `opt` 目录，先通过命令 `mkdir -p /opt/jd` 目录_
 #### __初始化容器：__
@@ -243,7 +246,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     #删除容器
     docker rm -f jd
     #删除镜像
-    docker rmi -f supermanito/jd
+    docker rmi -f registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > __若您 `已接受` 本项目声明，您必须在下载后的 `24小时` 内从计算机中完全删除相关内容。__
 
 ***
