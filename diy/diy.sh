@@ -86,7 +86,7 @@ done
 ## 删除旧版本失效的活动示例： rm -rf ${ShellDir}/scripts/jd_test.js >/dev/null 2>&1
 rm -rf ${ShellDir}/scripts/jd_asus_iqiyi.js
 rm -rf ${ShellDir}/scripts/jd_collectBlueCoin.js
-rm -rf ${ShellDir}/scripts/ jd_jump-jump.js
+rm -rf ${ShellDir}/scripts/jd_jump-jump.js
 
 ##############################  修  正  定  时  任  务  ##########################################
 ## 注意两边修改内容区别在于中间内容"jd"、"${ShellDir}/jd.sh"
