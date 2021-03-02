@@ -116,12 +116,11 @@ function EnvStructures() {
         rm -rf /etc/apt/sources.list.d/nodesource.list
         ## 安装需要的软件包
         apt install -y wget curl openssh-server git perl moreutils
-        ## 安装Nodejs与NPM
+        ## 安装 Nodejs 与 npm
         curl -sL https://deb.nodesource.com/setup_14.x | bash -
-        sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
-        echo "deb https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
-        echo "deb-src https://mirrors.ustc.edu.cn/nodesource/deb/node_14.x $SYSTEM_VERSION main" >>/etc/apt/sources.list.d/nodesource.list
-        apt update
+        echo -e ''
+        echo -e '\033[37m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m'
+        echo -e ''
         apt install -y nodejs
         apt autoremove -y
     ## 基于 RedHat 发行版和及其衍生发行版的软件包安装
@@ -131,29 +130,13 @@ function EnvStructures() {
         rm -rf /etc/yum.repos.d/nodesource-*.repo
         ## 安装需要的软件包
         yum install -y wget curl openssh-server git perl moreutils
-        ## 安装Nodejs与NPM
+        ## 安装 Nodejs 与 npm
         curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-        sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
-        yum makecache
+        echo -e ''
+        echo -e '\033[37m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m'
+        echo -e ''
         yum install -y nodejs
         yum autoremove -y
-    fi
-    ## 安装Nodejs与NPM备用方案
-    VERIFICATION=$(node -v | cut -c2)
-    if [ $VERIFICATION != 1 ]; then
-        echo -e '\033[37m常规方法未成功安装 nodejs ，开始执行备用方案，下载网速可能过慢请耐心等候...... \033[0m'
-        sleep 3s
-        if [ $SYSTEM = "Debian" ]; then
-            apt remove -y nodejs npm >/dev/null 2>&1
-            rm -rf /etc/apt/sources.list.d/nodesource.list
-            curl -sL https://deb.nodesource.com/setup_14.x | bash -
-            apt install -y nodejs
-        elif [ $SYSTEM = "RedHat" ]; then
-            yum remove -y nodejs npm >/dev/null 2>&1
-            rm -rf /etc/yum.repos.d/nodesource-*.repo
-            curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-            apt install -y nodejs
-        fi
     fi
 }
 
@@ -217,7 +200,7 @@ function PanelInstallation() {
     cd $BASE
     ## 赋权所有项目文件
     chmod 777 $BASE/*
-    ## 判定控制面板是否安装成功q
+    ## 判定控制面板是否安装成功
     curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
     if [ $? -eq 0 ]; then
         sleep 3s
@@ -235,7 +218,6 @@ function PanelInstallation() {
         echo -e "\033[32m |      关于更多使用帮助请通过《使用与更新》教程获取     | \033[0m"
         echo -e "\033[32m |                                                       | \033[0m"
         echo -e "\033[32m +-------------------------------------------------------+ \033[0m"
-
     else
         echo -e ''
         echo -e "\033[31m ------------------- 控制面板安装失败 ------------------- \033[0m"
