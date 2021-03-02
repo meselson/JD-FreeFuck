@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-2-28
-
-## 项目安装目录
-BASE=""
-## 定义项目安装目录，例如：BASE="/opt/jd"
+## Modified:2021-3-2
 
 ## 定义下载的脚本代理链接
 Proxy_URL=https://ghproxy.com/
@@ -16,7 +12,7 @@ Proxy_URL=https://ghproxy.com/
 ## 4. 修正定时任务 （Docker版本用户）
 
 #添加hosts;如无法正常下载Github Raw文件，请注释掉
-Host_IP=('151.101.88.133' '151.101.228.133')
+Host_IP=('151.101.76.133' '151.101.88.133')
 Host_Name=('raw.githubusercontent.com' 'raw.githubusercontent.com')
 for ((i = 0; i <= ${#Host_IP[@]}; i++)); do
   echo "${Host_IP[$i]} ${Host_Name[$i]}" >>/etc/hosts
@@ -35,7 +31,7 @@ author_list=""
 scripts_base_url_1=
 
 
-## 添加脚本地址URL示例：scripts_base_url_x=https://raw.githubusercontent.com/xxx/xxx/master/
+## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/master/
 
 ##############################  作  者  脚  本  名  称  （必填）  ##############################
 # 将相应作者的脚本填写到以下变量中
@@ -90,15 +86,15 @@ for author in $author_list; do
 done
 
 ##########################  删  除  旧  的  失  效  活  动  ##########################
-## 删除旧版本失效的活动示例： rm -rf $BASE/scripts/jd_test.js >/dev/null 2>&1
+## 删除旧版本失效的活动示例： rm -rf ${ScriptsDir}/jd_test.js >/dev/null 2>&1
 
 
 
 ##############################  修  正  定  时  任  务  ##########################################
-## Linux版用户填写此处，Docker版用户则不用
+## Linux 用户请填写此部分内容，Docker 用户则不用
 ## 注意两边修改内容区别在于中间内容"jd"、"$BASE/jd.sh"
-## 修正定时任务示例：sed -i "s|bash jd jd_test|bash $BASE/jd.sh test|g" config/crontab.list
-##                 sed -i "s|bash jd jd_ceshi|bash $BASE/jd.sh ceshi|g" config/crontab.list
+## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" config/crontab.list
+##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" config/crontab.list
 
 
 
