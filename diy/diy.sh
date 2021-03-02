@@ -23,7 +23,7 @@ author_list="i-chenzhe JDMyself"
 # 1.从作者库中随意挑选一个脚本地址，每个作者的地址添加一个即可，无须重复添加
 # 2.将地址最后的 “脚本名称+后缀” 剪切到下一个变量里（my_scripts_list_xxx）
 scripts_base_url_1=https://raw.githubusercontent.com/i-chenzhe/qx/main/
-scripts_base_url_2=https://github.com/573462273/JDMyself/tree/main/scripts/
+scripts_base_url_2=https://raw.githubusercontent.com/573462273/JDMyself/main/scripts/
 
 ## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/master/
 
