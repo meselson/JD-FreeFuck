@@ -329,8 +329,8 @@ function Installation() {
     EnvJudgment
     EnvStructures
     ## 判定Nodejs是否安装成功，若成功开始部署项目，否则跳出
-    VERIFICATION=$(node -v | cut -c2-3)
-    if [ $VERIFICATION = "14" ]; then
+    VERIFICATION=$(node -v | cut -c2)
+    if [ $VERIFICATION = "1" ]; then
         PrivateKeyInstallation
         ## 判定私钥是否安装成功，若成功开始部署项目，否则跳出
         ls /root/.ssh | grep id_rsa -wq
