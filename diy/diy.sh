@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-1
+## Modified:2021-3-2
 
 ## 定义下载的脚本代理链接
 Proxy_URL=https://ghproxy.com/
 
 #添加hosts;如无法正常下载Github Raw文件，请注释掉
-Host_IP=('151.101.88.133' '151.101.228.133')
+Host_IP=('151.101.76.133' '151.101.88.133')
 Host_Name=('raw.githubusercontent.com' 'raw.githubusercontent.com')
 for ((i = 0; i <= ${#Host_IP[@]}; i++)); do
   echo "${Host_IP[$i]} ${Host_Name[$i]}" >>/etc/hosts
@@ -23,17 +23,17 @@ author_list="i-chenzhe"
 # 1.从作者库中随意挑选一个脚本地址，每个作者的地址添加一个即可，无须重复添加
 # 2.将地址最后的 “脚本名称+后缀” 剪切到下一个变量里（my_scripts_list_xxx）
 scripts_base_url_1=https://raw.githubusercontent.com/i-chenzhe/qx/main/
+scripts_base_url_2=https://github.com/573462273/JDMyself/tree/main/scripts/
 
-
-## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/xxx/xxx/master/
+## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/master/
 
 ##############################  作  者  脚  本  名  称  （必填）  ##############################
 # 将相应作者的脚本填写到以下变量中
-my_scripts_list_1="jd_entertainment.js"
+my_scripts_list_1="jd_entertainment.js jd_jump-jump.js jd_shake.js jd_shakeBean.js"
+my_scripts_list_2="jd_axc.js jd_xxl_gh.js"
 
-
-## 活动脚本名称1：百变大咖秀
-
+## 活动脚本名称1：百变大咖秀、母婴跳一跳、摇一摇、摇京豆
+## 活动脚本名称2：东东爱消除、个护爱消除
 
 ## 添加更多脚本名称示例：my_scripts_list_3="jd_test1.js jd_test2.js jd_test3.js ......"
 
@@ -83,17 +83,21 @@ for author in $author_list; do
 done
 
 ##########################  删  除  旧  的  失  效  活  动  ##########################
-## 删除旧版本失效的活动示例： rm -rf ${ShellDir}/scripts/jd_test.js >/dev/null 2>&1
-rm -rf ${ShellDir}/scripts/jd_asus_iqiyi.js
-rm -rf ${ShellDir}/scripts/jd_collectBlueCoin.js
-rm -rf ${ShellDir}/scripts/jd_jump-jump.js
+## 删除旧版本失效的活动示例： rm -rf ${ScriptsDir}/jd_test.js >/dev/null 2>&1
+rm -rf ${ScriptsDir}/jd_asus_iqiyi.js
+rm -rf ${ScriptsDir}/jd_collectBlueCoin.js
+
 
 ##############################  修  正  定  时  任  务  ##########################################
 ## 注意两边修改内容区别在于中间内容"jd"、"${ShellDir}/jd.sh"
 ## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" config/crontab.list
 ##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" config/crontab.list
 sed -i "s|bash jd jd_entertainment|bash ${ShellDir}/jd.sh jd_entertainment|g" config/crontab.list
-
+sed -i "s|bash jd jd_jump-jump|bash ${ShellDir}/jd.sh jd_jump-jump|g" config/crontab.list
+sed -i "s|bash jd jd_shake|bash ${ShellDir}/jd.sh jd_shake|g" config/crontab.list
+sed -i "s|bash jd jd_shakeBean|bash ${ShellDir}/jd.sh jd_shakeBean|g" config/crontab.list
+sed -i "s|bash jd jd_axc|bash ${ShellDir}/jd.sh jd_axc|g" config/crontab.list
+sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" config/crontab.list
 
 echo -e "\033[37mdiy脚本更新完成... \033[0m"
 echo -e ''
