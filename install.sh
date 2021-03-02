@@ -85,15 +85,15 @@ function EnvJudgment() {
 ## 环境搭建：
 function EnvStructures() {
     echo -e ''
-    echo -e '\033[37m+---------------------------------------------------+ \033[0m'
-    echo -e '\033[37m|                                                   | \033[0m'
-    echo -e '\033[37m|   =============================================   | \033[0m'
-    echo -e '\033[37m|                                                   | \033[0m'
-    echo -e '\033[37m|      欢迎使用《京东薅羊毛》一键部署 For Linux     | \033[0m'
-    echo -e '\033[37m|                                                   | \033[0m'
-    echo -e '\033[37m|   =============================================   | \033[0m'
-    echo -e '\033[37m|                                                   | \033[0m'
-    echo -e '\033[37m+---------------------------------------------------+ \033[0m'
+    echo -e '+---------------------------------------------------+'
+    echo -e '|                                                   |'
+    echo -e '|   =============================================   |'
+    echo -e '|                                                   |'
+    echo -e '|      欢迎使用《京东薅羊毛》一键部署 For Linux     |'
+    echo -e '|                                                   |'
+    echo -e '|   =============================================   |'
+    echo -e '|                                                   |'
+    echo -e '+---------------------------------------------------+'
     echo -e ''
     sleep 2s
     ## CentOS 启用仓库
@@ -119,7 +119,7 @@ function EnvStructures() {
         ## 安装 Nodejs 与 npm
         curl -sL https://deb.nodesource.com/setup_14.x | bash -
         echo -e ''
-        echo -e '\033[37m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m'
+        echo -e '开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候......'
         echo -e ''
         apt install -y nodejs
         apt autoremove -y
@@ -133,7 +133,7 @@ function EnvStructures() {
         ## 安装 Nodejs 与 npm
         curl -sL https://rpm.nodesource.com/setup_14.x | bash -
         echo -e ''
-        echo -e '\033[37m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m'
+        echo -e '开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候......'
         echo -e ''
         yum install -y nodejs
         yum autoremove -y
@@ -147,7 +147,7 @@ function PrivateKeyInstallation() {
     ls /root/.ssh | grep id_rsa.bak -wq
     if [ $? -eq 0 ]; then
         rm -rf /root/.ssh/id_rsa
-        echo -e "\033[31m检测到已备份的私钥，跳过备份操作...... \033[0m"
+        echo -e "\033[32m检测到已备份的私钥，跳过备份操作...... \033[0m"
         sleep 2s
     else
         mv /root/.ssh/id_rsa /root/.ssh/id_rsa.bak >/dev/null 2>&1
@@ -156,7 +156,7 @@ function PrivateKeyInstallation() {
     ls /root/.ssh | grep id_rsa.pub.bak -wq
     if [ $? -eq 0 ]; then
         rm -rf /root/.ssh/id_rsa.pub
-        echo -e "\033[31m检测到已备份的公钥，跳过备份操作...... \033[0m"
+        echo -e "\033[32m检测到已备份的公钥，跳过备份操作...... \033[0m"
         sleep 2s
     else
         mv /root/.ssh/id_rsa.pub /root/.ssh/id_rsa.pub.bak >/dev/null 2>&1
