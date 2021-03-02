@@ -115,7 +115,7 @@ function EnvStructures() {
         apt remove -y nodejs npm >/dev/null 2>&1
         rm -rf /etc/apt/sources.list.d/nodesource.list
         ## 安装需要的软件包
-        apt install -y wget curl net-tools openssh-server git perl moreutils
+        apt install -y wget curl openssh-server git perl moreutils
         ## 安装Nodejs与NPM
         curl -sL https://deb.nodesource.com/setup_14.x | bash -
         sed -i '1,$d' /etc/apt/sources.list.d/nodesource.list
@@ -130,7 +130,7 @@ function EnvStructures() {
         yum remove -y nodejs npm >/dev/null 2>&1
         rm -rf /etc/yum.repos.d/nodesource-*.repo
         ## 安装需要的软件包
-        yum install -y wget curl net-tools openssh-server git perl moreutils
+        yum install -y wget curl openssh-server git perl moreutils
         ## 安装Nodejs与NPM
         curl -sL https://rpm.nodesource.com/setup_14.x | bash -
         sed -i "s#rpm.nodesource.com#mirrors.ustc.edu.cn/nodesource/rpm#" /etc/yum.repos.d/nodesource-*.repo
@@ -217,11 +217,10 @@ function PanelInstallation() {
     cd $BASE
     ## 赋权所有项目文件
     chmod 777 $BASE/*
-    ## 判定控制面板是否安装成功
-    netstat -anp | grep 5678 -wq
+    ## 判定控制面板是否安装成功q
+    curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
     if [ $? -eq 0 ]; then
         sleep 3s
-        echo -e ''
         echo -e ''
         echo -e "\033[32m +--------- 控 制 面 板 安 装 成 功 并 已 启 动 ---------+ \033[0m"
         echo -e "\033[32m |                                                       | \033[0m"
