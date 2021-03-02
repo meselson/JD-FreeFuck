@@ -100,11 +100,12 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > 否则请使用 `Docker` 通用版本部署此项目\
 > 附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)
 #### __部署前需知与准备工作：__
-1. 执行部署脚本前请检查您的系统是否联网，并请切换至 `root用户` ，切换命令为 `sudo -i`
-2. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端
-3. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署
-4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
-5. 若使用 `VPS` 平台，部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置
+1. 执行部署脚本前请检查您的系统是否联网，并请切换至 `root用户` ，切换命令为 `sudo -i`。
+2. 如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端。
+3. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署。
+4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助。
+5. 若使用 `VPS` 平台，部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置。
+6. `控制面板` 功能的初始用户名为 `useradmin`，初始密码为 `supermanito`。
 
 #### __更换国内源：（选择执行）__
     bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/ReplaceMirror.sh)
@@ -138,7 +139,6 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
        npm install -g pm2
        pm2 start server.js
 6. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
-7. `控制面板` 功能的初始用户名为 `useradmin`，初始密码为 `supermanito`。
 ㅤ
 
 ***
