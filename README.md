@@ -230,6 +230,9 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
 ## 五、卸载项目
 ### `Linux` 版本
+- 停止控制面板运行
+
+      pm2 stop /opt/jd/panel/server.js
 - 删除项目文件
 
       rm -rf /opt/jd
@@ -237,6 +240,9 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
       apt/yum remove -y git perl moreutils nodejs npm
 ### `Docker` 版本
+- 停止控制面板运行
+
+      docker exec -it jd /bin/bash pm2 stop panel/server.js
 - 删除容器
 
       docker rm -f jd
