@@ -119,7 +119,8 @@ function EnvStructures() {
         ## 安装 Nodejs 与 npm
         curl -sL https://deb.nodesource.com/setup_14.x | bash -
         echo -e ''
-        echo -e '开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候......'
+        echo -e "\033[32m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m"
+        echo -e ''
         echo -e ''
         apt install -y nodejs
         apt autoremove -y
@@ -133,7 +134,8 @@ function EnvStructures() {
         ## 安装 Nodejs 与 npm
         curl -sL https://rpm.nodesource.com/setup_14.x | bash -
         echo -e ''
-        echo -e '开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候......'
+        echo -e "\033[32m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m"
+        echo -e ''
         echo -e ''
         yum install -y nodejs
         yum autoremove -y
@@ -203,7 +205,7 @@ function PanelInstallation() {
     ## 判定控制面板是否安装成功
     curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
     if [ $? -eq 0 ]; then
-        sleep 3s
+        sleep 6s
         echo -e ''
         echo -e "\033[32m +--------- 控 制 面 板 安 装 成 功 并 已 启 动 ---------+ \033[0m"
         echo -e "\033[32m |                                                       | \033[0m"
@@ -224,7 +226,6 @@ function PanelInstallation() {
     fi
     echo -e ''
     echo -e ''
-    sleep 2s
 }
 
 ## 更改配置文件：
