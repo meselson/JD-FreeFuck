@@ -94,7 +94,7 @@ done
 
 ##############################  修  正  定  时  任  务  ##########################################
 ## Linux 用户请填写此部分内容，Docker 用户则不用
-## 注意两边修改内容区别在于中间内容"jd"、"$BASE/jd.sh"
+## 注意两边修改内容区别在于中间内容"jd"、"${ShellDir}/jd.sh"
 ## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" config/crontab.list
 ##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" config/crontab.list
 
