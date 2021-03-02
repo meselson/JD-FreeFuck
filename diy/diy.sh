@@ -14,7 +14,7 @@ done
 
 ##############################  作  者  昵  称  （必填）  ##############################
 # 使用空格隔开
-author_list="i-chenzhe"
+author_list="i-chenzhe JDMyself"
 
 ## 添加更多作者昵称（必填）示例：author_list="i-chenzhe whyour testuser"  直接追加，不要新定义变量
 
