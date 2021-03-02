@@ -1,71 +1,70 @@
-#!/bin/bash
+#!/bin/env bash
 #Author:SuperManito
 
-## 当前系统判定：
-function SystemJudgment() {
-  ls /etc | grep redhat-release -qw
-  if [ $? -eq 0 ]; then
+## 系统判定变量：
+## 判定系统是基于 Debian 还是 RedHat
+ls /etc | grep redhat-release -qw
+if [ $? -eq 0 ]; then
     SYSTEM="RedHat"
-  else
+else
     SYSTEM="Debian"
+fi
+## 定义一些变量（系统名称、系统版本、系统版本号）
+if [ $SYSTEM = "Debian" ]; then
+  SYSTEM_NAME=$(lsb_release -is)
+  SYSTEM_VERSION=$(lsb_release -cs)
+  SYSTEM_VERSION_NUMBER=$(lsb_release -rs)
+elif [ $SYSTEM = "RedHat" ]; then
+  SYSTEM_NAME=$(cat /etc/redhat-release | cut -c1-6)
+  if [ $SYSTEM_NAME = "CentOS" ]; then
+    SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c22-24)
+    CENTOS_VERSION=$(cat /etc/redhat-release | cut -c22)
+  elif [ $SYSTEM_NAME = "Fedora" ]; then
+    SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c16-18)
   fi
-
-  if [ $SYSTEM = "Debian" ]; then
-    SYSTEM_NAME=$(lsb_release -is)
-    SYSTEM_VERSION=$(lsb_release -cs)
-    SYSTEM_VERSION_NUMBER=$(lsb_release -rs)
-  elif [ $SYSTEM = "RedHat" ]; then
-    SYSTEM_NAME=$(cat /etc/redhat-release | cut -c1-6)
-    if [ $SYSTEM_NAME = "CentOS" ]; then
-      SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c22-24)
-    elif [ $SYSTEM_NAME = "Fedora" ]; then
-      SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c16-18)
-    fi
-  fi
-}
+fi
 
 ## 更换国内源：
 function ReplaceMirror() {
-  echo -e '\033[37m+---------------------------------------------------+ \033[0m'
-  echo -e '\033[37m|                                                   | \033[0m'
-  echo -e '\033[37m|   =============================================   | \033[0m'
-  echo -e '\033[37m|                                                   | \033[0m'
-  echo -e '\033[37m|         欢迎使用 Linux 一键更换国内源脚本         | \033[0m'
-  echo -e '\033[37m|                                                   | \033[0m'
-  echo -e '\033[37m|   =============================================   | \033[0m'
-  echo -e '\033[37m|                                                   | \033[0m'
-  echo -e '\033[37m+---------------------------------------------------+ \033[0m'
+  echo -e '+---------------------------------------------------+'
+  echo -e '|                                                   |'
+  echo -e '|   =============================================   |'
+  echo -e '|                                                   |'
+  echo -e '|         欢迎使用 Linux 一键更换国内源脚本         |'
+  echo -e '|                                                   |'
+  echo -e '|   =============================================   |'
+  echo -e '|                                                   |'
+  echo -e '+---------------------------------------------------+'
   echo -e ''
-  echo -e '\033[37m##################################################### \033[0m'
+  echo -e '#####################################################'
   echo -e ''
-  echo -e '\033[37m            提供以下国内更新源可供选择： \033[0m'
+  echo -e '            提供以下国内更新源可供选择：'
   echo -e ''
-  echo -e '\033[37m##################################################### \033[0m'
+  echo -e '#####################################################'
+  echo -e ' *  1)    中科大'
+  echo -e ' *  2)    华为云'
+  echo -e ' *  3)    阿里云'
+  echo -e ' *  4)    网易'
+  echo -e ' *  4)    搜狐'
+  echo -e ' *  6)    清华大学'
+  echo -e ' *  7)    浙江大学'
+  echo -e ' *  8)    南京大学'
+  echo -e ' *  9)    重庆大学'
+  echo -e ' *  10)   兰州大学'
+  echo -e ' *  11)   上海交通大学'
+  echo -e ' *  12)   北京交通大学'
+  echo -e ' *  13)   北京理工大学'
+  echo -e ' *  14)   南京邮电大学'
+  echo -e ' *  15)   华中科技大学'
+  echo -e ' *  16)   哈尔滨工业大学'
+  echo -e ' *  17)   北京外国语大学'
   echo -e ''
-  echo -e '\033[37m *  1)    中科大 \033[0m'
-  echo -e '\033[37m *  2)    华为云 \033[0m'
-  echo -e '\033[37m *  3)    阿里云 \033[0m'
-  echo -e '\033[37m *  4)    网易 \033[0m'
-  echo -e '\033[37m *  4)    搜狐 \033[0m'
-  echo -e '\033[37m *  6)    清华大学 \033[0m'
-  echo -e '\033[37m *  7)    浙江大学 \033[0m'
-  echo -e '\033[37m *  8)    南京大学 \033[0m'
-  echo -e '\033[37m *  9)    重庆大学 \033[0m'
-  echo -e '\033[37m *  10)   兰州大学 \033[0m'
-  echo -e '\033[37m *  11)   上海交通大学 \033[0m'
-  echo -e '\033[37m *  12)   北京交通大学 \033[0m'
-  echo -e '\033[37m *  13)   北京理工大学 \033[0m'
-  echo -e '\033[37m *  14)   南京邮电大学 \033[0m'
-  echo -e '\033[37m *  15)   华中科技大学 \033[0m'
-  echo -e '\033[37m *  16)   哈尔滨工业大学 \033[0m'
-  echo -e '\033[37m *  17)   北京外国语大学 \033[0m'
+  echo -e '#####################################################'
   echo -e ''
-  echo -e '\033[37m##################################################### \033[0m'
+  echo -e "      当前操作系统  $SYSTEM_NAME $SYSTEM_VERSION_NUMBER"
+  echo -e "      当前系统时间  $(date +%Y-%m-%d) $(date +%H:%M)"
   echo -e ''
-  echo -e "\033[37m      当前操作系统  $SYSTEM_NAME $SYSTEM_VERSION_NUMBER \033[0m"
-  echo -e "\033[37m      当前系统时间  $(date +%Y-%m-%d) $(date +%H:%M) \033[0m"
-  echo -e ''
-  echo -e '\033[37m##################################################### \033[0m'
+  echo -e '#####################################################'
   echo -e ''
   CHOICE=$(echo -e '\033[32m请输入您想使用的国内更新源 [ 1~17 ]：\033[0m')
   read -p "$CHOICE" INPUT
@@ -202,10 +201,8 @@ function RedHatMirrors() {
   yum makecache
 }
 
-## 生成基于RedHat系Linux发行版的repo官方更新源：
+## 生成基于 RedHat 发行版和及其衍生发行版的 repo 官方更新源：
 function RedHatOfficialMirror() {
-  SYSTEM_NAME=$(cat /etc/redhat-release | cut -c1-6)
-  CENTOS_VERSION=$(cat /etc/redhat-release | cut -c22)
   ls /etc | grep yum.repos.d.bak -qw
   if [ $? -eq 0 ]; then
     echo -e '\033[32m检测到已备份的 repo源 文件，跳过备份操作...... \033[0m'
@@ -216,18 +213,18 @@ function RedHatOfficialMirror() {
   fi
   sleep 3s
   if [ $CENTOS_VERSION = "8" ]; then
-    rm -rf /etc/yum.repos.d/CentOS-Linux-AppStream.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-BaseOS.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-ContinuousRelease.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-Debuginfo.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-Devel.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-Extras.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-FastTrack.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-HighAvailability.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-Media.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-Plus.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
-    rm -rf /etc/yum.repos.d/CentOS-Linux-Sources.repo
+    rm -rf /etc/yum.repos.d/*AppStream.repo
+    rm -rf /etc/yum.repos.d/*BaseOS.repo
+    rm -rf /etc/yum.repos.d/*ContinuousRelease.repo
+    rm -rf /etc/yum.repos.d/*Debuginfo.repo
+    rm -rf /etc/yum.repos.d/*Devel.repo
+    rm -rf /etc/yum.repos.d/*Extras.repo
+    rm -rf /etc/yum.repos.d/*FastTrack.repo
+    rm -rf /etc/yum.repos.d/*HighAvailability.repo
+    rm -rf /etc/yum.repos.d/*Media.repo
+    rm -rf /etc/yum.repos.d/*Plus.repo
+    rm -rf /etc/yum.repos.d/*PowerTools.repo
+    rm -rf /etc/yum.repos.d/*Sources.repo
     touch /etc/yum.repos.d/CentOS-Linux-AppStream.repo
     touch /etc/yum.repos.d/CentOS-Linux-BaseOS.repo
     touch /etc/yum.repos.d/CentOS-Linux-ContinuousRelease.repo
@@ -488,13 +485,13 @@ enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 EOF
   elif [ $CENTOS_VERSION = "7" ]; then
-    rm -rf /etc/yum.repos.d/CentOS-BaseOS.repo
-    rm -rf /etc/yum.repos.d/CentOS-CR.repo
-    rm -rf /etc/yum.repos.d/CentOS-Debuginfo.repo
-    rm -rf /etc/yum.repos.d/CentOS-fasttrack.repo
-    rm -rf /etc/yum.repos.d/CentOS-Media.repo
-    rm -rf /etc/yum.repos.d/CentOS-Sources.repo
-    rm -rf /etc/yum.repos.d/CentOS-Vault.repo
+    rm -rf /etc/yum.repos.d/*BaseOS.repo
+    rm -rf /etc/yum.repos.d/*CR.repo
+    rm -rf /etc/yum.repos.d/*Debuginfo.repo
+    rm -rf /etc/yum.repos.d/*fasttrack.repo
+    rm -rf /etc/yum.repos.d/*Media.repo
+    rm -rf /etc/yum.repos.d/*Sources.repo
+    rm -rf /etc/yum.repos.d/*Vault.repo
     touch /etc/yum.repos.d/CentOS-BaseOS.repo
     touch /etc/yum.repos.d/CentOS-CR.repo
     touch /etc/yum.repos.d/CentOS-Debuginfo.repo
@@ -677,13 +674,13 @@ enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 EOF
   elif [ $SYSTEM_NAME = "Fedora" ]; then
-    rm -rf /etc/yum.repos.d/fedora-cisco-openh264.repo
+    rm -rf /etc/yum.repos.d/*cisco-openh264.repo
     rm -rf /etc/yum.repos.d/fedora.repo
-    rm -rf /etc/yum.repos.d/fedora-updates.repo
-    rm -rf /etc/yum.repos.d/fedora-modular.repo
-    rm -rf /etc/yum.repos.d/fedora-updates-modular.repo
-    rm -rf /etc/yum.repos.d/fedora-updates-testing.repo
-    rm -rf /etc/yum.repos.d/fedora-updates-testing-modular.repo
+    rm -rf /etc/yum.repos.d/*updates.repo
+    rm -rf /etc/yum.repos.d/*modular.repo
+    rm -rf /etc/yum.repos.d/*updates-modular.repo
+    rm -rf /etc/yum.repos.d/*updates-testing.repo
+    rm -rf /etc/yum.repos.d/*updates-testing-modular.repo
     touch /etc/yum.repos.d/fedora-cisco-openh264.repo
     touch /etc/yum.repos.d/fedora.repo
     touch /etc/yum.repos.d/fedora-updates.repo
@@ -944,6 +941,4 @@ skip_if_unavailable=False
 EOF
   fi
 }
-
-SystemJudgment
 ReplaceMirror
