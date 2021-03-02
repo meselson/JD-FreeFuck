@@ -106,7 +106,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助
 5. 若使用 `VPS` 平台，部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置
 
-#### __更换国内源：__
+#### __更换国内源：（选择执行）__
     bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/ReplaceMirror.sh)
 > _注意：1. 此脚本为 `LinuxMirror` 一键更换国内源脚本，之前附加在旧版本部署脚本中现独立出来，_\
 > _ㅤㅤㅤ2. 如果您使用的平台位于国外则不需要执行此命令，例如 `Google Cloud Platform` 用户，_\
@@ -131,14 +131,13 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 2. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。
 3. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
 4. 如在拉取活动脚本时失败提示 `Repository more than 5 connections` 是由于 `Gitee` 限制了每秒同时拉取项目的IP不能超过 `5` 个所导致，此报错为正常现象，重新执行更新命令即可。
-5. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，详见[Issues #95](https://github.com/SuperManito/JD-FreeFuck/issues/95)。
-6. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
+5. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
 
        cd /opt/jd/panel
        npm install || npm install --registry=https://registry.npm.taobao.org
        npm install -g pm2
        pm2 start server.js
-7. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
+6. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
 ㅤ
 
 ***
@@ -182,7 +181,6 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### __常见问题与帮助：__
 1. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
 2. 如在拉取活动脚本时失败提示 `Repository more than 5 connections` 是由于 `Gitee` 限制了每秒同时拉取项目的IP不能超过 `5` 个所导致，此报错为正常现象，重新执行更新命令即可。
-3. 如在拉取活动脚本时失败提示 `Permission denied` 是因为私钥没有生效造成的错误，详见[Issues #95](https://github.com/SuperManito/JD-FreeFuck/issues/95)。ㅤ
 
 ***
 
@@ -261,7 +259,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ## 赞赏码
 <img src="https://gitee.com/SuperManito/JD-FreeFuck/raw/main/icon/thank.jpg" width="300" height="300" alt="微信赞赏码"/><br/>
 ### 开发不易、维护艰辛，如果您愿意支持此项目，可对我打赏，感激不尽！
-### 由衷感谢各位大佬对此项目作出的贡献，感谢各位朋友提供的宝贵意见!
+### 由衷感谢各位大佬对此项目作出的贡献，感谢各位朋友提供的宝贵意见！
 
 ***
 
