@@ -1,4 +1,4 @@
-__如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便分享给更多的朋友吗？ㅤㅤㅤㅤㅤ![Github](https://img.shields.io/badge/SuperManito-JD--FreeFuck-blue)__
+__如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便分享给更多的朋友吗？ㅤㅤㅤㅤㅤㅤ![Github](https://img.shields.io/badge/SuperManito-JD--FreeFuck-blue)__
 
 ***
 
