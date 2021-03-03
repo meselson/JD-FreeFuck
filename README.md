@@ -208,12 +208,12 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
 - 将获得的`Cookie部分内容`填入下面命令中的“双引号”内复制完整命令到终端并执行：
 
-      sed -i '28c Cookie1=""' config/config.sh
-      sed -i '29c Cookie2=""' config/config.sh
-      sed -i '30c Cookie3=""' config/config.sh
-      sed -i '31c Cookie4=""' config/config.sh
-      sed -i '32c Cookie5=""' config/config.sh
-      sed -i '33c Cookie6=""' config/config.sh
+      sed -i '35c Cookie1=""' config/config.sh
+      sed -i '36c Cookie2=""' config/config.sh
+      sed -i '37c Cookie3=""' config/config.sh
+      sed -i '38c Cookie4=""' config/config.sh
+      sed -i '39c Cookie5=""' config/config.sh
+      sed -i '40c Cookie6=""' config/config.sh
 > _参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' config/config.sh_
 
 > _注意：1. 执行此命令前 `Linux` 版需要进入项目安装目录，`Docker` 版需要进入容器内。_\
