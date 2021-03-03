@@ -251,16 +251,14 @@ function AutoScript() {
 ## 判定控制面板安装结果：
 function PanelJudgment() {
     netstat -tunlp | grep 5678 -wq
-    if [ $? -eq 0 ];then
+    PanelTestA=$?
+    curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
+    PanelTestB=$?
+    if [ ${PanelTestA} -eq 0 ] || [ ${PanelTestB} -eq 0 ];then
         PanelUseNotes
     else
-        curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
-        if [ $? -eq 0 ];then
-            PanelUseNotes
-        else
-            echo -e ''
-            echo -e "\033[31m ------------------- 控制面板安装失败 ------------------- \033[0m"
-        fi
+        echo -e ''
+        echo -e "\033[31m ------------------- 控制面板安装失败 ------------------- \033[0m"
     fi
 }
 
