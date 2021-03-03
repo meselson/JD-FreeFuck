@@ -79,7 +79,6 @@ function Installation() {
         if [ $? -eq 0 ]; then
             ProjectDeployment
             SetConfig
-            AutoScript
             PanelJudgment
             UseNotes
         else
@@ -216,27 +215,6 @@ function SetConfig() {
     sed -i "38c Cookie4=$COOKIE4" $BASE/config/config.sh
     sed -i "39c Cookie5=$COOKIE5" $BASE/config/config.sh
     sed -i "40c Cookie6=$COOKIE6" $BASE/config/config.sh
-}
-
-## 一键脚本：
-function AutoScript() {
-    ## 编写 run-all 一键执行所有活动脚本
-    touch $BASE/run-all.sh
-    bash $BASE/jd.sh | grep -o 'j[drx]_[a-z].*' | grep -v 'bean_change' >$BASE/run-all.sh
-    sed -i "1i\jd_bean_change.js" $BASE/run-all.sh       ## 置顶京豆变动通知
-    sed -i "s#^#bash $BASE/jd.sh &#g" $BASE/run-all.sh
-    sed -i 's#.js# now#g' $BASE/run-all.sh
-    sed -i '1i\#!/bin/env bash' $BASE/run-all.sh
-    cat $BASE/run-all.sh | grep jd_crazy_joy_coin -wq
-    if [ $? -eq 0 ]; then
-        sed -i '/jd_crazy_joy_coin/d' $BASE/run-all.sh
-        echo "bash $BASE/jd.sh jd_crazy_joy_coin now" >>$BASE/run-all.sh
-    fi
-    ## 去除不需要加入到此脚本中的活动
-    sed -i '/jd_delCoupon/d' $BASE/run-all.sh ## 不执行 "京东家庭号" 任务
-    sed -i '/jd_family/d' $BASE/run-all.sh    ## 不执行 "删除优惠券" 任务
-    ## 去除脚本中的空行
-    sed -i '/^\s*$/d' $BASE/run-all.sh
 }
 
 ## 判定控制面板安装结果：
