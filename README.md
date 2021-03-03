@@ -1,4 +1,4 @@
-__如果您觉得这个项目不错的话可以在右上角给颗⭐吗？方便分享给更多的朋友吗？ㅤㅤㅤㅤㅤㅤ![Github](https://img.shields.io/badge/SuperManito-JD--FreeFuck-blue)__
+__如果您觉得这个项目不错的话可以在右上角给颗⭐吗？您的支持是我最大的动力，方便分享给更多的朋友吗？__
 
 ***
 
@@ -112,6 +112,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助。
 5. 若使用 `VPS` 平台，部署前请进入您所使用平台的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置。
 6. `控制面板` 功能的初始用户名为 `useradmin`，初始密码为 `supermanito`。
+7. 如果您平台的网络环境暴露在了公网（例如VPS用户），请根据《使用与更新》教程更改用户名和密码。
 
 #### __更换国内源：（选择执行）__
     bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/ReplaceMirror.sh)
@@ -138,7 +139,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 2. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。
 3. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
 4. 如在拉取活动脚本时失败提示 `Repository more than 5 connections` 是由于 `Gitee` 限制了每秒同时拉取项目的IP不能超过 `5` 个所导致，此报错为正常现象，重新执行更新命令即可。
-5. 如果 `控制面板` 功能未安装成功是由于网络原因导致的，可执行下面的命令重新安装：
+5. 如果 `控制面板` 功能未安装成功可执行下面的命令重新安装：
 
        cd /opt/jd/panel
        npm install || npm install --registry=https://registry.npm.taobao.org
@@ -159,7 +160,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 1. 下面的教程涉及 `容器技术` 专业知识，执行命令前请先看 `注释内容` ，若无法理解请先百度或向我咨询。
 2. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命令，不要使用图形界面。
 3. `控制面板` 功能的初始用户名为 `useradmin`，初始密码为 `supermanito`。
-4. 如果您平台的网络环境暴露在了公网（例如VPS用户），请根据《使用与更新》教程更改密码。
+4. 如果您平台的网络环境暴露在了公网（例如VPS用户），请根据《使用与更新》教程更改用户名和密码。
 #### __安装 Docker Server 客户端：__
 
     sudo curl -sSL https://get.daocloud.io/docker | sh
@@ -188,6 +189,14 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### __常见问题与帮助：__
 1. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
 2. 如在拉取活动脚本时失败提示 `Repository more than 5 connections` 是由于 `Gitee` 限制了每秒同时拉取项目的IP不能超过 `5` 个所导致，此报错为正常现象，重新执行更新命令即可。
+3. 如果 `控制面板` 功能未安装成功可执行下面的命令重新安装：
+
+       docker exec -it jd /bin/bash
+       cd panel
+       npm install || npm install --registry=https://registry.npm.taobao.org
+       npm install -g pm2
+       pm2 start server.js
+       exit
 
 ***
 
