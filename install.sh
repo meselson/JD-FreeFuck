@@ -1,17 +1,16 @@
 #!/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-2
+## Modified:2021-3-3
 
 ## ======================================== 说 明 =========================================================
 ##                                                                                                        #
 ## 项目名称：《京东薅羊毛》一键部署 For Linux                                                              #
-## 项目用途：通过参与京东商城的各种活动白嫖京豆                                                            #
+## 项目用途：通过自动化脚本参与JD商城的各种活动从而获取京豆用于购物抵扣                                     #
 ## 适用系统：仅支持 Debian 与 Redhat 发行版和及其衍生发行版                                                #
 ## 温馨提示：尽量使用最新的稳定版系统，并且安装语言使用简体中文                                             #
-##           如果您使用的是 CentOS 系统且最小化安装，请通过SSH的方式进入到终端                              #
+##           如果您使用的是 CentOS 系统且最小化安装，请通过 SSH 的方式进入到终端                            #
 ## 本项目基于 Evine 前辈公布的源码，目前由本人维护并继续开发                                                #
 ## 本项目使用的活动脚本来自 lxk0301 大佬的 jd_scripts 项目                                                 #
-## 本人能力有限，这可能是最终版本，感谢 Evine 对此项目做出的贡献                                            #
 ##                                                                                                        #
 ## ========================================================================================================
 
@@ -44,7 +43,7 @@ COOKIE6='""'
 ## 2. 本项目可同时运行无限个账号，从第7个账户开始需要自行在项目 config.sh 配置文件中定义变量例如Cookie7=""
 ## ========================================================================================================
 
-## 系统判定变量：
+## 定义变量：
 ## 判定系统是基于 Debian 还是 RedHat
 ls /etc | grep redhat-release -qw
 if [ $? -eq 0 ]; then
@@ -52,7 +51,7 @@ if [ $? -eq 0 ]; then
 else
     SYSTEM="Debian"
 fi
-## 定义一些变量（系统名称、系统版本、系统版本号）
+## 系统判定变量（系统名称、系统版本、系统版本号）
 if [ $SYSTEM = "Debian" ]; then
     SYSTEM_NAME=$(lsb_release -is)
     SYSTEM_VERSION=$(lsb_release -cs)
@@ -66,6 +65,32 @@ elif [ $SYSTEM = "RedHat" ]; then
         SYSTEM_VERSION_NUMBER=$(cat /etc/redhat-release | cut -c16-18)
     fi
 fi
+
+## 组合各个函数模块部署项目：
+function Installation() {
+    ## 根据各部分函数执行结果判定部署结果
+    ## 判断环境条件决定是否退出部署脚本
+    EnvJudgment
+    EnvStructures
+    ## 判定Nodejs是否安装成功，否则跳出
+    VERIFICATION=$(node -v | cut -c2)
+    if [ $VERIFICATION = "1" ]; then
+        PrivateKeyInstallation
+        ## 判定私钥是否安装成功，否则跳出
+        ls /root/.ssh | grep id_rsa -wq
+        if [ $? -eq 0 ]; then
+            ProjectDeployment
+            SetConfig
+            AutoScript
+            PanelJudgment
+            UseNotes
+        else
+            PrivateKeyFailureTips
+        fi
+    else
+        NodejsFailureTips
+    fi
+}
 
 ## 环境判定：
 function EnvJudgment() {
@@ -84,18 +109,7 @@ function EnvJudgment() {
 
 ## 环境搭建：
 function EnvStructures() {
-    echo -e ''
-    echo -e '+---------------------------------------------------+'
-    echo -e '|                                                   |'
-    echo -e '|   =============================================   |'
-    echo -e '|                                                   |'
-    echo -e '|      欢迎使用《京东薅羊毛》一键部署 For Linux     |'
-    echo -e '|                                                   |'
-    echo -e '|   =============================================   |'
-    echo -e '|                                                   |'
-    echo -e '+---------------------------------------------------+'
-    echo -e ''
-    sleep 2s
+    Welcome
     ## CentOS 启用仓库
     if [ $SYSTEM_NAME = "CentOS" ]; then
         ## 安装扩展 EPEL 源
@@ -109,19 +123,19 @@ function EnvStructures() {
     fi
     ## 修改系统时区：
     timedatectl set-timezone "Asia/Shanghai"
+    ## 放行控制面板需要用到的端口
+    firewall-cmd --zone=public --add-port=5678/tcp --permanent >/dev/null 2>&1
+    systemctl reload firewalld >/dev/null 2>&1
     ## 基于 Debian 发行版和及其衍生发行版的软件包安装
     if [ $SYSTEM = "Debian" ]; then
         ## 卸载旧版本Node版本，从而确保安装新版本
         apt remove -y nodejs npm >/dev/null 2>&1
         rm -rf /etc/apt/sources.list.d/nodesource.list
         ## 安装需要的软件包
-        apt install -y wget curl openssh-server git perl moreutils
+        apt install -y wget curl net-tools openssh-server git perl moreutils
         ## 安装 Nodejs 与 npm
         curl -sL https://deb.nodesource.com/setup_14.x | bash -
-        echo -e ''
-        echo -e "\033[32m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m"
-        echo -e ''
-        echo -e ''
+        DownloadTip
         apt install -y nodejs
         apt autoremove -y
     ## 基于 RedHat 发行版和及其衍生发行版的软件包安装
@@ -130,13 +144,10 @@ function EnvStructures() {
         yum remove -y nodejs npm >/dev/null 2>&1
         rm -rf /etc/yum.repos.d/nodesource-*.repo
         ## 安装需要的软件包
-        yum install -y wget curl openssh-server git perl moreutils
+        yum install -y wget curl net-tools openssh-server git perl moreutils
         ## 安装 Nodejs 与 npm
         curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-        echo -e ''
-        echo -e "\033[32m开始下载并安装 Nodejs，因无 Nodesource 国内源可用，下载网速可能过慢请耐心等候...... \033[0m"
-        echo -e ''
-        echo -e ''
+        DownloadTip
         yum install -y nodejs
         yum autoremove -y
     fi
@@ -178,54 +189,25 @@ function ProjectDeployment() {
     ## 创建目录
     mkdir $BASE/config
     mkdir $BASE/log
-    ## 配置定时任务的所在目录
+    ## 根据安装目录配置定时任务
     sed -i "s#BASE#$BASE#g" $BASE/sample/computer.list.sample
     ## 创建项目配置文件与定时任务配置文件
     cp $BASE/sample/config.sh.sample $BASE/config/config.sh
     cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
-    ## 拉取活动脚本
-    bash $BASE/git_pull.sh
-    bash $BASE/git_pull.sh >/dev/null 2>&1
-
-}
-
-## 安装控制面板：
-function PanelInstallation() {
+    ## 切换 npm 官方源为淘宝源
+    npm config set registry http://registry.npm.taobao.org
     ## 安装控制面板功能
-    firewall-cmd --zone=public --add-port=5678/tcp --permanent >/dev/null 2>&1
-    systemctl reload firewalld >/dev/null 2>&1
     cp $BASE/sample/auth.json $BASE/config/auth.json
     cd $BASE/panel
     npm install || npm install --registry=https://registry.npm.taobao.org
     npm install -g pm2
     pm2 start server.js
     cd $BASE
+    ## 拉取活动脚本
+    bash $BASE/git_pull.sh
+    bash $BASE/git_pull.sh >/dev/null 2>&1
     ## 赋权所有项目文件
     chmod 777 $BASE/*
-    ## 判定控制面板是否安装成功
-    curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
-    if [ $? -eq 0 ]; then
-        sleep 6s
-        echo -e ''
-        echo -e "\033[32m +--------- 控 制 面 板 安 装 成 功 并 已 启 动 ---------+ \033[0m"
-        echo -e "\033[32m |                                                       | \033[0m"
-        echo -e "\033[32m |      本地访问：http://127.0.0.1:5678                  | \033[0m"
-        echo -e "\033[32m |                                                       | \033[0m"
-        echo -e "\033[32m |      外部访问：http://内部或外部IP地址:5678           | \033[0m"
-        echo -e "\033[32m |                                                       | \033[0m"
-        echo -e "\033[32m |      初始用户名：useradmin  初始密码：supermanito     | \033[0m"
-        echo -e "\033[32m |                                                       | \033[0m"
-        echo -e "\033[32m |      控制面板默认开机自启，如若失效请自行重启         | \033[0m"
-        echo -e "\033[32m |                                                       | \033[0m"
-        echo -e "\033[32m |      关于更多使用帮助请通过《使用与更新》教程获取     | \033[0m"
-        echo -e "\033[32m |                                                       | \033[0m"
-        echo -e "\033[32m +-------------------------------------------------------+ \033[0m"
-    else
-        echo -e ''
-        echo -e "\033[31m ------------------- 控制面板安装失败 ------------------- \033[0m"
-    fi
-    echo -e ''
-    echo -e ''
 }
 
 ## 更改配置文件：
@@ -242,10 +224,11 @@ function SetConfig() {
 function AutoScript() {
     ## 编写 run-all 一键执行所有活动脚本
     touch $BASE/run-all.sh
-    bash $BASE/jd.sh | grep -o 'j[drx]_[a-z].*' >$BASE/run-all.sh
+    bash $BASE/jd.sh | grep -o 'j[drx]_[a-z].*' | grep -v 'bean_change' >$BASE/run-all.sh
+    sed -i "1i\jd_bean_change.js" $BASE/run-all.sh       ## 置顶京豆变动通知
     sed -i "s#^#bash $BASE/jd.sh &#g" $BASE/run-all.sh
     sed -i 's#.js# now#g' $BASE/run-all.sh
-    sed -i '1i\#!/bin/bash' $BASE/run-all.sh
+    sed -i '1i\#!/bin/env bash' $BASE/run-all.sh
     cat $BASE/run-all.sh | grep jd_crazy_joy_coin -wq
     if [ $? -eq 0 ]; then
         sed -i '/jd_crazy_joy_coin/d' $BASE/run-all.sh
@@ -265,8 +248,97 @@ function AutoScript() {
     fi
 }
 
-## 使用需知：
+## 判定控制面板安装结果：
+function PanelJudgment() {
+    netstat -tunlp | grep 5678 -wq
+    if [ $? -eq 0 ];then
+        PanelUseNotes
+    else
+        curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
+        if [ $? -eq 0 ];then
+            PanelUseNotes
+        else
+            echo -e ''
+            echo -e "\033[31m ------------------- 控制面板安装失败 ------------------- \033[0m"
+        fi
+    fi
+}
+
+## 失败原因提示：
+function PrivateKeyFailureTips() {
+    echo -e ''
+    echo -e "\033[31m -------------- 私钥安装失败，退出部署脚本 -------------- \033[0m"
+    echo -e "\033[31m 原因：1. 在 /root/.ssh 目录下没有检测到私钥文件 \033[0m"
+    echo -e "\033[31m      2. 可能由于 /root/.ssh 目录创建失败导致私 \033[0m"
+    exit
+}
+
+## 失败原因提示：
+function NodejsFailureTips() {
+    echo -e ''
+    echo -e "\033[31m -------------- 一键部署失败，退出部署脚本 -------------- \033[0m"
+    echo -e "\033[31m 原因：1. Nodejs未安装成功，请检查网络相关问题 \033[0m"
+    echo -e "\033[31m      2. 或由于其它软件包未安装成功间接导致 Nodejs 安装失败 \033[0m"
+    exit    
+}
+
+## 欢迎语：
+function Welcome() {
+    echo -e ''
+    echo -e '+---------------------------------------------------+'
+    echo -e '|                                                   |'
+    echo -e '|   =============================================   |'
+    echo -e '|                                                   |'
+    echo -e '|      欢迎使用《京东薅羊毛》一键部署 For Linux     |'
+    echo -e '|                                                   |'
+    echo -e '|   =============================================   |'
+    echo -e '|                                                   |'
+    echo -e '+---------------------------------------------------+'
+    echo -e ''
+    echo -e '#####################################################'
+    echo -e ''
+    echo -e "      当前操作系统  $SYSTEM_NAME $SYSTEM_VERSION_NUMBER"
+    echo -e "      当前系统时间  $(date +%Y-%m-%d) $(date +%H:%M)"
+    echo -e ''
+    echo -e '#####################################################'
+    echo -e ''
+    sleep 3s
+}
+
+## 下载提示：
+function DownloadTip() {
+    echo -e "\033[32m +----------------- 开 始 下 载 并 安 装 Nodejs -----------------+ \033[0m"
+    echo -e "\033[32m |                                                               | \033[0m"
+    echo -e "\033[32m |   因 Nodesource 无国内源，下载网速可能过慢请您耐心等候......  | \033[0m"
+    echo -e "\033[32m |                                                               | \033[0m"
+    echo -e "\033[32m +---------------------------------------------------------------+ \033[0m"
+    echo -e ''
+    echo -e ''
+}
+
+## 控制面板使用需知：
+function PanelUseNotes() {
+    echo -e ''
+    echo -e "\033[32m +--------- 控 制 面 板 安 装 成 功 并 已 启 动 ---------+ \033[0m"
+    echo -e "\033[32m |                                                       | \033[0m"
+    echo -e "\033[32m |      本地访问：http://127.0.0.1:5678                  | \033[0m"
+    echo -e "\033[32m |                                                       | \033[0m"
+    echo -e "\033[32m |      外部访问：http://内部或外部IP地址:5678           | \033[0m"
+    echo -e "\033[32m |                                                       | \033[0m"
+    echo -e "\033[32m |      初始用户名：useradmin  初始密码：supermanito     | \033[0m"
+    echo -e "\033[32m |                                                       | \033[0m"
+    echo -e "\033[32m |      控制面板默认开机自启，如若失效请自行重启         | \033[0m"
+    echo -e "\033[32m |                                                       | \033[0m"
+    echo -e "\033[32m |      关于更多使用帮助请通过《使用与更新》教程获取     | \033[0m"
+    echo -e "\033[32m |                                                       | \033[0m"
+    echo -e "\033[32m +-------------------------------------------------------+ \033[0m"
+    echo -e ''
+    sleep 3s
+}
+
+## 项目使用需知：
 function UseNotes() {
+    echo -e ''
     echo -e "\033[32m --------------------------- 一键部署成功，请执行 bash run-all.sh 命令开始您的薅羊毛行为 --------------------------- \033[0m"
     echo -e ''
     echo -e "\033[32m +=================================================================================================================+ \033[0m"
@@ -306,36 +378,5 @@ function UseNotes() {
     echo -e ''
 }
 
-## 执行相关函数开始部署：
-## 根据各部分函数执行结果判定部署结果，判断环境条件决定是否退出部署脚本
-function Installation() {
-    EnvJudgment
-    EnvStructures
-    ## 判定Nodejs是否安装成功，若成功开始部署项目，否则跳出
-    VERIFICATION=$(node -v | cut -c2)
-    if [ $VERIFICATION = "1" ]; then
-        PrivateKeyInstallation
-        ## 判定私钥是否安装成功，若成功开始部署项目，否则跳出
-        ls /root/.ssh | grep id_rsa -wq
-        if [ $? -eq 0 ]; then
-            ProjectDeployment
-            PanelInstallation
-            SetConfig
-            AutoScript
-            UseNotes
-        else
-            echo -e ''
-            echo -e "\033[31m -------------- 私钥安装失败，退出部署脚本 -------------- \033[0m"
-            echo -e "\033[31m 原因：1. 在 /root/.ssh 目录下没有检测到私钥文件 \033[0m"
-            echo -e "\033[31m      2. 可能由于 /root/.ssh 目录创建失败导致私 \033[0m"
-            exit
-        fi
-    else
-        echo -e ''
-        echo -e "\033[31m -------------- 一键部署失败，退出部署脚本 -------------- \033[0m"
-        echo -e "\033[31m 原因：1. Nodejs未安装成功，请检查网络相关问题 \033[0m"
-        echo -e "\033[31m      2. 或由于其它软件包未安装成功间接导致 Nodejs 安装失败 \033[0m"
-        exit
-    fi
-}
+## 执行相关函数开始部署
 Installation
