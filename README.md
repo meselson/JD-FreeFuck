@@ -209,7 +209,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
 ### 关于如何获取账号信息的途径：
 - 通过 `控制面板` 功能进入 `WEB网页` 手机扫码获取，此方式获取的“身份证”有效期为3个月 __（优先推荐）__
-- 通过浏览器开发工具获取，在 Wiki [ GetCookies ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies)有详细的图文教程，此方式获取的“身份证”有效期为1个月
+- 通过浏览器开发工具获取，在 Wiki [ GetCookies1 ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程，此方式获取的“身份证”有效期为1个月
+- 通过浏览器插件获取，在 Wiki [ GetCookies2 ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程，此方式获取的“身份证”有效期为1个月
 
 ### 1. 配置账户
 
