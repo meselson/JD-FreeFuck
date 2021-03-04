@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-2
+## Modified:2021-3-4
 
 ## 定义下载的脚本代理链接
 Proxy_URL=https://ghproxy.com/
@@ -75,9 +75,9 @@ for author in $author_list; do
       if [ -z "${script_date}" ]; then
         cron_min=$(rand 1 59)
         cron_hour=$(rand 7 9)
-        [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${cron_min} ${cron_hour} * * * bash jd $croname" $BASE/config/crontab.list
+        [ $(grep -c "$croname" ${ListCron}) -eq 0 ] && sed -i "/hangup/a${cron_min} ${cron_hour} * * * bash jd $croname" ${ListCron}
       else
-        [ $(grep -c "$croname" $BASE/config/crontab.list) -eq 0 ] && sed -i "/hangup/a${script_date} bash jd $croname" $BASE/config/crontab.list
+        [ $(grep -c "$croname" ${ListCron}) -eq 0 ] && sed -i "/hangup/a${script_date} bash jd $croname" ${ListCron}
       fi
     else
       [ -f scripts/$name.new ] && rm -f scripts/$name.new
@@ -95,10 +95,10 @@ done
 ##############################  修  正  定  时  任  务  ##########################################
 ## Linux 用户请填写此部分内容，Docker 用户则不用
 ## 注意两边修改内容区别在于中间内容"jd"、"${ShellDir}/jd.sh"
-## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" config/crontab.list
-##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" config/crontab.list
+## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" ${ListCron}
+##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" ${ListCron}
 
 
 
-echo -e "\033[37mdiy脚本更新完成... \033[0m"
+echo -e "diy脚本更新完成..."
 echo -e ''
