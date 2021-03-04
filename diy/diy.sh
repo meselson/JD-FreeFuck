@@ -14,7 +14,7 @@ done
 
 ##############################  作  者  昵  称  （必填）  ##############################
 # 使用空格隔开
-author_list="i-chenzhe JDMyself"
+author_list="i-chenzhe JDMyself whyour"
 
 ## 添加更多作者昵称（必填）示例：author_list="i-chenzhe whyour testuser"  直接追加，不要新定义变量
 
@@ -24,6 +24,7 @@ author_list="i-chenzhe JDMyself"
 # 2.将地址最后的 “脚本名称+后缀” 剪切到下一个变量里（my_scripts_list_xxx）
 scripts_base_url_1=https://raw.githubusercontent.com/i-chenzhe/qx/main/
 scripts_base_url_2=https://raw.githubusercontent.com/573462273/JDMyself/main/scripts/
+scripts_base_url_3=https://raw.githubusercontent.com/whyour/hundun/master/quanx/
 
 ## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/master/
 
@@ -31,9 +32,11 @@ scripts_base_url_2=https://raw.githubusercontent.com/573462273/JDMyself/main/scr
 # 将相应作者的脚本填写到以下变量中
 my_scripts_list_1="jd_entertainment.js jd_jump-jump.js jd_shake.js jd_shakeBean.js"
 my_scripts_list_2="jd_axc.js jd_xxl_gh.js"
+my_scripts_list_3="jx_factory_component.js"
 
 ## 活动脚本名称1：百变大咖秀、母婴跳一跳、摇一摇、摇京豆
 ## 活动脚本名称2：东东爱消除、个护爱消除
+## 活动脚本名称3：京喜工厂Plus
 
 ## 添加更多脚本名称示例：my_scripts_list_3="jd_test1.js jd_test2.js jd_test3.js ......"
 
@@ -98,6 +101,7 @@ sed -i "s|bash jd jd_shake|bash ${ShellDir}/jd.sh jd_shake|g" ${ListCron}
 sed -i "s|bash jd jd_shakeBean|bash ${ShellDir}/jd.sh jd_shakeBean|g" ${ListCron}
 sed -i "s|bash jd jd_axc|bash ${ShellDir}/jd.sh jd_axc|g" ${ListCron}
 sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" ${ListCron}
+sed -i "s|bash jd jx_factory_component|bash ${ShellDir}/jd.sh jx_factory_component|g" ${ListCron}
 
 
 echo -e "diy脚本更新完成..."
