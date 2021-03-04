@@ -199,8 +199,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
 ***
 
-> 到此项目已部署完毕，接下来需要您账户的“身份证”，它由 `Cookie部分内容` 组成，将它写入至配置文件中才可以开始使用\
-> 此部分教程的配置操作也可在 `控制面板` 功能中的 `WEB网页` 完成配置，可取代在终端输入命令，具体看下方教程的注释
+> 接下来需要您JD账户的“身份证”，它由 `Cookie部分内容` 组成，将它写入至配置文件中才可以开始使用\
+> 此部分教程的配置操作也可在 `控制面板` 功能中的 `WEB网页` 完成配置，可取代在终端输入命令
 
 ***
 
@@ -218,7 +218,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
       sed -i '38c Cookie4=""' config/config.sh
       sed -i '39c Cookie5=""' config/config.sh
       sed -i '40c Cookie6=""' config/config.sh
-> _参考命令：sed -i '28c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' config/config.sh_
+> _参考命令：sed -i '35c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' config/config.sh_
 
 > _注意：1. 执行此命令前 `Linux` 版需要进入项目安装目录，`Docker` 版需要进入容器内。_\
 > _ㅤㅤㅤ2. 此操作对应 `控制面板` 功能 `首页` 中的 28~33 行内容，具体教程查看注释内容。_\
@@ -229,7 +229,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 ## 四、使用项目
-> 关于如何使用此项目，请前往至 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) ，项目后续的更新、修复都在其页面发布！
+> 关于如何使用此项目，请前往至 [ Wiki 首页](https://github.com/SuperManito/JD-FreeFuck/wiki/) ，项目后续的更新、修复命令都在其页面发布！
 
 - __`Linux`  版本使用教程 ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Linux-Use-And-Update-Tutorial)__
 - __`Docker` 版本使用教程 ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Use-And-Update-Tutorial)__
