@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-2
+## Modified:2021-3-4
 
 ## 定义下载的脚本代理链接
 Proxy_URL=https://ghproxy.com/
@@ -90,14 +90,15 @@ rm -rf ${ScriptsDir}/jd_collectBlueCoin.js
 
 ##############################  修  正  定  时  任  务  ##########################################
 ## 注意两边修改内容区别在于中间内容"jd"、"${ShellDir}/jd.sh"
-## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" config/crontab.list
-##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" config/crontab.list
-sed -i "s|bash jd jd_entertainment|bash ${ShellDir}/jd.sh jd_entertainment|g" config/crontab.list
-sed -i "s|bash jd jd_jump-jump|bash ${ShellDir}/jd.sh jd_jump-jump|g" config/crontab.list
-sed -i "s|bash jd jd_shake|bash ${ShellDir}/jd.sh jd_shake|g" config/crontab.list
-sed -i "s|bash jd jd_shakeBean|bash ${ShellDir}/jd.sh jd_shakeBean|g" config/crontab.list
-sed -i "s|bash jd jd_axc|bash ${ShellDir}/jd.sh jd_axc|g" config/crontab.list
-sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" config/crontab.list
+## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" ${ShellDir}/config/crontab.list
+##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" ${ShellDir}/config/crontab.list
+sed -i "s|bash jd jd_entertainment|bash ${ShellDir}/jd.sh jd_entertainment|g" ${ShellDir}/config/crontab.list
+sed -i "s|bash jd jd_jump-jump|bash ${ShellDir}/jd.sh jd_jump-jump|g" ${ShellDir}/config/crontab.list
+sed -i "s|bash jd jd_shake|bash ${ShellDir}/jd.sh jd_shake|g" ${ShellDir}/config/crontab.list
+sed -i "s|bash jd jd_shakeBean|bash ${ShellDir}/jd.sh jd_shakeBean|g" ${ShellDir}/config/crontab.list
+sed -i "s|bash jd jd_axc|bash ${ShellDir}/jd.sh jd_axc|g" ${ShellDir}/config/crontab.list
+sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" ${ShellDir}/config/crontab.list
 
-echo -e "\033[37mdiy脚本更新完成... \033[0m"
+
+echo -e "diy脚本更新完成..."
 echo -e ''
