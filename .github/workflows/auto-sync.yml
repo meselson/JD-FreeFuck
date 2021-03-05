@@ -1,3 +1,6 @@
+Gitee私人令牌：517fcaf972349cf9573195b22c4766e5
+
+
 on:
   push:
     # delete this item if you don't want to trigger this workflow when modify this repo
@@ -13,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Mirror the Github repos to Gitee.
-      uses: Yikun/hub-mirror-action@master
+      uses: SuperManito/JD-FreeFuck@master
       with:
         src: github/SuperManito
         dst: gitee/SuperManito
