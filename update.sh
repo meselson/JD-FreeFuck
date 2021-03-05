@@ -1,9 +1,7 @@
 #!/bin/env bash
 ## Author:SuperManito
-## Date:2021-3-4
+## Date:2021-3-5
 
-## 项目安装目录
-BASE="/opt/jd"
 
 ## 代理链接
 Proxy_URL=https://ghproxy.com/
@@ -14,16 +12,18 @@ Config_URL=https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/source/samp
 
 
 ## 删除旧的脚本
-rm -rf $BASE/manual-update.sh
+rm -rf manual-update.sh
 ## 更新一键脚本
-wget $Proxy_URL$Git_Pull_URL -O $BASE/git_pull.sh
+wget $Proxy_URL$Git_Pull_URL -O git_pull.sh
 ## 更新配置文件模板
-wget $Proxy_URL$Config_URL -O $BASE/sample/config.sh.sample
+wget $Proxy_URL$Config_URL -O sample/config.sh.sample
 ## 备份当前配置文件
-mv $BASE/config/config.sh $BASE/config/config.sh.bak
-echo -e "已备份当前使用配置文件至 $BASE/config/config.sh.bak ... "
+mv config/config.sh config/config.sh.bak
+echo -e ''
+echo -e "已备份当前使用配置文件至 config/config.sh.bak ... "
+echo -e ''
 ## 替换新的配置文件
-cp -f $BASE/sample/config.sh.sample $BASE/config/config.sh
+cp -f sample/config.sh.sample config/config.sh
 
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
 echo -e "\033[32m |                                                             | \033[0m"
