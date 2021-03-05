@@ -3,7 +3,7 @@ name: Github > Gitee
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   repo-sync:
     env:
