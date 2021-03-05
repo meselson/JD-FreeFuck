@@ -85,7 +85,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### 1. 本项目根据安装平台区分为 `Linux` 与 `Docker` 两个版本，分别提供对应的脚本与教程
 #### 2. `Linux` 为系统直装版本，适配常用 GNU/Linux 发行版，仅适用于在 `PC`  `VPS` 平台部署
 #### 3. `Docker` 为容器版本，且为通用版本，建议用于在 `NAS`  `软路由` 平台部署，占用资源较低
-#### 4. 两版本的《部署教程》与《使用教程》均不相同，不要错误、重复使用，请认真阅读所有教程内容
+#### 4. 两版本的《部署教程》与《使用教程》均不相同，不要错误、重复使用，请认真阅读所有教程
 
 ***
 
@@ -212,8 +212,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 
 #### 关于如何获取账号信息的途径：
 - 通过 `控制面板` 功能进入 `WEB网页` 手机APP扫码获取，获取后可直接在配置文件中配置 __（优先推荐）__
-- 通过浏览器开发工具获取，请前往 Wiki 查看具体教程ㅤㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程
-- 通过浏览器扩展插件获取，请前往 Wiki 查看具体教程ㅤㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程
+- 通过浏览器开发工具获取，请前往 Wiki 查看具体的图文教程ㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)
+- 通过浏览器扩展插件获取，请前往 Wiki 查看具体的图文教程ㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)
 > 所有方式获取的 `Cookie` 有效期均为1个月
 #### 1. 配置账户
 
