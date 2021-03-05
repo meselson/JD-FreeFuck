@@ -1,3 +1,12 @@
+---
+name: Bug report
+about: 错误报告
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 <!-- 这是隐藏的信息
 
 在提交前请阅读下面的内容：
