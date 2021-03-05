@@ -1,6 +1,3 @@
-Gitee私人令牌：517fcaf972349cf9573195b22c4766e5
-
-
 on:
   push:
     # delete this item if you don't want to trigger this workflow when modify this repo
@@ -23,3 +20,4 @@ jobs:
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
         force_update: true
+
