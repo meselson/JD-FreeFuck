@@ -19,4 +19,5 @@ jobs:
         dst: gitee/SuperManito
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
+        static_list: "JD-FreeFuck"
         force_update: true
