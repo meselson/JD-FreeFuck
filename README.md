@@ -9,7 +9,7 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？您的
 > 具体内容和命令请前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看通知
 
 - __2021/3/05 20:45 `修复`__
-ㅤ修复了 `Linux` 版本在 3月4号 版本更新中的遗留问题，由于本人的疏忽在删除 `manual-update` 脚本后忘记修改了定时文件，请使用 `Linux` 版本的朋友前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看具体命令修复此问题。
+ㅤ修复了 `Linux` 版本在 3月4号 版本更新中的遗留问题，由于本人的疏忽在删除 `manual-update` 脚本后忘记修改了定时文件，请所有使用 `Linux` 版本的朋友前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看具体命令修复此问题。
 
 - __2021/3/05 20:30 `更新`__
 ㅤ更新了 `diy` 自定义脚本，新加入了部分活动。
