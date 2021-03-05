@@ -84,8 +84,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ## 一、前言
 #### 1. 本项目根据安装平台区分为 `Linux` 与 `Docker` 两个版本，分别提供对应的脚本与教程
 #### 2. `Linux` 为系统直装版本，适配常用 GNU/Linux 发行版，仅适用于在 `PC`  `VPS` 平台部署
-#### 3. `Docker` 为容器版本，为通用版本，建议用于在 `NAS`  `软路由` 平台部署，占用资源较低
-#### 4. 两版本的《部署教程》与《使用教程》均不相同，不要重复、错误使用，请认真阅读所有教程内容
+#### 3. `Docker` 为容器版本，且为通用版本，建议用于在 `NAS`  `软路由` 平台部署，占用资源较低
+#### 4. 两版本的《部署教程》与《使用教程》均不相同，不要错误、重复使用，请认真阅读所有教程内容
 
 ***
 
@@ -103,11 +103,11 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > 否则请使用 `Docker` 通用版本部署此项目\
 > 附：[ Windows10 安装 WSL Ubuntu 教程](https://github.com/SuperManito/JD-FreeFuck/wiki/Windows10-Install-WSL-Ubuntu)
 #### __部署前需知与准备工作：__
-1. 执行命令前请检查您的系统是否联网，并请切换至 `root用户` ，切换命令为 `sudo -i`。
+1. 执行命令前请检查您的系统是否联网，并请切换至 `root` 用户，切换命令为 `sudo -i`。
 2. 如果您使用的是 CentOS 系统且最小化安装，请通过 SSH 的方式进入到终端。
 3. 本项目默认安装目录为 `/opt/jd` ，如果您不想安装到该目录请自行下载部署脚本并更改相关变量手动部署。
 4. 由于某些组件的安装受国外网络影响，如果部署失败或遇到报错请再次尝试，否则请严格按照模板提交至[ Issues ](https://github.com/SuperManito/JD-FreeFuck/issues)寻求帮助。
-5. 若使用 `VPS` 平台，部署前请进入您所使用平台提供商的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置。
+5. 若您使用 `VPS` 平台，部署前请进入您所使用平台提供商的防火墙功能，检查是否已开放相关端口、允许`HTTP/HTTPS`流量通过等设置。
 6. `控制面板` 功能的初始用户名为 `useradmin`，初始密码为 `supermanito`，部署成功后可通过 `http://内部或外部IP地址:5678` 访问
 7. 如果您的网络环境暴露在了公网（例如 VPS 用户），请根据《使用与更新》教程更改 `控制面板` 的用户名和密码。
 
@@ -125,7 +125,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 | Kali | 2019 ~ 2021.1 |
 | Fedora | 28 ~ 33 |
 | CentOS | 7.0 ~ 8.3 |
-> 如果您的系统或版本不在此列表中则不能使用此脚本
+> 如果您的系统或版本不在此列表中则无法使用此脚本
 #### __脚本一键部署：__
     bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
 > _再次提醒：请根据您使用的平台选择合适的版本，不要重复部署！_
@@ -136,13 +136,13 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 2. 如果执行脚本部署命令后没有反应直接结束并跳回终端交互说明您的网络环境存在问题，请检查您的网络连通性。
 3. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
 4. 如在拉取活动脚本时失败提示 `Repository more than 5 connections` 是由于 `Gitee` 限制了每秒同时拉取项目的IP不能超过 `5` 个所导致，此报错为正常现象，重新执行更新命令即可。
-5. 如果 `控制面板` 功能未安装成功可执行下面的命令重新安装：
+5. 部署成功后无法访问 `控制面板` 是由于 `5678` 端口外部不能访问所导致。
+6. 如果 `控制面板` 功能未安装成功可执行下面的命令重新安装：
 
        cd /opt/jd/panel
        npm install || npm install --registry=https://registry.npm.taobao.org
        npm install -g pm2
        pm2 start server.js
-6. 部署成功后无法访问`控制面板`是由于`5678 端口`外部不能访问所导致。
 ㅤ
 
 ***
@@ -155,15 +155,15 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ### 支持的架构：
 `amd64` `arm64` `arm/v8` `arm/v7` `arm/v6` `ppc64le` `s390x`
 #### __部署前需知与准备工作：__
-1. 执行命令前请检查您的系统是否联网，并请切换至 `root用户` ，切换命令为 `sudo -i`。
+1. 执行命令前请检查您的系统是否联网，并请切换至 `root` 用户，切换命令为 `sudo -i`。
 2. 下面的教程涉及 `容器技术` 专业知识，执行命令前请先看 `注释内容` ，若无法理解请先百度或向我咨询。
-3. 使用 `NAS` | `软路由` 的朋友请在终端执行下面教程中的命令，不要使用图形界面。
+3. 使用 `NAS` `软路由` 的朋友请在终端执行下面教程中的命令，不要使用图形界面。
 4. `控制面板` 功能的初始用户名为 `useradmin`，初始密码为 `supermanito`，部署成功后可通过 `http://内部或外部IP地址:5678` 访问
 5. 如果您的网络环境暴露在了公网（例如 VPS 用户），请根据《使用与更新》教程更改 `控制面板` 的用户名和密码。
 #### __安装 Docker Server 客户端：__
 
-    sudo curl -sSL https://get.daocloud.io/docker | sh
-> _注意：大部分设备默认自带ㅤ`Docker` 客户端，如果没有安装请先执行此官方命令一键安装。_
+    curl -sSL https://get.daocloud.io/docker | sh
+> _注意：大部分设备默认自带 `Docker` 客户端，如果没有安装请先执行此官方脚本一键安装。_
 #### __下载镜像：__
     docker pull registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > _注意：此镜像大约需要占用 `239MB` 的空闲存储空间，目前最新版本的镜像ID为 `2f6bf791cf7c` 。_
@@ -181,14 +181,16 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
     --restart always `# 设置容器开机自启` \
     registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > _注意：1.如果是旁路由，容器网络类型需使用ㅤ`host` 模式，请将 `--network bridge` 参数改成 `--network host`，_\
-> _ㅤㅤㅤ2.如果设备不存在 `opt` 目录，先通过命令 `mkdir -p /opt/jd` 创建主机目录。_
+> _ㅤㅤㅤ2.如果设备不存在 `opt` 目录，请先通过命令 `mkdir -p /opt/jd` 创建主机目录，您也可以自定义此目录，_\
+> _ㅤㅤㅤ3.如果您想将挂载目录替换为当前所在目录，将 `/opt/jd` 参数改成 `$PWD` 即可。_
 #### __初始化容器：__
     docker logs -f jd
-> _注意：请先执行此命令查看初始化容器进度，当输出 `容器启动成功......` 字样即代表容器创建成功，此时通过命令 `Ctrl + C` 退出即可。_
+> _注意：请先执行此命令查看容器初始化进度，当输出 `容器启动成功......` 字样即代表容器启动成功，此时通过命令 `Ctrl + C` 退出即可。_
 #### __常见问题与帮助：__
 1. 如在拉取活动脚本时失败提示 `ssh: connect to host gitee.com port 22: Connection timed out` 是由于您使用平台的 `22` 端口不可用所导致，自行解决处理。
 2. 如在拉取活动脚本时失败提示 `Repository more than 5 connections` 是由于 `Gitee` 限制了每秒同时拉取项目的IP不能超过 `5` 个所导致，此报错为正常现象，重新执行更新命令即可。
-3. 如果 `控制面板` 功能未安装成功可执行下面的命令重新安装：
+3. 部署成功后无法访问 `控制面板` 是由于容器映射的 `主机端口` （默认5678）外部不能访问所导致。
+4. 如果 `控制面板` 功能未安装成功可执行下面的命令重新安装：
 
        docker exec -it jd /bin/bash
        cd panel
@@ -209,13 +211,13 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ***
 
 #### 关于如何获取账号信息的途径：
-- 通过 `控制面板` 功能进入 `WEB网页` 手机扫码获取，此方式获取的“身份证”有效期为3个月 __（优先推荐）__
-- 通过浏览器开发工具获取，在 Wiki [ GetCookies1 ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程，此方式获取的“身份证”有效期为1个月
-- 通过浏览器插件获取，在 Wiki [ GetCookies2 ](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程，此方式获取的“身份证”有效期为1个月
-
+- 通过 `控制面板` 功能进入 `WEB网页` 手机APP扫码获取，获取后可直接在配置文件中配置 __（优先推荐）__
+- 通过浏览器开发工具获取，请前往 Wiki 查看具体教程ㅤㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程
+- 通过浏览器扩展插件获取，请前往 Wiki 查看具体教程ㅤㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/GetCookies1)有详细的图文教程
+> 所有方式获取的 `Cookie` 有效期均为1个月
 #### 1. 配置账户
 
-- 将获得的`Cookie部分内容`填入下面命令中的“双引号”内复制完整命令到终端并执行：
+- 将获得的 `Cookie部分内容` 填入下面命令中的“双引号”内复制完整命令到终端并执行：
 
       sed -i '35c Cookie1=""' config/config.sh
       sed -i '36c Cookie2=""' config/config.sh
@@ -226,7 +228,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > _参考命令：sed -i '35c Cookie1="pt_pin=xxxxx;pt_key=xxxxxxx;"' config/config.sh_
 
 > _注意：1. 执行此命令前 `Linux` 版需要进入项目安装目录，`Docker` 版需要进入容器内。_\
-> _ㅤㅤㅤ2. 此操作对应 `控制面板` 功能 `首页` 中的 28~33 行内容，具体教程查看注释内容。_\
+> _ㅤㅤㅤ2. 此操作对应 `控制面板` 功能 `首页` 中的 35~40 行内容，具体教程查看注释内容。_\
 > _ㅤㅤㅤ3. 用几个账号就执行几行命令，超出6个账号后需要自行在 `config.sh` 配置文件中创建变量。_
 #### 2. 配置消息推送功能
 > _详见 `config.sh` 配置文件中的注释教程，很详细......_
@@ -236,8 +238,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ## 四、使用项目
 > 关于如何使用此项目，请前往至 [ Wiki 首页](https://github.com/SuperManito/JD-FreeFuck/wiki/) ，项目后续的更新、修复命令都在其页面发布！
 
-- __`Linux`  版本使用教程 ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Linux-Use-And-Update-Tutorial)__
-- __`Docker` 版本使用教程 ㅤ[ 点击此处前往 ](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Use-And-Update-Tutorial)__
+- __`Linux`  版本使用教程 ㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/Linux-Use-And-Update-Tutorial)__
+- __`Docker` 版本使用教程 ㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Use-And-Update-Tutorial)__
 > _注意：您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_\
 > _ㅤㅤㅤ您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_\
 > _ㅤㅤㅤ您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_
