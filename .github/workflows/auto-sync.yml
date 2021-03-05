@@ -5,7 +5,7 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     # UTC 17:00 -> CST (China) 1:00, see https://datetime360.com/cn/utc-cst-china-time/
-    - cron: '0/5 * * * *'
+    - cron: '2 * * * *'
 name: Mirror GitHub Auto Queried Repos to Gitee
 jobs:
   run:
@@ -13,18 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Mirror the Github repos to Gitee.
-      uses: SuperManito/JD-FreeFuck@master
-      with:
-        src: github/SuperManito
-        dst: gitee/SuperManito
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token: ${{ secrets.GITEE_TOKEN }}
-        force_update: true
-
-    runs-on: ubuntu-latest
-    steps:
-    - name: Mirror the Github repos to Gitee.
-      uses: SuperManito/JD-FreeFuck@source
+      uses: Yikun/hub-mirror-action@master
       with:
         src: github/SuperManito
         dst: gitee/SuperManito
