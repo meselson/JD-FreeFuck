@@ -21,3 +21,13 @@ jobs:
         dst_token: ${{ secrets.GITEE_TOKEN }}
         force_update: true
 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Mirror the Github repos to Gitee.
+      uses: SuperManito/JD-FreeFuck@source
+      with:
+        src: github/SuperManito
+        dst: gitee/SuperManito
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITEE_TOKEN }}
+        force_update: true
