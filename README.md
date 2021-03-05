@@ -8,6 +8,9 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？您的
 > `通知` 代表有新的内容或信息需要您了解\
 > 具体内容和命令请前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看通知
 
+- __2021/3/05 19:00 `修复`__
+ㅤ接到活动脚本作者的通知，由于某个活动脚本编写错误导致死循环，示意用户删除该脚本后重新拉取，请所有朋友前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看具体命令修复此问题。
+
 - __2021/3/04 1:30 `更新`__\
 ㅤ去除了 `manual-update` 脚本，将其功能移入至 `git_pull` 原版一键更新脚本中，更新了对应教程注意今后使用新命令，配置文件新增同步 `Diy` 脚本功能，已推送新版 `Docker` 镜像且支持了更多的架构，最新版本的镜像ID为 `2f6bf791cf7c` ，如果您不想重新部署可通过对应版本《使用与更新》教程之<更新教程>的第4条命令升级现有版本，此次更新内容较少，主要为项目结构调整，感谢您的理解与支持。
 
@@ -238,7 +241,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 ## 四、使用项目
 > 关于如何使用此项目，请前往至 [ Wiki 首页](https://github.com/SuperManito/JD-FreeFuck/wiki/) ，项目后续的更新、修复命令都在其页面发布！
 
-- __`Linux`  版本使用教程 ㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/Linux-Use-And-Update-Tutorial)__
+- __`Linux`  版本使用教程ㅤㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/Linux-Use-And-Update-Tutorial)__
 - __`Docker` 版本使用教程 ㅤ[点击此处前往](https://github.com/SuperManito/JD-FreeFuck/wiki/Docker-Use-And-Update-Tutorial)__
 > _注意：您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_\
 > _ㅤㅤㅤ您使用的哪个版本就用哪个版本的教程，不要混用，重要的事情说三遍！_\
