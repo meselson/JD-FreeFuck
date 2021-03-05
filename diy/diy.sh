@@ -23,11 +23,11 @@ scripts_base_url_3=https://raw.githubusercontent.com/whyour/hundun/master/quanx/
 
 ##############################  作  者  脚  本  名  称  （必填）  ##############################
 # 将相应作者的脚本填写到以下变量中
-my_scripts_list_1="jd_entertainment.js jd_jump-jump.js jd_shake.js jd_shakeBean.js"
+my_scripts_list_1="jd_entertainment.js jd_jump-jump.js jd_shake.js jd_shakeBean.js jd_xmf.js"
 my_scripts_list_2="jd_axc.js jd_xxl_gh.js"
 my_scripts_list_3="jx_factory_component.js"
 
-## 活动脚本名称1：百变大咖秀、母婴跳一跳、摇一摇、摇京豆
+## 活动脚本名称1：百变大咖秀、母婴跳一跳、摇一摇、摇京豆、小魔方
 ## 活动脚本名称2：东东爱消除、个护爱消除
 ## 活动脚本名称3：京喜工厂Plus
 
@@ -92,9 +92,11 @@ sed -i "s|bash jd jd_entertainment|bash ${ShellDir}/jd.sh jd_entertainment|g" ${
 sed -i "s|bash jd jd_jump-jump|bash ${ShellDir}/jd.sh jd_jump-jump|g" ${ListCron}
 sed -i "s|bash jd jd_shake|bash ${ShellDir}/jd.sh jd_shake|g" ${ListCron}
 sed -i "s|bash jd jd_shakeBean|bash ${ShellDir}/jd.sh jd_shakeBean|g" ${ListCron}
+sed -i "s|bash jd jd_xmf|bash ${ShellDir}/jd.sh jd_xmf|g" ${ListCron}
 sed -i "s|bash jd jd_axc|bash ${ShellDir}/jd.sh jd_axc|g" ${ListCron}
 sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" ${ListCron}
 sed -i "s|bash jd jx_factory_component|bash ${ShellDir}/jd.sh jx_factory_component|g" ${ListCron}
+
 
 
 echo -e "diy脚本更新完成..."
