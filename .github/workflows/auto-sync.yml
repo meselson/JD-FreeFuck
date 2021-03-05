@@ -1,23 +1,29 @@
+# 通过 Github action， 在仓库的每一次 commit 后自动同步到 Gitee 上
+name: "Github > Gitee"
 on:
   push:
-    # delete this item if you don't want to trigger this workflow when modify this repo
-    branches: master
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    # UTC 17:00 -> CST (China) 1:00, see https://datetime360.com/cn/utc-cst-china-time/
-    - cron: '0/1 * * * *'
-name: "Github自动同步到Gitee"
+    branches:
+      - master
+      - source
 jobs:
-  run:
-    name: Sync-GitHub-to-Gitee
+  repo-sync:
+    env:
+      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+      dst_token: ${{ secrets.GITEE_TOKEN }}
+      gitee_user: ${{ secrets.GITEE_USER }}
     runs-on: ubuntu-latest
     steps:
-    - name: Mirror the Github repos to Gitee.
-      uses: Yikun/hub-mirror-action@master
-      with:
-        src: github/SuperManito
-        dst: gitee/SuperManito
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token: ${{ secrets.GITEE_TOKEN }}
-        static_list: "JD-FreeFuck"
-        force_update: true
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: sync github -> gitee
+        uses: Yikun/hub-mirror-action@master
+        if: env.dst_key && env.dst_token && env.gitee_user
+        with:
+          src: github/SuperManito
+          dst: gitee/SuperManito
+          static_list: "JD-FreeFuck"
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token:  ${{ secrets.GITEE_TOKEN }}
+          force_update: true
