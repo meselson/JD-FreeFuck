@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - source
 jobs:
   repo-sync:
     env:
