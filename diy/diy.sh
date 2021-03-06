@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-5
+## Modified:2021-3-6
 
 ## 定义下载的脚本代理链接
 Proxy_URL=https://ghproxy.com/
@@ -23,7 +23,7 @@ scripts_base_url_3=https://raw.githubusercontent.com/whyour/hundun/master/quanx/
 
 ##############################  作  者  脚  本  名  称  （必填）  ##############################
 # 将相应作者的脚本填写到以下变量中
-my_scripts_list_1="jd_entertainment.js jd_jump-jump.js jd_shake.js jd_shakeBean.js jd_xmf.js"
+my_scripts_list_1="jd_entertainment.js jd_jump_jump.js jd_shake.js jd_shakeBean.js jd_xmf.js"
 my_scripts_list_2="jd_axc.js jd_xxl_gh.js"
 my_scripts_list_3="jx_factory_component.js"
 
@@ -80,24 +80,24 @@ done
 
 ##########################  删  除  旧  的  失  效  活  动  ##########################
 ## 删除旧版本失效的活动示例： rm -rf ${ScriptsDir}/jd_test.js >/dev/null 2>&1
-rm -rf ${ScriptsDir}/jd_asus_iqiyi.js
-rm -rf ${ScriptsDir}/jd_collectBlueCoin.js
+rm -rf ${ScriptsDir}/jd_jump-jump.js
+# rm -rf ${ScriptsDir}/jd_xmf.js
 rm -rf ${ScriptsDir}/format_share_jd_code.js
+
 
 ##############################  修  正  定  时  任  务  ##########################################
 ## 注意两边修改内容区别在于中间内容"jd"、"${ShellDir}/jd.sh"
 ## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" ${ListCron}
 ##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" ${ListCron}
 sed -i "s|bash jd jd_entertainment|bash ${ShellDir}/jd.sh jd_entertainment|g" ${ListCron}
-sed -i "s|bash jd jd_jump-jump|bash ${ShellDir}/jd.sh jd_jump-jump|g" ${ListCron}
+sed -i "s|bash jd jd_jump_jump|bash ${ShellDir}/jd.sh jd_jump_jump|g" ${ListCron}
 sed -i "s|bash jd jd_shake|bash ${ShellDir}/jd.sh jd_shake|g" ${ListCron}
 sed -i "s|bash jd jd_shakeBean|bash ${ShellDir}/jd.sh jd_shakeBean|g" ${ListCron}
 sed -i "s|bash jd jd_xmf|bash ${ShellDir}/jd.sh jd_xmf|g" ${ListCron}
 sed -i "s|bash jd jd_axc|bash ${ShellDir}/jd.sh jd_axc|g" ${ListCron}
 sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" ${ListCron}
 sed -i "s|bash jd jx_factory_component|bash ${ShellDir}/jd.sh jx_factory_component|g" ${ListCron}
-
-
+sed -i '/jd_jump-jump/d' ${ListCron}
 
 echo -e "diy脚本更新完成..."
 echo -e ''
