@@ -63,7 +63,7 @@ function ReplaceMirror() {
   echo -e '#####################################################'
   echo -e ''
   echo -e "      当前操作系统  $SYSTEM_NAME $SYSTEM_VERSION_NUMBER"
-  echo -e "      当前系统时间  $(date +%Y-%m-%d) $(date +%H:%M)"
+  echo -e "      当前系统时间  $(date "+%Y-%m-%d %H:%M")"
   echo -e ''
   echo -e '#####################################################'
   echo -e ''
@@ -124,7 +124,7 @@ function ReplaceMirror() {
   *)
     SOURCE="mirrors.ustc.edu.cn"
     echo -e ''
-    echo -e '\033[33m----------输入错误，更新源将默认使用中科大源---------- \033[0m'
+    echo -e '\033[33m---------- 输入错误，更新源将默认使用中科大源 ---------- \033[0m'
     sleep 3s
     ;;
   esac
@@ -133,6 +133,8 @@ function ReplaceMirror() {
     DebianMirrors
   elif [ $SYSTEM = "RedHat" ]; then
     RedHatMirrors
+  else
+    echo -e '\033[31m---------- 此脚本不支持您所使用的操作系统 ---------- \033[0m'
   fi
 }
 
