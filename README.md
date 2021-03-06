@@ -169,7 +169,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 #### __安装 Docker Server 客户端：__
 
     curl -sSL https://get.daocloud.io/docker | sh
-> _注意：大部分设备默认自带 `Docker` 客户端，如果没有安装请先执行此官方脚本一键安装。_
+> _注意：部分设备默认自带 `Docker` 客户端，如果没有安装请先执行此官方脚本一键安装。_
 #### __下载镜像：__
     docker pull registry.cn-hangzhou.aliyuncs.com/supermanito/jd
 > _注意：此镜像大约需要占用 `239MB` 的空闲存储空间，目前最新版本的镜像ID为 `2f6bf791cf7c` 。_
