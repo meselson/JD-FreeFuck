@@ -8,6 +8,9 @@ __如果您觉得这个项目不错的话可以在右上角给颗⭐吗？您的
 > `通知` 代表有新的内容或信息需要您了解\
 > 具体内容和命令请前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看通知
 
+- __2021/3/06 19:30 `通知`__
+ㅤ全面更换本项目所使用的代理。
+
 - __2021/3/05 21:20 `修复`__
 ㅤ修复了 `Linux` 版本在 3月4号 版本更新中的遗留问题，由于本人的疏忽在删除 `manual-update` 脚本后忘记修改了定时文件，请所有使用 `Linux` 版本的朋友前往 [Wiki](https://github.com/SuperManito/JD-FreeFuck/wiki/) 查看具体命令修复此问题。
 
@@ -115,7 +118,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 7. 如果您的网络环境暴露在了公网（例如 VPS 用户），请根据《使用与更新》教程更改 `控制面板` 的用户名和密码。
 
 #### __更换国内源：（选择执行）__
-    bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/ReplaceMirror.sh)
+    bash <(curl -sSL https://raw.sevencdn.com/SuperManito/JD-FreeFuck/main/ReplaceMirror.sh)
 > _注意：1. 此脚本为 `LinuxMirror` 一键更换国内源脚本，之前附加在旧版本部署脚本中现独立出来，_\
 > _ㅤㅤㅤ2. 如果您使用的平台位于国外则不需要执行此命令，例如 `Google Cloud Platform` 用户，_\
 > _ㅤㅤㅤ3. 此脚本并没有适配所有的 GNU/Linux 发行版，具体支持列表详见下方表格。_
@@ -130,7 +133,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 | CentOS | 7.0 ~ 8.3 |
 > 如果您的系统或版本不在此列表中则无法使用此脚本
 #### __脚本一键部署：__
-    bash <(curl -sSL https://ghproxy.com/https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/main/install.sh)
+    bash <(curl -sSL https://raw.sevencdn.com/SuperManito/JD-FreeFuck/main/install.sh)
 > _再次提醒：请根据您使用的平台选择合适的版本，不要重复部署！_
 #### __常见问题与帮助：__
 1. 如果执行部署脚本命令后提示 `Command 'curl' not found` 则说明当前未安装 `curl` 软件包，安装命令如下：
