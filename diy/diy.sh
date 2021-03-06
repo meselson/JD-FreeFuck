@@ -95,5 +95,4 @@ sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" ${ListCron}
 sed -i "s|bash jd jx_factory_component|bash ${ShellDir}/jd.sh jx_factory_component|g" ${ListCron}
 sed -i '/jd_jump-jump/d' ${ListCron}
 
-echo -e "diy脚本更新完成..."
 echo -e ''
