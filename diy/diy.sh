@@ -2,8 +2,6 @@
 ## Author:SuperManito
 ## Modified:2021-3-6
 
-## 定义下载的脚本代理链接
-Proxy_URL=https://raw.sevencdn.com/
 
 ##############################  作  者  昵  称  （必填）  ##############################
 # 使用空格隔开
@@ -12,14 +10,14 @@ author_list="i-chenzhe JDMyself whyour"
 ## 添加更多作者昵称（必填）示例：author_list="i-chenzhe whyour testuser"  直接追加，不要新定义变量
 
 ##############################  作  者  脚  本  地  址  URL  （必填）  ##############################
-# 例如：https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.js
+# 例如：https://raw.sevencdn.com/whyour/hundun/master/quanx/jx_nc.js
 # 1.从作者库中随意挑选一个脚本地址，每个作者的地址添加一个即可，无须重复添加
 # 2.将地址最后的 “脚本名称+后缀” 剪切到下一个变量里（my_scripts_list_xxx）
-scripts_base_url_1="i-chenzhe/qx/main/"
-scripts_base_url_2="573462273/JDMyself/main/scripts/"
-scripts_base_url_3="whyour/hundun/master/quanx/"
+scripts_base_url_1=https://raw.sevencdn.com/i-chenzhe/qx/main/
+scripts_base_url_2=https://raw.sevencdn.com/573462273/JDMyself/main/scripts/
+scripts_base_url_3=https://raw.sevencdn.com/whyour/hundun/master/quanx/
 
-## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.githubusercontent.com/SuperManito/JD-FreeFuck/master/
+## 添加更多脚本地址URL示例：scripts_base_url_3=https://raw.sevencdn.com/SuperManito/JD-FreeFuck/master/
 
 ##############################  作  者  脚  本  名  称  （必填）  ##############################
 # 将相应作者的脚本填写到以下变量中
@@ -54,7 +52,7 @@ for author in $author_list; do
     echo $url
     eval name=$js
     echo $name
-    wget -q --no-check-certificate $Proxy_URL$url -O scripts/$name.new
+    wget -q --no-check-certificate $url -O scripts/$name.new
 
     # 如果上一步下载没问题，才去掉后缀".new"，如果上一步下载有问题，就保留之前正常下载的版本
     # 随机添加个cron到crontab.list
