@@ -3,26 +3,23 @@
 ## Date:2021-3-8
 
 ## 项目安装目录
-ShellDir=${JD_DIR:-$(
-  cd $(dirname $0)
-  pwd
-)}
+BASE=/opt/jd
 ## 一键更新脚本地址
 Git_Pull_URL=https://gitee.com/SuperManito/JD-FreeFuck/raw/source/git_pull.sh
 
 ## 删除旧的脚本
-rm -rf $ShellDir/manual-update.sh
+rm -rf $BASE/manual-update.sh
 ## 更新一键脚本
 wget $Git_Pull_URL -O git_pull.sh
 ## 更新活动脚本
-bash $ShellDir/git_pull.sh
+bash $BASE/git_pull.sh
 ## 创建软链接
-ln -sf $ShellDir/jd.sh /usr/local/bin/jd
-ln -sf $ShellDir/git_pull.sh /usr/local/bin/git_pull
-ln -sf $ShellDir/rm_log.sh /usr/local/bin/rm_log
-ln -sf $ShellDir/export_sharecodes.sh /usr/local/bin/export_sharecodes
+ln -sf $BASE/jd.sh /usr/local/bin/jd
+ln -sf $BASE/git_pull.sh /usr/local/bin/git_pull
+ln -sf $BASE/rm_log.sh /usr/local/bin/rm_log
+ln -sf $BASE/export_sharecodes.sh /usr/local/bin/export_sharecodes
 ## 更新活动脚本
-bash $ShellDir/git_pull.sh >/dev/null 2>&1
+bash $BASE/git_pull.sh >/dev/null 2>&1
 
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
 echo -e "\033[32m |                                                             | \033[0m"
