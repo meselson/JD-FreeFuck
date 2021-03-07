@@ -1,6 +1,6 @@
 #!/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-7
+## Modified:2021-3-8
 
 ## ======================================== 说 明 =========================================================
 ##                                                                                                        #
@@ -183,6 +183,11 @@ function ProjectDeployment() {
     ## 创建目录
     mkdir $BASE/config
     mkdir $BASE/log
+    ## 创建软链接
+    ln -sf $BASE/jd.sh /usr/local/bin/jd
+    ln -sf $BASE/git_pull.sh /usr/local/bin/git_pull
+    ln -sf $BASE/rm_log.sh /usr/local/bin/rm_log
+    ln -sf $BASE/export_sharecodes.sh /usr/local/bin/export_sharecodes
     ## 根据安装目录配置定时任务
     sed -i "s#BASE#$BASE#g" $BASE/sample/computer.list.sample
     ## 创建项目配置文件与定时任务配置文件
