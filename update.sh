@@ -11,8 +11,6 @@ Git_Pull_URL=https://gitee.com/SuperManito/JD-FreeFuck/raw/source/git_pull.sh
 rm -rf $BASE/manual-update.sh
 ## 更新一键脚本
 wget $Git_Pull_URL -O git_pull.sh
-## 更新活动脚本
-bash $BASE/git_pull.sh
 ## 定义全局变量
 echo "export JD_DIR=$BASE" >>/etc/profile
 source /etc/profile
