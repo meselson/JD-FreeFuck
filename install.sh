@@ -16,7 +16,7 @@
 
 ## ======================================= 定 义 相 关 变 量 ===============================================
 ## 安装目录
-BASE="/opt/jd"
+BASE=/opt/jd
 ## 项目分支
 JD_BASE_BRANCH="source"
 ## 项目地址
@@ -77,6 +77,7 @@ function Installation() {
         if [ $? -eq 0 ]; then
             ProjectDeployment
             SetConfig
+            sleep 5s
             PanelJudgment
             UseNotes
         else
@@ -195,6 +196,9 @@ function ProjectDeployment() {
     cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
     ## 切换 npm 官方源为淘宝源
     npm config set registry http://registry.npm.taobao.org
+    ## 拉取活动脚本
+    bash $BASE/git_pull.sh
+    bash $BASE/git_pull.sh >/dev/null 2>&1
     ## 安装控制面板功能
     cp $BASE/sample/auth.json $BASE/config/auth.json
     cd $BASE/panel
@@ -202,9 +206,6 @@ function ProjectDeployment() {
     npm install -g pm2
     pm2 start server.js
     cd $BASE
-    ## 拉取活动脚本
-    bash $BASE/git_pull.sh
-    bash $BASE/git_pull.sh >/dev/null 2>&1
     ## 赋权所有项目文件
     chmod 777 $BASE/*
 }
@@ -317,7 +318,7 @@ function UseNotes() {
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m |       如果想要执行特定活动脚本，请通过命令 bash jd.sh 查看教程                                                  | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
-    echo -e "\033[32m | 注意：1. 该项目文件以及一键脚本的安装目录为$BASE                                                                | \033[0m"
+    echo -e "\033[32m | 注意：1. 该项目文件以及一键脚本的安装目录为$BASE                                                              | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
     echo -e "\033[32m |       2. 为了保证脚本的正常运行，请不要更改任何组件的位置以避免出现未知的错误                                   | \033[0m"
     echo -e "\033[32m |                                                                                                                 | \033[0m"
