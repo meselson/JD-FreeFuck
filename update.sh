@@ -1,6 +1,6 @@
 #!/bin/env bash
 ## Author:SuperManito
-## Date:2021-3-8
+## Date:2021-3-9
 
 ## 项目安装目录
 BASE=/opt/jd
@@ -13,13 +13,16 @@ rm -rf $BASE/manual-update.sh
 wget $Git_Pull_URL -O git_pull.sh
 ## 更新活动脚本
 bash $BASE/git_pull.sh
+## 定义全局变量
+echo "export JD_DIR=$BASE" >>/etc/profile
+source /etc/profile
 ## 创建软链接
 ln -sf $BASE/jd.sh /usr/local/bin/jd
 ln -sf $BASE/git_pull.sh /usr/local/bin/git_pull
 ln -sf $BASE/rm_log.sh /usr/local/bin/rm_log
 ln -sf $BASE/export_sharecodes.sh /usr/local/bin/export_sharecodes
 ## 更新活动脚本
-bash $BASE/git_pull.sh >/dev/null 2>&1
+bash $BASE/git_pull.sh
 
 echo -e "\033[32m +------------------------ 更 新 成 功 ------------------------+ \033[0m"
 echo -e "\033[32m |                                                             | \033[0m"
