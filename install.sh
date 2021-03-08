@@ -186,11 +186,6 @@ function ProjectDeployment() {
     ## 定义全局变量
     echo "export JD_DIR=$BASE" >>/etc/profile
     source /etc/profile
-    ## 创建软链接
-    ln -sf $BASE/jd.sh /usr/local/bin/jd
-    ln -sf $BASE/git_pull.sh /usr/local/bin/git_pull
-    ln -sf $BASE/rm_log.sh /usr/local/bin/rm_log
-    ln -sf $BASE/export_sharecodes.sh /usr/local/bin/export_sharecodes
     ## 根据安装目录配置定时任务
     sed -i "s#BASE#$BASE#g" $BASE/sample/computer.list.sample
     ## 创建项目配置文件与定时任务配置文件
@@ -208,8 +203,15 @@ function ProjectDeployment() {
     cd $BASE
     bash git_pull.sh
     bash git_pull.sh >/dev/null 2>&1
+    ## 创建软链接
+    ln -sf $BASE/jd.sh /usr/local/bin/jd
+    ln -sf $BASE/git_pull.sh /usr/local/bin/git_pull
+    ln -sf $BASE/rm_log.sh /usr/local/bin/rm_log
+    ln -sf $BASE/export_sharecodes.sh /usr/local/bin/export_sharecodes
+    ln -sf /opt/jd/run_all.sh /usr/local/bin/run_all
     ## 赋权所有项目文件
-    chmod 777 *
+    chmod 777 $BASE/*
+    chmod 777 /usr/local/bin/*
 }
 
 ## 更改配置文件：
