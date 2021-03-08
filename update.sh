@@ -21,6 +21,7 @@ ln -sf $BASE/jd.sh /usr/local/bin/jd
 ln -sf $BASE/git_pull.sh /usr/local/bin/git_pull
 ln -sf $BASE/rm_log.sh /usr/local/bin/rm_log
 ln -sf $BASE/export_sharecodes.sh /usr/local/bin/export_sharecodes
+ln -sf /opt/jd/run_all.sh /usr/local/bin/run_all
 ## 更新活动脚本
 bash $BASE/git_pull.sh
 
