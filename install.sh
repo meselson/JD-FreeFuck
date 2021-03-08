@@ -201,12 +201,12 @@ function ProjectDeployment() {
     npm install || npm install --registry=https://registry.npm.taobao.org
     npm install -g pm2
     pm2 start server.js
-    cd $BASE
     ## 拉取活动脚本
-    bash $BASE/git_pull.sh
-    bash $BASE/git_pull.sh >/dev/null 2>&1
+    cd $BASE
+    bash git_pull.sh
+    bash git_pull.sh >/dev/null 2>&1
     ## 赋权所有项目文件
-    chmod 777 $BASE/*
+    chmod 777 *
 }
 
 ## 更改配置文件：
