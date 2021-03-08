@@ -1,6 +1,6 @@
 #!/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-8
+## Modified:2021-3-9
 
 ## ======================================== 说 明 =========================================================
 ##                                                                                                        #
@@ -183,6 +183,9 @@ function ProjectDeployment() {
     ## 创建目录
     mkdir $BASE/config
     mkdir $BASE/log
+    ## 定义全局变量
+    echo "export JD_DIR=$BASE" >>/etc/profile
+    source /etc/profile
     ## 创建软链接
     ln -sf $BASE/jd.sh /usr/local/bin/jd
     ln -sf $BASE/git_pull.sh /usr/local/bin/git_pull
