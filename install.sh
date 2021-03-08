@@ -216,12 +216,12 @@ function ProjectDeployment() {
 
 ## 更改配置文件：
 function SetConfig() {
-    sed -i "35c Cookie1=$COOKIE1" $BASE/config/config.sh
-    sed -i "36c Cookie2=$COOKIE2" $BASE/config/config.sh
-    sed -i "37c Cookie3=$COOKIE3" $BASE/config/config.sh
-    sed -i "38c Cookie4=$COOKIE4" $BASE/config/config.sh
-    sed -i "39c Cookie5=$COOKIE5" $BASE/config/config.sh
-    sed -i "40c Cookie6=$COOKIE6" $BASE/config/config.sh
+    sed -i "30c Cookie1=$COOKIE1" $BASE/config/config.sh
+    sed -i "31c Cookie2=$COOKIE2" $BASE/config/config.sh
+    sed -i "32c Cookie3=$COOKIE3" $BASE/config/config.sh
+    sed -i "33c Cookie4=$COOKIE4" $BASE/config/config.sh
+    sed -i "34c Cookie5=$COOKIE5" $BASE/config/config.sh
+    sed -i "35c Cookie6=$COOKIE6" $BASE/config/config.sh
 }
 
 ## 判定控制面板安装结果：
