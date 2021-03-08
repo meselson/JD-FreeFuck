@@ -16,7 +16,7 @@
 
 ## ======================================= 定 义 相 关 变 量 ===============================================
 ## 安装目录
-BASE=/opt/jd
+BASE="/opt/jd"
 ## 项目分支
 JD_BASE_BRANCH="source"
 ## 项目地址
@@ -77,7 +77,6 @@ function Installation() {
         if [ $? -eq 0 ]; then
             ProjectDeployment
             SetConfig
-            sleep 5s
             PanelJudgment
             UseNotes
         else
@@ -196,9 +195,6 @@ function ProjectDeployment() {
     cp $BASE/sample/computer.list.sample $BASE/config/crontab.list
     ## 切换 npm 官方源为淘宝源
     npm config set registry http://registry.npm.taobao.org
-    ## 拉取活动脚本
-    bash $BASE/git_pull.sh
-    bash $BASE/git_pull.sh >/dev/null 2>&1
     ## 安装控制面板功能
     cp $BASE/sample/auth.json $BASE/config/auth.json
     cd $BASE/panel
@@ -206,6 +202,9 @@ function ProjectDeployment() {
     npm install -g pm2
     pm2 start server.js
     cd $BASE
+    ## 拉取活动脚本
+    bash $BASE/git_pull.sh
+    bash $BASE/git_pull.sh >/dev/null 2>&1
     ## 赋权所有项目文件
     chmod 777 $BASE/*
 }
