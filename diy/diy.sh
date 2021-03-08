@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-6
+## Modified:2021-3-8
 
 ##############################  作  者  昵  称  （必填）  ##############################
 # 使用空格隔开
@@ -20,11 +20,11 @@ scripts_base_url_3=https://raw.sevencdn.com/whyour/hundun/master/quanx/
 
 ##############################  作  者  脚  本  名  称  （必填）  ##############################
 # 将相应作者的脚本填写到以下变量中
-my_scripts_list_1="jd_entertainment.js jd_jump_jump.js jd_shake.js jd_shakeBean.js"
+my_scripts_list_1="jd_entertainment.js jd_shake.js jd_shakeBean.js"
 my_scripts_list_2="jd_axc.js jd_xxl_gh.js"
 my_scripts_list_3="jx_factory_component.js"
 
-## 活动脚本名称1：百变大咖秀、母婴跳一跳、摇一摇、摇京豆
+## 活动脚本名称1：百变大咖秀、摇一摇、摇京豆
 ## 活动脚本名称2：东东爱消除、个护爱消除
 ## 活动脚本名称3：京喜工厂Plus
 
@@ -78,6 +78,7 @@ done
 ##########################  删  除  旧  的  失  效  活  动  ##########################
 ## 删除旧版本失效的活动示例： rm -rf ${ScriptsDir}/jd_test.js
 rm -rf ${ScriptsDir}/jd_jump-jump.js
+rm -rf ${ScriptsDir}/jd_jump_jump.js
 rm -rf ${ScriptsDir}/jd_xmf.js
 rm -rf ${ScriptsDir}/format_share_jd_code.js
 
@@ -87,10 +88,8 @@ rm -rf ${ScriptsDir}/format_share_jd_code.js
 ## 修正定时任务示例：sed -i "s|bash jd jd_test|bash ${ShellDir}/jd.sh test|g" ${ListCron}
 ##                 sed -i "s|bash jd jd_ceshi|bash ${ShellDir}/jd.sh ceshi|g" ${ListCron}
 sed -i "s|bash jd jd_entertainment|bash ${ShellDir}/jd.sh jd_entertainment|g" ${ListCron}
-sed -i "s|bash jd jd_jump_jump|bash ${ShellDir}/jd.sh jd_jump_jump|g" ${ListCron}
 sed -i "s|bash jd jd_shake|bash ${ShellDir}/jd.sh jd_shake|g" ${ListCron}
 sed -i "s|bash jd jd_shakeBean|bash ${ShellDir}/jd.sh jd_shakeBean|g" ${ListCron}
 sed -i "s|bash jd jd_axc|bash ${ShellDir}/jd.sh jd_axc|g" ${ListCron}
 sed -i "s|bash jd jd_xxl_gh|bash ${ShellDir}/jd.sh jd_xxl_gh|g" ${ListCron}
 sed -i "s|bash jd jx_factory_component|bash ${ShellDir}/jd.sh jx_factory_component|g" ${ListCron}
-sed -i '/jd_jump-jump/d' ${ListCron}
