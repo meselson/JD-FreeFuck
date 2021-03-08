@@ -182,7 +182,7 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 > _注意：部分设备默认自带 `Docker` 客户端，如果没有安装请先执行此官方脚本一键安装。_
 #### __下载镜像：__
     docker pull registry.cn-hangzhou.aliyuncs.com/supermanito/jd
-> _注意：此镜像大约需要占用 `239MB` 的空闲存储空间，目前最新版本的镜像ID为 `68e4d721f0fa` 。_
+> _注意：此镜像大约需要占用 `239MB` 的空闲存储空间，目前最新版本的镜像ID为 `52c690aa52a9` 。_
 #### __启动容器：__
     docker run -dit \
     -v /opt/jd/scripts:/jd/scripts `# 设置活动脚本的主机挂载目录为/opt/jd/scripts` \
