@@ -228,7 +228,7 @@ function SetConfig() {
 function PanelJudgment() {
     netstat -tunlp | grep 5678 -wq
     PanelTestA=$?
-    curl -sSL 127.0.0.1:5678 | grep "京东羊毛脚本控制面板" -wq
+    curl -sSL 127.0.0.1:5678 | grep "京东薅羊毛控制面板" -wq
     PanelTestB=$?
     if [ ${PanelTestA} -eq 0 ] || [ ${PanelTestB} -eq 0 ]; then
         PanelUseNotes
