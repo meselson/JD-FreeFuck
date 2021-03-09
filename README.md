@@ -125,8 +125,8 @@ __请ㅤㅤ认ㅤㅤ真ㅤㅤ阅ㅤㅤ读ㅤㅤ教ㅤㅤ程ㅤ，ㅤ90%ㅤㅤ的
 8. 若您使用 `VPS` 平台，关机前请先执行此命令手动停止控制面板，否则在仪表盘强制关机重启后可能会出现无法保存配置文件的问题。
 
 #### __更换国内源：（选择执行）__
-    bash <(curl -sSL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/ReplaceMirror.sh)
-> _注意：1. 此脚本为 `LinuxMirror` 一键更换国内源脚本，之前附加在旧版本部署脚本中现独立出来，_\
+    bash <(curl -sSL https://gitee.com/SuperManito/JD-FreeFuck/raw/main/ChangeMirror.sh)
+> _注意：1. 此脚本为本人原创一键更换国内源脚本，之前附加在旧版本部署脚本中现独立出来，_\
 > _ㅤㅤㅤ2. 如果您使用的平台位于国外则不需要执行此命令，例如 `Google Cloud Platform` 用户，_\
 > _ㅤㅤㅤ3. 此脚本并没有适配所有的 GNU/Linux 发行版，具体支持列表详见下方表格。_
 - 可使用 `LinuxMirror` 一键更换国内源脚本的 GNU/Linux 发行版
