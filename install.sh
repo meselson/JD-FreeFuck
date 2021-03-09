@@ -1,6 +1,6 @@
 #!/bin/env bash
 ## Author:SuperManito
-## Modified:2021-3-9
+## Modified:2021-3-10
 
 ## ======================================== 说 明 =========================================================
 ##                                                                                                        #
@@ -178,6 +178,13 @@ function PrivateKeyInstallation() {
 
 ## 项目部署：
 function ProjectDeployment() {
+    ## 卸载旧版本
+    rm -rf $BASE
+    rm -rf /usr/local/bin/jd
+    rm -rf /usr/local/bin/git_pull
+    rm -rf /usr/local/bin/rm_log
+    rm -rf /usr/local/bin/export_sharecodes
+    rm -rf /usr/local/bin/run_all
     ## 克隆源码
     git clone -b $JD_BASE_BRANCH $JD_BASE_URL $BASE
     ## 创建目录
