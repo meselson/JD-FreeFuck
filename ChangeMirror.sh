@@ -25,7 +25,7 @@ elif [ $SYSTEM = "RedHat" ]; then
 fi
 
 ## 更换国内源：
-function ReplaceMirror() {
+function ChangeMirror() {
   echo -e ''
   echo -e '+---------------------------------------------------+'
   echo -e '|                                                   |'
@@ -944,4 +944,4 @@ skip_if_unavailable=False
 EOF
   fi
 }
-ReplaceMirror
+ChangeMirror
