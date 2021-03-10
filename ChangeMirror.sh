@@ -144,7 +144,7 @@ function DebianMirrors() {
   if [ $? -eq 0 ]; then
     echo -e '\033[32m检测到已备份的 source.list源 文件，跳过备份操作...... \033[0m'
   else
-    cp -rf /etc/apt/sources.list /etc/apt/sources.list.bak
+    cp -rf /etc/apt/sources.list /etc/apt/sources.list.bak >/dev/null 2>&1
     echo -e '\033[32m已备份原有 source.list 更新源文件...... \033[0m'
   fi
   sleep 3s
@@ -211,7 +211,7 @@ function RedHatOfficialMirror() {
     echo -e '\033[32m检测到已备份的 repo源 文件，跳过备份操作...... \033[0m'
   else
     mkdir -p /etc/yum.repos.d.bak
-    cp -rf /etc/yum.repos.d/* /etc/yum.repos.d.bak
+    cp -rf /etc/yum.repos.d/* /etc/yum.repos.d.bak >/dev/null 2>&1
     echo -e '\033[32m已备份原有 repo源 文件至 /etc/yum.repos.d.bak ...... \033[0m'
   fi
   sleep 3s
@@ -488,6 +488,7 @@ enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 EOF
   elif [ $CENTOS_VERSION = "7" ]; then
+    rm -rf /etc/yum.repos.d/*Base.repo
     rm -rf /etc/yum.repos.d/*BaseOS.repo
     rm -rf /etc/yum.repos.d/*CR.repo
     rm -rf /etc/yum.repos.d/*Debuginfo.repo
@@ -495,7 +496,7 @@ EOF
     rm -rf /etc/yum.repos.d/*Media.repo
     rm -rf /etc/yum.repos.d/*Sources.repo
     rm -rf /etc/yum.repos.d/*Vault.repo
-    touch /etc/yum.repos.d/CentOS-BaseOS.repo
+    touch /etc/yum.repos.d/CentOS-Base.repo
     touch /etc/yum.repos.d/CentOS-CR.repo
     touch /etc/yum.repos.d/CentOS-Debuginfo.repo
     touch /etc/yum.repos.d/CentOS-fasttrack.repo
